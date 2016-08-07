@@ -1,0 +1,2 @@
+module StufitHelper
+end
