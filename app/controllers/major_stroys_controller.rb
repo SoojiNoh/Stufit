@@ -1,0 +1,2 @@
+class MajorStroysController < ApplicationController
+end

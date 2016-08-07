@@ -1,0 +1,2 @@
+class MajorStroy < ApplicationRecord
+end

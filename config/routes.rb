@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :major_stroys
+  resources :events
+  resources :activities
+  resources :mock_tests
   get 'stufit/index'
 
   get 'facebook/index'

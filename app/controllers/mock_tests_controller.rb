@@ -1,0 +1,2 @@
+class MockTestsController < ApplicationController
+end
