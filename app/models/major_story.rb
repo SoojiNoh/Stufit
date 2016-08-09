@@ -1,0 +1,2 @@
+class MajorStory < ApplicationRecord
+end

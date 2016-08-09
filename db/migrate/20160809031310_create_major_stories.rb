@@ -1,6 +1,6 @@
-class CreateMajorStroys < ActiveRecord::Migration[5.0]
+class CreateMajorStories < ActiveRecord::Migration[5.0]
   def change
-    create_table :major_stroys do |t|
+    create_table :major_stories do |t|
 
       t.string :title
       t.string :content

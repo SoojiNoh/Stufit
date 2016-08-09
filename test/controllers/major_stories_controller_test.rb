@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class MajorStroyTest < ActiveSupport::TestCase
+class MajorStoriesControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

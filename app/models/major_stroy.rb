@@ -1,2 +1,0 @@
-class MajorStroy < ApplicationRecord
-end

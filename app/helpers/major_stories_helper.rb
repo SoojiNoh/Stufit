@@ -1,0 +1,2 @@
+module MajorStoriesHelper
+end

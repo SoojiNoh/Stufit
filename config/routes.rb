@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  resources :major_stories
   devise_for :users
-  resources :major_stroys
   resources :events
   resources :activities
   resources :mock_tests

@@ -1,2 +1,0 @@
-class MajorStroysController < ApplicationController
-end
