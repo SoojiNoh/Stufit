@@ -9,6 +9,6 @@ class DueDate < ApplicationRecord
   # Event : Start_date relation => 1:1
   has_many :event, foreign_key: :start_id
 
-  # Event : End_date relation => 1:1 
+  # Event : End_date relation => 1:1
   has_many :event, foreign_key: :end_id
 end

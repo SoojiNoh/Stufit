@@ -6,6 +6,8 @@ class University < ApplicationRecord
   # Major_stories : University relation => N:1
   has_many :major_storries
 
-  # Major_story : University relation => N:1
-  has_many :major_stories
+  # User : Univ_follow : University relation => N:M
+  has_many :univ_foloows
+  has_many :users, through: :univ_follows
+
 end
