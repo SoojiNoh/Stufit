@@ -7,6 +7,7 @@ class CreateMockTests < ActiveRecord::Migration[5.0]
       t.float :percent
       t.string :host
       t.references :user, index:true, foreign_key: true
+      t.references :due_date, index:true, foreign_key: true
 
       t.timestamps
     end
