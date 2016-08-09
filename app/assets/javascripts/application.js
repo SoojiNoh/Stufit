@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require_tree .
 //= require materialize/dist/js/materialize.min
+//= require Chart
