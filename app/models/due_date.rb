@@ -1,0 +1,2 @@
+class DueDate < ApplicationRecord
+end

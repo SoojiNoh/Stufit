@@ -1,0 +1,2 @@
+class MajorFollow < ApplicationRecord
+end
