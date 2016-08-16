@@ -1,0 +1,5 @@
+<h5>새 글쓰기</h5></br>
+
+<%= form_for @event do |d| %>
+<%= render partial: 'form', locals: { :f => d} %>
+<% end %>

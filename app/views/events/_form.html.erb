@@ -1,0 +1,33 @@
+<div class="field">
+    <%= f.label :title, '제목' %>
+    <%= f.text_area :title %>
+</div>
+<div>
+    <%= f.label :content, '내용' %>
+    <%= f.text_area :content, :size => "50x10" %>
+</div>
+<div>
+    <%= f.label :place, '장소' %>
+    <%= f.text_field :place %>
+</div>
+<div>
+    <%= f.label :event_type, '분류' %>
+    <%= f.text_field :event_type %>
+</div>
+<div class="field">
+    <%= f.label :start_at, '시작일' %>
+    <%= f.datetime_field :start_at %>
+</div>
+<div class="field">
+    <%= f.label :end_at, '종료일' %>
+    <%= f.datetime_field :end_at %>
+</div>
+<div>
+   <%= f.label :file, '파일첨부' %> 
+   <%= f.text_field :file %>
+   <%= f.file_field :file %>
+</div>
+</br>
+<div>
+    <%= f.submit "저장하기" %>
+</div>

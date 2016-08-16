@@ -1,0 +1,44 @@
+<h5>정보게시판 자세히 보기</h5>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>제목</th>
+      <th>내용</th>
+      
+      <th>장소</th>
+      <th>분류</th>
+      
+      <th>시작일</th>
+      <th>종료일</th>
+      <th>첨부파일</th>
+      
+      <th>등록일</th>
+      <th>기능</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+     <tr>
+        <td><%= @event.title %></td>
+        <td><%= @event.content %></td>
+        
+        <td><%= @event.place %></td>
+        <td><%= @event.event_type %></td>
+
+        <td><%= @event.start_at %></td>
+        <td><%= @event.end_at %></td>
+        <td><%= @event.file %></td>
+        
+        <td><%= @event.created_at.in_time_zone("Asia/Seoul").strftime("%Y년%m월%d일 %H시%M분%S초") %></td>
+        <td><%= link_to "수정", edit_event_path(@event) %></td>
+        <td><%= link_to "삭제", event_path(@event), method: "delete" %></td>
+        <td><%= link_to "목록", events_path %></td>
+     </tr>
+  </tbody>
+</table>
+
+<br>
+<%= link_to '새 글쓰기', new_event_path %>

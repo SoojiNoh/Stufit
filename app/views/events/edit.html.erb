@@ -1,0 +1,7 @@
+<%= form_for (@event) do |f| %>
+<%= render partial: 'form', locals: { :f => f} %>
+
+<%= link_to '이전', @event %> 
+<%= link_to '목록', events_path %>
+
+<% end %>
