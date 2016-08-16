@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160815080006) do
+ActiveRecord::Schema.define(version: 20160815073857) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "activity_type"
@@ -122,16 +122,6 @@ ActiveRecord::Schema.define(version: 20160815080006) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_mock_tests_on_user_id"
-  end
-
-  create_table "testnames", force: :cascade do |t|
-    t.datetime "start_at"
-    t.integer  "grade"
-    t.string   "subject"
-    t.float    "percent"
-    t.string   "host_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "univ_follows", force: :cascade do |t|
