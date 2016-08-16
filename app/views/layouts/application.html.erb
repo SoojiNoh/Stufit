@@ -19,12 +19,12 @@
       <% if user_signed_in? %>
           <ul class="right hide-on-med-and-down">
             <li><%= link_to '행사', events_path , method: 'get' %></li>
-            <li><%= link_to '마이페이지', my_page_index_path , method: 'get' %></li>
+            <li><%= link_to current_user.name, my_page_index_path , method: 'get' %></li>
             <li><%= link_to '로그아웃', destroy_user_session_path, method: 'delete' %></li>
           </ul>
           <ul class="side-nav" id="mobile-demo">
             <li><%= link_to '행사', events_path , method: 'get' %></li>
-            <li><%= link_to '마이페이지', my_page_index_path , method: 'get' %></li>
+            <li><%= link_to current_user.name, my_page_index_path , method: 'get' %></li>
             <li><%= link_to '로그아웃', destroy_user_session_path, method: 'delete' %></li>
           </ul>
       <% else %>
