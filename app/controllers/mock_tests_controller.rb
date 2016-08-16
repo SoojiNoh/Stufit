@@ -1,12 +1,4 @@
 class MockTestsController < ApplicationController
-  def index
-    @mock_test = MockTest.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render xml: @mock_tests }
-    end
-  end
 
   def new
     @mock_test = MockTest.new
