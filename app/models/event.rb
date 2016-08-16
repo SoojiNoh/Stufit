@@ -10,4 +10,8 @@ class Event < ApplicationRecord
   has_many :hash_events
   has_many :hash_tag, through: :hash_events
 
+  # User : UserSchedule : Schedule relation => N:M
+  has_many :user_schedules
+  has_many :users, through: :user_schedules
+
 end

@@ -21,4 +21,8 @@ class User < ApplicationRecord
   # User : Major_follow : Major_story relation => N:M
   has_many :major_follows
   has_many :major_stories, through: :major_follows
+
+  # User : UserSchedule : Schedule relation => N:M
+  has_many :user_schedules
+  has_many :schedules, class_name: :Event, through: :user_schedules
 end
