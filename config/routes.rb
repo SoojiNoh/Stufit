@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get '/' => 'home#index'
   get 'home/index'
+  get 'my_page/index'
 
   resources :major_stories
   devise_for :users
