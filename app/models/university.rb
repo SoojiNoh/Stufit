@@ -4,10 +4,10 @@ class University < ApplicationRecord
   has_many :events
 
   # Major_stories : University relation => N:1
-  has_many :major_storries
+  has_many :major_stories
 
   # User : Univ_follow : University relation => N:M
-  has_many :univ_foloows
+  has_many :univ_follows
   has_many :users, through: :univ_follows
 
 end

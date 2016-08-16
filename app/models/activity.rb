@@ -5,9 +5,7 @@ class Activity < ApplicationRecord
   has_many :hash_tags, through: :hash_activites
 
   # User : Activity relation => 1:N
-  belongs_to :user
+  belongs_to :user, optional: true
 
-  # Due_date : Activity relation => 1:N
-  belongs_to :due_date
 
 end

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DueDateTest < ActiveSupport::TestCase
+class HashEventTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

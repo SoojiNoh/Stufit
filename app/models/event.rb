@@ -4,12 +4,10 @@ class Event < ApplicationRecord
   has_many :comments
 
   # Universitiy : Event relation => 1:N
-  belongs_to :university
+  belongs_to :university, optional: true
 
-  # Start_date : Event relation => 1:1
-  belongs_to :start_date, class_name: :due_date
-
-  # End_date : Event relation => 1:1
-  belongs_to :end_date, class_name: :due_date
+  # Hash_tag : Event relation => N:M
+  has_many :hash_events
+  has_many :hash_tag, through: :hash_events
 
 end

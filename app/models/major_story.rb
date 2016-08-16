@@ -1,7 +1,7 @@
 class MajorStory < ApplicationRecord
 
   # University : Major_story relation => 1:N
-  belongs_to :university
+  belongs_to :university, optional: true
 
   # Comment : Major_story relation => N:1
   has_many :comments

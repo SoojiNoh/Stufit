@@ -19,7 +19,7 @@ class MockTestsController < ApplicationController
 
   def create
     @mock_test = MockTest.new(mock_test_params)
-    @mock_test.user_id = current_user.id
+    @mock_test.user = current_user
 
     respond_to do |format|
       if @mock_test.save
@@ -33,7 +33,7 @@ class MockTestsController < ApplicationController
     end
   end
 
-  def show 
+  def show
     @mock_test = MockTest.find(params[:id])
 
     respond_to do |format|
@@ -73,6 +73,6 @@ class MockTestsController < ApplicationController
 
   private
   def mock_test_params
-    params.require(:mock_test).permit(:grade, :subject, :percent, :host)
+    params.require(:mock_test).permit(:grade, :subject, :percent, :host_name)
   end
 end

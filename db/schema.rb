@@ -10,18 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160809033406) do
+ActiveRecord::Schema.define(version: 20160815080006) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "activity_type"
-    t.string   "host"
+    t.string   "host_name"
     t.string   "style"
     t.string   "title"
+    t.datetime "start_at"
+    t.datetime "end_at"
     t.integer  "user_id"
-    t.integer  "date_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.index ["date_id"], name: "index_activities_on_date_id"
     t.index ["user_id"], name: "index_activities_on_user_id"
   end
 
@@ -35,21 +35,14 @@ ActiveRecord::Schema.define(version: 20160809033406) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "due_dates", force: :cascade do |t|
-    t.integer  "day"
-    t.integer  "month"
-    t.integer  "year"
-    t.integer  "hour"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "events", force: :cascade do |t|
     t.string   "title"
     t.string   "content"
     t.string   "place"
     t.string   "file"
     t.string   "event_type"
+    t.datetime "start_at"
+    t.datetime "end_at"
     t.integer  "university_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
@@ -63,6 +56,15 @@ ActiveRecord::Schema.define(version: 20160809033406) do
     t.datetime "updated_at",       null: false
     t.index ["activity_id"], name: "index_hash_activities_on_activity_id"
     t.index ["hash_activity_id"], name: "index_hash_activities_on_hash_activity_id"
+  end
+
+  create_table "hash_events", force: :cascade do |t|
+    t.integer  "event_id"
+    t.integer  "hash_tag_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["event_id"], name: "index_hash_events_on_event_id"
+    t.index ["hash_tag_id"], name: "index_hash_events_on_hash_tag_id"
   end
 
   create_table "hash_majors", force: :cascade do |t|
@@ -114,13 +116,22 @@ ActiveRecord::Schema.define(version: 20160809033406) do
     t.integer  "grade"
     t.string   "subject"
     t.float    "percent"
-    t.string   "host"
+    t.string   "host_name"
+    t.datetime "start_at"
     t.integer  "user_id"
-    t.integer  "due_date_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["due_date_id"], name: "index_mock_tests_on_due_date_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_mock_tests_on_user_id"
+  end
+
+  create_table "testnames", force: :cascade do |t|
+    t.datetime "start_at"
+    t.integer  "grade"
+    t.string   "subject"
+    t.float    "percent"
+    t.string   "host_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "univ_follows", force: :cascade do |t|
@@ -134,7 +145,7 @@ ActiveRecord::Schema.define(version: 20160809033406) do
 
   create_table "universities", force: :cascade do |t|
     t.string   "name"
-    t.string   "link"
+    t.string   "link_url"
     t.string   "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

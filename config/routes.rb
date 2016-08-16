@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get '/' => 'home#index'
+  get 'home/index'
+
   resources :major_stories
   devise_for :users
   resources :events
