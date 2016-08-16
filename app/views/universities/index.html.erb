@@ -1,0 +1,19 @@
+<div class="row">
+<%= @universities.each do |univ| %>
+  <div class="col s12 m7">
+    <div class="card">
+      <div class="card-image">
+        <%= image_tag "http://i.imgur.com/58n1APz.jpg" %>
+        <span class="card-title"><%= univ.name %></span>
+      </div>
+      <div class="card-content">
+        <p><%= univ.content %></p>
+      </div>
+      <div class="card-action">
+        <a href="#"><%= univ.link_url %></a>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>
+<%= link_to "대학등록", new_university_path %>
