@@ -1,1 +1,39 @@
-dd
+<%= link_to "새로만들기", new_activity_path %>
+<table class="centered highlight">
+      <thead>
+        <tr>
+          <th data-field="id">교내/교외</th>
+          <th data-field="name">분류</th>
+          <th data-field="price">활동명</th>
+          <th data-field="price">내용</th>
+          <th data-field="name">주관기관</th>
+          <th data-field="price">발급번호</th>
+          <th data-field="price">급수</th>
+          <th data-field="price">일시</th>
+          <th data-field="price">이미지</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @activities.each do |a| %>
+        <tr>
+          <td><%=a.activity_type%></td>
+          <td><%=a.style%></td>
+          <td><%=a.title%></td>
+          <td><%=a.content%></td>
+          <td><%=a.host_name%></td>
+          <td><%=a.issuednumber%></td>
+          <td><%=a.grade%></td>
+          <td><%=a.start_at%></td>
+          <td><%=a.end_at%></td>
+          <td><a href='/sexies/image/<%=a.id%>'>이미지</a></td>
+
+          <td><button type="submit" ><%= link_to "자세히", activity_path(a) %></button></td>
+          <td><button type="submit" ><%= link_to "수정", edit_activity_path(a) %></button></td>
+          <td><button type="submit" ><%= link_to "삭제", activity_path(a), method: "delete" %></button></td>
+            
+        <%end%>
+        </tr>
+        </tbody>
+        </table>
+        

@@ -14,9 +14,12 @@ ActiveRecord::Schema.define(version: 20160816142842) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "activity_type"
-    t.string   "host_name"
     t.string   "style"
+    t.string   "host_name"
     t.string   "title"
+    t.string   "content"
+    t.string   "grade"
+    t.string   "issuednumber"
     t.datetime "start_at"
     t.datetime "end_at"
     t.integer  "user_id"
