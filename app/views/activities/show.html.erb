@@ -11,6 +11,8 @@
           <th data-field="price">시작일</th>
           <th data-field="price">종료일</th>
           <th data-field="price">이미지</th>
+          <th data-field="price">수정</th>
+          <th data-field="price">삭제</th>
         </tr>
       </thead>
 
@@ -26,8 +28,9 @@
           <td><%=@activity.grade%></td>
           <td><%=@activity.start_at%></td>
           <td><%=@activity.end_at%></td>
-          <td><button type="submit" class="btn waves-effect waves-light"><%= link_to "수정", edit_activity_path(@activity) %></button></td>
-          <td><button type="submit" class="btn waves-effect waves-light"><%= link_to "삭제", activity_path(@activity), method: "delete" %></button></td>
+          <td><a href='/activities/image/<%=@activity.id%>'>이미지</a></td>
+          <td><%= link_to "수정", edit_activity_path(@activity) %></td>
+          <td><%= link_to "삭제", activity_path(@activity), method: "delete" %></td>
         </tr>
         </tbody>
         </table>

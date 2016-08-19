@@ -33,6 +33,9 @@ def destroy
     redirect_to activities_path
 end
 
+def image
+    @activity = Activity.find(params[:id])
+end
 private
 def activity_params
     params.require(:activity).permit(:activity_type, :style, :title, :content, :host_name, :issuednumber, :grade, :start_at, :end_at, :image )
