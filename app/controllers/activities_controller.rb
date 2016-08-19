@@ -1,7 +1,7 @@
 class ActivitiesController < ApplicationController
 
 def index
-    @activities = Activity.all
+    @activities = Activity.all.sort_by(&:start_at)
 end
 
 def new
