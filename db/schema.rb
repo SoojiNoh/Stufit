@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20160816142842) do
     t.string   "issuednumber"
     t.datetime "start_at"
     t.datetime "end_at"
+    t.string   "image"
+    t.string   "image_url"
     t.integer  "user_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false

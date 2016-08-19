@@ -11,6 +11,8 @@ class CreateActivities < ActiveRecord::Migration[5.0]
       t.string :issuednumber      
       t.datetime :start_at
       t.datetime :end_at
+      t.string :image
+      t.string :image_url
       t.references :user, index: true, foreign_key: true
 
       t.timestamps

@@ -21,13 +21,13 @@
           <td><%=a.activity_type%></td>
           <td><%=a.style%></td>
           <td><%=a.title%></td>
-          <td><%=a.content%></td>
+          <td><%=truncate(a.content, :length => 20, :separator=>' ')do link_to "see more...", activity_path(a) end%></td>
           <td><%=a.host_name%></td>
           <td><%=a.issuednumber%></td>
           <td><%=a.grade%></td>
           <td><%=a.start_at%></td>
           <td><%=a.end_at%></td>
-          <td><a href='/sexies/image/<%=a.id%>'>이미지</a></td>
+          <td><a href='/activities/image/<%=a.id%>'>이미지</a></td>
 
           <td><button type="submit" ><%= link_to "자세히", activity_path(a) %></button></td>
           <td><button type="submit" ><%= link_to "수정", edit_activity_path(a) %></button></td>
