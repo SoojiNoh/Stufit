@@ -1,4 +1,20 @@
-<table class="centered highlight">
+<head>
+    <style>
+      table{
+
+    table-layout: fixed;
+    width: 200px;
+}
+
+th, td {
+
+    
+    width: 150px;
+}
+
+    </style>
+</head>
+<table class="centered highlight" >
       <thead>
         <tr>
           <th data-field="id"><%= f.label :activity_type, '교내/교외'%></th>
@@ -8,26 +24,32 @@
           <th data-field="price"><%= f.label :host_name, '주관기관'%></th>
           <th data-field="name"><%= f.label :issuednumber, '발급번호'%></th>
           <th data-field="price"><%= f.label :grade, '급수'%></th>
-          <th data-field="price"><%= f.label :date, '시작일'%></th>
-          <th data-field="price"><%= f.label :date, '종료일'%></th>
-          <th data-field="price"><%= f.label :image, '이미지'%></th>
-          
-    
-        </tr>
+          </tr>
       </thead>
 
       <tbody>
         <tr>
-<td><%= f.select(:activity_type, ['Item 1', 'Item 2', 'Item 3'], {} ) %></td>
-<td><%= f.text_field :style%></td>
-<td><%= f.text_field :title%></td>
-<td><%= f.text_field :content%></td>
-<td><%= f.text_field :host_name%></td>
-<td><%= f.text_field :issuednumber%></td>
-<td><%= f.text_field :grade%></td>
-<td><%= f.datetime_field :start_at%></td>
-<td><%= f.datetime_field :end_at%></td>
-<td><%= f.file_field :image%></td>
+<td width="10%"><%= f.select(:activity_type, ['교내', '교외'], {} ) %></td>
+<td width="10%"><%= f.text_field :style%></td>
+<td width="10%"><%= f.text_field :title  %></td>
+<td width="10%"><%= f.text_field :content %></td>
+<td width="10%"><%= f.text_field :host_name %></td>
+<td width="10%"><%= f.text_field :issuednumber%></td>
+<td width="10%"><%= f.text_field :grade%></td>
+</tr>
+</tbody>
+<thead>
+  <tr>
+          <th data-field="price"><%= f.label :date, '시작일'%></th>
+          <th data-field="price"><%= f.label :date, '종료일'%></th>
+          <th data-field="price"><%= f.label :image, '이미지'%></th>
+        
+        </tr>
+      </thead>
+<tbody>
+<tr><td width="10%"><%= f.datetime_field :start_at %></td>
+<td width="10%"><%= f.datetime_field :end_at %></td>
+<td width="10%"><%= f.file_field :image, :size=>30 %></td></tr>
 </tbody>
 </table>
 <%=f.submit "만들기", class:"btn waves-effect waves-light" %>
