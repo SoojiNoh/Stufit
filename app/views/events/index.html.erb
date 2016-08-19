@@ -22,10 +22,9 @@
     <% @events.each do |event| %>
       <tr>
         <td><%= event.title %></td>
-        <td><%= event.content %></td>
-        <td><%= event.created_at.in_time_zone("Asia/Seoul").strftime("%Y년%m월%d일 %H시%M분%S초") %></td>
+        <td><%= truncate(event.content, :length => 30, :separator=>' ')do link_to "더보기", event_path(event) end%></td>
+        <td><%= truncate(event.created_at.in_time_zone("Asia/Seoul").strftime("%Y년%m월%d일 %H시%M분%S초"), :length => 16, :separator=>' ')do link_to "자세히", event_path(event) end%></td>
         <td><%= link_to "자세히", event_path(event) %></td>
-   
       </tr>    
     <% end %>
   </tbody>
