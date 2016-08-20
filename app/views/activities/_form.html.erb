@@ -47,9 +47,9 @@ th, td {
         </tr>
       </thead>
 <tbody>
-<tr><td width="10%"><%= f.datetime_field :start_at %></td>
-<td width="10%"><%= f.datetime_field :end_at %></td>
-<td width="10%"><%= f.file_field :image, :size=>30 %></td></tr>
+<tr><td width="10%"><%= f.date_field :start_at %></td>
+<td width="10%"><%= f.date_field :end_at %></td>
+<td width="10%"><%= f.file_field :image %></td></tr>
 </tbody>
 </table>
 <%=f.submit "만들기", class:"btn waves-effect waves-light" %>

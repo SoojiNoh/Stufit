@@ -1,6 +1,22 @@
+<head>
 
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+          
+
+<script>
+
+</script>
+
+<style>
+
+</style>
+</head>
 <%= link_to "새로만들기", new_activity_path %>
-<table class="centered highlight">
+<table id="table-demo" class="centered highlight">
       <thead>
         <tr>
           <th data-field="id">교내/교외</th>
@@ -41,4 +57,6 @@
         </tr>
         </tbody>
         </table>
-        
+  <%= will_paginate @activities %>
+  
+</ul>

@@ -9,8 +9,8 @@ class CreateActivities < ActiveRecord::Migration[5.0]
       t.string :content
       t.string :grade
       t.string :issuednumber      
-      t.datetime :start_at
-      t.datetime :end_at
+      t.date :start_at
+      t.date :end_at
       t.string :image
       t.string :image_url
       t.references :user, index: true, foreign_key: true

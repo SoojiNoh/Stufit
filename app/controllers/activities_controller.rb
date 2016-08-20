@@ -1,16 +1,22 @@
 class ActivitiesController < ApplicationController
 
 def index
-    @activities = Activity.all.sort_by(&:start_at)
-end
+    @activities = Activity.paginate(:page => params[:page], :per_page => 2)
+
+end 
 
 def new
     @activity = Activity.new
 end
 
 def create
-    @activity = Activity.create(activity_params)
+    uploader = AvatarUploader.new
+    uploader.store!(params[:activity][:image])
+    @activity = Activity.new(activity_params)
+    @activity.image_url = uploader.url
+    @activity.save
     redirect_to activities_path
+    
 end
 
 def edit
