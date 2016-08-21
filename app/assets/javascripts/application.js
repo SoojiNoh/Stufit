@@ -16,3 +16,5 @@
 //= require_tree .
 //= require materialize/dist/js/materialize.min
 //= require Chart
+//= require moment 
+//= require fullcalendar

@@ -9,11 +9,15 @@ Rails.application.routes.draw do
   resources :events
   resources :activities
   resources :mock_tests
+  resources :schedules
   get 'stufit/index'
   
   get 'facebook/index'
   
   get '/activities/image/:id'=>'activities#image'
+  
+  
+  
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

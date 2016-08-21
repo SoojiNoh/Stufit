@@ -13,7 +13,13 @@
  *= require_tree .
  *= require materialize/dist/css/materialize.min
  *= require_self
+ *= require fullcalendar
  */
+ 
+ .fc-day-header{
+     color: red;   
+}
+
 .pagination a li.active {
   color: #b2b2b2;
 }
