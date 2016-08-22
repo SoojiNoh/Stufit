@@ -12,12 +12,17 @@
 </script>
 
 <style>
-
+.table-wrapping {
+    width: auto;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
 </style>
 </head>
 <%= link_to "새로만들기", new_activity_path %>
 <div class="row">
-<table id="table-demo" class="centered highlight">
+  <div class = "col s12 m12 l12 table-wrapping">
+<table id="table-demo" class="centered highlight responsive-table">
       <thead>
         <tr>
           <th data-field="id">교내/교외</th>
@@ -57,5 +62,6 @@
         </table>
         
   <%= will_paginate @activities %>
+  </div>
 </div>  
 </ul>
