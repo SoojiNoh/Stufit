@@ -28,11 +28,11 @@
         <td><%= @event.place %></td>
         <td><%= @event.event_type %></td>
 
-        <td><%= @event.start_at %></td>
-        <td><%= @event.end_at %></td>
+        <td><%= @event.start_at.in_time_zone("Asia/Seoul").strftime("%Y년%m월%d일 %H시%M분") %></td>
+        <td><%= @event.end_at.in_time_zone("Asia/Seoul").strftime("%Y년%m월%d일 %H시%M분") %></td>
         <td><%= @event.file %></td>
         
-        <td><%= @event.created_at.in_time_zone("Asia/Seoul").strftime("%Y년%m월%d일 %H시%M분%S초") %></td>
+        <td><%= @event.created_at.in_time_zone("Asia/Seoul").strftime("%Y년%m월%d일 %H시%M분") %></td>
         <td><%= link_to "수정", edit_event_path(@event) %></td>
         <td><%= link_to "삭제", event_path(@event), method: "delete" %></td>
         <td><%= link_to "목록", events_path %></td>

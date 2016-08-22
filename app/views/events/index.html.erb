@@ -19,7 +19,7 @@
   </thead>
 
   <tbody>
-    <% @events.each do |event| %>
+    <% @events.sort_by(&:created_at).each do |event| %>
       <tr>
         <td><%= event.title %></td>
         <td><%= truncate(event.content, :length => 30, :separator=>' ')do link_to "더보기", event_path(event) end%></td>
