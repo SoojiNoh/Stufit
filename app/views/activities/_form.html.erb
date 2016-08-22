@@ -3,13 +3,13 @@
       table{
 
     table-layout: fixed;
-    width: 200px;
+    
 }
 
 th, td {
 
     
-    width: 150px;
+    
 }
 
     </style>
@@ -29,10 +29,10 @@ th, td {
 
       <tbody>
         <tr>
-<td width="10%"><%= f.select(:activity_type, ['교내', '교외'], {} ) %></td>
+<td width="7%"><%= f.select(:activity_type, ['교내', '교외'], {} ) %></td>
 <td width="10%"><%= f.text_field :style%></td>
 <td width="10%"><%= f.text_field :title  %></td>
-<td width="10%"><%= f.text_field :content %></td>
+<td width="13%"><%= f.text_field :content %></td>
 <td width="10%"><%= f.text_field :host_name %></td>
 <td width="10%"><%= f.text_field :issuednumber%></td>
 <td width="10%"><%= f.text_field :grade%></td>

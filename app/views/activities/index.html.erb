@@ -16,6 +16,7 @@
 </style>
 </head>
 <%= link_to "새로만들기", new_activity_path %>
+<div class="row">
 <table id="table-demo" class="centered highlight">
       <thead>
         <tr>
@@ -29,7 +30,6 @@
           <th data-field="price">시작일</th>
           <th data-field="price">종료일</th>
           <th data-field="price">이미지</th>
-          <th data-field="price" style="hidden">자세히</th>
           <th data-field="price" style="hidden">수정</th>
           <th date-field="price" style="hidden">삭제</th>
         </tr>
@@ -40,7 +40,7 @@
         <tr>
           <td><%=a.activity_type%></td>
           <td><%=a.style%></td>
-          <td><%=a.title%></td>
+          <td><%= link_to a.title, activity_path(a) %></td>
           <td><%=truncate(a.content, :length => 20, :separator=>' ')do link_to "see more...", activity_path(a) end%></td>
           <td><%=a.host_name%></td>
           <td><%=a.issuednumber%></td>
@@ -49,14 +49,13 @@
           <td><%=a.end_at%></td>
           <td><a href='/activities/image/<%=a.id%>'>이미지</a></td>
 
-          <td><button type="submit" ><%= link_to "자세히", activity_path(a) %></button></td>
           <td><button type="submit" ><%= link_to "수정", edit_activity_path(a) %></button></td>
           <td><button type="submit" ><%= link_to "삭제", activity_path(a), method: "delete" %></button></td>
-            
         <%end%>
         </tr>
         </tbody>
         </table>
+        
   <%= will_paginate @activities %>
-  
+</div>  
 </ul>
