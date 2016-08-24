@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
 
-   self.per_page = 10
+   self.per_page = 6
    # Comment : Event relation => N:1
    has_many :comments
   
