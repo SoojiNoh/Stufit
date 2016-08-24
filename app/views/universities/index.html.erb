@@ -1,7 +1,6 @@
 <div class="row">
-  <h1>hi</h1>
-<%= @universities.each do |univ| %>
-  <div class="col s12 m7">
+<% @universities.each do |univ| %>
+  <div class="col s3 m3">
     <div class="card">
       <div class="card-image">
         <%= image_tag "#{univ.img}" %>
@@ -11,7 +10,7 @@
         <p><%= univ.content %></p>
       </div>
       <div class="card-action">
-        <a href="#"><%= univ.link_url %></a>
+        <%= link_to "홈페이지", "http://#{univ.link_url}" %>
       </div>
     </div>
   </div>
