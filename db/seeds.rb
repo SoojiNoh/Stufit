@@ -21,3 +21,10 @@ Activity.create(activity_type: '교외', style:'자격증', title:'컴퓨터 활
 content: '컴퓨터 활용능력', host_name:'한국산업인력공단', issuednumber: '2016-132', grade: '1급', start_at:'2016-01-05', end_at: '2016-01-05')
 Activity.create(activity_type: '교내', style:'봉사활동', title:'농촌 지역 봉사활동',
 content: '가지치기, 열매 수확', host_name:'한국고등학교', issuednumber: '2016-68', grade: '20시간', start_at:'2014-07-05', end_at: '2016-07-08')
+
+University.create(name: "서울대학교", remote_img_url: "http://i.imgur.com/58n1APz.jpg", link_url: "www.snu.ac.kr", content: "서울대입니다")
+University.create(name: "숙명여자대학교", remote_img_url: "http://cfile10.uf.tistory.com/image/1452434C4F6C2A270C3628", link_url: "www.sookmyung.ac.kr", content: "숙대입니다")
+University.create(name: "숭실대학교", remote_img_url: "http://i.imgur.com/58n1APz.jpg", link_url: "www.ssu.ac.kr", content: "숭실대입니다")
+University.create(name: "고려대학교", remote_img_url: "http://i.imgur.com/58n1APz.jpg", link_url: "www.snu.ac.kr", content: "서울대입니다")
+University.create(name: "연세대학교", remote_img_url: "http://i.imgur.com/58n1APz.jpg", link_url: "www.snu.ac.kr", content: "서울대입니다")
+UnivFollow.create(user_id: 1, university_id: 1)

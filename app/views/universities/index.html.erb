@@ -1,17 +1,24 @@
 <div class="row">
-<%= @universities.each do |univ| %>
-  <div class="col s12 m7">
+<% @universities.each do |univ| %>
+  <div class="col s3 m3">
     <div class="card">
       <div class="card-image">
-        <%= image_tag "http://i.imgur.com/58n1APz.jpg" %>
+        <% if current_user.universities.where(id: univ.id).take != nil  %>
+          <%= link_to "/universities/univ_destroy/#{UnivFollow.where(user: current_user, university: univ).take.id}" do %><i class="pull_star material-icons">star</i> <% end %>
+        <% else %>
+          <%= link_to "/universities/univ/#{univ.id}" do %> <i class="empty_star material-icons">star</i> <% end %>
+        <% end %>
+      <%= link_to university_path(univ) do %>
+        <%= image_tag "#{univ.img}" %>
         <span class="card-title"><%= univ.name %></span>
       </div>
-      <div class="card-content">
-        <p><%= univ.content %></p>
-      </div>
-      <div class="card-action">
-        <a href="#"><%= univ.link_url %></a>
-      </div>
+        <div class="card-content">
+          <p><%= univ.content %></p>
+        </div>
+        <div class="card-action">
+          <%= link_to "홈페이지", "http://#{univ.link_url}" %>
+        </div>
+      <% end %>
     </div>
   </div>
 <% end %>
