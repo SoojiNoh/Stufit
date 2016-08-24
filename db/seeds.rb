@@ -27,3 +27,4 @@ University.create(name: "숙명여자대학교", remote_img_url: "http://cfile10
 University.create(name: "숭실대학교", remote_img_url: "http://i.imgur.com/58n1APz.jpg", link_url: "www.ssu.ac.kr", content: "숭실대입니다")
 University.create(name: "고려대학교", remote_img_url: "http://i.imgur.com/58n1APz.jpg", link_url: "www.snu.ac.kr", content: "서울대입니다")
 University.create(name: "연세대학교", remote_img_url: "http://i.imgur.com/58n1APz.jpg", link_url: "www.snu.ac.kr", content: "서울대입니다")
+UnivFollow.create(user_id: 1, university_id: 1)

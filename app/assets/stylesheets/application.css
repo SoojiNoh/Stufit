@@ -34,3 +34,11 @@ body {
 main {
   flex: 1 0 auto;
 }
+
+.empty_star {
+  color: rgba(0, 0, 0, 0.3) 
+}
+
+.pull_star{
+  color: yellow
+}
