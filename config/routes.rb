@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :events
   resources :activities
   resources :mock_tests
+  resources :comments
   resources :schedules
   get 'stufit/index'
 

@@ -34,9 +34,11 @@ ActiveRecord::Schema.define(version: 20160816142842) do
     t.string   "content"
     t.integer  "user_id"
     t.integer  "event_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "university_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.index ["event_id"], name: "index_comments_on_event_id"
+    t.index ["university_id"], name: "index_comments_on_university_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
