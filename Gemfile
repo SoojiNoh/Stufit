@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 
+gem 'figaro'
 gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-materialize'
 gem 'materialize-sass'

@@ -10,4 +10,5 @@ class University < ApplicationRecord
   has_many :univ_follows
   has_many :users, through: :univ_follows
 
+  mount_uploader :img, AvatarUploader
 end

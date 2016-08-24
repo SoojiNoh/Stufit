@@ -140,6 +140,7 @@ ActiveRecord::Schema.define(version: 20160816142842) do
 
   create_table "universities", force: :cascade do |t|
     t.string   "name"
+    t.string   "img"
     t.string   "link_url"
     t.string   "content"
     t.datetime "created_at", null: false

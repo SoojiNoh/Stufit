@@ -1,9 +1,10 @@
 <div class="row">
+  <h1>hi</h1>
 <%= @universities.each do |univ| %>
   <div class="col s12 m7">
     <div class="card">
       <div class="card-image">
-        <%= image_tag "http://i.imgur.com/58n1APz.jpg" %>
+        <%= image_tag "#{univ.img}" %>
         <span class="card-title"><%= univ.name %></span>
       </div>
       <div class="card-content">
