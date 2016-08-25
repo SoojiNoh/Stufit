@@ -1,6 +1,7 @@
 class Event < ApplicationRecord
 
    self.per_page = 6
+   #is_impressionable
    # Comment : Event relation => N:1
    has_many :comments
   
