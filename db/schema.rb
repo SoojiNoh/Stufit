@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160816142842) do
+ActiveRecord::Schema.define(version: 20160825081443) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "activity_type"
@@ -131,6 +131,20 @@ ActiveRecord::Schema.define(version: 20160816142842) do
     t.index ["user_id"], name: "index_mock_tests_on_user_id"
   end
 
+  create_table "schedules", force: :cascade do |t|
+    t.string   "title"
+    t.string   "content"
+    t.string   "place"
+    t.string   "file"
+    t.string   "event_type"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.integer  "university_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["university_id"], name: "index_schedules_on_university_id"
+  end
+
   create_table "univ_follows", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "university_id"
@@ -147,6 +161,15 @@ ActiveRecord::Schema.define(version: 20160816142842) do
     t.string   "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "user_events", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_user_events_on_event_id"
+    t.index ["user_id"], name: "index_user_events_on_user_id"
   end
 
   create_table "user_schedules", force: :cascade do |t|

@@ -1,4 +1,4 @@
-json.array!(@events) do |schedule|
+json.array!(@schedules) do |schedule|
   json.extract! schedule, :id, :title, :content, :place, :file, :event_type
   json.start schedule.start_at
   json.end schedule.end_at

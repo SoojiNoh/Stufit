@@ -24,9 +24,9 @@
   </thead>
 
 
-  <% if @events.present? %>
+  <% if @schedules.present? %>
     <tbody>
-      <% @events.each do |schedule| %>
+      <% @schedules.each do |schedule| %>
         <tr>
           <td><%= schedule.title %></td>
           <td><%= schedule.content %></td>
@@ -58,7 +58,7 @@
 
     $('#calendar').fullCalendar(
       {
-        eventSources: [
+        scheduleSources: [
   
           // your schedule source
           {
