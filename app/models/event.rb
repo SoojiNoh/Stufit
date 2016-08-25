@@ -15,9 +15,9 @@ class Event < ApplicationRecord
    has_many :user_events
    has_many :users, through: :user_events
    
-   #Schedule 검색 _수지
+   #event 검색 _수지
    def self.search(search)
-     where("start_time LIKE ?", "%#{search}%")
+     where("start_at LIKE ?", "%#{search}%")
    end
 
 end

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'my_page/index'
   get '/universities/univ/:id' => 'universities#univ_follow_create'
   get '/universities/univ_destroy/:id' => 'universities#univ_follow_destroy'
+  get '/events/eventfollow/:id' => 'events#event_follow_create'
+  get '/events/eventfollow_destroy/:id' => 'events#event_follow_destroy'
   resources :universities
 
   resources :major_stories

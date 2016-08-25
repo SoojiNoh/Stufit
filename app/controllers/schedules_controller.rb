@@ -1,35 +1,35 @@
 class SchedulesController < ApplicationController
- before_action :set_event, only: [:show, :edit, :update, :destroy]
+ before_action :set_schedule, only: [:show, :edit, :update, :destroy]
 
-  # GET /events
-  # GET /events.json
+  # GET /schedules
+  # GET /schedules.json
   def index
+    @events = current_user.events.all
     @schedules = Schedule.all
-    @events = Schedule.all
     if params[:search]
-      @events = Schedule.search(params[:search]).order("created_at DESC")
+      @schedules = Schedule.search(params[:search]).order("created_at DESC")
     else
-      @events = Schedule.all.order('created_at DESC')
+      @schedules = Schedule.all.order('created_at DESC')
     end
   end
 
-  # GET /events/1
-  # GET /events/1.json
+  # GET /schedules/1
+  # GET /schedules/1.json
   def show
   end
-  # GET /events/new
+  # GET /schedules/new
   def new
     @schedule = Schedule.new
   end
 
-  # GET /events/1/edit
+  # GET /schedules/1/edit
   def edit
   end
 
-  # POST /events
-  # POST /events.json
+  # POST /schedules
+  # POST /schedules.json
   def create
-    @schedule = Schedule.new(event_params)
+    @schedule = Schedule.new(schedule_params)
 
     respond_to do |format|
       if @schedule.save
@@ -42,11 +42,11 @@ class SchedulesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /events/1
-  # PATCH/PUT /events/1.json
+  # PATCH/PUT /schedules/1
+  # PATCH/PUT /schedules/1.json
   def update
     respond_to do |format|
-      if @schedule.update(event_params)
+      if @schedule.update(schedule_params)
         format.html { redirect_to @schedule, notice: 'Schedule was successfully updated.' }
         format.json { render :show, status: :ok, location: @schedule }
       else
@@ -56,12 +56,12 @@ class SchedulesController < ApplicationController
     end
   end
 
-  # DELETE /events/1
-  # DELETE /events/1.json
+  # DELETE /schedules/1
+  # DELETE /schedules/1.json
   def destroy
     @schedule.destroy
     respond_to do |format|
-      format.html { redirect_to events_url, notice: 'Schedule was successfully destroyed.' }
+      format.html { redirect_to schedules_url, notice: 'Schedule was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -70,12 +70,12 @@ class SchedulesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_event
+    def set_schedule
       @schedule = Schedule.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def event_params
-      params.require(:schedule).permit(:title, :content, :place, :file, :event_type, :start_at, :end_at, :university)
+    def schedule_params
+      params.require(:schedule).permit(:title, :content, :place, :file, :schedule_type, :start_at, :end_at, :university)
     end
 end

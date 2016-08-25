@@ -27,5 +27,5 @@ class User < ApplicationRecord
 
   # User : UserSchedule : Schedule relation => N:M
   has_many :user_events
-  has_many :my_events, class_name: :Event, through: :user_events
+  has_many :events, through: :user_events
 end

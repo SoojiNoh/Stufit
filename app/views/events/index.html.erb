@@ -26,6 +26,12 @@
        <td><%= link_to "#{truncate(event.content, :length => 30, :separator=>' ')}", event_path(event) %></td>
        <td><%= truncate(event.created_at.in_time_zone("Asia/Seoul").strftime("%Y년%m월%d일 %H시%M분%S초"), :length => 14, :separator=>' ')%></td>
        <td><%= "3" %></td>
+       <td>
+        <% if current_user.events.where(id: event.id).take != nil  %>
+          <%= link_to "/events/eventfollow_destroy/#{UserEvent.where(user: current_user, event: event).take.id}" do %><i class="pull_star material-icons">star</i> <% end %>
+        <% else %>
+          <%= link_to "/events/eventfollow/#{event.id}" do %> <i class="empty_star material-icons">star</i> <% end %>
+        <% end %></td>
        </tr>
        
    <% end %>
