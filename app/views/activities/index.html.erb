@@ -9,8 +9,14 @@
 
 <script>
 
+    
 </script>
-
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>Sortable table example</title>
+	<link rel="stylesheet" type="text/css" href="../../../../stylesheeets/home.scss"/>
+	<meta name="author" content="Joost de Valk, http://www.joostdevalk.nl/" />
+	<link href="http://www.joostdevalk.nl/" rev="made" />
+	<script type="text/javascript" src="../../../../javascripts/sortable.js"></script>
 <style>
 .table-wrapping {
     width: auto;
@@ -23,21 +29,21 @@
 <div class="row" style="margin-top:100px">
 <%= link_to "new", new_activity_path, class:"btn-floating red" %>
   <div class = "col s12 m12 l12 table-wrapping">
-<table id="table-demo" class="centered highlight responsive-table">
+<table id="anyid" class="centered highlight responsive-table sortable"  >
       <thead>
         <tr>
           <th data-field="id">교내/교외</th>
           <th data-field="name">분류</th>
-          <th data-field="price">활동명</th>
-          <th data-field="price">내용</th>
-          <th data-field="name">주관기관</th>
-          <th data-field="price">발급번호</th>
-          <th data-field="price">급수</th>
+          <th data-field="price" class="unsortable">활동명</th>
+          <th data-field="price" class="unsortable">내용</th>
+          <th data-field="name" class="unsortable">주관기관</th>
+          <th data-field="price" class="unsortable">발급번호</th>
+          <th data-field="price" class="unsortable">급수</th>
           <th data-field="price">시작일</th>
           <th data-field="price">종료일</th>
-          <th data-field="price">이미지</th>
-          <th data-field="price" style="hidden">수정</th>
-          <th date-field="price" style="hidden">삭제</th>
+          <th data-field="price" class="unsortable">이미지</th>
+          <th data-field="price" style="hidden" class="unsortable">수정</th>
+          <th date-field="price" style="hidden" class="unsortable">삭제</th>
         </tr>
       </thead>
 
