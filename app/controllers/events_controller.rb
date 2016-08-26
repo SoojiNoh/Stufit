@@ -37,6 +37,17 @@ class EventsController < ApplicationController
         @event.destroy
         redirect_to events_path
     end
+    
+    def event_follow_create
+        UserEvent.create(user: current_user, event_id: params[:id])
+        redirect_to :back
+    end
+
+    def event_follow_destroy
+        @event_follow = UserEvent.find(params[:id])
+        @event_follow.destroy
+        redirect_to :back
+    end
 
     private
     

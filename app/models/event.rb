@@ -13,12 +13,12 @@ class Event < ApplicationRecord
    has_many :hash_tag, through: :hash_events
   
    # User : UserSchedule : Schedule relation => N:M
-   has_many :user_schedules
-   has_many :users, through: :user_schedules
+   has_many :user_events
+   has_many :users, through: :user_events
    
-   #Schedule 검색 _수지
+   #event 검색 _수지
    def self.search(search)
-     where("start_time LIKE ?", "%#{search}%")
+     where("start_at LIKE ?", "%#{search}%")
    end
 
 end

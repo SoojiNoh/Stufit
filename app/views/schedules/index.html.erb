@@ -24,9 +24,9 @@
   </thead>
 
 
-  <% if @events.present? %>
+  <% if @schedules.present? %>
     <tbody>
-      <% @events.each do |schedule| %>
+      <% @schedules.each do |schedule| %>
         <tr>
           <td><%= schedule.title %></td>
           <td><%= schedule.content %></td>
@@ -62,7 +62,7 @@
   
           // your schedule source
           {
-              url: '/schedules.json', // use the `url` property
+              url: '/schedules.json',// use the `url` property
               color: 'yellow',    // an option!
               textColor: 'green'  // an option!
           }
