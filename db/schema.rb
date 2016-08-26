@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20160825081443) do
     t.date     "start_at"
     t.date     "end_at"
     t.string   "image"
+    t.string   "image_url"
     t.integer  "user_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
@@ -33,11 +34,9 @@ ActiveRecord::Schema.define(version: 20160825081443) do
     t.string   "content"
     t.integer  "user_id"
     t.integer  "event_id"
-    t.integer  "university_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_comments_on_event_id"
-    t.index ["university_id"], name: "index_comments_on_university_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
@@ -46,7 +45,6 @@ ActiveRecord::Schema.define(version: 20160825081443) do
     t.string   "content"
     t.string   "place"
     t.string   "file"
-    t.string   "image"
     t.string   "event_type"
     t.datetime "start_at"
     t.datetime "end_at"
@@ -57,12 +55,12 @@ ActiveRecord::Schema.define(version: 20160825081443) do
   end
 
   create_table "hash_activities", force: :cascade do |t|
-    t.integer  "hash_activity_id"
+    t.integer  "hash_tag_id"
     t.integer  "activity_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.index ["activity_id"], name: "index_hash_activities_on_activity_id"
-    t.index ["hash_activity_id"], name: "index_hash_activities_on_hash_activity_id"
+    t.index ["hash_tag_id"], name: "index_hash_activities_on_hash_tag_id"
   end
 
   create_table "hash_events", force: :cascade do |t|
@@ -156,7 +154,6 @@ ActiveRecord::Schema.define(version: 20160825081443) do
 
   create_table "universities", force: :cascade do |t|
     t.string   "name"
-    t.string   "img"
     t.string   "link_url"
     t.string   "content"
     t.datetime "created_at", null: false
@@ -170,6 +167,15 @@ ActiveRecord::Schema.define(version: 20160825081443) do
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_user_events_on_event_id"
     t.index ["user_id"], name: "index_user_events_on_user_id"
+  end
+
+  create_table "user_schedules", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_user_schedules_on_event_id"
+    t.index ["user_id"], name: "index_user_schedules_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

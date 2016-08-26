@@ -2,10 +2,9 @@
 <%= form_for @activity, multipart: true do |a| %>
 <%= render partial: 'form', locals: { :f => a} %>
 <% end %>
-
+</div>
 <script>
     $(document).ready(function() {
     $('select').material_select();
 });
 </script>
-</div>

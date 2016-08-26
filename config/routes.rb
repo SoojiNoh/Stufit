@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get '/' => 'home#index'
   get 'home/index'
   get 'my_page/index'
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
   resources :mock_tests
   resources :comments
   resources :schedules
+  resources :hash_tags, only: [:index,:show]
   get 'stufit/index'
 
   get 'facebook/index'

@@ -1,3 +1,8 @@
+<div class = "field">
+  <%= f.label :hash_events, '해쉬태그' %>
+  <%= f.select :hash_events, options_for_select(HashTag.all.collect{ |u| [u.name,u.id] }),{},{ :multiple => true} %>
+</div>
+
 <div class="field">
     <%= f.label :title, '제목' %>
     <%= f.text_area :title %>
