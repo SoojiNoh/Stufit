@@ -1,8 +1,9 @@
 class EventsController < ApplicationController
-    
+    #impressionist :actions=>[:show,:index]
     def index
        WillPaginate.per_page = 10
        @events =Event.paginate(:page => params[:page])
+       #impressionist(@event)
        #Event.reorder("created_at DESC").paginate(:page => params[:page], :per_page => 10)
     end
 
