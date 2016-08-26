@@ -20,5 +20,7 @@ class Event < ApplicationRecord
    def self.search(search)
      where("start_at LIKE ?", "%#{search}%")
    end
+   
+   mount_uploader :image, AvatarUploader
 
 end

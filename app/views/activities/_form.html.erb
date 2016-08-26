@@ -32,6 +32,7 @@
       <th data-field="price"><%= f.label :date, '종료일'%></th>
       <th data-field="price"><%= f.label :image, '이미지'%></th>
 
+<<<<<<< HEAD
     </tr>
   </thead>
   <tbody>
@@ -39,6 +40,34 @@
       <td width="10%"><%= f.date_field :end_at %></td>
       <td width="10%"><%= f.file_field :image %></td></tr>
   </tbody>
+=======
+      <tbody>
+        <tr>
+<td width="7%"><%= f.select(:activity_type, ['교내', '교외'], {} ) %></td>
+<td width="10%"><%= f.text_field :style%></td>
+<td width="10%"><%= f.text_field :title  %></td>
+<td width="13%"><%= f.text_field :content %></td>
+<td width="10%"><%= f.text_field :host_name %></td>
+<td width="10%"><%= f.text_field :issuednumber%></td>
+<td width="10%"><%= f.text_field :grade%></td>
+</tr>
+</tbody>
+<thead>
+  <tr>
+          <th data-field="price"><%= f.label :date, '시작일'%></th>
+          <th data-field="price"><%= f.label :date, '종료일'%></th>
+          <th data-field="price"><%= f.label :image, '이미지'%></th>
+        
+        </tr>
+      </thead>
+<tbody>
+<tr>
+<td width="10%"><%= f.date_field :start_at %></td>
+<td width="10%"><%= f.date_field :end_at %></td>
+<td width="10%"><%= f.file_field :image %></td>
+</tr>
+</tbody>
+>>>>>>> 5844165148beaafb47f41a38d8b4dbbcb16a8c10
 </table>
 <%=f.submit "만들기", class:"btn waves-effect waves-light" %>
 

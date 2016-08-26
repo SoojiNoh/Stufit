@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20160825081443) do
     t.date     "start_at"
     t.date     "end_at"
     t.string   "image"
-    t.string   "image_url"
     t.integer  "user_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
@@ -47,6 +46,7 @@ ActiveRecord::Schema.define(version: 20160825081443) do
     t.string   "content"
     t.string   "place"
     t.string   "file"
+    t.string   "image"
     t.string   "event_type"
     t.datetime "start_at"
     t.datetime "end_at"
