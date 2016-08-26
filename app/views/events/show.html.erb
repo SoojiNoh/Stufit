@@ -16,7 +16,7 @@
      <!--내용부분-->
      
      <br><p><%= @event.content %></p><br>
-     
+     <%= image_tag "#{@event.image}" %><br>
      <!--그 외 정보-->
      
      장소 : <%= @event.place %><br>
@@ -24,7 +24,7 @@
      일정 : <%= @event.start_at.in_time_zone("Asia/Seoul").strftime("%Y. %m. %d.  %H : %M") %>
      ~  <%= @event.end_at.in_time_zone("Asia/Seoul").strftime("%Y. %m. %d.  %H : %M") %><br>
      첨부파일 <br><%= @event.file %>
-     <%= image_tag "#{@event.image}" %>
+     
      <div class="progress">
        <div class="determinate" style="width: 70%"></div>
      </div>
