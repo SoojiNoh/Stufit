@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
-
+gem 'ckeditor'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
+gem "paperclip"
 
 gem 'figaro'
 gem 'will_paginate', '~> 3.1.0'

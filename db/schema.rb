@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160825081443) do
+ActiveRecord::Schema.define(version: 20160826072429) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "activity_type"
@@ -28,6 +28,29 @@ ActiveRecord::Schema.define(version: 20160825081443) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["user_id"], name: "index_activities_on_user_id"
+  end
+
+  create_table "articles", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ckeditor_assets", force: :cascade do |t|
+    t.string   "data_file_name",               null: false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.string   "data_fingerprint"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    limit: 30
+    t.string   "type",              limit: 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.index ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable"
+    t.index ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -113,6 +136,7 @@ ActiveRecord::Schema.define(version: 20160825081443) do
     t.string   "place"
     t.string   "file"
     t.string   "major_type"
+    t.text     "body"
     t.integer  "university_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false

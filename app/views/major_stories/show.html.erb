@@ -1,216 +1,36 @@
-<%= image_tag("stufit.JPG", size: "944x258") %>
-  <p class="z-depth-1 card-panel #ffcdd2 red lighten-4"><strong>Q1.</strong> 서울대학교 전기정보공학부에 대해 설명해줘</p>
+<p id="notice"><%= notice %></p>
 
-  <table>
-    <col width="100px">
-    <col width="900px">
-    <thead>
-      <tr>
-        <th data-field="id">구분</th>
-        <th data-field="name">내용</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <tr>
-        <td>컴퓨터</td>
-        <td>기계 안에 들어 있는 회로나 엔진을 제어하기 위한 분야라고 해</td>
-      </tr>
-      <tr>
-        <td>디바이스</td>
-        <td>예로들어 컴퓨터의 계산을 담당하는 부분을 트랜지스터라고 불러. 트랜지스
-터가 많을수록 컴퓨터의 계산속도가 빠르게 되겠지? 하지만 컴퓨터는 크기가
-제한적이기 때문에 트랜지스터가 들어갈 공간도 제한적이야. 때문에 트랜지
-스터를 최대한 작게 만들어야 성능이 좋아지는데 이를 위해 연구하는 분야가
-디바이스 분야라고 해.</td>
-      </tr>
-      <tr>
-        <td>컴퓨터</td>
-        <td>컴퓨터는 우리에게 좋은 정보를 주기 위해서 관련정보들을 저장하고 있어. 그
-래서 정보들을 효율적으로 저장하기 위한 데이터베이스(저장 공간)와 정보를
-빨리 찾아내기 위한 지름길을 알아내는 사고(알고리즘)가 필요하지. 데이터베
-이스와 알고리즘을 이용해 새롭고 편리한 서비스를 만드는 곳이 컴퓨터 분야
-라고 해.</td>
-      </tr>
-    </tbody>
-    
-  </table>
+<h3><%= @major_story.title.html_safe %></h3>
 
 
-<div class="col s12 m2">
-  <p class="z-depth-1 card-panel #ffcdd2 red lighten-4">Q1. 서울대학교 전기정보공학부에 대해 설명해줘</p>
-</div>
-        <div class="row">
-          <div class="col s2">
-              <table class="centered">
-                <thead>
-                  <tr>
-                      <th data-field="id">분야</th>
-                  </tr>
-                </thead>
-              </table>
-          </div>
-          <div class="col s10">
-              <table class="centered">
-                <thead>
-                  <tr>
-                      <th data-field="id">내용</th>
-                  </tr>
-                </thead>
-              </table>
-          </div>
-        </div>
-        
-        <div class="row">
-          <div class="col s2">
-              <table class="centered">
-                <tbody>
-                  <tr>
-                      <td data-field="id">시스템</td>
-                  </tr>
-                </tbody>
-              </table>
-          </div>
-          <div class="col s10">
-              <table>
-                <tbody>
-                  <tr>
-                      <td data-field="id">기계 안에 들어 있는 회로나 엔진을 제어하기 위한 분야라고 해</td>
-                  </tr>
-                </tbody>
-              </table>
-          </div>
-        </div>
-        
-        <div class="row">
-          <div class="col s2">
-              <table class="centered">
-                <tbody>
-                  <tr>
-                      <td data-field="id">디바이스</td>
-                  </tr>
-                </tbody>
-              </table>
-          </div>
-          <div class="col s10">
-              <table>
-                <tbody>
-                  <tr>
-                      <td data-field="id">예로들어 컴퓨터의 계산을 담당하는 부분을 트랜지스터라고 불러. 트랜지스터가 많을수록 컴퓨터의 계산속도가 빠르게 되겠지? 하지만 컴퓨터는 크기가 제한적이기 때문에 트랜지스터가 들어갈 공간도 제한적이야. 때문에 트랜지스터를 최대한 작게 만들어야 성능이 좋아지는데 이를 위해 연구하는 곳을 디바이스 분야라고 해.</td>
-                  </tr>
-                </tbody>
-              </table>
-          </div>
-        </div>
-        
-        <div class="row">
-          <div class="col s2">
-              <table class="centered">
-                <tbody>
-                  <tr>
-                      <td data-field="id">컴퓨터</td>
-                  </tr>
-                </tbody>
-              </table>
-          </div>
-          <div class="col s10">
-              <table>
-                <tbody>
-                  <tr>
-                      <td data-field="id">컴퓨터는 우리에게 좋은 정보를 주기 위해서 관련정보들을 저장하고 있어. 그래서 정보들을 효율적으로 저장하기 위한 데이터베이스(저장 공간)와 정보를 빨리 찾아내기 위한 지름길을 알아내는 사고(알고리즘)가 필요하지. 데이터베이스와 알고리즘을 이용해 새롭고 편리한 서비스를 만드는 곳이 컴퓨터 분야란다.</td>
-                  </tr>
-                </tbody>
-              </table>
-          </div>
-        </div>
-<div class="col s12 m2">
-  <p class="z-depth-1 card-panel #ffcdd2 red lighten-4" style="margin-top:80px; margin-bottom:50px;"><strong>Q2.</strong> 학년 별로 배우는 내용에 대해 설명해줘</p>
-</div>
+<p>
+  <strong>짧은설명:</strong>
+  <%= @major_story.content %>
+</p>
 
-        <div class="row">
-          <div class="col s2">
-              <table class="centered">
-                <tbody>
-                  <tr>
-                      <td data-field="id">1학년 :</td>
-                  </tr>
-                </tbody>
-              </table>
-          </div>
-          <div class="col s10">
-              <table>
-                <tbody>
-                  <tr>
-                      <td data-field="id">공학분야는 작은 실수로 큰 사고가 발생할 수 있기 때문에 실수가 있어서는 안 돼. 그렇기 때문에 1학년은 공학을 정밀하게 설계하기 위한 기초분야(미적분, 벡터, 기초물리학, 통계 등)을 배우게 돼.</td></td>
-                  </tr>
-                </tbody>
-              </table>
-          </div>
-        </div>
-        
-            
-        <div class="row">
-          <div class="col s2">
-              <table class="centered">
-                <tbody>
-                  <tr>
-                      <td data-field="id">2학년 :</td>
-                  </tr>
-                </tbody>
-              </table>
-          </div>
-          <div class="col s10">
-              <table>
-                <tbody>
-                  <tr>
-                      <td data-field="id">전자의 행동패턴을 더 자세히 논리적으로 예측하기 위해서 전자기학이라는 과목을 자세히 배워.</td></td>
-                  </tr>
-                </tbody>
-              </table>
-          </div>
-        </div>
-        
-        <div class="row">
-          <div class="col s2">
-              <table class="centered">
-                <tbody>
-                  <tr>
-                      <td data-field="id">3학년 :</td>
-                  </tr>
-                </tbody>
-              </table>
-          </div>
-          <div class="col s10">
-              <table>
-                <tbody>
-                  <tr>
-                      <td data-field="id">2년 동안 배운 것을 바탕으로 세부전공을 선택하게 돼. 나 같은 경우는 전파, 반도체, 컴퓨터 분야를 집중적으로 공부하는 중이야.</td></td>
-                  </tr>
-                </tbody>
-              </table>
-          </div>
-        </div>
-        
-        <div class="row">
-          <div class="col s2">
-              <table class="centered">
-                <tbody>
-                  <tr>
-                      <td data-field="id">4학년 :</td>
-                  </tr>
-                </tbody>
-              </table>
-          </div>
-          <div class="col s10">
-              <table>
-                <tbody>
-                  <tr>
-                      <td data-field="id">3학년과 비슷하게 자신이 선택한 분야를 자세히 배우게 돼.</td></td>
-                  </tr>
-                </tbody>
-              </table>
-          </div>
-        </div>
-        <span class="blue-text text-darken-2">**전자란? 음전하를 가진, 질량이 아주 작은 입자로 모든 물질의 구성요소<br>**전자기학이란? 전기적 자기적 현상 전반에 대하여 연구하는 학문</span>
+<p>
+  <strong>장소:</strong>
+  <%= @major_story.place %>
+</p>
 
-</div>
+<p>
+  <strong>파일:</strong>
+  <%= @major_story.file %>
+</p>
+
+<p>
+  <strong>분류:</strong>
+  <%= @major_story.major_type %>
+</p>
+
+<p>
+  <strong>대학:</strong>
+  <%= @major_story.university_id %>
+</p>
+
+
+
+<p><%= @major_story.body.html_safe %></p>
+
+<%= link_to 'Edit', edit_major_story_path(@major_story) %> |
+<%= link_to 'Back', major_stories_path %>

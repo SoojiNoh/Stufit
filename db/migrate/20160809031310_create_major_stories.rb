@@ -7,6 +7,9 @@ class CreateMajorStories < ActiveRecord::Migration[5.0]
       t.string :place
       t.string :file
       t.string :major_type
+      
+      t.text :body
+
       t.references :university, index: true, foreign_key: true
 
       t.timestamps

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
+  resources :articles
   get '/' => 'home#index'
   get 'home/index'
   get 'my_page/index'
