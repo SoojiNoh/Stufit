@@ -67,9 +67,21 @@ class UniversitiesController < ApplicationController
     end
   end
 
+  def univ_follow_create
+    UnivFollow.create(user: current_user, university_id: params[:id])
+    redirect_to :back
+  end
+
+  def univ_follow_destroy
+    @univ_follow = UnivFollow.find(params[:id])
+    @univ_follow.destroy
+    redirect_to :back
+  end
+
   private
 
   def university_params
-    params.require(:university).permit(:name, :content, :link_url)
+    params.require(:university).permit(:name, :content, :link_url, :img)
   end
+
 end

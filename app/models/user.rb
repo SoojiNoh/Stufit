@@ -9,6 +9,9 @@ class User < ApplicationRecord
 
   # Activity : User relation => N:1
   has_many :activities
+  
+  # Schedule : USer relation => N:1
+  has_many :schedules
 
   # User : like : Comment relation => N:M
   has_many :likes
@@ -23,6 +26,6 @@ class User < ApplicationRecord
   has_many :major_stories, through: :major_follows
 
   # User : UserSchedule : Schedule relation => N:M
-  has_many :user_schedules
-  has_many :schedules, class_name: :Event, through: :user_schedules
+  has_many :user_events
+  has_many :events, through: :user_events
 end

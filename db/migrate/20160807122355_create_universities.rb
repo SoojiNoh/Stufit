@@ -3,6 +3,7 @@ class CreateUniversities < ActiveRecord::Migration[5.0]
     create_table :universities do |t|
 
       t.string :name
+      t.string :img
       t.string :link_url
       t.string :content
 

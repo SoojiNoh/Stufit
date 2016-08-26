@@ -9,11 +9,8 @@ def new
 end
 
 def create
-    uploader = AvatarUploader.new
-    uploader.store!(params[:activity][:image])
-    @activity = Activity.new(activity_params)
-    @activity.image_url = uploader.url
-    @activity.save
+
+    @activity = Activity.create(activity_params)
     redirect_to activities_path
     
 end
@@ -24,7 +21,7 @@ end
 
 def update
     @activity = Activity.find(params[:id])
-    @activity.update(post_params)
+    @activity.update(activity_params)
     redirect_to activity_path(@activity)
 end
 

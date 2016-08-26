@@ -1,3 +1,51 @@
-<h1>스튜핏 소개 맨 첫 페이지</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-<%= link_to "대학목록", universities_path %>
+<!DOCTYPE html>
+<html>
+  <body>
+    
+    
+    
+ <div class="row">
+   
+    <!--이미지 슬라이드: stufit 소개이미지-->
+    <div class="col s7">
+       <div class="carousel">
+        <a class="carousel-item" href="#one!"><img src="minion.jpg"></a>
+        <a class="carousel-item" href="#two!"><img src="comeonbabe.JPG"></a>
+        <a class="carousel-item" href="#four!"><img src="minion.jpg"></a>
+        <a class="carousel-item" href="#five!"><img src="comeonbabe.JPG"></a>
+      </div>
+        <script>
+               $(document).ready(function(){
+            $('.carousel').carousel({
+                  dist:0,
+                  shift:0,
+                  padding:20,
+            });
+          });
+        </script>    
+   </div>
+    
+     <!--캘린더-->
+          <div class="col s5">
+            <div id='calendar'></div>
+              <script>
+
+                    $('#calendar').fullCalendar(
+                      {
+                        eventSources: [
+                  
+                          // your schedule source
+                          {
+                              url: '/schedules.json',// use the `url` property
+                              color: 'yellow',    // an option!
+                              textColor: 'green'  // an option!
+                          }
+                          ]
+                               // schedules: '/schedules.json'
+                               // put your options and callbacks here
+                       });  
+              </script>
+          </div>  
+     </div>   
+  </body>
+</html>

@@ -33,4 +33,16 @@ body {
 
 main {
   flex: 1 0 auto;
+<<<<<<< HEAD
 }
+=======
+}
+
+.empty_star {
+  color: rgba(0, 0, 0, 0.3) 
+}
+
+.pull_star{
+  color: yellow
+}
+>>>>>>> 5844165148beaafb47f41a38d8b4dbbcb16a8c10

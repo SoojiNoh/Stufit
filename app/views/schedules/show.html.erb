@@ -2,42 +2,42 @@
 
 <p>
   <strong>일정:</strong>
-  <%= @event.title %>
+  <%= @schedule.title %>
 </p>
 
 <p>
   <strong>설명:</strong>
-  <%= @event.content %>
+  <%= @schedule.content %>
 </p>
 
 <p>
   <strong>장소:</strong>
-  <%= @event.place %>
+  <%= @schedule.place %>
 </p>
 
 <p>
   <strong>파일:</strong>
-  <%= @event.file %>
+  <%= @schedule.file %>
 </p>
 
 <p>
   <strong>분류:</strong>
-  <%= @event.event_type %>
+  <%= @schedule.event_type %>
 </p>
 
 <p>
   <strong>시작시점:</strong>
-  <%= @event.start_at %>
+  <%= @schedule.start_at %>
 </p>
 
 <p>
   <strong>종료시점:</strong>
-  <%= @event.end_at %>
+  <%= @schedule.end_at %>
 </p>
 
 <p>
   <strong>대학:</strong>
-  <%= @event.university_id %>
+  <%= @schedule.university_id %>
 </p>
-<%= link_to 'Edit', edit_schedule_path(@event) %> |
+<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
 <%= link_to 'Back', schedules_path %>

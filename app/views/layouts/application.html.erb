@@ -8,34 +8,40 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   
+    
   </head>
 
   <body>
-
     <nav>
     <div class="nav-wrapper">
-      <a href="/" class="brand-logo">Logo</a>
+      <a href="/" class="brand-logo">Stufit</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
       <% if user_signed_in? %>
           <ul class="right hide-on-med-and-down">
-            <li><%= link_to '행사', events_path , method: 'get' %></li>
             <li><%= link_to current_user.name, my_page_index_path , method: 'get' %></li>
             <li><%= link_to '로그아웃', destroy_user_session_path, method: 'delete' %></li>
           </ul>
           <ul class="side-nav" id="mobile-demo">
+<<<<<<< HEAD
             <li><%= link_to '행사', events_path , method: 'get' %></li>
+            <li><%= link_to '활동내역', activities_path , method: 'get' %></li>
+=======
+>>>>>>> 210f2de87d1dc361ea0bd20cde4ff6a0d7304ef4
             <li><%= link_to current_user.name, my_page_index_path , method: 'get' %></li>
             <li><%= link_to '로그아웃', destroy_user_session_path, method: 'delete' %></li>
           </ul>
       <% else %>
         <ul class="right hide-on-med-and-down">
-          <li><%= link_to '행사', events_path , method: 'get' %></li>
           <li><%= link_to '회원가입', new_user_registration_path , method: 'get' %></li>
           <li><%= link_to '로그인', new_user_session_path, method: 'get' %></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
+<<<<<<< HEAD
           <li><%= link_to '행사', events_path , method: 'get' %></li>
+          <li><%= link_to '활동내역', activities_path , method: 'get' %></li>
+=======
+>>>>>>> 210f2de87d1dc361ea0bd20cde4ff6a0d7304ef4
           <li><%#= link_to '회원가입', new_user_registration_path , method: 'get' %></li>
           <li><%= link_to '로그인', new_user_session_path, method: 'get' %></li>
         </ul>
@@ -44,6 +50,31 @@
     </nav>
 
     <main>
+    <!--4개 탭-->
+      <div class="row">
+          <div class="col s12">
+            <ul class="tabs">
+              <li class="tab col s3" id="btn_tab_univ"><%= link_to '대학가자!', universities_path , method: 'get' %></a></li>
+              <li class="tab col s3" id="btn_tab_event"><%= link_to '정보게시판', events_path , method: 'get' %></a></li>
+              <li class="tab col s3" id="btn_tab_mentor"><%= link_to '선배와의이야기', major_stories_path , method: 'get' %></a></li>
+              <li class="tab col s3" id="btn_tab_mentor"><%= link_to 'My page', my_page_index_path , method: 'get' %></a></li>
+            </ul>
+          </div>
+      </div>
+      
+      <div class="container" id="main_tab">
+      </div>
+      
+      <script>
+       $(document).ready(function(){
+          $("#btn_tab_univ").tabs('select_tab','#main_tab');
+          $("#btn_tab_event").tabs('select_tab','#main_tab');
+          $("#btn_tab_mentor").tabs('select_tab','#main_tab');
+          $("#btn_tab_mypage").tabs('select_tab','#main_tab');
+        });
+      </script>
+    
+      
     <div class="container">
       <%= yield %>
     </div>

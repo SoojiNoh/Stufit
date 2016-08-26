@@ -4,7 +4,8 @@ class CreateComments < ActiveRecord::Migration[5.0]
 
       t.string :content
       t.references :user, index:true, foreign_key: true
-      t.references :event, indext: true, foreign_key: true
+      t.references :event, index: true, foreign_key: true
+      t.references :university, index: true, foreign_key: true
 
       t.timestamps
     end
