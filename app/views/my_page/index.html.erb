@@ -12,4 +12,12 @@
   <div id="test2" class="col s12">
     <%= render partial: 'mock_tests/index', locals: { :mock_tests => @mock_tests } %>
   </div>
+  <div class="col s 12">
+    <% HashTag.all.each do |tag| %>
+      <div class="chip">
+        <%= tag.name %>
+        <i class="close material-icons">close</i>
+      </div>
+    <% end %>
+  </div>
 </div>

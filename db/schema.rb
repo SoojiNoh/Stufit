@@ -57,12 +57,12 @@ ActiveRecord::Schema.define(version: 20160825081443) do
   end
 
   create_table "hash_activities", force: :cascade do |t|
-    t.integer  "hash_activity_id"
+    t.integer  "hash_tag_id"
     t.integer  "activity_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.index ["activity_id"], name: "index_hash_activities_on_activity_id"
-    t.index ["hash_activity_id"], name: "index_hash_activities_on_hash_activity_id"
+    t.index ["hash_tag_id"], name: "index_hash_activities_on_hash_tag_id"
   end
 
   create_table "hash_events", force: :cascade do |t|

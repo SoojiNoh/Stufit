@@ -36,3 +36,10 @@ Event.create(title: 'ybm영어말하기대회', content:'고등학생 대상 자
 Event.create(title: '수학경시대회', content:'고등학교 1학년 대상으로 수학경시대회를 개최합니다. 참가비 3만원', place:'서울 종로구',event_type: '경시대회', start_at:'2016-12-05', end_at: '2016-12-12')
 Event.create(title: '아이디어 공모전', content:'고등학교 2,3학년 대상 발명 아이디어 공모전', place:'서울 종로구',event_type: '공모전', start_at:'2016-10-05', end_at: '2017-10-08')
 Event.create(title: '대한민국 청소년 토론 대회당', content:'고등학생 30명 토론대회 참가자모집합니다.', place:'서울 강남',event_type: '대회', start_at:'2016-08-08', end_at: '2017-10-08')
+
+HashTag.create(name: "물리학")
+HashTag.create(name: "생물학")
+HashTag.create(name: "화학")
+HashTag.create(name: "지구과학")
+HashTag.create(name: "경영학")
+
