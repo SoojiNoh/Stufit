@@ -1,4 +1,5 @@
-<%= form_for @activity do |a| %>
+<div class="row" style="margin-top: 100px">
+<%= form_for @activity, multipart: true do |a| %>
 <%= render partial: 'form', locals: { :f => a} %>
 <% end %>
 
@@ -7,3 +8,4 @@
     $('select').material_select();
 });
 </script>
+</div>

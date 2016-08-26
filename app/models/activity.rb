@@ -6,6 +6,7 @@ class Activity < ApplicationRecord
 
   # User : Activity relation => 1:N
   belongs_to :user, optional: true
-
+  
+  mount_uploader :image, AvatarUploader
 
 end

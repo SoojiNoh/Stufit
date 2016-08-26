@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20160825081443) do
     t.string   "content"
     t.string   "place"
     t.string   "file"
+    t.string   "image"
     t.string   "event_type"
     t.datetime "start_at"
     t.datetime "end_at"

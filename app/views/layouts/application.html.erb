@@ -26,6 +26,7 @@
           </ul>
           <ul class="side-nav" id="mobile-demo">
             <li><%= link_to '행사', events_path , method: 'get' %></li>
+            <li><%= link_to '활동내역', activities_path , method: 'get' %></li>
             <li><%= link_to current_user.name, my_page_index_path , method: 'get' %></li>
             <li><%= link_to '로그아웃', destroy_user_session_path, method: 'delete' %></li>
           </ul>
@@ -38,6 +39,7 @@
         </ul>
         <ul class="side-nav" id="mobile-demo">
           <li><%= link_to '행사', events_path , method: 'get' %></li>
+          <li><%= link_to '활동내역', activities_path , method: 'get' %></li>
           <li><%#= link_to '회원가입', new_user_registration_path , method: 'get' %></li>
           <li><%= link_to '로그인', new_user_session_path, method: 'get' %></li>
         </ul>
