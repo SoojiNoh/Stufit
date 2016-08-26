@@ -9,10 +9,8 @@ class ActivitiesController < ApplicationController
   end
 
   def create
-    uploader = AvatarUploader.new
-    uploader.store!(params[:activity][:image])
     @activity = Activity.new(activity_params)
-    @activity.image_url = uploader.url
+    @activity.user = current_user
     @activity.save
     @hash = params[:activity][:hash_activities]
     @hash.each do |hash|
