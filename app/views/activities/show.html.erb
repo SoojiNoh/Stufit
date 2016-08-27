@@ -1,37 +1,76 @@
-<table class="centered highlight">
-      <thead>
-        <tr>
-          <th data-field="id">교내/교외</th>
-          <th data-field="name">분류</th>
-          <th data-field="price">활동명</th>
-          <th data-field="id">내용</th>
-          <th data-field="price">주관기관</th>
-          <th data-field="id">발급번호</th>
-          <th data-field="name">급수(점수)</th>
-          <th data-field="price">시작일</th>
-          <th data-field="price">종료일</th>
-          <th data-field="price">이미지</th>
-          <th data-field="price">수정</th>
-          <th data-field="price">삭제</th>
-        </tr>
-      </thead>
+<%= link_to "수정", edit_activity_path(@activity) %>
+<%= link_to "삭제", activity_path(@activity), method: "delete" %>
+<div class="row" style="margin-top:100px">
+  <table class="centered highlight">
+    <thead>
+      <tr>
+        <th data-field="id">교내/교외</th>
+        <th data-field="name">분류</th>  
+        <th data-field="price">활동명</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style='text-align:center; vertical-align:middle'><%=@activity.activity_type%></td>
+        <td style='text-align:center; vertical-align:middle'><%=@activity.style%></td>
+        <td style='text-align:center; vertical-align:middle'><%=@activity.title%></td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th data-field="price">주관기관</th>
+        <th data-field="id">발급번호</th>
+        <th data-field="name">급수(점수)</th>
 
-      <tbody>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style='text-align:center; vertical-align:middle'><%=@activity.host_name%></td>    
+        <td style='text-align:center; vertical-align:middle'><%=@activity.issuednumber%></td>
+        <td style='text-align:center; vertical-align:middle'><%=@activity.grade%></td>    
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th data-field="id">내용</th>  
+        <th data-field="price">시작일</th>
+        <th data-field="price">종료일</th>
+          <th data-field="price">조회수</th>
+      
+      </tr>
+    </thead>
+    <tbody>
+      <tr>  
+        <td style='text-align:center; vertical-align:middle'><%=@activity.content%></td>
+        <td style='text-align:center; vertical-align:middle'><%=@activity.start_at%></td>
+        <td style='text-align:center; vertical-align:middle'><%=@activity.end_at%></td>
+        <td style='text-align:center; vertical-align:middle'><%=@activity.impressions.count%></td>
+      </tr>          
+    </tbody>
 
-        <tr>
-          <td><%=@activity.activity_type%></td>
-          <td><%=@activity.style%></td>
-          <td><%=@activity.title%></td>
-          <td><%=@activity.content%></td>
-          <td><%=@activity.host_name%></td>
-          <td><%=@activity.issuednumber%></td>
-          <td><%=@activity.grade%></td>
-          <td><%=@activity.start_at%></td>
-          <td><%=@activity.end_at%></td>
-          <td><a href='/activities/image/<%=@activity.id%>'>이미지</a></td>
-          <td><%= link_to "수정", edit_activity_path(@activity) %></td>
-          <td><%= link_to "삭제", activity_path(@activity), method: "delete" %></td>
-        </tr>
-        </tbody>
-        </table>
-        <img src='<%= @activity.image_url%>'>
+  </table>
+</div>
+<div class='row'>
+  <table class="centered highlight responsive-table">
+    <thead>
+      <tr>
+        <th>이미지</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style='text-align:center; vertical-align:middle'><%= image_tag "camaro.jpg" %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>관련 태그</h3>
+<p>
+<% @activity.hash_tags.each do |hash| %>
+  <div class="chip"> <%= link_to "#{hash.name}", hash_tag_path(hash) %> </div> &nbsp;
+<% end %>
+</p>
+
+<td style='text-align:center; vertical-align:middle'><a href='/activities/image/<%=@activity.id%>'>이미지</a></td>

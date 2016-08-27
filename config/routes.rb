@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   mount Ckeditor::Engine => '/ckeditor'
   resources :articles
+=======
+
+>>>>>>> 9a4b762cbfea37aab702d4a381be37c4a245ef39
   get '/' => 'home#index'
   get 'home/index'
   get 'my_page/index'
@@ -17,6 +21,7 @@ Rails.application.routes.draw do
   resources :mock_tests
   resources :comments
   resources :schedules
+  resources :hash_tags, only: [:index,:show]
   get 'stufit/index'
 
   get 'facebook/index'

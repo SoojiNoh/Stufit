@@ -1,3 +1,8 @@
+<div class = "field">
+  <%= f.label :hash_events, '해쉬태그' %>
+  <%= f.select :hash_events, options_for_select(HashTag.all.collect{ |u| [u.name,u.id] }),{},{ :multiple => true} %>
+</div>
+
 <div class="field">
     <%= f.label :title, '제목' %>
     <%= f.text_area :title %>
@@ -23,9 +28,9 @@
     <%= f.datetime_field :end_at %>
 </div>
 <div>
-   <%= f.label :file, '파일첨부' %> 
+   <%= f.label :image, '파일첨부' %> 
    <%= f.text_field :file %>
-   <%= f.file_field :file %>
+   <%= f.file_field :image %>
 </div>
 </br>
 <div>

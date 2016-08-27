@@ -12,7 +12,7 @@ class CreateActivities < ActiveRecord::Migration[5.0]
       t.date :start_at
       t.date :end_at
       t.string :image
-      t.string :image_url
+      t.integer :impressions_count
       t.references :user, index: true, foreign_key: true
 
       t.timestamps
