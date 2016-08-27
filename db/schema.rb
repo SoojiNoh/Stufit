@@ -23,10 +23,10 @@ ActiveRecord::Schema.define(version: 20160827034857) do
     t.date     "start_at"
     t.date     "end_at"
     t.string   "image"
-    t.integer  "impressions_count", default: 0
+    t.integer  "impressions_count"
     t.integer  "user_id"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.index ["user_id"], name: "index_activities_on_user_id"
   end
 

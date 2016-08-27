@@ -1,8 +1,8 @@
 class ActivitiesController < ApplicationController
-  
+  helper_method :sort_column, :sort_direction
   
   def index
-    @activities = Activity.reorder("start_at DESC").paginate(:page => params[:page], :per_page => 5)
+    @activities = Activity.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:page => params[:page], :per_page => 5)
   end
 
   def new
@@ -52,6 +52,15 @@ class ActivitiesController < ApplicationController
 
   def activity_params
     params.require(:activity).permit(:activity_type, :style, :title, :content, :host_name, :issuednumber, :grade, :start_at, :end_at, :image , hash_activities: [:id])
+  end
+
+  
+  def sort_column
+    Activity.column_names.include?(params[:sort]) ? params[:sort] : "start_at"
+  end
+  
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
   end
 
 

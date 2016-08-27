@@ -11,5 +11,14 @@ class Activity < ApplicationRecord
   belongs_to :user, optional: true
   
   mount_uploader :image, AvatarUploader
-
+  
+  
+  def self.search(search)
+  if search
+    where('content LIKE ?', "%#{search}%")
+  else
+    where(nil)
+  end
+end
+  
 end
