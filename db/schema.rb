@@ -23,10 +23,10 @@ ActiveRecord::Schema.define(version: 20160827034857) do
     t.date     "start_at"
     t.date     "end_at"
     t.string   "image"
-    t.string   "image_url"
+    t.integer  "impressions_count"
     t.integer  "user_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.index ["user_id"], name: "index_activities_on_user_id"
   end
 
@@ -70,22 +70,24 @@ ActiveRecord::Schema.define(version: 20160827034857) do
     t.string   "content"
     t.string   "place"
     t.string   "file"
+    t.string   "image"
     t.string   "event_type"
     t.datetime "start_at"
     t.datetime "end_at"
+    t.integer  "impressions_count"
     t.integer  "university_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.index ["university_id"], name: "index_events_on_university_id"
   end
 
   create_table "hash_activities", force: :cascade do |t|
-    t.integer  "hash_activity_id"
+    t.integer  "hash_tag_id"
     t.integer  "activity_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.index ["activity_id"], name: "index_hash_activities_on_activity_id"
-    t.index ["hash_activity_id"], name: "index_hash_activities_on_hash_activity_id"
+    t.index ["hash_tag_id"], name: "index_hash_activities_on_hash_tag_id"
   end
 
   create_table "hash_events", force: :cascade do |t|
