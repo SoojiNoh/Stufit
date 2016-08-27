@@ -36,7 +36,8 @@
         <th data-field="id">내용</th>  
         <th data-field="price">시작일</th>
         <th data-field="price">종료일</th>
-
+          <th data-field="price">조회수</th>
+      
       </tr>
     </thead>
     <tbody>
@@ -44,6 +45,7 @@
         <td style='text-align:center; vertical-align:middle'><%=@activity.content%></td>
         <td style='text-align:center; vertical-align:middle'><%=@activity.start_at%></td>
         <td style='text-align:center; vertical-align:middle'><%=@activity.end_at%></td>
+        <td style='text-align:center; vertical-align:middle'><%=@activity.impressions.count%></td>
       </tr>          
     </tbody>
 

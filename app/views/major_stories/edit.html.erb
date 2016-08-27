@@ -1,0 +1,6 @@
+<%= form_for @major_story do |f| %>
+    <%= render partial: 'form', locals: { :f => f } %>
+<% end %>
+
+<%= link_to 'Show', @article %> |
+<%= link_to 'Back', articles_path %>

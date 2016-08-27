@@ -8,7 +8,7 @@
 
 <h5> 제목 | <%= @event.title %> </h5>
 <h6> 작성일 :  <%= @event.created_at.in_time_zone("Asia/Seoul").strftime("%Y. %m. %d.    %H : %M") %> </h6>
-
+<h6> 조회수 : <%=@event.impressions.count%></h6>
 <div class="progress">
   <div class="determinate" style="width: 70%"></div>
 </div>

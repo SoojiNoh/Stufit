@@ -7,7 +7,13 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  
+  <style>
+  .table-wrapping {
+    width: auto;
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+  </style>
     
   </head>
 
@@ -34,6 +40,8 @@
           <li><%= link_to '로그인', new_user_session_path, method: 'get' %></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
+
+
           <li><%= link_to '행사', events_path , method: 'get' %></li>
           <li><%= link_to '활동내역', activities_path , method: 'get' %></li>
           <li><%#= link_to '회원가입', new_user_registration_path , method: 'get' %></li>

@@ -1,3 +1,13 @@
+<%= form_tag activities_path, :method => 'get', :id => "activities_search" do %>
+  <%= hidden_field_tag :direction, params[:direction]%>
+  <%= hidden_field_tag :sort, params[:sort]%>  
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :content => nil %>
+  </p>
+<% end %>
+
+
 <head>
 
 <!-- Compiled and minified CSS -->
@@ -5,39 +15,41 @@
 
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-          
+<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"></script>
 
 <script>
 
+    
 </script>
-
-<style>
-.table-wrapping {
-    width: auto;
-    overflow-x: scroll;
-    white-space: nowrap;
+	<style>
+	  table {
+  width: 100%
 }
-</style>
+	</style>
+	
+
 </head>
 
-<div class="row" style="margin-top:100px">
+<div class="row col s12 m12 l12" style="margin-top:100px">
 <%= link_to "new", new_activity_path, class:"btn-floating red" %>
-  <div class = "col s12 m12 l12 table-wrapping">
-<table id="table-demo" class="centered highlight responsive-table">
+<table class="centered highlight responsive-table table-wrapping" style="width:auto" >
       <thead>
         <tr>
-          <th data-field="id">교내/교외</th>
-          <th data-field="name">분류</th>
-          <th data-field="price">활동명</th>
-          <th data-field="price">내용</th>
-          <th data-field="name">주관기관</th>
-          <th data-field="price">발급번호</th>
-          <th data-field="price">급수</th>
-          <th data-field="price">시작일</th>
-          <th data-field="price">종료일</th>
+                <th data-field="id"><%= sortable "activity_type", "교내/교외"%></th>
+          <th data-field="name"><%= sortable "style", "분류"%></th>
+          <th data-field="price"><%= sortable  "title",  "활동명"%></th>
+          <th data-field="price"><%= sortable "content", "내용"%></th>
+          <th data-field="name"><%= sortable"host_name",  "주관기관"%></th>
+          <th data-field="price"><%= sortable "issuednumber",  "발급번호" %></th>
+          <th data-field="price"><%= sortable "grade",  "급수" %></th>
+          <th data-field="price"><%= sortable "start_at", "시작일" %></th>
+          <th data-field="price"><%= sortable "end_at", "종료일" %></th>
           <th data-field="price">이미지</th>
-          <th data-field="price" style="hidden">수정</th>
-          <th date-field="price" style="hidden">삭제</th>
+          <th data-field="price"><%= sortable "impressions_count", "조회수" %></th>
+
+          <th data-field="price" style="hidden" class="unsortable">수정</th>
+          <th date-field="price" style="hidden" class="unsortable">삭제</th>
         </tr>
       </thead>
 
@@ -54,7 +66,7 @@
           <td><%=a.start_at%></td>
           <td><%=a.end_at%></td>
           <td><a href='/activities/image/<%=a.id%>'>이미지</a></td>
-
+          <td><%="#{a.impressions.count}"%></td>
           <td><button type="submit" ><%= link_to "수정", edit_activity_path(a) %></button></td>
           <td><button type="submit" ><%= link_to "삭제", activity_path(a), method: "delete" %></button></td>
         <%end%>

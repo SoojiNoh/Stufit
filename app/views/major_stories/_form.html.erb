@@ -1,0 +1,46 @@
+<%= form_for(@major_story) do |f| %>
+  <% if @major_story.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@major_story.errors.count, "error") %> prohibited this major_story from being saved:</h2>
+
+      <ul>
+      <% @major_story.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field" col="3">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :body %>
+    <%= f.cktext_area :body, rows: 10 %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label :place %><br>
+    <%= f.text_field :place %>
+  </div>
+  <div class="field">
+    <%= f.label :file %><br>
+    <%= f.text_field :file %>
+  </div>
+  <div class="field">
+    <%= f.label :major_type %><br>
+    <%= f.text_field :major_type %>
+  </div>
+ 
+  <div class="field">
+    <%= f.label :university %><br>
+    <%= f.file_field :university %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

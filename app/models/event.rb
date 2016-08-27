@@ -1,5 +1,7 @@
 class Event < ApplicationRecord
-
+  
+  is_impressionable 
+  
   self.per_page = 6
   #is_impressionable
   # Comment : Event relation => N:1
@@ -18,9 +20,14 @@ class Event < ApplicationRecord
   has_many :users, through: :user_events
 
   #event 검색 _수지
-  def self.search(search)
-    where("start_at LIKE ?", "%#{search}%")
+  
+def self.search(search)
+  if search
+    where('content LIKE ?', "%#{search}%")
+  else
+    where(nil)
   end
+end
 
   mount_uploader :image, AvatarUploader
 
