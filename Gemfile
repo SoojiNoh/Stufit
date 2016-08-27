@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
 
+gem 'impressionist'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
-#gem 'impressionist'
 gem 'figaro'
 gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-materialize'

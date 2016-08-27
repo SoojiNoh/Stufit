@@ -5,18 +5,15 @@
 
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-          
+<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"></script>
 
 <script>
 
     
 </script>
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-	<title>Sortable table example</title>
-	<link rel="stylesheet" type="text/css" href="../../../../stylesheeets/home.scss"/>
-	<meta name="author" content="Joost de Valk, http://www.joostdevalk.nl/" />
-	<link href="http://www.joostdevalk.nl/" rev="made" />
-	<script type="text/javascript" src="../../../../javascripts/sortable.js"></script>
+	
+	
 <style>
 .table-wrapping {
     width: auto;
@@ -29,7 +26,7 @@
 <div class="row" style="margin-top:100px">
 <%= link_to "new", new_activity_path, class:"btn-floating red" %>
   <div class = "col s12 m12 l12 table-wrapping">
-<table id="anyid" class="centered highlight responsive-table sortable"  >
+<table id="myTable" class="centered highlight responsive-table table-wrapping tablesorter"  >
       <thead>
         <tr>
           <th data-field="id">교내/교외</th>
@@ -42,6 +39,8 @@
           <th data-field="price">시작일</th>
           <th data-field="price">종료일</th>
           <th data-field="price" class="unsortable">이미지</th>
+          <th data-field="price" class="unsortable">조회수</th>
+
           <th data-field="price" style="hidden" class="unsortable">수정</th>
           <th date-field="price" style="hidden" class="unsortable">삭제</th>
         </tr>
@@ -60,7 +59,7 @@
           <td><%=a.start_at%></td>
           <td><%=a.end_at%></td>
           <td><a href='/activities/image/<%=a.id%>'>이미지</a></td>
-
+          <td><%=a.impressions.count%></td>
           <td><button type="submit" ><%= link_to "수정", edit_activity_path(a) %></button></td>
           <td><button type="submit" ><%= link_to "삭제", activity_path(a), method: "delete" %></button></td>
         <%end%>

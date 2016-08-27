@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 <div class="row">
  
@@ -9,9 +8,7 @@
   <div class="col s9">
 
 
-=======
 
->>>>>>> fccf2785badd7eda56322ae450e2c962be04cedb
 <h5>정보게시판 목록</h5>
 </br>
 <table>
@@ -31,12 +28,9 @@
        <td><%= link_to event.title, event_path(event) %></td>
        <td><%= link_to "#{truncate(event.content, :length => 30, :separator=>' ')}", event_path(event) %></td>
        <td><%= truncate(event.created_at.in_time_zone("Asia/Seoul").strftime("%Y년%m월%d일 %H시%M분%S초"), :length => 14, :separator=>' ')%></td>
-<<<<<<< HEAD
 
        <td><%= "3" %> </td> <!--조회수 event.impressionist -->
 
-=======
->>>>>>> fccf2785badd7eda56322ae450e2c962be04cedb
        <td><%= "3" %></td>
        <td>
         <% if current_user.events.where(id: event.id).take != nil  %>
@@ -44,10 +38,7 @@
         <% else %>
           <%= link_to "/events/eventfollow/#{event.id}" do %> <i class="empty_star material-icons">star</i> <% end %>
         <% end %></td>
-<<<<<<< HEAD
 
-=======
->>>>>>> fccf2785badd7eda56322ae450e2c962be04cedb
        </tr>
 
    <% end %>

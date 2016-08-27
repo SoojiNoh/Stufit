@@ -1,5 +1,7 @@
 class Activity < ApplicationRecord
-
+  
+  is_impressionable 
+  
   # Hash_tag : Hash_activity :  Activity relation => N:M
   has_many :hash_activities
   has_many :hash_tags, through: :hash_activities

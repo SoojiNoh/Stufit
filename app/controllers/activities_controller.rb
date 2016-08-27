@@ -1,5 +1,6 @@
 class ActivitiesController < ApplicationController
-
+  
+  
   def index
     @activities = Activity.reorder("start_at DESC").paginate(:page => params[:page], :per_page => 5)
   end
@@ -34,6 +35,7 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = Activity.find(params[:id])
+    impressionist(@activity)
   end
 
   def destroy
