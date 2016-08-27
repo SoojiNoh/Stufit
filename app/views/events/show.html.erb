@@ -43,3 +43,13 @@
    <%= link_to "삭제", event_path(@event), method: "delete",class: 'waves-effect waves-light btn' %>
    <%= link_to "목록", events_path,class: 'waves-effect waves-light btn' %>
    <%= link_to '새 글쓰기', new_event_path ,class: 'waves-effect waves-light btn' %>
+
+   <% @event.comments.each do |comment| %>
+     <h4>
+     <%= comment.user.name %>
+     <%= comment.content %>
+     <%= link_to "댓글삭제", comment_path(comment), method: :delete %>
+     </h4>
+   <% end %>
+
+   <%= render partial: 'comments/new', locals: { :comment => @event.comments.new , event: @event.id} %>
