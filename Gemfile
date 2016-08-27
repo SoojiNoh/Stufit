@@ -1,17 +1,14 @@
 source 'https://rubygems.org'
 
-<<<<<<< HEAD
 gem 'ckeditor'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 gem "paperclip"
 
-=======
 
 gem 'impressionist'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
->>>>>>> 9a4b762cbfea37aab702d4a381be37c4a245ef39
 gem 'figaro'
 gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-materialize'
