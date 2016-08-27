@@ -2,6 +2,32 @@
 
 <h1>전공 스토리</h1>
 
+<div class="row">
+<% @major_stories.each do |major_story| %>
+  <div class="col s3 m3">
+    <div class="card">
+      <div class="card-image">
+      <%= link_to major_story_path(major_story) do %>
+        <img src="https://snupsy.sona-systems.com/custom/customlogo.png" >
+        <span class="card-title"><%= major_story.content %></span>
+      </div>
+        <div class="card-content">
+          <p><%= major_story.content %></p><br><%= major_story.place %>
+        </div>
+        <div class="card-action">
+          <%= link_to "자세히 보기", major_story %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+</div>
+
+
+
+
+
+
 <table>
   <thead>
     <tr>
