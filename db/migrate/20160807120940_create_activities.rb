@@ -8,7 +8,7 @@ class CreateActivities < ActiveRecord::Migration[5.0]
       t.string :title
       t.string :content
       t.string :grade
-      t.string :issuednumber      
+      t.string :issuednumber
       t.date :start_at
       t.date :end_at
       t.string :image
