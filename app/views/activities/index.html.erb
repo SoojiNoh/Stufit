@@ -22,21 +22,18 @@
 
     
 </script>
-	
-	
-<style>
-.table-wrapping {
-    width: auto;
-    overflow-x: scroll;
-    white-space: nowrap;
+	<style>
+	  table {
+  width: 100%
 }
-</style>
+	</style>
+	
+
 </head>
 
-<div class="row" style="margin-top:100px">
+<div class="row col s12 m12 l12" style="margin-top:100px">
 <%= link_to "new", new_activity_path, class:"btn-floating red" %>
-  <div class = "col s12 m12 l12 table-wrapping">
-<table id="myTable" class="centered highlight responsive-table table-wrapping tablesorter"  >
+<table class="centered highlight responsive-table table-wrapping" style="width:auto" >
       <thead>
         <tr>
                 <th data-field="id"><%= sortable "activity_type", "교내/교외"%></th>

@@ -1,8 +1,10 @@
 class EventsController < ApplicationController
+  helper_method :sort_column, :sort_direction
+  
   #impressionist :actions=>[:show,:index]
   def index
-    WillPaginate.per_page = 10
-    @events =Event.paginate(:page => params[:page])
+
+    @events =Event.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:page => params[:page], :per_page => 5)
     #impressionist(@event)
     #Event.reorder("created_at DESC").paginate(:page => params[:page], :per_page => 10)
   end
@@ -25,6 +27,7 @@ class EventsController < ApplicationController
 
   def show
     @event=Event.find(params[:id])
+    impressionist(@event)
   end
 
   def edit
@@ -60,4 +63,15 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:title, :content, :created_at, :place, :file, :event_type, :start_at, :end_at, :image , hash_events: [:id])
   end
+  
+  
+  def sort_column
+    Event.column_names.include?(params[:sort]) ? params[:sort] : "start_at"
+  end
+  
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
+  end
+  
+  
 end

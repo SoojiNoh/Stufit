@@ -51,9 +51,10 @@ ActiveRecord::Schema.define(version: 20160827034857) do
     t.string   "event_type"
     t.datetime "start_at"
     t.datetime "end_at"
+    t.integer  "impressions_count"
     t.integer  "university_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.index ["university_id"], name: "index_events_on_university_id"
   end
 
