@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160827034857) do
+ActiveRecord::Schema.define(version: 20160827161322) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "activity_type"
@@ -154,6 +154,15 @@ ActiveRecord::Schema.define(version: 20160827034857) do
     t.datetime "updated_at",     null: false
     t.index ["major_story_id"], name: "index_major_follows_on_major_story_id"
     t.index ["user_id"], name: "index_major_follows_on_user_id"
+  end
+
+  create_table "major_likes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "major_story_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["major_story_id"], name: "index_major_likes_on_major_story_id"
+    t.index ["user_id"], name: "index_major_likes_on_user_id"
   end
 
   create_table "major_stories", force: :cascade do |t|

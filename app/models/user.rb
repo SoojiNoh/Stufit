@@ -28,4 +28,9 @@ class User < ApplicationRecord
   # User : UserSchedule : Schedule relation => N:M
   has_many :user_events
   has_many :events, through: :user_events
+
+  # User : Major_like : Major_story relation => N:M
+  has_many :major_likes
+  has_many :major_stories, through: :major_likes
+
 end
