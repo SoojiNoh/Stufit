@@ -22,11 +22,13 @@ content: '컴퓨터 활용능력', host_name:'한국산업인력공단', issuedn
 Activity.create(activity_type: '교내', style:'봉사활동', title:'농촌 지역 봉사활동',
 content: '가지치기, 열매 수확', host_name:'한국고등학교', issuednumber: '2016-68', grade: '20시간', start_at:'2014-07-05', end_at: '2016-07-08')
 
-University.create(name: "서울대학교", remote_img_url: "http://i.imgur.com/58n1APz.jpg", link_url: "www.snu.ac.kr", content: "서울대입니다")
-University.create(name: "숙명여자대학교", remote_img_url: "http://cfile10.uf.tistory.com/image/1452434C4F6C2A270C3628", link_url: "www.sookmyung.ac.kr", content: "숙대입니다")
-University.create(name: "숭실대학교", remote_img_url: "http://i.imgur.com/58n1APz.jpg", link_url: "www.ssu.ac.kr", content: "숭실대입니다")
-University.create(name: "고려대학교", remote_img_url: "http://i.imgur.com/58n1APz.jpg", link_url: "www.snu.ac.kr", content: "서울대입니다")
-University.create(name: "연세대학교", remote_img_url: "http://i.imgur.com/58n1APz.jpg", link_url: "www.snu.ac.kr", content: "서울대입니다")
+University.create(name: "서울대학교", remote_img_url: "http://i.imgur.com/BV2YyYA.png", link_url: "http://admission.snu.ac.kr/index.html", content: "서울대학교")
+University.create(name: "숙명여자대학교", remote_img_url: "http://i.imgur.com/JydlcMG.jpg", link_url: "http://admission.sookmyung.ac.kr/enter/html/main/main.asp", content: "숙명여자대학교")
+University.create(name: "숭실대학교", remote_img_url: "http://i.imgur.com/QbGk3xh.jpg", link_url: "http://iphak.ssu.ac.kr/", content: "숭실대학교")
+University.create(name: "고려대학교", remote_img_url: "http://i.imgur.com/2kkFOdQ.png", link_url: "http://oku.korea.ac.kr/oku/index.jsp", content: "고려대학교")
+University.create(name: "연세대학교", remote_img_url: "http://i.imgur.com/kyDIpdw.jpg", link_url: "http://admission.yonsei.ac.kr/seoul/admission/html/main/main.asp", content: "연세대학교")
+University.create(name: "서울과학기술대학교", remote_img_url: "http://i.imgur.com/JydlcMG.jpg", link_url: "http://admission.seoultech.ac.kr/", content: "서울과학기술대학교")
+
 UnivFollow.create(user_id: 1, university_id: 1)
 
 Event.create(title: '삼성 해외탐방단', content:'고등학생 30명 해외봉사단 모집합니다.', place:'캄보디아',event_type: '봉사', start_at:'2016-08-08', end_at: '2017-10-08')
@@ -42,4 +44,5 @@ HashTag.create(name: "생물학")
 HashTag.create(name: "화학")
 HashTag.create(name: "지구과학")
 HashTag.create(name: "경영학")
+HashTag.create(name: "경제학")
 

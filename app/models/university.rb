@@ -1,5 +1,6 @@
 class University < ApplicationRecord
 
+  self.per_page = 12
   # Event : University relation => N:1
   has_many :events
 

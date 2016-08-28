@@ -23,4 +23,7 @@
   </div>
 <% end %>
 </div>
-<%= link_to "대학등록", new_university_path %>
+<%= link_to "대학등록", new_university_path,class: 'waves-effect waves-light btn' %>
+
+<!--페이지 넘기기-->
+<%= will_paginate @universities %>
