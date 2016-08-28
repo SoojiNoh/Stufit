@@ -58,11 +58,9 @@ ActiveRecord::Schema.define(version: 20160827034857) do
     t.integer  "user_id"
     t.integer  "event_id"
     t.integer  "university_id"
-    t.integer  "major_story_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.index ["event_id"], name: "index_comments_on_event_id"
-    t.index ["major_story_id"], name: "index_comments_on_major_story_id"
     t.index ["university_id"], name: "index_comments_on_university_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
@@ -164,7 +162,6 @@ ActiveRecord::Schema.define(version: 20160827034857) do
     t.string   "place"
     t.string   "file"
     t.string   "major_type"
-    t.text     "body"
     t.integer  "university_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
