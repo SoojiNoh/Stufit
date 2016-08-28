@@ -1,4 +1,13 @@
-<%= link_to "목록", activities_path, :class=>"waves-effect waves-light btn"%>
+<head>
+ <style>
+  img {
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /* ie8 */
+}
+</style>
+</head>
+<%= link_to "목록", activities_path, :class=>"waves-effect waves-light btn", :style=>"float: right;"%>
 <div class="row" style="margin-top:30px">
   <table class="centered highlight">
     <thead>
@@ -57,14 +66,14 @@
     </thead>
     <tbody>
       <tr>
-        <td style='text-align:center; vertical-align:middle'><%= image_tag "camaro.jpg" %></td>
+        <td style='text-align:center; vertical-align:middle'><%= image_tag "#{@activity.image}" %></td>
       </tr>
     </tbody>
   </table>
 </div>
 <div class="row">
-<%= link_to "수정", edit_activity_path(@activity), :class=>"waves-effect waves-light btn"%>
-<%= link_to "삭제", activity_path(@activity), method: "delete", :class=>"waves-effect waves-light btn" %>
+<%= link_to "삭제", activity_path(@activity), method: "delete", :class=>"waves-effect waves-light btn", :style=>"float: right;" %>
+<%= link_to "수정", edit_activity_path(@activity), :class=>"waves-effect waves-light btn", :style=>"float: right;"%>
 </div>
 <h3>관련 태그</h3>
 <p>

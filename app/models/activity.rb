@@ -15,7 +15,7 @@ class Activity < ApplicationRecord
   
   def self.search(search)
   if search
-    where('content LIKE ?', "%#{search}%")
+    where('title LIKE :search OR content LIKE :search', search: "%#{search}%")
   else
     where(nil)
   end
