@@ -1,13 +1,14 @@
 <h5 class="center">정보게시판 목록</h5>
 <!--검색바-->
-   <div id="search" class="row white-text grey darken-3 " >
-       <div class="container">
+   <div id="search" class="nav-wrapper" >
+       <div class="container  input-field">
              <%= form_tag events_path, :method => 'get' do %>
              <%= hidden_field_tag :direction, params[:direction]%>
              <%= hidden_field_tag :sort, params[:sort]%>  
-             <p>
-               <%= text_field_tag :search, params[:search] %>
+
+               <%= text_field_tag :search, params[:search]%>
                <%= submit_tag "Search", :content => nil %>
+             <%end%>
              </p>
        </div>
    </div>
@@ -25,7 +26,6 @@
   </nav>
     
     
-<% end %>
 
 <!--게시판 리스트-->
 <div class="row">
