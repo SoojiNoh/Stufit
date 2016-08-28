@@ -36,18 +36,20 @@
 
    <!--버튼 기능-->
 
+<div>
+   <% @event.comments.each do |comment| %>
+     <%= comment.user.name %><br>
+     <%= comment.content %>
+     <%= link_to "댓글 삭제", comment_path(comment), method: :delete,:class=>"mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
+     
+   <% end %>
+</div>
+<div>
+   <%= render partial: 'comments/new', locals: { :comment => @event.comments.new , event: @event.id, belong: "event"} %>
+</div>
 <div class="mdl-cell mdl-cell--6-col-tablet mdl-cell--10-col-desktop mdl-cell--stretch" >
    <%= link_to "삭제", event_path(@event), method: "delete",:class=>"mdl-button mdl-js-button mdl-button--raised mdl-button--colored", :style=>"float: right;"%>
    <%= link_to "수정", edit_event_path(@event),:class=>"mdl-button mdl-js-button mdl-button--raised mdl-button--colored", :style=>"float: right;"%>
    <%= link_to "목록", events_path, :class=>"mdl-button mdl-js-button mdl-button--raised mdl-button--colored", :style=>"float: right;" %>
    <%= link_to '새 글쓰기', new_event_path ,:class=>"mdl-button mdl-js-button mdl-button--raised mdl-button--colored", :style=>"float: right;" %>
 </div>
-   <% @event.comments.each do |comment| %>
-     <h4>
-     <%= comment.user.name %>
-     <%= comment.content %>
-     <%= link_to "댓글삭제", comment_path(comment), method: :delete %>
-     </h4>
-   <% end %>
-
-   <%= render partial: 'comments/new', locals: { :comment => @event.comments.new , event: @event.id, belong: "event"} %>

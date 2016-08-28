@@ -1,24 +1,33 @@
-<h5 class="center">정보게시판 목록</h5>
-<!--검색바-->
-   <div id="search" class="nav-wrapper" >
-       <div class="container input-field">
-             <%= form_tag events_path, :method => 'get' do %>
-             <%= hidden_field_tag :direction, params[:direction]%>
-             <%= hidden_field_tag :sort, params[:sort]%>  
-
-               <%= text_field_tag :search, params[:search]%>
-               <%= submit_tag "Search", :content => nil %>
-             <%end%>
-             </p>
-       </div>
-   </div>
+<head>
+    <style>
+        table { 
+        display:block;
+        table-layout: fixed;
+        overflow-x: auto;
+    white-space:nowrap;
+    }
+    </style>
+</head>
+<div class="mdl-cell mdl-cell--12-col">
+<h5>정보게시판</h5><br>
+</div>
+<div class="mdl-cell mdl-cell--12-col center ">
+    <%= form_tag events_path, :method => 'get', :id => "events_search" do %>
+    <%= hidden_field_tag :direction, params[:direction]%>
+    <%= hidden_field_tag :sort, params[:sort]%>  
+    <%= text_field_tag :search, params[:search], :class=>"mdl-textfield__input", :for=>"sample1" , :placeholder=>"검색어를 입력하세요"  %>
+    <%= submit_tag "검색", :content => nil, :class=>"mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
+    <%end%>
+</div>
+    
 
 <!--게시판 리스트-->
 <div class="mdl-cell mdl-cell--12-col">
+<%= link_to "새글 쓰기", new_event_path , :class=>"mdl-button mdl-js-button mdl-button--raised mdl-button--colored", :style=>"float: right;"%>
 <table class="mdl-data-table mdl-js-data-table" style="width: 100%;">
 <thead>
    <tr>
-     <th colspan="10" class="mdl-data-table__cell--non-numeric"><%= sortable "title", "제목"%></th>
+     <th class="mdl-data-table__cell--non-numeric"><%= sortable "title", "제목"%></th>
      <th class="mdl-data-table__cell--non-numeric"><%= sortable "content", "내용"%></th>
      <th class="mdl-data-table__cell--non-numeric"><%= sortable "created_at", "작성일"%></th>
      <th class="mdl-data-table__cell--non-numeric">조회수</th>
@@ -29,12 +38,12 @@
    <% @events.each do |event| %>
 
        <tr>
-       <td><%= link_to event.title, event_path(event) %></td>
-       <td><%= link_to "#{truncate(event.content, :length => 30, :separator=>' ')}", event_path(event) %></td>
-       <td><%= truncate(event.created_at.in_time_zone("Asia/Seoul").strftime("%Y년%m월%d일 %H시%M분%S초"), :length => 14, :separator=>' ')%></td>
-       <td><%= event.impressions.count %> </td> <!--조회수 event.impressionist -->
+       <td class="mdl-data-table__cell--non-numeric"><%= link_to event.title, event_path(event) %></td>
+       <td class="mdl-data-table__cell--non-numeric"><%= link_to "#{truncate(event.content, :length => 30, :separator=>' ')}", event_path(event) %></td>
+       <td class="mdl-data-table__cell--non-numeric"><%= truncate(event.created_at.in_time_zone("Asia/Seoul").strftime("%Y년%m월%d일 %H시%M분%S초"), :length => 14, :separator=>' ')%></td>
+       <td class="mdl-data-table__cell--non-numeric"><%= event.impressions.count %> </td> <!--조회수 event.impressionist -->
 
-       <td>
+       <td class="mdl-data-table__cell--non-numeric">
         <% if current_user.events.where(id: event.id).take != nil  %>
           <%= link_to "/events/eventfollow_destroy/#{UserEvent.where(user: current_user, event: event).take.id}" do %><i class="pull_star material-icons">star</i> <% end %>
         <% else %>
@@ -49,6 +58,6 @@
 <%= will_paginate @events %>
 </div>
 
-<%= link_to "새글쓰기", new_event_path , :class=>"mdl-button mdl-js-button mdl-button--raised mdl-button--colored", :style=>"float: right;"%>
+
 <!--페이지 넘기기-->
 
