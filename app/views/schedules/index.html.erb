@@ -1,62 +1,59 @@
 <p id="notice"><%= notice %></p>
 
-<h1>스튜핏 캘린더</h1>
-
-<%= form_tag(schedules_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "시간형식'1995-01-24 23:59:59" %>
-<%= submit_tag "Search" %>
-<% end %>
-
-
-<table>
-  <thead>
-    <tr>
-      <th>일정</th>
-      <th>설명</th>
-      <th>장소</th>
-      <th>첨부파일</th>
-      <th>분류</th>
-      <th>시작시점</th>
-      <th>종료시점</th>
-      <th>대학</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-
-  <% if @schedules.present? %>
-    <tbody>
-      <% @schedules.each do |schedule| %>
-        <tr>
-          <td><%= schedule.title %></td>
-          <td><%= schedule.content %></td>
-          <td><%= schedule.place %></td>
-          <td><%= schedule.file %></td>
-          <td><%= schedule.event_type %></td>
-          <td><%= schedule.start_at %></td>
-          <td><%= schedule.end_at %></td>
-          <td><%= schedule.university_id %></td>
-          <td><%= link_to '자세히', schedule %></td>
-          <td><%= link_to '수정', edit_schedule_path(schedule) %></td>
-          <td><%= link_to '삭제', schedule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<div class="row">
+  <h3>스튜핏 캘린더</h3>
+  
+  <%= form_tag(schedules_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "시간형식'1995-01-24 23:59:59" %>
+  <%= submit_tag "Search" %>
+  <% end %>
+  
+  <div class="col s7">
+      <%= link_to '일정추가', new_schedule_path %>
+    <table>
+      <thead>
+        <tr style="text-align: center;">
+          <th colspan="5">일정</th>
+          <th colspan="3">장소</th>
+          <th colspan="3">분류</th>
+          <th colspan="4">시작시점</th>
+          <th colspan="4">종료시점</th>
         </tr>
-      <% end %>
-    </tbody>
-    <% else %>
-      <p>There are no schedules containing the term(s) <%= params[:search] %>.</p>
-    <% end %>
-</table>
+      </thead>
+    
+    
+      <% if @schedules.present? %>
+        <tbody>
+          <% @schedules.each do |schedule| %>
+            <tr>
+              <td><%= schedule.title %></td>
+              <td><%= schedule.place %></td>
+              <td><%= schedule.event_type %></td>
+              <td><%= schedule.start_at %></td>
+              <td><%= schedule.end_at %></td>
+              <td><%= link_to '자세히', schedule %></td>
+              <td><%= link_to '수정', edit_schedule_path(schedule) %></td>
+              <td><%= link_to '삭제', schedule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+        <% else %>
+          <p>There are no schedules containing the term(s) <%= params[:search] %>.</p>
+        <% end %>
+    </table>
+</div>
 
-<br>
+<div class="col s5">
 
-<%= link_to '일정추가', new_schedule_path %>
+  
+  <div id='calendar'></div>
+</div>
 
-<div id='calendar'></div>
-
-
+</div>
 <script>
-
-    $('#calendar').fullCalendar(
+ $(document).ready(function(){
+   $('#calendar').empty();
+   $('#calendar').fullCalendar(
       {
         eventSources: [
   
@@ -69,6 +66,7 @@
           ]
                // schedules: '/schedules.json'
                 // put your options and callbacks here
-            });  
+            });   
+ });
 </script>
 
