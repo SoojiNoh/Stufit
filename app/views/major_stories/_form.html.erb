@@ -13,32 +13,32 @@
 
   <div class="field" col="3">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title %> <!-- 인터뷰 제목 -->
   </div>
   <div>
     <%= f.label :body %>
-    <%= f.cktext_area :body, rows: 10 %>
+    <%= f.cktext_area :body, rows: 10 %><!-- 인터뷰 내용 -->
   </div>
   <div class="field">
     <%= f.label :content %><br>
-    <%= f.text_area :content %>
+    <%= f.text_area :content %> <!-- 학교이름 -->
   </div>
   <div class="field">
     <%= f.label :place %><br>
-    <%= f.text_field :place %>
+    <%= f.text_field :place %><!-- 학과 이름 -->
   </div>
   <div class="field">
     <%= f.label :file %><br>
-    <%= f.text_field :file %>
+    <%= f.text_field :file %><!-- 학년 및 이름 -->
   </div>
   <div class="field">
     <%= f.label :major_type %><br>
-    <%= f.text_field :major_type %>
+    <%= f.file_field :major_type %><!-- 썸네일 이미지 -->
   </div>
- 
+
   <div class="field">
     <%= f.label :university %><br>
-    <%= f.file_field :university %>
+    <%= f.text_field :university %>
   </div>
   <div class="actions">
     <%= f.submit %>

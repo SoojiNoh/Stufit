@@ -15,14 +15,16 @@ class MajorStory < ApplicationRecord
   has_many :users, through: :major_follows
 
   def self.search(search)
-  if search
-    where('place LIKE :search OR file LIKE :search', search: "%#{search}%")
-  else
-    where(nil)
+    if search
+      where('title LIKE :search OR content LIKE :search OR place LIKE :search OR file LIKE :search', search: "%#{search}%")
+    else
+      where(nil)
+    end
   end
-end
   # User : Major_like : Major_story relation => N:M
   has_many :major_likes
   has_many :users, through: :major_likes
+
+  mount_uploader :major_type, AvatarUploader
 
 end
