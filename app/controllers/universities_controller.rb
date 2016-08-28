@@ -1,8 +1,8 @@
 class UniversitiesController < ApplicationController
 
   def index
-    @universities = University.all
-
+    @universities = University.paginate(:page => params[:page], :per_page => 12)
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render xml: @universities }
