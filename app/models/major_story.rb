@@ -14,4 +14,12 @@ class MajorStory < ApplicationRecord
   has_many :major_follows
   has_many :users, through: :major_follows
 
+  def self.search(search)
+  if search
+    where('place LIKE :search OR file LIKE :search', search: "%#{search}%")
+  else
+    where(nil)
+  end
+end
+
 end
