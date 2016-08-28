@@ -1,13 +1,16 @@
-
-<%= form_tag activities_path, :method => 'get', :id => "activities_search", :style=>"margin-top:50px" do %>
+<div class="mdl-cell mdl-cell--12-col">
+<h5>활동내역</h5>
+</div>
+<div class="mdl-cell mdl-cell--12-col center">
+<%= form_tag activities_path, :method => 'get', :id => "activities_search" do %>
   <%= hidden_field_tag :direction, params[:direction]%>
   <%= hidden_field_tag :sort, params[:sort]%>  
   <p>
     <%= text_field_tag :search, params[:search], :placeholder=>"검색어를 입력하세요" %>
-    
-    <a class="waves-effect waves-light btn"><%= submit_tag "검색", :content => nil%></a>
-  
-  </p>
+  <%= submit_tag "검색", :content => nil, :class=>"mdl-button mdl-js-button mdl-button--raised mdl-button--colored"%>
+
+</div>
+      </p>
 <% end %>
 
 
@@ -27,6 +30,9 @@
 </script>
 	<style>
 
+        table td.shrink {
+    white-space:nowrap
+}
 
 table { 
         display:block;
@@ -42,17 +48,18 @@ table {
 	
 </head>
 
-<div class="row col s12 m12 l12" style="margin-top:50px">
-<table class="centered highlight responsive-table table-wrapping" sytle="width: 100%;" >
+<div class="mdl-cell mdl-cell--12-col">
+          <%= link_to "새로 만들기", new_activity_path, :class=>"mdl-button mdl-js-button mdl-button--raised mdl-button--colored", :style=>"float: right;"%>
+<table class="mdl-data-table mdl-js-data-table" style="width: 100%;" >
       <thead>
         <tr>
-                <th data-field="id"><%= sortable "activity_type", "교내/교외"%></th>
-          <th data-field="name"><%= sortable "style", "분류"%></th>
-          <th data-field="price"><%= sortable  "title",  "활동명"%></th>
-          <th data-field="price"><%= sortable "content", "내용"%></th>
-          <th data-field="name"><%= sortable"host_name",  "주관기관"%></th>
-          <th data-field="price"><%= sortable "start_at", "시작일" %></th>
-          <th data-field="price"><%= sortable "end_at", "종료일" %></th>
+          <th data-field="id" class="mdl-data-table__cell--non-numeric"><%= sortable "activity_type", "교내/교외"%></th>
+          <th data-field="name" class="mdl-data-table__cell--non-numeric"><%= sortable "style", "분류"%></th>
+          <th data-field="price" class="mdl-data-table__cell--non-numeric"><%= sortable  "title",  "활동명"%></th>
+          <th data-field="price" class="mdl-data-table__cell--non-numeric"><%= sortable "content", "내용"%></th>
+          <th data-field="name" class="mdl-data-table__cell--non-numeric"><%= sortable"host_name",  "주관기관"%></th>
+          <th data-field="price" class="mdl-data-table__cell--non-numeric"><%= sortable "start_at", "시작일" %></th>
+          <th data-field="price" class="mdl-data-table__cell--non-numeric"><%= sortable "end_at", "종료일" %></th>
           
         </tr>
       </thead>
@@ -60,19 +67,16 @@ table {
       <tbody>
         <% @activities.each do |a| %>
         <tr>
-          <td><%=a.activity_type%></td>
-          <td><%=a.style%></td>
-          <td><%= link_to a.title, activity_path(a) %></td>
-          <td><%=truncate(a.content, :length => 20, :separator=>' ')do link_to "see more...", activity_path(a) end%></td>
-          <td><%=a.host_name%></td>
-          <td><%=a.start_at%></td>
-          <td><%=a.end_at%></td>
+          <td class="mdl-data-table__cell--non-numeric"><%=a.activity_type%></td>
+          <td class="mdl-data-table__cell--non-numeric"><%=a.style%></td>
+          <td class="mdl-data-table__cell--non-numeric"><%= link_to a.title, activity_path(a) %></td>
+          <td class="mdl-data-table__cell--non-numeric"><%=truncate(a.content, :length => 20, :separator=>' ')do link_to "see more...", activity_path(a) end%></td>
+          <td class="mdl-data-table__cell--non-numeric"><%=a.host_name%></td>
+          <td class="mdl-data-table__cell--non-numeric"><%=a.start_at%></td>
+          <td class="mdl-data-table__cell--non-numeric"><%=a.end_at%></td>
         <%end%>
         </tr>
         </tbody>
         </table>
-        <%= link_to "새로 만들기", new_activity_path, :class=>"waves-effect waves-light btn", :style=>"float: right;"%>
   <%= will_paginate @activities %>
   </div>
-</div>  
-</ul>

@@ -2,6 +2,7 @@
 
 <h1>전공 스토리</h1>
 
+<<<<<<< HEAD
 
 
 <!-- Square card -->
@@ -27,6 +28,32 @@
               <%= link_to '수정', edit_major_story_path(major_story) %>
               <%= link_to '삭제', major_story, method: :delete, data: { confirm: 'Are you sure?' } %>
           </div>
+=======
+<%= form_tag major_stories_path, :method => 'get', :id => "activities_search", :style=>"margin-top:50px" do %>
+  <%= hidden_field_tag :direction, params[:direction]%>
+  <%= hidden_field_tag :sort, params[:sort]%>  
+  <p>
+    <%= text_field_tag :search, params[:search], :placeholder=>"검색어를 입력하세요" %>
+    
+    <a class="waves-effect waves-light btn"><%= submit_tag "검색", :content => nil%></a>
+  
+  </p>
+<% end %>
+<div class="row">
+<% @major_stories.each do |major_story| %>
+  <div class="col s3 m3">
+    <div class="card">
+      <div class="card-image">
+      <%= link_to major_story_path(major_story) do %>
+        <img src="https://snupsy.sona-systems.com/custom/customlogo.png" >
+        <span class="card-title"><%= major_story.content %></span>
+      </div>
+        <div class="card-content">
+          <p><%= major_story.content %></p><br><%= major_story.place %>
+        </div>
+        <div class="card-action">
+          <%= link_to "자세히 보기", major_story %>
+>>>>>>> 81f9771896f525dfd65119e4ec8b51d1c2792ec1
         </div>
       </div>
       <% end %>

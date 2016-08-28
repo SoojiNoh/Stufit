@@ -24,10 +24,6 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-<<<<<<< HEAD
-    params.require(:comment).permit(:content, :event_id)
-=======
     params.require(:comment).permit(:content, :event_id, :university_id, :major_story_id)
->>>>>>> 5c1c87f677ba0d9e16c8eb8973eded3c90bc1672
   end
 end

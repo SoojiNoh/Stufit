@@ -4,13 +4,13 @@
 
   <% if belong=="university" %>
     <%= f.hidden_field :university_id, value: university %>
-  <% end %>  
+  <% end %>
   <% if belong=="major_story" %>
-    <%= f.hidden_field :major_story_id, value: major_story %>  
+    <%= f.hidden_field :major_story_id, value: major_story %>
   <% end %>
   <% if belong=="event" %>
     <%= f.hidden_field :event_id, value: event %>
   <% end %>
 
-  <%= f.submit "submit" %>
+  <%= f.submit "submit", class:"mdl-button mdl-js-button mdl-button--raised mdl-button--colored"%>
 <% end %>
