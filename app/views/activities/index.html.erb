@@ -23,17 +23,23 @@
     
 </script>
 	<style>
-	  table {
-  width: 100%
-}
-	</style>
+
+table { 
+        display:block;
+        table-layout: fixed;
+        overflow-x: scroll;
+    white-space:nowrap;
+    }
+
+  </style>
+
 	
 
 </head>
 
 <div class="row col s12 m12 l12" style="margin-top:100px">
 <%= link_to "new", new_activity_path, class:"btn-floating red" %>
-<table class="centered highlight responsive-table table-wrapping" style="width:auto" >
+<table class="centered highlight responsive-table table-wrapping" sytle="width: 100%;" >
       <thead>
         <tr>
                 <th data-field="id"><%= sortable "activity_type", "교내/교외"%></th>
