@@ -1,5 +1,6 @@
 <%= form_for comment do |f| %>
   <%= f.label :content, 'content' %>
   <%= f.text_field :content %>
+  <%= f.hidden_field :event_id, value: event %>
   <%= f.submit "submit" %>
 <% end %>

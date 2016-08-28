@@ -18,3 +18,4 @@
 //= require Chart
 //= require moment 
 //= require fullcalendar
+//= require ckeditor/init

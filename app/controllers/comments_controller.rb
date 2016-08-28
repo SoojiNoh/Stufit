@@ -1,7 +1,8 @@
 class CommentsController < ApplicationController
-  
+
   def create
     @comment = Comment.new(comment_params)
+    @comment.user = current_user
 
     respond_to do |format|
       if @comment.save
@@ -19,13 +20,10 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @comment.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(comments_url) }
-      format.xml  { head :ok }
-    end
+    redirect_to :back
   end
 
   def comment_params
-    params.require(:comment).permit()
+    params.require(:comment).permit(:content, :event_id)
   end
 end

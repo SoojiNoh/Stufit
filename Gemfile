@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+gem 'ckeditor'
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
+gem "paperclip"
+
 
 gem 'impressionist'
 gem 'fullcalendar-rails'
