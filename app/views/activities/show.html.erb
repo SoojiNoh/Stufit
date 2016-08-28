@@ -1,6 +1,5 @@
-<%= link_to "수정", edit_activity_path(@activity) %>
-<%= link_to "삭제", activity_path(@activity), method: "delete" %>
-<div class="row" style="margin-top:100px">
+<%= link_to "목록", activities_path, :class=>"waves-effect waves-light btn"%>
+<div class="row" style="margin-top:30px">
   <table class="centered highlight">
     <thead>
       <tr>
@@ -36,7 +35,6 @@
         <th data-field="id">내용</th>  
         <th data-field="price">시작일</th>
         <th data-field="price">종료일</th>
-          <th data-field="price">조회수</th>
       
       </tr>
     </thead>
@@ -45,7 +43,6 @@
         <td style='text-align:center; vertical-align:middle'><%=@activity.content%></td>
         <td style='text-align:center; vertical-align:middle'><%=@activity.start_at%></td>
         <td style='text-align:center; vertical-align:middle'><%=@activity.end_at%></td>
-        <td style='text-align:center; vertical-align:middle'><%=@activity.impressions.count%></td>
       </tr>          
     </tbody>
 
@@ -65,7 +62,10 @@
     </tbody>
   </table>
 </div>
-
+<div class="row">
+<%= link_to "수정", edit_activity_path(@activity), :class=>"waves-effect waves-light btn"%>
+<%= link_to "삭제", activity_path(@activity), method: "delete", :class=>"waves-effect waves-light btn" %>
+</div>
 <h3>관련 태그</h3>
 <p>
 <% @activity.hash_tags.each do |hash| %>
@@ -73,4 +73,5 @@
 <% end %>
 </p>
 
-<td style='text-align:center; vertical-align:middle'><a href='/activities/image/<%=@activity.id%>'>이미지</a></td>
+<!--<td style='text-align:center; vertical-align:middle'><a href='/activities/image/<%=@activity.id%>'>이미지</a></td>
+--!>
