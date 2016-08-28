@@ -1,10 +1,26 @@
-<div class="row" style="margin-top: 100px">
+<head>
+    <style>
+        table {
+    table-layout: auto;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table td.absorbing-column {
+    width: 100%;
+}
+
+    </style>
+</head>
+
+<div class="row">
 <%= form_for @activity, multipart: true do |a| %>
 <%= render partial: 'form', locals: { :f => a} %>
 <% end %>
-</div>
+
 <script>
     $(document).ready(function() {
     $('select').material_select();
 });
 </script>
+</div>

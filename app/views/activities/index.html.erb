@@ -4,8 +4,11 @@
   <%= hidden_field_tag :sort, params[:sort]%>  
   <p>
     <%= text_field_tag :search, params[:search], :placeholder=>"검색어를 입력하세요" %>
+  <div class="mdl-cell mdl-cell--12-col"><%= submit_tag "검색", :content => nil, :class=>"mdl-button mdl-js-button mdl-button--raised mdl-button--colored"%>
+
+</div>
     
-    <a class="waves-effect waves-light btn"><%= submit_tag "검색", :content => nil%></a>
+    
   
   </p>
 <% end %>
@@ -27,6 +30,9 @@
 </script>
 	<style>
 
+        table td.shrink {
+    white-space:nowrap
+}
 
 table { 
         display:block;
@@ -42,9 +48,9 @@ table {
 	
 </head>
 
-<div class="row col s12 m12 l12" style="margin-top:50px">
+<div class="mdl-cell mdl-cell--12-col">
           <%= link_to "새로 만들기", new_activity_path, :class=>"mdl-button mdl-js-button mdl-button--raised mdl-button--colored", :style=>"float: right;"%>
-<table class="mdl-data-table mdl-js-data-table" sytle="width: 100%;" >
+<table class="mdl-data-table mdl-js-data-table" style="width: 100%;" >
       <thead>
         <tr>
           <th data-field="id" class="mdl-data-table__cell--non-numeric"><%= sortable "activity_type", "교내/교외"%></th>
@@ -74,5 +80,3 @@ table {
         </table>
   <%= will_paginate @activities %>
   </div>
-</div>  
-</ul>

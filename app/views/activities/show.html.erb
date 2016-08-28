@@ -5,16 +5,18 @@
     height: auto;
     width: auto\9; /* ie8 */
 }
+
+
 </style>
 </head>
 
-<div class="row mdl-textfield mdl-js-textfield" style="margin-top:30px">
-  <table class="mdl-data-table mdl-js-data-table">
+  <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--6-col-tablet mdl-cell--10-col-desktop mdl-cell--stretch" >
+  <table class="mdl-data-table mdl-js-data-table" style="width:100%;">
     <thead>
       <tr>
-        <th data-field="id" class="mdl-data-table__cell--non-numeric">교내/교외</th>
-        <th data-field="name" class="mdl-data-table__cell--non-numeric">분류</th>  
-        <th data-field="price" class="mdl-data-table__cell--non-numeric">활동명</th>
+        <th data-field="id" class="mdl-data-table__cell--non-numeric", style='text-align:center; vertical-align:middle'>교내/교외</th>
+        <th data-field="name" class="mdl-data-table__cell--non-numeric", style='text-align:center; vertical-align:middle'>분류</th>  
+        <th data-field="price" class="mdl-data-table__cell--non-numeric", style='text-align:center; vertical-align:middle'>활동명</th>
       </tr>
     </thead>
     <tbody>
@@ -24,11 +26,12 @@
         <td style='text-align:center; vertical-align:middle' class="mdl-data-table__cell--non-numeric"><%=@activity.title%></td>
       </tr>
     </tbody>
+
     <thead>
       <tr>
-        <th data-field="price" class="mdl-data-table__cell--non-numeric">주관기관</th>
-        <th data-field="id" class="mdl-data-table__cell--non-numeric">발급번호</th>
-        <th data-field="name" class="mdl-data-table__cell--non-numeric">급수(점수)</th>
+        <th data-field="price" class="mdl-data-table__cell--non-numeric", style='text-align:center; vertical-align:middle'>주관기관</th>
+        <th data-field="id" class="mdl-data-table__cell--non-numeric", style='text-align:center; vertical-align:middle'>발급번호</th>
+        <th data-field="name" class="mdl-data-table__cell--non-numeric", style='text-align:center; vertical-align:middle'>급수(점수)</th>
 
       </tr>
     </thead>
@@ -41,8 +44,8 @@
     </tbody>
     <thead>
       <tr>
-        <th data-field="price" class="mdl-data-table__cell--non-numeric">시작일</th>
-        <th data-field="price" class="mdl-data-table__cell--non-numeric">종료일</th>
+        <th data-field="price" class="mdl-data-table__cell--non-numeric", style='text-align:center; vertical-align:middle'>시작일</th>
+        <th data-field="price" class="mdl-data-table__cell--non-numeric", style='text-align:center; vertical-align:middle'>종료일</th>
       </tr>
     </thead>
     <tbody>
@@ -54,11 +57,12 @@
 
   </table>
 </div>
-<div class="row">
+
+  <div class="mdl-cell mdl-cell--12-col-tablet mdl-cell--10-col-desktop mdl-cell--stretchmdl-textfield mdl-js-textfield">
 <table class="mdl-data-table mdl-js-data-table">
   <thead>
     <tr>
-      <th data-field="id" class="mdl-data-table__cell--non-numeric">내용</th>  
+      <th data-field="id" class="mdl-data-table__cell--non-numeric", style='text-align:center; vertical-align:middle'>내용</th>  
     </tr>
   </thead>
   <tbody>
@@ -68,7 +72,9 @@
   </tbody>
 </table>
 </div>
-<div class='row'>
+
+
+  <div class="mdl-cell mdl-cell--6-col-tablet mdl-cell--10-col-desktop mdl-cell--stretch">
   <table class="mdl-data-table mdl-js-data-table">
     <thead>
       <tr>
@@ -82,18 +88,24 @@
     </tbody>
   </table>
 </div>
-<div class="row">
 
-<%= link_to "삭제", activity_path(@activity), method: "delete", :class=>"waves-effect waves-light btn", :style=>"float: right;" %>
-<%= link_to "수정", edit_activity_path(@activity), :class=>"waves-effect waves-light btn", :style=>"float: right;"%>
-<%= link_to "목록", activities_path, :class=>"waves-effect waves-light btn", :style=>"float: right;"%>
-</div>
-<h3>관련 태그</h3>
+<div class="mdl-cell mdl-cell--6-col-tablet mdl-cell--10-col-desktop mdl-cell--stretch">
+<h5>관련 태그</h5>
 <p>
 <% @activity.hash_tags.each do |hash| %>
-  <div class="chip"> <%= link_to "#{hash.name}", hash_tag_path(hash) %> </div> &nbsp;
+<span class="mdl-chip">
+    <span class="mdl-chip__text"><%= link_to "#{hash.name}", hash_tag_path(hash) %></span>
+</span>
 <% end %>
 </p>
+</div>
+
+<div class="mdl-cell mdl-cell--6-col-tablet mdl-cell--10-col-desktop mdl-cell--stretch">
+<%= link_to "삭제", activity_path(@activity), method: "delete", :class=>"mdl-button mdl-js-button mdl-button--raised mdl-button--colored", :style=>"float: right;" %>
+<%= link_to "수정", edit_activity_path(@activity), :class=>"mdl-button mdl-js-button mdl-button--raised mdl-button--colored", :style=>"float: right;"%>
+<%= link_to "목록", activities_path, :class=>"mdl-button mdl-js-button mdl-button--raised mdl-button--colored", :style=>"float: right;"%>
+</div>
+
 
 <!--<td style='text-align:center; vertical-align:middle'><a href='/activities/image/<%=@activity.id%>'>이미지</a></td>
 --!>

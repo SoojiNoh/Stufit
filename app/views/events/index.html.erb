@@ -1,7 +1,7 @@
 <h5 class="center">정보게시판 목록</h5>
 <!--검색바-->
    <div id="search" class="nav-wrapper" >
-       <div class="container  input-field">
+       <div class="container input-field">
              <%= form_tag events_path, :method => 'get' do %>
              <%= hidden_field_tag :direction, params[:direction]%>
              <%= hidden_field_tag :sort, params[:sort]%>  
@@ -12,32 +12,16 @@
              </p>
        </div>
    </div>
-    
-     <nav>
-    <div class="nav-wrapper">
-      <form>
-        <div class="input-field">
-          <input id="search" type="search" required>
-          <label for="search"><i class="material-icons">search</i></label>
-          <i class="material-icons">close</i>
-        </div>
-      </form>
-    </div>
-  </nav>
-    
-    
 
 <!--게시판 리스트-->
-<div class="row">
- 
-</br>
-<table>
+<div class="mdl-cell mdl-cell--12-col">
+<table class="mdl-data-table mdl-js-data-table" style="width: 100%;">
 <thead>
    <tr>
-     <th><%= sortable "title", "제목"%></th>
-     <th><%= sortable "content", "내용"%></th>
-     <th><%= sortable "created_at", "작성일"%></th>
-     <td>조회수</td>
+     <th colspan="10" class="mdl-data-table__cell--non-numeric"><%= sortable "title", "제목"%></th>
+     <th class="mdl-data-table__cell--non-numeric"><%= sortable "content", "내용"%></th>
+     <th class="mdl-data-table__cell--non-numeric"><%= sortable "created_at", "작성일"%></th>
+     <th class="mdl-data-table__cell--non-numeric">조회수</th>
    </tr>
  </thead>
 
@@ -62,8 +46,9 @@
    <% end %>
  </tbody>
 </table>
-<br>
-<%= link_to "새 글쓰기", new_event_path ,class: 'waves-effect waves-light btn' %>
-<br>
-<!--페이지 넘기기-->
 <%= will_paginate @events %>
+</div>
+
+<%= link_to "새글쓰기", new_event_path , :class=>"mdl-button mdl-js-button mdl-button--raised mdl-button--colored", :style=>"float: right;"%>
+<!--페이지 넘기기-->
+

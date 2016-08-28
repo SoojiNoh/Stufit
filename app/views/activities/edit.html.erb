@@ -1,8 +1,15 @@
-<div class="row" style="margin-top: 100px">
+<head>
+    <style>
+        table td.shrink {
+    white-space:nowrap
+}
+    </style>
+</head>
+
 <%= form_for @activity do |a| %>
 <%= render partial: 'form', locals: { :f => a} %>
 <% end %>
-</div>
+
 
 <script>
     $(document).ready(function() {
