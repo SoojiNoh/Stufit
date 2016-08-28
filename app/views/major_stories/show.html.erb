@@ -5,9 +5,17 @@
 
 <p><%= @major_story.body.html_safe %></p>
 
-
-
-
+<% @major_story.comments.each do |comment| %>
+     <h4>
+     <%= comment.user.name %>
+     <%= comment.content %>
+     <%= link_to "댓글삭제", comment_path(comment), method: :delete %>
+     </h4>
+<% end %>
 
 <%= link_to 'Edit', edit_major_story_path(@major_story) %> |
 <%= link_to 'Back', major_stories_path %>
+
+
+
+<%= render partial: '/comments/new', locals: { :comment => @major_story.comments.new, major_story: @major_story.id, belong: "major_story" } %>
