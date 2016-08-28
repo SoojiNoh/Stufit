@@ -3,6 +3,7 @@
 <%= form_for @event, multipart: true do |d| %>
   <%= render partial: 'form', locals: { :f => d} %>
 <% end %>
+
 <script>
     $(document).ready(function() {
     $('select').material_select();

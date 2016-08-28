@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-//= require materialize/dist/js/materialize.min
+//= require material-design-lite//material.min
 //= require Chart
 //= require moment 
 //= require fullcalendar
