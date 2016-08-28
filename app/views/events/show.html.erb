@@ -53,4 +53,4 @@
      </h4>
    <% end %>
 
-   <%= render partial: 'comments/new', locals: { :comment => @event.comments.new , event: @event.id} %>
+   <%= render partial: 'comments/new', locals: { :comment => @event.comments.new , event: @event.id, belong: "event"} %>
