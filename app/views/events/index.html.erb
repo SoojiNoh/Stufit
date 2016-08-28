@@ -1,16 +1,35 @@
-<%= form_tag events_path, :method => 'get' do %>
-  <%= hidden_field_tag :direction, params[:direction]%>
-  <%= hidden_field_tag :sort, params[:sort]%>  
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :content => nil %>
-  </p>
+<h5 class="center">정보게시판 목록</h5>
+<!--검색바-->
+   <div id="search" class="row white-text grey darken-3 " >
+       <div class="container">
+             <%= form_tag events_path, :method => 'get' do %>
+             <%= hidden_field_tag :direction, params[:direction]%>
+             <%= hidden_field_tag :sort, params[:sort]%>  
+             <p>
+               <%= text_field_tag :search, params[:search] %>
+               <%= submit_tag "Search", :content => nil %>
+             </p>
+       </div>
+   </div>
+    
+     <nav>
+    <div class="nav-wrapper">
+      <form>
+        <div class="input-field">
+          <input id="search" type="search" required>
+          <label for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+      </form>
+    </div>
+  </nav>
+    
+    
 <% end %>
 
-
+<!--게시판 리스트-->
 <div class="row">
  
-<h5>정보게시판 목록</h5>
 </br>
 <table>
 <thead>
