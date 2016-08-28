@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <script src="/assets/javascripts/material.min.js"></script>
     <title>Stufit</title>
     <%= csrf_meta_tags %>
 
@@ -9,7 +8,6 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css">
   </head>
 
   <body>
@@ -22,7 +20,11 @@
 
         <a href="/">
           <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" >
-            <i class="material-icons">home</i>
+            <%= link_to home_index_path do %>
+              <i class="material-icons">
+                home
+              </i>
+            <% end %>
         </button></a>
         <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
           <i class="material-icons">more_vert</i>
@@ -44,26 +46,26 @@
           <% else %>
             <span> 로그인 해주세요 </span>
           <% end %>
-            <div class="mdl-layout-spacer"></div>
-            <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-              <i class="material-icons" role="presentation">arrow_drop_down</i>
-              <span class="visuallyhidden">Accounts</span>
-            </button>
-            <% if user_signed_in? %>
-              <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
-                <li class="mdl-menu__item"><%= link_to '설정', my_page_index_path , method: 'get' %></li>
-                <li class="mdl-menu__item"><%= link_to '로그아웃', destroy_user_session_path, method: 'delete' %></li>
-                <li class="mdl-menu__item"><i class="material-icons">add</i>Add another account...</li>
-              </ul>
-            <% else %>
-              <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
-                <li class="mdl-menu__item"><%= link_to '회원가입', new_user_registration_path %></li>
-                <li class="mdl-menu__item"><%= link_to '로그인', new_user_session_path %></li>
-                <li class="mdl-menu__item"><i class="material-icons">add</i>Add another account...</li>
-              </ul>
-            <% end %>
-          </div>  
-          </header>
+          <div class="mdl-layout-spacer"></div>
+          <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">arrow_drop_down</i>
+            <span class="visuallyhidden">Accounts</span>
+          </button>
+          <% if user_signed_in? %>
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+              <li class="mdl-menu__item"><%= link_to '설정', my_page_index_path , method: 'get' %></li>
+              <li class="mdl-menu__item"><%= link_to '로그아웃', destroy_user_session_path, method: 'delete' %></li>
+              <li class="mdl-menu__item"><i class="material-icons">add</i>Add another account...</li>
+            </ul>
+          <% else %>
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+              <li class="mdl-menu__item"><%= link_to '회원가입', new_user_registration_path %></li>
+              <li class="mdl-menu__item"><%= link_to '로그인', new_user_session_path %></li>
+              <li class="mdl-menu__item"><i class="material-icons">add</i>Add another account...</li>
+            </ul>
+          <% end %>
+        </div>
+        </header>
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
         <a class="mdl-navigation__link" href="/my_page/index"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">perm_identity</i>마이서비스</a>
         <a class="mdl-navigation__link" href="/events"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>행사</a>
@@ -72,21 +74,13 @@
         </nav>
       </div>
 
-
       <main class="mdl-layout__content mdl-color--grey-100">
       <div class="mdl-grid demo-content">
         <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid" style="height:500px;">
-          <%= yield %>  
-
-
-
+          <%= yield %>
         </div>
       </div>
       </main>
 
-
-
-
     </body>
-
   </html>

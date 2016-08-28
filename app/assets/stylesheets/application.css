@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require material-design-lite/material.min
+ *= require material-design-lite/styles
  *= require_self
  *= require fullcalendar
  */
