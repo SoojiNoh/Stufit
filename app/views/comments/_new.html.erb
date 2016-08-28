@@ -1,6 +1,24 @@
 <%= form_for comment do |f| %>
-  <%= f.label :content, 'content' %>
+  <%= current_user.name %>
   <%= f.text_field :content %>
+<<<<<<< HEAD
+<<<<<<< HEAD
   <%= f.hidden_field :event_id, value: event %>
+=======
+  <%= f.hidden_field :event_id, value: @event.id %>
+>>>>>>> 844e1771ac195b6b09d1316cdd0cf3ba8960de4d
+=======
+
+  <% if belong=="university" %>
+    <%= f.hidden_field :university_id, value: university %>
+  <% end %>  
+  <% if belong=="major_story" %>
+    <%= f.hidden_field :major_story_id, value: major_story %>  
+  <% end %>
+  <% if belong=="event" %>
+    <%= f.hidden_field :event_id, value: event %>
+  <% end %>
+
+>>>>>>> 5c1c87f677ba0d9e16c8eb8973eded3c90bc1672
   <%= f.submit "submit" %>
 <% end %>

@@ -1,29 +1,39 @@
-<%= form_tag events_path, :method => 'get' do %>
-  <%= hidden_field_tag :direction, params[:direction]%>
-  <%= hidden_field_tag :sort, params[:sort]%>  
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :content => nil %>
-  </p>
+<h5 class="center">정보게시판 목록</h5>
+<!--검색바-->
+   <div id="search" class="row white-text grey darken-3 " >
+       <div class="container">
+             <%= form_tag events_path, :method => 'get' do %>
+             <%= hidden_field_tag :direction, params[:direction]%>
+             <%= hidden_field_tag :sort, params[:sort]%>  
+             <p>
+               <%= text_field_tag :search, params[:search] %>
+               <%= submit_tag "Search", :content => nil %>
+             </p>
+       </div>
+   </div>
+    
+     <nav>
+    <div class="nav-wrapper">
+      <form>
+        <div class="input-field">
+          <input id="search" type="search" required>
+          <label for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+      </form>
+    </div>
+  </nav>
+    
+    
 <% end %>
 
-
+<!--게시판 리스트-->
 <div class="row">
  
-  <div class="col s3">
-       <!--왼쪽 메뉴바 -->
-  </div>
-  
-  <div class="col s9">
-
-
-
-<h5>정보게시판 목록</h5>
 </br>
 <table>
 <thead>
    <tr>
-       
      <th><%= sortable "title", "제목"%></th>
      <th><%= sortable "content", "내용"%></th>
      <th><%= sortable "created_at", "작성일"%></th>
@@ -38,10 +48,8 @@
        <td><%= link_to event.title, event_path(event) %></td>
        <td><%= link_to "#{truncate(event.content, :length => 30, :separator=>' ')}", event_path(event) %></td>
        <td><%= truncate(event.created_at.in_time_zone("Asia/Seoul").strftime("%Y년%m월%d일 %H시%M분%S초"), :length => 14, :separator=>' ')%></td>
-
        <td><%= event.impressions.count %> </td> <!--조회수 event.impressionist -->
 
-       <td><%= "3" %></td>
        <td>
         <% if current_user.events.where(id: event.id).take != nil  %>
           <%= link_to "/events/eventfollow_destroy/#{UserEvent.where(user: current_user, event: event).take.id}" do %><i class="pull_star material-icons">star</i> <% end %>
@@ -57,5 +65,5 @@
 <br>
 <%= link_to "새 글쓰기", new_event_path ,class: 'waves-effect waves-light btn' %>
 <br>
-
+<!--페이지 넘기기-->
 <%= will_paginate @events %>

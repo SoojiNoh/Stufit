@@ -16,10 +16,28 @@
  *= require fullcalendar
  */
 
- .fc-day-header{
-     color: red;
+#main_tab{
+  margin: 15px;
 }
 
+/*달력관련디자인 시작*/
+  .fc-day-header{
+       color: black;
+  }
+  
+  .fc-left{
+    height: 10px;
+  }
+
+/*달력관련디자인 끝*/
+
+
+/*버튼 디자인 시작*/
+.btn-flat{
+  font-size: 12px;
+  background-color: #d7ccc8;
+}
+/*버튼 디자인 끝*/
 .pagination a li.active {
   color: #b2b2b2;
 }

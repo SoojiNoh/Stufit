@@ -171,7 +171,6 @@ ActiveRecord::Schema.define(version: 20160827161322) do
     t.string   "place"
     t.string   "file"
     t.string   "major_type"
-    t.text     "body"
     t.integer  "university_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false

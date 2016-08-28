@@ -6,6 +6,8 @@ class MajorStoriesController < ApplicationController
   end
   
   def show
+
+    @major_story=MajorStory.find(params[:id])
   end
 
   def new
