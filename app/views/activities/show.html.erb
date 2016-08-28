@@ -8,76 +8,76 @@
 </style>
 </head>
 
-<div class="row" style="margin-top:30px">
-  <table class="centered highlight">
+<div class="row mdl-textfield mdl-js-textfield" style="margin-top:30px">
+  <table class="mdl-data-table mdl-js-data-table">
     <thead>
       <tr>
-        <th data-field="id">교내/교외</th>
-        <th data-field="name">분류</th>  
-        <th data-field="price">활동명</th>
+        <th data-field="id" class="mdl-data-table__cell--non-numeric">교내/교외</th>
+        <th data-field="name" class="mdl-data-table__cell--non-numeric">분류</th>  
+        <th data-field="price" class="mdl-data-table__cell--non-numeric">활동명</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td style='text-align:center; vertical-align:middle'><%=@activity.activity_type%></td>
-        <td style='text-align:center; vertical-align:middle'><%=@activity.style%></td>
-        <td style='text-align:center; vertical-align:middle'><%=@activity.title%></td>
+        <td style='text-align:center; vertical-align:middle' class="mdl-data-table__cell--non-numeric"><%=@activity.activity_type%></td>
+        <td style='text-align:center; vertical-align:middle' class="mdl-data-table__cell--non-numeric"><%=@activity.style%></td>
+        <td style='text-align:center; vertical-align:middle' class="mdl-data-table__cell--non-numeric"><%=@activity.title%></td>
       </tr>
     </tbody>
     <thead>
       <tr>
-        <th data-field="price">주관기관</th>
-        <th data-field="id">발급번호</th>
-        <th data-field="name">급수(점수)</th>
+        <th data-field="price" class="mdl-data-table__cell--non-numeric">주관기관</th>
+        <th data-field="id" class="mdl-data-table__cell--non-numeric">발급번호</th>
+        <th data-field="name" class="mdl-data-table__cell--non-numeric">급수(점수)</th>
 
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td style='text-align:center; vertical-align:middle'><%=@activity.host_name%></td>    
-        <td style='text-align:center; vertical-align:middle'><%=@activity.issuednumber%></td>
-        <td style='text-align:center; vertical-align:middle'><%=@activity.grade%></td>    
+        <td style='text-align:center; vertical-align:middle' class="mdl-data-table__cell--non-numeric"><%=@activity.host_name%></td>    
+        <td style='text-align:center; vertical-align:middle' class="mdl-data-table__cell--non-numeric"><%=@activity.issuednumber%></td>
+        <td style='text-align:center; vertical-align:middle' class="mdl-data-table__cell--non-numeric"><%=@activity.grade%></td>    
       </tr>
     </tbody>
     <thead>
       <tr>
-        <th data-field="price">시작일</th>
-        <th data-field="price">종료일</th>
+        <th data-field="price" class="mdl-data-table__cell--non-numeric">시작일</th>
+        <th data-field="price" class="mdl-data-table__cell--non-numeric">종료일</th>
       </tr>
     </thead>
     <tbody>
       <tr>  
-        <td style='text-align:center; vertical-align:middle'><%=@activity.start_at%></td>
-        <td style='text-align:center; vertical-align:middle'><%=@activity.end_at%></td>
+        <td style='text-align:center; vertical-align:middle' class="mdl-data-table__cell--non-numeric"><%=@activity.start_at%></td>
+        <td style='text-align:center; vertical-align:middle' class="mdl-data-table__cell--non-numeric"><%=@activity.end_at%></td>
       </tr> 
     </tbody>
 
   </table>
 </div>
 <div class="row">
-<table class="centered highlight">
+<table class="mdl-data-table mdl-js-data-table">
   <thead>
     <tr>
-      <th data-field="id">내용</th>  
+      <th data-field="id" class="mdl-data-table__cell--non-numeric">내용</th>  
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style='text-align:center; vertical-align:middle'><%=@activity.content%></td>
+      <td style='text-align:center; vertical-align:middle' class="mdl-data-table__cell--non-numeric"><%=@activity.content%></td>
     </tr>
   </tbody>
 </table>
 </div>
 <div class='row'>
-  <table class="centered highlight responsive-table">
+  <table class="mdl-data-table mdl-js-data-table">
     <thead>
       <tr>
-        <th>이미지</th>
+        <th class="mdl-data-table__cell--non-numeric">이미지</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td style='text-align:center; vertical-align:middle'><%= image_tag "#{@activity.image}" %></td>
+        <td style='text-align:center; vertical-align:middle' class="mdl-data-table__cell--non-numeric"><%= image_tag "#{@activity.image}" %></td>
       </tr>
     </tbody>
   </table>
