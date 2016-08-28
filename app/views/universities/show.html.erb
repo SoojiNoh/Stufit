@@ -6,4 +6,13 @@
         <a href="#"><%= @university.link_url %></a>
   </div>
 </div>
-<%= render partial: '/comments/new', locals: { :comment => @university.comments.new } %>
+
+<% @university.comments.each do |comment| %>
+     <h4>
+     <%= comment.user.name %>
+     <%= comment.content %>
+     <%= link_to "댓글삭제", comment_path(comment), method: :delete %>
+     </h4>
+<% end %>
+
+<%= render partial: '/comments/new', locals: { :comment => @university.comments.new, university: @university.id, belong: "university"} %>
