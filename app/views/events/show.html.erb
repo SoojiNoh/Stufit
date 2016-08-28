@@ -53,8 +53,5 @@
      </h4>
    <% end %>
 
-<<<<<<< HEAD
    <%= render partial: 'comments/new', locals: { :comment => @event.comments.new , event: @event.id} %>
-=======
    <%= render partial: 'comments/new', locals: { :comment => @event.comments.new , event: @event.id, belong: "event"} %>
->>>>>>> 5c1c87f677ba0d9e16c8eb8973eded3c90bc1672
