@@ -1,99 +1,115 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
   <head>
+    <script src="/assets/javascripts/material.min.js"></script>
     <title>Stufit</title>
     <%= csrf_meta_tags %>
     
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <style>
-  .table-wrapping {
-    width: auto;
-    overflow-x: scroll;
-    white-space: nowrap;
-  }
-  </style>
-    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Material Design Lite</title>
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+    <link rel="shortcut icon" href="images/favicon.png">
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="material.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      #view-source {
+        position: fixed;
+        display: block;
+        right: 0;
+        bottom: 0;
+        margin-right: 40px;
+        margin-bottom: 40px;
+        z-index: 900;
+      }
+    </style>
   </head>
-
-  <body>
-    <nav>
-    <div class="nav-wrapper">
-      <a href="/" class="brand-logo">Stufit</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-
-      <% if user_signed_in? %>
-          <ul class="right hide-on-med-and-down">
-            <li><%= link_to current_user.name, my_page_index_path , method: 'get' %></li>
-            <li><%= link_to '로그아웃', destroy_user_session_path, method: 'delete' %></li>
-          </ul>
-          <ul class="side-nav" id="mobile-demo">
-            <li><%= link_to '행사', events_path , method: 'get' %></li>
-            <li><%= link_to '활동내역', activities_path , method: 'get' %></li>
-            <li><%= link_to current_user.name, my_page_index_path , method: 'get' %></li>
-            <li><%= link_to '로그아웃', destroy_user_session_path, method: 'delete' %></li>
-          </ul>
-      <% else %>
-        <ul class="right hide-on-med-and-down">
-          <li><%= link_to '회원가입', new_user_registration_path , method: 'get' %></li>
-          <li><%= link_to '로그인', new_user_session_path, method: 'get' %></li>
-        </ul>
-        <ul class="side-nav" id="mobile-demo">
-
-
-          <li><%= link_to '행사', events_path , method: 'get' %></li>
-          <li><%= link_to '활동내역', activities_path , method: 'get' %></li>
-          <li><%#= link_to '회원가입', new_user_registration_path , method: 'get' %></li>
-          <li><%= link_to '로그인', new_user_session_path, method: 'get' %></li>
-        </ul>
-      <% end %>
-    </div>
-    </nav>
-
-    <main>
-    <!--4개 탭-->
-      <div class="row">
-          <div class="col s12">
-            <ul class="tabs">
-              <li class="tab col s3" id="btn_tab_univ"><%= link_to '대학가자!', universities_path , method: 'get' %></a></li>
-              <li class="tab col s3" id="btn_tab_event"><%= link_to '정보게시판', events_path , method: 'get' %></a></li>
-              <li class="tab col s3" id="btn_tab_mentor"><%= link_to '선배와의이야기', major_stories_path , method: 'get' %></a></li>
-              <li class="tab col s3" id="btn_tab_mentor"><%= link_to 'My page', my_page_index_path , method: 'get' %></a></li>
-            </ul>
+  
+        <body>
+          <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+            <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+              <div class="mdl-layout__header-row">
+                <img style="height: 27px;" src="http://www.kosdaqca.or.kr/_PDS/Board/1/16447/Images/%EC%86%94%EB%9D%BC%EC%8B%9C%EC%95%84%20%EB%A1%9C%EA%B3%A0(%ED%8C%8C%EB%9E%91_%ED%88%AC%EB%AA%85).png">
+                <span style="margin: 5px;" class="mdl-layout-title">Home</span>
+                <div class="mdl-layout-spacer"></div>
+                  
+                <a href="/">
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" >
+                  <i class="material-icons">home</i>
+                </button></a>
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+                  <i class="material-icons">more_vert</i>
+                </button>
+                <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+                  <li class="mdl-menu__item">About</li>
+                  <li class="mdl-menu__item">Contact</li>
+                  <li class="mdl-menu__item">Legal information</li>
+                </ul>
+              </div>
+            </header>
+          <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+            <header class="demo-drawer-header">
+              <img src="http://cfile2.uf.tistory.com/image/247D023455EE71460B2555" class="demo-avatar">
+              
+            <div class="demo-avatar-dropdown"> 
+            <div class="mdl-layout-spacer"></div>
+            <% if user_signed_in? %>
+              <li class="mdl-layout-title"><%=current_user.name%>님</li>
+              <li><%= link_to '설정', my_page_index_path , method: 'get' %></li>
+              <li><%= link_to '로그아웃', destroy_user_session_path, method: 'delete' %></li>
+            <% else %>
+              <li><%= link_to '회원가입', new_user_registration_path , method: 'get' %></li>
+              <li><%= link_to '로그인', new_user_session_path, method: 'get' %></li>
+            <% end %>
+          </div>  
+              <div class="demo-avatar-dropdown">
+              <div class="mdl-layout-spacer"></div>
+              </div>
+            </header>
+            <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+              <a class="mdl-navigation__link" href="/my_page/index"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">perm_identity</i>마이서비스</a>
+              <a class="mdl-navigation__link" href="/events"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>행사</a>
+              <a class="mdl-navigation__link" href="/major_stories"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>선배</a>
+              <a class="mdl-navigation__link" href="/universities"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">flag</i>대학</a>
+            </nav>
           </div>
-      </div>
-
-      <div class="container" id="main_tab">
-      </div>
-
-      <script>
-       $(document).ready(function(){
-          $("#btn_tab_univ").tabs('select_tab','#main_tab');
-          $("#btn_tab_event").tabs('select_tab','#main_tab');
-          $("#btn_tab_mentor").tabs('select_tab','#main_tab');
-          $("#btn_tab_mypage").tabs('select_tab','#main_tab');
-        });
-      </script>
-
-
-    <div class="container">
-      <%= yield %>
-    </div>
-    </main>
-
-    <footer class="page-footer">
-    <div class="container">
-      <div class="row">
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
-        Copyright © 2016. Stu-Fit. All rights reserved.
-        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-      </div>
-    </div>
-    </footer>
-
-  </body>
+            
+            
+      <main class="mdl-layout__content mdl-color--grey-100">
+        <div class="mdl-grid demo-content">
+          <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid" style="height:500px;">
+              <%= yield %>  
+         
+            
+            
+          </div>
+        </div>
+      </main>
+        
+      
+          
+          
+        </body>
+    
 </html>
