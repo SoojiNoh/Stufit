@@ -11,11 +11,13 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 //= require material-design-lite//material.min
 //= require Chart
-//= require moment 
+//= require moment
 //= require fullcalendar
 //= require ckeditor/init
+//= require turbolinks
+$.turbo.use('pjax:start', 'pjax:end');

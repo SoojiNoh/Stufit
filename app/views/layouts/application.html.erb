@@ -5,7 +5,7 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application' , 'data-turbolinks-track': 'reload' %>
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   </head>
@@ -18,14 +18,13 @@
         <span style="margin: 5px;" class="mdl-layout-title">Home</span>
         <div class="mdl-layout-spacer"></div>
 
-        <a href="/">
+        <%= link_to home_index_path do %>
           <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" >
-            <%= link_to home_index_path do %>
-              <i class="material-icons">
-                home
-              </i>
-            <% end %>
-        </button></a>
+            <i class="material-icons">
+              home
+            </i>
+          </button>
+        <% end %>
         <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
           <i class="material-icons">more_vert</i>
         </button>
@@ -83,4 +82,9 @@
       </main>
 
     </body>
+    <script charset="utf-8">
+      window.onclick = function() {
+        location.reload();
+      };
+    </script>
   </html>

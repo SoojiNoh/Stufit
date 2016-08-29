@@ -4,6 +4,7 @@ gem 'ckeditor'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 gem "paperclip"
+gem 'jquery-turbolinks'
 
 
 gem 'impressionist'
