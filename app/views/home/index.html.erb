@@ -1,46 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <body>
-    
-    
-    
-    <div class="row">
-     
-      <!--이미지 슬라이드: stufit 소개이미지-->
-      <div class="col s7">
-         <div class="carousel">
-          <a class="carousel-item" href="#one!"><img src="minion.jpg"></a>
-          <a class="carousel-item" href="#two!"><img src="comeonbabe.JPG"></a>
-          <a class="carousel-item" href="#four!"><img src="minion.jpg"></a>
-          <a class="carousel-item" href="#five!"><img src="comeonbabe.JPG"></a>
-         </div>
+ <body>
+     <div class="row">
+        <div class= "col s7">
+           <div class="carousel">
+               <a class="carousel-item" href="#one!"><img src="https://scontent.xx.fbcdn.net/v/t1.0-9/14102632_1189806881076166_3287712449334987511_n.png?oh=225ba03466f9d233b6de3eae8de88133&oe=5858C405" height="300" width="1000"></a>
+              <a class="carousel-item" href="#one!"><img src="https://scontent.xx.fbcdn.net/v/t1.0-9/14089008_1189612887762232_3405052991861971541_n.png?oh=3752b0d5c1e2b241569e9babf5022c2d&oe=5837F963" height="300" width="600"></a>
+              <a class="carousel-item" href="#two!"><img src="https://scontent.xx.fbcdn.net/v/t1.0-9/14054098_1189612914428896_7113831067133829824_n.png?oh=168478419134812c866b75b73dfad807&oe=584229F4" height="300" width="600"></a>
+              <a class="carousel-item" href="#three!"><img src="https://scontent.xx.fbcdn.net/v/t1.0-9/14054037_1189612934428894_9035058732767937071_n.png?oh=3cc35971e7464e11b42f5306bf7bb5cd&oe=5845F00A" height="300" width="600"></a>
+          <script>
+          $(document).ready(function(){
+            $('.carousel').carousel();
+          });
+          
+        $('.carousel.carousel-slider').carousel({full_width: true});
+          </script>
+        </div>
       </div>
-      
-       <!--캘린더-->
-            <div class="col s5">
-              <div id='calendar'></div>
-                
-            </div> 
-            
-            <script>
-             $(document).ready(function(){
-               $('#calendar').empty();
-               $('#calendar').fullCalendar(
-                  {
-                    eventSources: [
-              
-                      // your schedule source
-                      {
-                          url: '/schedules.json',// use the `url` property
-                          color: 'yellow',    // an option!
-                          textColor: 'green'  // an option!
-                      }
-                      ]
-                           // schedules: '/schedules.json'
-                            // put your options and callbacks here
-                        });   
-             });
-            </script>            
-    </div>   
-  </body>
+      <!--캘린더-->
+           <div class="col s5">
+             <div id='calendar'></div>
+             <a href="/schedules">
+               <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+              자세히
+               </button></a>
+           </div>
+           
+
+           <script>
+            $(document).ready(function(){
+              $('#calendar').empty();
+              $('#calendar').fullCalendar(
+                 {
+                   eventSources: [
+             
+                     // your schedule source
+                     {
+                         url: '/schedules.json',// use the `url` property
+                         color: 'yellow',    // an option!
+                         textColor: 'green'  // an option!
+                     }
+                     ]
+                          // schedules: '/schedules.json'
+                           // put your options and callbacks here
+                       });   
+            });
+           </script>            
+   </div>
+ </body>
 </html>

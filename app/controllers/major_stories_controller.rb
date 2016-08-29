@@ -4,7 +4,7 @@ class MajorStoriesController < ApplicationController
   def index
     @major_stories = MajorStory.search(params[:search]).paginate(:page => params[:page], :per_page => 5)
   end
-  
+
   def show
 
     @major_story=MajorStory.find(params[:id])
@@ -17,13 +17,13 @@ class MajorStoriesController < ApplicationController
 
   def create
     @major_story = MajorStory.new(major_story_params)
-    
+
     if @major_story.save
       redirect_to major_stories_path, notice: "The article has been successfully created."
     else
       render action: "new"
     end
-      
+
 
   end
 
@@ -65,7 +65,7 @@ class MajorStoriesController < ApplicationController
   end
 
   private
-  
+
   def set_major_story
       @major_story = MajorStory.find(params[:id])
   end

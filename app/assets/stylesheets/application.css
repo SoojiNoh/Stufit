@@ -26,8 +26,9 @@
        color: black;
   }
   
-  .fc-left{
-    height: 10px;
+  .fc-left h2{
+    font-size: 30px;
+
   }
 
 /*달력관련디자인 끝*/
