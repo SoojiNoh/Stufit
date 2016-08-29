@@ -14,7 +14,6 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require_tree .
-//= require material-design-lite//material.min
 //= require Chart
 //= require moment
 //= require fullcalendar
