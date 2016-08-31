@@ -49,15 +49,15 @@
         <% else %>
           <%= link_to "/events/eventfollow/#{event.id}" do %> <i class="empty_star material-icons">star</i> <% end %>
         <% end %></td>
-
        </tr>
 
    <% end %>
  </tbody>
+ <!--페이지 넘기기-->
 </table>
 <%= will_paginate @events %>
 </div>
 
 
-<!--페이지 넘기기-->
+
 
