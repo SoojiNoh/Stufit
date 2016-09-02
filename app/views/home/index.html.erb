@@ -2,84 +2,20 @@
 <!--chart dashboard start-->
 <div id="chart-dashboard">
     <div class="row">
-        <div class="col s12 m8 l8">
-            <div class="carousel carousel-slider">
-                <a class="carousel-item" href="#one!"><img src="http://graphicdesigno.com/wp-content/uploads/What-is-Lorem-ipsum.jpg"></a>
-                <a class="carousel-item" href="#two!"><img src="http://graphicdesigno.com/wp-content/uploads/What-is-Lorem-ipsum.jpg"></a>
-                <a class="carousel-item" href="#three!"><img src="http://graphicdesigno.com/wp-content/uploads/What-is-Lorem-ipsum.jpg"></a>
-                <a class="carousel-item" href="#four!"><img src="http://graphicdesigno.com/wp-content/uploads/What-is-Lorem-ipsum.jpg"></a>
-            </div>            
+        <div class="col s12 m6 l8">
+            <div class="card">
+                <div class="carousel carousel-slider">
+                    <a class="carousel-item" href="#one!"><img src="http://graphicdesigno.com/wp-content/uploads/What-is-Lorem-ipsum.jpg"></a>
+                    <a class="carousel-item" href="#two!"><img src="http://graphicdesigno.com/wp-content/uploads/What-is-Lorem-ipsum.jpg"></a>
+                    <a class="carousel-item" href="#three!"><img src="http://graphicdesigno.com/wp-content/uploads/What-is-Lorem-ipsum.jpg"></a>
+                    <a class="carousel-item" href="#four!"><img src="http://graphicdesigno.com/wp-content/uploads/What-is-Lorem-ipsum.jpg"></a>
+                </div>
+            </div>
         </div>
 
-        <div class="col s12 m4 l4">
+        <div class="col s12 m6 l4">
             <div class="card">
-                <div class="card-move-up teal waves-effect waves-block waves-light">
-                    <div class="move-up">
-                        <p class="margin white-text">Browser Stats</p>
-                        <canvas id="trending-radar-chart" height="121" width="320" style="width: 285px; height: 108px;"></canvas>
-                    </div>
-                </div>
-                <div class="card-content  teal darken-2">
-                    <a class="btn-floating btn-move-up waves-effect waves-light darken-2 right"><i class="mdi-content-add activator"></i></a>
-                    <div class="line-chart-wrapper">
-                        <p class="margin white-text">Revenue by country</p>
-                        <canvas id="line-chart" height="109" width="288" style="width: 256px; height: 97px;"></canvas>
-                    </div>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Revenue by country <i class="mdi-navigation-close right"></i></span>
-                    <table class="responsive-table">
-                        <thead>
-                            <tr>
-                                <th data-field="country-name">Country Name</th>
-                                <th data-field="item-sold">Item Sold</th>
-                                <th data-field="total-profit">Total Profit</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>USA</td>
-                                <td>65</td>
-                                <td>$452.55</td>
-                            </tr>
-                            <tr>
-                                <td>UK</td>
-                                <td>76</td>
-                                <td>$452.55</td>
-                            </tr>
-                            <tr>
-                                <td>Canada</td>
-                                <td>65</td>
-                                <td>$452.55</td>
-                            </tr>
-                            <tr>
-                                <td>Brazil</td>
-                                <td>76</td>
-                                <td>$452.55</td>
-                            </tr>
-                            <tr>
-                    
-                                <td>India</td>
-                                <td>65</td>
-                                <td>$452.55</td>
-                            </tr>
-                            <tr>
-                                <td>France</td>
-                                <td>76</td>
-                                <td>$452.55</td>
-                            </tr>
-                            <tr>
-                                <td>Austrelia</td>
-                                <td>65</td>
-                                <td>$452.55</td>
-                            </tr>
-                            <tr>
-                                <td>Russia</td>
-                                <td>76</td>
-                                <td>$452.55</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div id='calendar'>
                 </div>
             </div>
         </div>
@@ -217,3 +153,26 @@
     </ul>
 </div>
 <!-- Floating Action Button -->
+
+
+<!--Calendar--> 
+<script>
+       $(document).ready(function(){
+       $('#calendar').empty();
+       $('#calendar').fullCalendar(
+          {
+            eventSources: [
+      
+              // your schedule source
+              {
+                  url: '/schedules.json',// use the `url` property
+                  color: 'yellow',    // an option!
+                  textColor: 'green'  // an option!
+              }
+              ]
+                   // schedules: '/schedules.json'
+                    // put your options and callbacks here
+                });   
+     });
+</script>
+<!--Calendar--> 
