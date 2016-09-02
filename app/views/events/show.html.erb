@@ -1,12 +1,10 @@
-    <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--6-col-tablet mdl-cell--10-col-desktop mdl-cell--stretch" >
-<h4>정보게시판</h4>
-</div>
+<h4>정보게시판</h4></br>
 
     <div class="progress">
        <div class="determinate" style="width: 70%"></div>
      </div>
     <!--제목부분-->
-    <div class="mdl-cell mdl-cell--6-col-tablet mdl-cell--10-col-desktop mdl-cell--stretch" >
+  
     <h5> 제목 | <%= @event.title %> </h5>
     <h6> 작성일 :  <%= @event.created_at.in_time_zone("Asia/Seoul").strftime("%Y. %m. %d.    %H : %M") %> </h6>
     <h6> 조회수 : <%=@event.impressions.count%></h6>
@@ -63,7 +61,6 @@
      <%= comment.user.name %><br>
      <%= comment.content %>
      <%= link_to "댓글 삭제", comment_path(comment), method: :delete,class: 'waves-effect waves-light btn' %>
-     
    <% end %>
 </div>
 <div>
