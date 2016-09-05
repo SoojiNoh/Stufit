@@ -375,9 +375,12 @@
     <!--plugins.js - Some Specific JS codes for Plugin Settings-->
     <script type="text/javascript" src="<%= asset_path "plugins.js" %>" ></script>
     <script charset="utf-8">
-      setTimeout(function() {
-        $('body').addClass('loaded');      
-      }, 100);
+      $( document ).ready(function() {
+        console.log( "ready!" );
+        setTimeout(function() {
+          $('body').addClass('loaded');      
+        }, 100);
+      });
     </script>
 
   </body>
