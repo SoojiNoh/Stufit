@@ -1,11 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'ckeditor'
-gem 'fullcalendar-rails'
-gem 'momentjs-rails'
 gem "paperclip"
 gem 'jquery-turbolinks'
-
+gem 'mini_magick'
 
 gem 'impressionist'
 gem 'fullcalendar-rails'
