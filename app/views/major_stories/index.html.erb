@@ -5,41 +5,37 @@
 
 <!-- Square card -->
 
-<div class = "row">
-  <div class = "mdl-grid">
-    <%= @major_stories.each do |major_story| %>
-      <div class="mdl-cell mdl-cell--4-col">
 
-        <div class="demo-card-square mdl-card mdl-shadow--2dp">
-          <div class="mdl-card__title mdl-card--expand">
-            <%= image_tag "#{major_story.major_type}" %>
-            <img src = "stufit_thumbnail.png", size height="150px" >
-          </div>
-          <div class="mdl-card__supporting-text">
-            <p><%= major_story.content %></p><br>
-            <%= major_story.place %> <%= major_story.file %>
-          </div>
-          <div class="mdl-card__actions mdl-card--border">
-            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-              <%= link_to "인터뷰 보러가기", major_story %><br>
-            </a>
-              <%= link_to '수정', edit_major_story_path(major_story) %>
-              <%= link_to '삭제', major_story, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </div>
-        </div>
+<div class="row">
+<% @major_stories.each do |major_story| %>
+  <div class="col s12 m3">
+    <div class="card">
+      <div class="card-image">
+      <%= link_to major_story_path(major_story) do %>
+          <%= image_tag "#{major_story.major_type}" %>
+        <span class="card-title"><%= major_story.content %></span>
       </div>
+        <div class="card-content">
+          <p><%= major_story.content %></p><br><%= major_story.place %>
+        </div>
+        <div class="card-action">
+          <%= link_to "자세히 보기", major_story %>
+        </div>
       <% end %>
     </div>
+  </div>
+<% end %>
 </div>
+
 <br>
-<div class ="mdl-cell mdl-cell--3-col", margin-top : 50px>
+<div class ="col s3 m3", margin-top : 50px>
   <%= link_to '전공추가', new_major_story_path %>
 </div>
-<div class = "mdl-cell mdl-cell--6-col">
+<div class = "col s6 m6">
 </div>
 
 <!--search -->
-<div class = "mdl-cell mdl-cell--3-col">
+<div class = "col s3 m3">
 
 
 <%= form_tag major_stories_path, :method => 'get', :id => "activities_search", :style=>"margin-top:50px" do %>
