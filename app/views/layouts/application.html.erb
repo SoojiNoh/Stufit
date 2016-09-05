@@ -22,18 +22,18 @@
 
 
     <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
-    <%#<link href="js/plugins/peferct-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">%>
-    <%#<link href="js/plugins/peferct-scrollbar/chartist.min.css"  type="text/css" rel="stylesheet" media="screen,projection">%>
+    <link href="<%= asset_path "perfect-scrollbar.css"%>" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="<%= asset_path "chartist.min.css"%>"  type="text/css" rel="stylesheet" media="screen,projection">
   </head>
 
 <body>
   <!-- Start Page Loading -->
-  <%#<div id="loader-wrapper">%>
-      <%#<div id="loader">%>
-      <%#</div>%>
-      <%#<div class="loader-section section-left"></div>%>
-      <%#<div class="loader-section section-right"></div>%>
-  <%#</div>%>
+  <div id="loader-wrapper">
+      <div id="loader">
+      </div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+  </div>
   <!-- End Page Loading -->
 
   <!-- //////////////////////////////////////////////////////////////////////////// -->
@@ -370,7 +370,7 @@
     <!--scrollbar-->
     <script type="text/javascript" src="<%= asset_path "perfect-scrollbar.min.js"%>"></script>
     <!-- chartist -->
-    <script type="text/javascript" src="<%= asset_path "chartist.min.js"%>"></script>   
+    <!--  <script type="text/javascript" src="<%= asset_path "chartist.min.js"%>"></script>  --> 
 
     <!--plugins.js - Some Specific JS codes for Plugin Settings-->
     <script type="text/javascript" src="<%= asset_path "plugins.js" %>"></script>
