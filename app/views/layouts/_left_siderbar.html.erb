@@ -7,17 +7,22 @@
     </div>
     <div class="col col s8 m8 l8">
       <ul id="profile-dropdown" class="dropdown-content">
-        <li><a href="#"><i class="mdi-action-face-unlock"></i> Profile</a>
-        </li>
         <li><a href="#"><i class="mdi-action-settings"></i> Settings</a>
         </li>
         <li><a href="#"><i class="mdi-communication-live-help"></i> Help</a>
         </li>
         <li class="divider"></li>
+        <% if user_signed_in? %>
+        <li><a href="#"><i class="mdi-action-face-unlock"></i> Profile</a>
+        </li>
+        <li><<i class="mdi-hardware-keyboard-tab"></i><%= link_to '로그아웃', destroy_user_session_path, method: 'delete' %></a>
+        </li>
+        <% else %>
         <li><a href="#"><i class="mdi-action-lock-outline"></i> Lock</a>
         </li>
-        <li><a href="#"><i class="mdi-hardware-keyboard-tab"></i> Logout</a>
-        </li>
+        <li><%= link_to '회원가입', new_user_registration_path , method: 'get' %></li>
+        <li><%= link_to '로그인', new_user_session_path, method: 'get' %></li>
+        <% end %>
       </ul>
       <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">John Doe<i class="mdi-navigation-arrow-drop-down right"></i></a>
       <p class="user-roal">student123@stufit.com</p>
