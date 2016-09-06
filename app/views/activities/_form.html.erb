@@ -13,7 +13,7 @@ th, td {
 }
 
   </style>
-
+`
 <%= f.label :hash_activities, 'hash_activities', :class=>"mdl-textfield__input", :for=>"sample1" %>
 <%= f.select :hash_activities, options_for_select(HashTag.all.collect{ |u| [u.name,u.id] }, :class=>"mdl-textfield__input", :type=>"text", :id=>"sample1"  ),{},{ :multiple => true}%>
 
