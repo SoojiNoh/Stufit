@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'owlcarousel-rails'
 gem 'ckeditor'
 gem "paperclip"
 gem 'jquery-turbolinks'
