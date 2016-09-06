@@ -11,17 +11,18 @@
 </head>
 
 <div class="row ">
-
-<table class="col bordered centered" style="width: 100%;">
+<div class="col s12">
+<table class="col s12 bordered centered" style="width: 100%;">
       <thead>
         <tr>
-          <th data-field="id"><%= sortable "activity_type", "교내/교외"%></th>
-          <th data-field="name"><%= sortable "style", "분류"%></th>
-          <th data-field="price"><%= sortable  "title",  "활동명"%></th>
-          <th data-field="price"><%= sortable "content", "내용"%></th>
-          <th data-field="name"><%= sortable"host_name",  "주관기관"%></th>
-          <th data-field="price"><%= sortable "start_at", "시작일" %></th>
-          <th data-field="price"><%= sortable "end_at", "종료일" %></th>
+          <th><%= sortable "activity_type", "교내/교외"%></th>
+          <th><%= sortable "style", "분류"%></th>
+          <th><%= sortable  "title",  "활동명"%></th>
+          <th><%= sortable "content", "내용"%></th>
+          <th><%= sortable"host_name",  "주관기관"%></th>
+          <th><%= sortable "start_at", "시작일" %></th>
+          <th><%= sortable "end_at", "종료일" %></th>
+          <th>조회수</th>
         </tr>
       </thead>
 
@@ -31,13 +32,12 @@
           <td><%=a.activity_type%></td>
           <td><%=a.style%></td>
           <td><%= link_to a.title, activity_path(a) %></td>
-          <td><%=truncate(a.content, :length => 10, :separator=>' ')do link_to "see more...", activity_path(a) end %></td>
+          <td><%= link_to "#{truncate(a.content, :length => 10, :separator=>' ')}", activity_path(a)  %></td>
           <td><%=a.host_name%></td>
           <td><%=a.start_at%></td>
           <td><%=a.end_at%></td>
           <td><%="#{a.impressions.count}"%></td>
-          <td><button type="submit" ><%= link_to "수정", edit_activity_path(a) %></button></td>
-          <td><button type="submit" ><%= link_to "삭제", activity_path(a), method: "delete" %></button></td>
+          
         <%end%>
         </tr>
         </tbody>
