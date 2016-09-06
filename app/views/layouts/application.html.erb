@@ -36,58 +36,63 @@
     <!-- End Page Loading -->
 
     <!-- //////////////////////////////////////////////////////////////////////////// -->
+    <% unless controller.controller_name == "sessions"  %>
 
-    <!-- START HEADER -->
-    <%= render partial: 'layouts/header_nav'%>
-    <!-- END HEADER -->
+      <!-- START HEADER -->
+      <%= render partial: 'layouts/header_nav'%>
+      <!-- END HEADER -->
 
-  <!-- //////////////////////////////////////////////////////////////////////////// -->
-    <!-- START MAIN -->
-    <div id="main">
-      <!-- START WRAPPER -->
-      <div class="wrapper">
+      <!-- //////////////////////////////////////////////////////////////////////////// -->
+      <!-- START MAIN -->
+      <div id="main">
+        <!-- START WRAPPER -->
+        <div class="wrapper">
 
-        <!-- START LEFT SIDEBAR NAV-->
-        <%= render partial: 'layouts/left_siderbar' %>
-        <!-- END LEFT SIDEBAR NAV-->
+          <!-- START LEFT SIDEBAR NAV-->
+          <%= render partial: 'layouts/left_siderbar' %>
+          <!-- END LEFT SIDEBAR NAV-->
 
-        <!-- //////////////////////////////////////////////////////////////////////////// -->
+          <!-- //////////////////////////////////////////////////////////////////////////// -->
 
-        <!-- START CONTENT -->
-        <section id="content">
+          <!-- START CONTENT -->
+          <section id="content">
 
-        <!--breadcrumbs start-->
+          <!--breadcrumbs start-->
 
-        <!--start container-->
-        <div class="container">
-          <div class="section">
+          <!--start container-->
+          <div class="container">
+            <div class="section">
+            <% end %>
             <%= yield %>
-          <div class="divider"></div>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <% unless controller.controller_name == "sessions"  %>
+
+              <div class="divider"></div>
+              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
           </div>
+          <!--end container-->
+          </section>
+          <!-- END CONTENT -->
+          <!-- //////////////////////////////////////////////////////////////////////////// -->
+          <!-- START RIGHT SIDEBAR NAV-->
+          <%= render partial: 'layouts/right_siderbar'%>
+          <!-- LEFT RIGHT SIDEBAR NAV-->
+
         </div>
-        <!--end container-->
-        </section>
-        <!-- END CONTENT -->
-        <!-- //////////////////////////////////////////////////////////////////////////// -->
-        <!-- START RIGHT SIDEBAR NAV-->
-        <%= render partial: 'layouts/right_siderbar'%>
-        <!-- LEFT RIGHT SIDEBAR NAV-->
+        <!-- END WRAPPER -->
+        <!-- Floating Action Button -->
+        <%= render partial: 'layouts/floating_action' %>
+        <!-- Floating Action Button -->
 
       </div>
-      <!-- END WRAPPER -->
-      <!-- Floating Action Button -->
-      <%= render partial: 'layouts/floating_action' %>
-      <!-- Floating Action Button -->
+      <!-- END MAIN -->
 
-    </div>
-    <!-- END MAIN -->
-
-    <!-- START FOOTER -->
-    <%= render partial: 'layouts/footer' %>
-    <!-- END FOOTER -->
+      <!-- START FOOTER -->
+      <%= render partial: 'layouts/footer' %>
+      <!-- END FOOTER -->
 
 
+    <% end %>
 
     <!-- ================================================
     Scripts
