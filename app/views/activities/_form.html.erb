@@ -13,51 +13,48 @@ th, td {
 }
 
   </style>
-  <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--6-col-tablet mdl-cell--10-col-desktop mdl-cell--stretch">
+
 <%= f.label :hash_activities, 'hash_activities', :class=>"mdl-textfield__input", :for=>"sample1" %>
 <%= f.select :hash_activities, options_for_select(HashTag.all.collect{ |u| [u.name,u.id] }, :class=>"mdl-textfield__input", :type=>"text", :id=>"sample1"  ),{},{ :multiple => true}%>
-</div>
-  <div class="mdl-cell mdl-cell--6-col-tablet mdl-cell--10-col-desktop mdl-cell--stretch">
-<table class="mdl-data-table mdl-js-data-table">
+
+ 
+ <table class="centered highlight" >
   <thead>
     <tr>
-      <th class="mdl-data-table__cell--non-numeric"><%= f.label :activity_type, '교내/교외', :class=>"mdl-textfield__input", :for=>"sample1"%></th>
-      <th class="mdl-data-table__cell--non-numeric"><%= f.label :style, '분류', :class=>"mdl-textfield__input", :for=>"sample1"%></th>
-      <th class="mdl-data-table__cell--non-numeric"><%= f.label :title, '제목', :class=>"mdl-textfield__input", :for=>"sample1"%></th>
-      <th class="mdl-data-table__cell--non-numeric"><%= f.label :content, '내용', :class=>"mdl-textfield__input", :for=>"sample1"%></th>
-      <th class="mdl-data-table__cell--non-numeric"><%= f.label :host_name, '주관기관', :class=>"mdl-textfield__input", :for=>"sample1"%></th>
-      <th class="mdl-data-table__cell--non-numeric"><%= f.label :issuednumber, '발급번호' , :class=>"mdl-textfield__input", :for=>"sample1"%></th>
-      <th class="mdl-data-table__cell--non-numeric"><%= f.label :grade, '급수', :class=>"mdl-textfield__input", :for=>"sample1"%></th>
+      <th data-field="id"><%= f.label :activity_type, '교내/교외'%></th>
+      <th data-field="name"><%= f.label :style, '분류'%></th>
+      <th data-field="price"><%= f.label :title, '제목'%></th>
+      <th data-field="price"><%= f.label :content, '내용'%></th>
+      <th data-field="price"><%= f.label :host_name, '주관기관'%></th>
+      <th data-field="name"><%= f.label :issuednumber, '발급번호'%></th>
+      <th data-field="price"><%= f.label :grade, '급수'%></th>
     </tr>
   </thead>
 
   <tbody>
     <tr>
-      <td><%= f.select(:activity_type, ['교내', '교외'], {},:class=>"mdl-textfield__input", :type=>"text", :id=>"sample1")%></td>
-      <td class="mdl-data-table__cell--non-numeric"><%= f.text_field :style, :class=>"mdl-textfield__input", :type=>"text", :id=>"sample1" %></td>
-      <td class="mdl-data-table__cell--non-numeric"><%= f.text_field :title, :class=>"mdl-textfield__input", :type=>"text", :id=>"sample1"  %></td>
-      <td class="mdl-data-table__cell--non-numeric"><%= f.text_field :content, :class=>"mdl-textfield__input", :type=>"text", :id=>"sample1" %></td>
-      <td class="mdl-data-table__cell--non-numeric"><%= f.text_field :host_name, :class=>"mdl-textfield__input", :type=>"text", :id=>"sample1" %></td>
-      <td class="mdl-data-table__cell--non-numeric"><%= f.text_field :issuednumber, :class=>"mdl-textfield__input", :type=>"text", :id=>"sample1"%></td>
-      <td class="mdl-data-table__cell--non-numeric"><%= f.text_field :grade, :class=>"mdl-textfield__input", :type=>"text", :id=>"sample1"%></td>
+      <td width="7%"><%= f.select(:activity_type, ['교내', '교외'], {} ) %></td>
+      <td width="10%"><%= f.text_field :style%></td>
+      <td width="10%"><%= f.text_field :title  %></td>
+      <td width="13%"><%= f.text_field :content %></td>
+      <td width="10%"><%= f.text_field :host_name %></td>
+      <td width="10%"><%= f.text_field :issuednumber%></td>
+      <td width="10%"><%= f.text_field :grade%></td>
     </tr>
   </tbody>
   <thead>
     <tr>
-      <th class="mdl-data-table__cell--non-numeric"><%= f.label :date, '시작일', :class=>"mdl-textfield__input"%></th>
-      <th class="mdl-data-table__cell--non-numeric"><%= f.label :date, '종료일', :class=>"mdl-textfield__input"%></th>
-      <th class="mdl-data-table__cell--non-numeric"><%= f.label :image, '이미지', :class=>"mdl-textfield__input"%></th>
+      <th data-field="price"><%= f.label :date, '시작일'%></th>
+      <th data-field="price"><%= f.label :date, '종료일'%></th>
+      <th data-field="price"><%= f.label :image, '이미지'%></th>
 
     </tr>
   </thead>
   <tbody>
-    <tr><td class="mdl-data-table__cell--non-numeric"><%= f.date_field :start_at, :class=>"mdl-textfield__input" %></td>
-      <td class="mdl-data-table__cell--non-numeric"><%= f.date_field :end_at, :class=>"mdl-textfield__input" %></td>
-      <td class="mdl-data-table__cell--non-numeric"><%= f.file_field :image, :class=>"mdl-textfield__input" %></td></tr>
+    <tr><td width="10%"><%= f.date_field :start_at %></td>
+      <td width="10%"><%= f.date_field :end_at %></td>
+      <td width="10%"><%= f.file_field :image %></td></tr>
   </tbody>
 </table>
-</div>
-<div class="mdl-cell mdl-cell--6-col-tablet mdl-cell--10-col-desktop mdl-cell--stretch">
-<%=f.submit "만들기", class:"mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
-</div>
+<%=f.submit "만들기", class:"btn waves-effect waves-light" %>
 

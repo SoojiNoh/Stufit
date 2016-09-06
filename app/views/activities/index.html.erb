@@ -1,47 +1,51 @@
-<div class="mdl-cell mdl-cell--12-col">
-  <h5>활동내역</h5>
-</div>
-<div class="mdl-cell mdl-cell--12-col center">
-  <%= form_tag activities_path, :method => 'get', :id => "activities_search" do %>
-    <%= hidden_field_tag :direction, params[:direction]%>
-    <%= hidden_field_tag :sort, params[:sort]%>  
-    <p>
-    <%= text_field_tag :search, params[:search], :placeholder=>"검색어를 입력하세요" %>
-    <%= submit_tag "검색", :content => nil, :class=>"mdl-button mdl-js-button mdl-button--raised mdl-button--colored"%>
+<h5>활동내역</h5>
 
-  </div>
-  </p>
-<% end %>
+<head>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"></script>
+</head>
 
-<div class="mdl-cell mdl-cell--12-col">
-  <%= link_to "새로 만들기", new_activity_path, :class=>"mdl-button mdl-js-button mdl-button--raised mdl-button--colored", :style=>"float: right;"%>
-  <table class="mdl-data-table mdl-js-data-table" style="width: 100%;" >
-    <thead>
-      <tr>
-        <th data-field="id" class="mdl-data-table__cell--non-numeric"><%= sortable "activity_type", "교내/교외"%></th>
-        <th data-field="name" class="mdl-data-table__cell--non-numeric"><%= sortable "style", "분류"%></th>
-        <th data-field="price" class="mdl-data-table__cell--non-numeric"><%= sortable  "title",  "활동명"%></th>
-        <th data-field="price" class="mdl-data-table__cell--non-numeric"><%= sortable "content", "내용"%></th>
-        <th data-field="name" class="mdl-data-table__cell--non-numeric"><%= sortable"host_name",  "주관기관"%></th>
-        <th data-field="price" class="mdl-data-table__cell--non-numeric"><%= sortable "start_at", "시작일" %></th>
-        <th data-field="price" class="mdl-data-table__cell--non-numeric"><%= sortable "end_at", "종료일" %></th>
+<div class="row ">
 
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @activities.each do |a| %>
+<table class="col bordered centered" style="width: 100%;">
+      <thead>
         <tr>
-          <td class="mdl-data-table__cell--non-numeric"><%=a.activity_type%></td>
-          <td class="mdl-data-table__cell--non-numeric"><%=a.style%></td>
-          <td class="mdl-data-table__cell--non-numeric"><%= link_to a.title, activity_path(a) %></td>
-          <td class="mdl-data-table__cell--non-numeric"><%=truncate(a.content, :length => 20, :separator=>' ')do link_to "see more...", activity_path(a) end%></td>
-          <td class="mdl-data-table__cell--non-numeric"><%=a.host_name%></td>
-          <td class="mdl-data-table__cell--non-numeric"><%=a.start_at%></td>
-          <td class="mdl-data-table__cell--non-numeric"><%=a.end_at%></td>
+          <th data-field="id"><%= sortable "activity_type", "교내/교외"%></th>
+          <th data-field="name"><%= sortable "style", "분류"%></th>
+          <th data-field="price"><%= sortable  "title",  "활동명"%></th>
+          <th data-field="price"><%= sortable "content", "내용"%></th>
+          <th data-field="name"><%= sortable"host_name",  "주관기관"%></th>
+          <th data-field="price"><%= sortable "start_at", "시작일" %></th>
+          <th data-field="price"><%= sortable "end_at", "종료일" %></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @activities.each do |a| %>
+        <tr>
+          <td><%=a.activity_type%></td>
+          <td><%=a.style%></td>
+          <td><%= link_to a.title, activity_path(a) %></td>
+          <td><%=truncate(a.content, :length => 10, :separator=>' ')do link_to "see more...", activity_path(a) end %></td>
+          <td><%=a.host_name%></td>
+          <td><%=a.start_at%></td>
+          <td><%=a.end_at%></td>
+          <td><%="#{a.impressions.count}"%></td>
+          <td><button type="submit" ><%= link_to "수정", edit_activity_path(a) %></button></td>
+          <td><button type="submit" ><%= link_to "삭제", activity_path(a), method: "delete" %></button></td>
         <%end%>
-      </tr>
-    </tbody>
-  </table>
+        </tr>
+        </tbody>
+        </table>
+        </br></br>
   <%= will_paginate @activities %>
-</div>
+   <!--버튼-->
+<%= link_to "새글 쓰기", new_activity_path,class: 'waves-effect waves-light btn right'%></br></br>
+  </div>
+</div>  
+</ul>

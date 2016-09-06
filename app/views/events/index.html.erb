@@ -1,20 +1,5 @@
 <h5 class="center">정보게시판 목록</h5>
-<!--검색-->
-   <div id="search" class="row black-text darken-3" >
-      <div class="container">
-      <div class="col s3 ">
-           <%= form_tag events_path, :method => 'get', :id => "events_search" do %>
-           <%= hidden_field_tag :direction, params[:direction]%>
-           <%= hidden_field_tag :sort, params[:sort]%>  
-           <p>
-           <%= text_field_tag :search, params[:search], :class=>"mdl-textfield__input", :for=>"sample1" , :placeholder=>"검색어를 입력하세요"  %>
-           <%= submit_tag "검색", :content => nil, class: 'waves-effect waves-light btn right' %>
-           </p>
-           <%end%>
-      </div>
-      </div>
-   </div>    
-   
+
 
 <!--게시판 리스트-->
 <div class="row ">
@@ -57,3 +42,5 @@
 
  <!--버튼-->
 <%= link_to "새글 쓰기", new_event_path ,class: 'waves-effect waves-light btn right'%>
+</div>
+</div>
