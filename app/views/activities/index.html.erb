@@ -1,4 +1,4 @@
-<h5>활동내역</h5>
+<h5 class="center">활동내역</h5>
 
 <head>
     <!-- Compiled and minified CSS -->
@@ -12,17 +12,17 @@
 
 <div class="row ">
 <div class="col s12">
-<table class="col s12 bordered centered" style="width: 100%;">
+<table class="bordered centered" style="width: 100%;">
       <thead>
         <tr>
           <th><%= sortable "activity_type", "교내/교외"%></th>
           <th><%= sortable "style", "분류"%></th>
-          <th><%= sortable  "title",  "활동명"%></th>
-          <th><%= sortable "content", "내용"%></th>
+          <th colspan="2"><%= sortable  "title",  "활동명"%></th>
+          <th colspan="2"><%= sortable "content", "내용"%></th>
           <th><%= sortable"host_name",  "주관기관"%></th>
           <th><%= sortable "start_at", "시작일" %></th>
           <th><%= sortable "end_at", "종료일" %></th>
-          <th>조회수</th>
+       
         </tr>
       </thead>
 
@@ -31,12 +31,13 @@
         <tr>
           <td><%=a.activity_type%></td>
           <td><%=a.style%></td>
-          <td><%= link_to a.title, activity_path(a) %></td>
-          <td><%= link_to "#{truncate(a.content, :length => 10, :separator=>' ')}", activity_path(a)  %></td>
+          <td colspan="2"><%= link_to "#{truncate(a.title, :length =>14, :separator=>' ')}", activity_path(a) %></td>
+          <td colspan="2"><%= link_to "#{truncate(a.content, :length => 14, :separator=>' ')}", activity_path(a)  %></td>
           <td><%=a.host_name%></td>
           <td><%=a.start_at%></td>
           <td><%=a.end_at%></td>
-          <td><%="#{a.impressions.count}"%></td>
+              
+          
           
         <%end%>
         </tr>
