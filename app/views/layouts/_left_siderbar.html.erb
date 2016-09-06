@@ -12,21 +12,28 @@
         <li><a href="#"><i class="mdi-communication-live-help"></i> Help</a>
         </li>
         <li class="divider"></li>
+        
         <% if user_signed_in? %>
         <li><a href="#"><i class="mdi-action-face-unlock"></i> Profile</a>
         </li>
-        <li><<i class="mdi-hardware-keyboard-tab"></i><%= link_to '로그아웃', destroy_user_session_path, method: 'delete' %></a>
+        <li><%= link_to '로그아웃', destroy_user_session_path, method: 'delete' %></a>
         </li>
+      </ul>
+      <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown"><%=current_user.name%><i class="mdi-navigation-arrow-drop-down right"></i></a>
+      <p class="user-roal"><%=current_user.email%></p>
+    
         <% else %>
         <li><a href="#"><i class="mdi-action-lock-outline"></i> Lock</a>
         </li>
         <li><%= link_to '회원가입', new_user_registration_path , method: 'get' %></li>
         <li><%= link_to '로그인', new_user_session_path, method: 'get' %></li>
-        <% end %>
       </ul>
-      <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">John Doe<i class="mdi-navigation-arrow-drop-down right"></i></a>
-      <p class="user-roal">student123@stufit.com</p>
+      <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">로그인하세요<i class="mdi-navigation-arrow-drop-down right"></i></a>
+      <p class="user-roal">환영합니다.</p>
+      
+      <% end %>
     </div>
+    
   </div>
   </li>
   <ul class="collapsible collapsible-accordion">
