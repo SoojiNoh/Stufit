@@ -13,8 +13,6 @@
  *= require_tree .
  *= require_self
  *= require fullcalendar
- *= require owl.carousel
- *= require owl.theme 
  */
 
 #main_tab{
