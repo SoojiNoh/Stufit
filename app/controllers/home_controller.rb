@@ -3,6 +3,7 @@ class HomeController < ApplicationController
   require 'date'
   
   def index
+     @major_stories = MajorStory.all
     @today =Date.today.to_s
     
     if !user_signed_in?
@@ -15,6 +16,7 @@ class HomeController < ApplicationController
     
     @tasks.order(end_at: :desc)
     
+   
   end
 
 end
