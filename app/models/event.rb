@@ -21,13 +21,9 @@ class Event < ApplicationRecord
 
   #event 검색 _수지
   
-def self.search(search)
-  if search
-    where('title LIKE :search OR content LIKE :search', search: "%#{search}%")
-  else
-    where(nil)
-  end
-end
+   def self.search(search)
+      where("title LIKE ? OR place LIKE ? OR event_type LIKE ? OR start_at LIKE ? OR end_at LIKE ?", "%#{search}%")
+   end
 
   mount_uploader :image, AvatarUploader
 

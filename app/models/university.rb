@@ -14,5 +14,9 @@ class University < ApplicationRecord
   # university : comment relation => 1:N
   has_many :comments
 
+  def self.search(search)
+      where("name LIKE ?", "%#{search}%")
+  end
+
   mount_uploader :img, AvatarUploader
 end
