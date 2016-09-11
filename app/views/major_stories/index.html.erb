@@ -12,7 +12,7 @@
     <div class="card">
       <div class="card-image">
       <%= link_to major_story_path(major_story) do %>
-          <%= image_tag "#{major_story.major_type}" %>
+          <%= image_tag "#{major_story.file}" , height: '300', width: '400', alt = "인터뷰 보러가기" %>
         <span class="card-title"><%= major_story.content %></span>
       </div>
         <div class="card-content">
@@ -33,7 +33,7 @@
 </div>
 <div class = "col s6 m6">
 </div>
-
+<%= will_paginate @major_stories %>
 <!--search -->
 <div class = "col s3 m3">
 
@@ -43,9 +43,8 @@
   <%= hidden_field_tag :sort, params[:sort]%>
   <p>
     <%= text_field_tag :search, params[:search], :placeholder=>"검색어를 입력하세요" %>
-  <div class="mdl-cell mdl-cell--12-col"><%= submit_tag "검색", :content => nil, :class=>"mdl-button mdl-js-button mdl-button--raised mdl-button--colored"%>
-
-</div>
+  <div><%= submit_tag "검색", :content => nil, class: 'waves-effect waves-light btn' %>
+  </div>
 
 
 
