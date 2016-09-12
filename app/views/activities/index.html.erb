@@ -1,7 +1,7 @@
-<div class="mdl-cell mdl-cell--12-col">
+
 <h5>활동내역</h5>
-</div>
-<div class="mdl-cell mdl-cell--12-col center">
+
+
 <%= form_tag activities_path, :method => 'get', :id => "activities_search" do %>
   <%= hidden_field_tag :direction, params[:direction]%>
   <%= hidden_field_tag :sort, params[:sort]%>  
@@ -9,7 +9,7 @@
     <%= text_field_tag :search, params[:search], :placeholder=>"검색어를 입력하세요" %>
   <%= submit_tag "검색", :content => nil, :class=>"mdl-button mdl-js-button mdl-button--raised mdl-button--colored"%>
 
-</div>
+
       </p>
 <% end %>
 
@@ -48,7 +48,8 @@ table {
 	
 </head>
 
-<div class="mdl-cell mdl-cell--12-col">
+<div class = "container" >
+  
           <%= link_to "새로 만들기", new_activity_path, :class=>"mdl-button mdl-js-button mdl-button--raised mdl-button--colored", :style=>"float: right;"%>
 <table class="mdl-data-table mdl-js-data-table" style="width: 100%;" >
       <thead>
