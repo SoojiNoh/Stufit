@@ -1,10 +1,10 @@
-<p id="notice"><%= notice %></p>
 
-<h3><%= @major_story.title.html_safe %></h3>
+<h3><%= @major_story.title.html_safe %> <%= @major_story.content %></h3>
+<h4><%= @major_story.place %> <%= @major_story.major_type %></h4>
 
-
-<p><%= @major_story.body.html_safe %></p>
-
+<div class ="container">
+  <p><%= @major_story.body.html_safe %></p>
+</div>
 
 
 

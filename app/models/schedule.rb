@@ -1,8 +1,8 @@
 class Schedule < ApplicationRecord
     belongs_to :user, optional: true
     
-    #schedule 검색 _수지
+   
    def self.search(search)
-     where("start_at LIKE ?", "%#{search}%")
+     where("title LIKE ? OR place LIKE ? OR event_type LIKE ? OR start_at LIKE ? OR end_at LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
    end
 end

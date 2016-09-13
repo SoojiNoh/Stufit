@@ -1,39 +1,38 @@
-  <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--6-col-tablet mdl-cell--10-col-desktop mdl-cell--stretch">
+<div class="field">
     <%= f.label :title, '제목' %>
     <%= f.text_area :title %>
 </div>
-<div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--6-col-tablet mdl-cell--10-col-desktop mdl-cell--stretch">
+<div class="field">
     <%= f.label :content, '내용' %>
     <%= f.text_area :content, :size => "50x10" %>
 </div>
-  <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--6-col-tablet mdl-cell--10-col-desktop mdl-cell--stretch">
+<div>
     <%= f.label :place, '장소' %>
     <%= f.text_field :place %>
 </div>
-  <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--6-col-tablet mdl-cell--10-col-desktop mdl-cell--stretch">
+<div>
     <%= f.label :event_type, '분류' %>
     <%= f.text_field :event_type %>
 </div>
-  <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--6-col-tablet mdl-cell--10-col-desktop mdl-cell--stretch">
+<div class="field">
     <%= f.label :start_at, '시작일' %>
     <%= f.datetime_field :start_at %>
 </div>
-  <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--6-col-tablet mdl-cell--10-col-desktop mdl-cell--stretch">
+<div class="field">
     <%= f.label :end_at, '종료일' %>
     <%= f.datetime_field :end_at %>
 </div>
-  <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--6-col-tablet mdl-cell--10-col-desktop mdl-cell--stretch">
+<div>
    <%= f.label :image, '파일첨부' %> 
    <%= f.text_field :file %>
    <%= f.file_field :image %>
 </div>
 </br>
-  <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--6-col-tablet mdl-cell--10-col-desktop mdl-cell--stretch">
+<div>
   <%= f.label :hash_events, '해쉬태그' %>
   <%= f.select :hash_events, options_for_select(HashTag.all.collect{ |u| [u.name,u.id] }),{},{ :multiple => true} %>
 </div>
 </br>
-
-<div class="mdl-cell mdl-cell--6-col-tablet mdl-cell--10-col-desktop mdl-cell--stretch">
-    <%= f.submit "저장하기", class:"mdl-button mdl-js-button mdl-button--raised mdl-button--colored"  %>
+<div>
+    <%= f.submit "저장하기",class: 'waves-effect waves-light btn' %>
 </div>

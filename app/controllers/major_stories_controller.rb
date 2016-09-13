@@ -2,7 +2,7 @@ class MajorStoriesController < ApplicationController
  before_action :set_major_story, only: [:show, :edit, :update, :destroy]
 
   def index
-    @major_stories = MajorStory.search(params[:search]).paginate(:page => params[:page], :per_page => 5)
+    @major_stories = MajorStory.search(params[:search]).paginate(:page => params[:page], :per_page => 8)
   end
 
   def show
@@ -40,6 +40,7 @@ class MajorStoriesController < ApplicationController
   end
 
   def edit
+    @major_story = MajorStoty.find(params[:id])
   end
 
   def destroy
@@ -71,6 +72,6 @@ class MajorStoriesController < ApplicationController
   end
 
   def major_story_params
-    params.require(:major_story).permit(:title, :content, :place, :file, :major_type, :body, :universtiy)
+    params.require(:major_story).permit(:title, :content, :place, :major_type, :file, :body, :universtiy)
   end
 end

@@ -10,6 +10,7 @@
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
+/db/database.yml
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -22,3 +23,9 @@
 
 # Ignore application configuration
 /config/application.yml
+
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

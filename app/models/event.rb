@@ -1,5 +1,7 @@
 class Event < ApplicationRecord
   
+  
+  
   is_impressionable 
   
   self.per_page = 6
@@ -21,13 +23,6 @@ class Event < ApplicationRecord
 
   #event 검색 _수지
   
-def self.search(search)
-  if search
-    where('title LIKE :search OR content LIKE :search', search: "%#{search}%")
-  else
-    where(nil)
-  end
-end
 
   mount_uploader :image, AvatarUploader
 

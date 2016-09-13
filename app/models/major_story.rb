@@ -25,6 +25,6 @@ class MajorStory < ApplicationRecord
   has_many :major_likes
   has_many :users, through: :major_likes
 
-  mount_uploader :major_type, AvatarUploader
+  mount_uploader :file, AvatarUploader
 
 end

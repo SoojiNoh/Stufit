@@ -1,17 +1,22 @@
-    <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--6-col-tablet mdl-cell--10-col-desktop mdl-cell--stretch" >
-<h4>정보게시판</h4>
-</div>
-
+   <div class="progress">
+       <div class="determinate" style="width: 70%"></div>
+     </div>
     <!--제목부분-->
-    <div class="mdl-cell mdl-cell--6-col-tablet mdl-cell--10-col-desktop mdl-cell--stretch" >
+  
     <h5> 제목 | <%= @event.title %> </h5>
     <h6> 작성일 :  <%= @event.created_at.in_time_zone("Asia/Seoul").strftime("%Y. %m. %d.    %H : %M") %> </h6>
     <h6> 조회수 : <%=@event.impressions.count%></h6>
 
+
+    <div class="progress">
+       <div class="determinate" style="width: 70%"></div>
+    </div>
+    
     <!--내용부분-->
     
     <br><p><%= @event.content %></p><br>
-    <%= image_tag "#{@event.image}" %><br>
+    <%= image_tag "#{@event.image}" %><br><br>
+    
     <!--그 외 정보-->
     
     장소 : <%= @event.place %><br>
@@ -19,37 +24,44 @@
     일정 : <%= @event.start_at.in_time_zone("Asia/Seoul").strftime("%Y. %m. %d.  %H : %M") %>
      ~  <%= @event.end_at.in_time_zone("Asia/Seoul").strftime("%Y. %m. %d.  %H : %M") %><br>
     첨부파일 <br><%= @event.file %>
+    <div class="progress">
+       <div class="determinate" style="width: 70%"></div>
+    </div>
 
 
-   
-   <h5>관련 태그</h5>
+   <!--해쉬태그-->
+   <h6>연관 태그</h6>
    <p>
    <% @event.hash_tags.each do |hash| %>
-   <span class="mdl-chip">
-    <span class="mdl-chip__text"><%= link_to "#{hash.name}", hash_tag_path(hash) %></span>
+   <span class="chip">
+    <span class="chip"><%= link_to "#{hash.name}", hash_tag_path(hash) %></span>
 </span>
 
    <% end %>
    </p>
 </div>
 
-
+    <div class="progress">
+       <div class="determinate" style="width: 70%"></div>
+    </div>
+    
    <!--버튼 기능-->
-
-<div>
+     <%= link_to "수정", edit_event_path(@event),class: 'waves-effect waves-light btn' %>
+     <%= link_to "삭제", event_path(@event), method: "delete",class: 'waves-effect waves-light btn' %>
+     <%= link_to "목록", events_path,class: 'waves-effect waves-light btn' %>
+     <%= link_to '새 글쓰기', new_event_path ,class: 'waves-effect waves-light btn' %>
+     <br><br><br><br><br><br>
+     
+     <!--댓글-->
+     <h6>댓글</h6>
+    <div>
    <% @event.comments.each do |comment| %>
      <%= comment.user.name %><br>
      <%= comment.content %>
-     <%= link_to "댓글 삭제", comment_path(comment), method: :delete,:class=>"mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
-     
+     <%= link_to "댓글 삭제", comment_path(comment), method: :delete,class: 'waves-effect waves-light btn' %>
    <% end %>
 </div>
 <div>
    <%= render partial: 'comments/new', locals: { :comment => @event.comments.new , event: @event.id, belong: "event"} %>
-</div>
-<div class="mdl-cell mdl-cell--6-col-tablet mdl-cell--10-col-desktop mdl-cell--stretch" >
-   <%= link_to "삭제", event_path(@event), method: "delete",:class=>"mdl-button mdl-js-button mdl-button--raised mdl-button--colored", :style=>"float: right;"%>
-   <%= link_to "수정", edit_event_path(@event),:class=>"mdl-button mdl-js-button mdl-button--raised mdl-button--colored", :style=>"float: right;"%>
-   <%= link_to "목록", events_path, :class=>"mdl-button mdl-js-button mdl-button--raised mdl-button--colored", :style=>"float: right;" %>
-   <%= link_to '새 글쓰기', new_event_path ,:class=>"mdl-button mdl-js-button mdl-button--raised mdl-button--colored", :style=>"float: right;" %>
-</div>
+</div></br>
+ 

@@ -6,7 +6,7 @@ CarrierWave.configure do |config|
     endpoint:              'https://s3.ap-northeast-2.amazonaws.com',       # optional, defaults to nil
     region:                'ap-northeast-2'
   }
-  config.fog_directory  = 'stufit'                                          # required
+  config.fog_directory  = 'stufits'                                          # required
   config.fog_public     = true                                              # optional, defaults to true
-  config.fog_attributes = { 'Cache-Control' => "max-age=#{365.day.to_i}" }  # optional, defaults to {}
+  config.fog_attributes = {}  # optional, defaults to {}
 end

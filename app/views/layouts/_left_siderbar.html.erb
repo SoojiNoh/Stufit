@@ -1,0 +1,71 @@
+<aside id="left-sidebar-nav">
+<ul id="slide-out" class="side-nav fixed leftside-navigation">
+  <li class="user-details cyan darken-2">
+  <div class="row">
+    <div class="col col s4 m4 l4">
+      <%= image_tag "avatar.jpg", class: "circle responsive-img valign profile-image" %>
+    </div>
+    <div class="col col s8 m8 l8">
+      <ul id="profile-dropdown" class="dropdown-content">
+        <li><a href="#"><i class="mdi-action-settings"></i> Settings</a>
+        </li>
+        <li><a href="#"><i class="mdi-communication-live-help"></i> Help</a>
+        </li>
+        <li class="divider"></li>
+        
+        <% if user_signed_in? %>
+        <li><a href="#"><i class="mdi-action-face-unlock"></i> Profile</a>
+        </li>
+        <li><%= link_to '로그아웃', destroy_user_session_path, method: 'delete' %></a>
+        </li>
+      </ul>
+      <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown"><%=current_user.name%><i class="mdi-navigation-arrow-drop-down right"></i></a>
+      <p class="user-roal"><%=current_user.email%></p>
+    
+        <% else %>
+        <li><a href="#"><i class="mdi-action-lock-outline"></i> Lock</a>
+        </li>
+        <li><%= link_to '회원가입', new_user_registration_path , method: 'get' %></li>
+        <li><%= link_to '로그인', new_user_session_path, method: 'get' %></li>
+      </ul>
+      <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">로그인하세요<i class="mdi-navigation-arrow-drop-down right"></i></a>
+      <p class="user-roal">환영합니다.</p>
+      
+      <% end %>
+    </div>
+    
+  </div>
+  </li>
+  <ul class="collapsible collapsible-accordion">
+    <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-perm-identity"></i> 내 서비스</a>
+    <div class="collapsible-body">
+      <ul>
+        <li><a href="/activities">활동내역</a>
+        </li>                                        
+        <li><a href="/mock_tests">성적관리</a>
+        </li>
+        <li><a href="/schedules">캘린더</a>
+        </li>
+      </ul>
+    </div>
+    </li>
+    <ul>
+
+      <li class="li-hover"><div class="divider"></div></li>
+      <li class="li-hover"><p class="ultra-small margin more-text">알리Go</p></li>
+      <li class="bold"><a href="/universities" class="waves-effect waves-cyan">
+        <i class="material-icons">&#xE80C;</i> 대학알리Go</a>
+      </li>
+      <li class="bold"><a href="/major_stories" class="waves-effect waves-cyan">
+        <i class="material-icons">&#xE150;</i> 전공알리Go</a>
+      </li>
+      <li class="bold"><a href="/events" class="waves-effect waves-cyan">
+        <i class="material-icons">&#xE916;</i> 대외알리Go</a>
+      </li>
+
+
+    </ul>
+    <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only darken-2">
+      <i class="mdi-navigation-menu" ></i></a>
+    </aside>
+

@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   resources :schedules
   resources :hash_tags, only: [:index,:show]
   get 'stufit/index'
-
+  get 'home/search'
   get 'facebook/index'
 
   get '/activities/image/:id'=>'activities#image'
