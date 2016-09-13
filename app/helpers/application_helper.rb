@@ -5,4 +5,5 @@ def sortable(column, nickname = nil)
   direction = column == sort_column && sort_direction == "asc" ? "desc" : "asc"
      link_to nickname, params.merge(:sort => column, :direction => direction, :page => nil).permit!
 end
+
 end

@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'ckeditor'
 gem "paperclip"
 gem 'jquery-turbolinks'
@@ -11,6 +10,7 @@ gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 gem 'figaro'
 gem 'will_paginate', '~> 3.1.0'
+
 gem 'will_paginate-materialize'
 gem 'materialize-sass'
 gem 'fog-aws'

@@ -57,7 +57,7 @@
         </tbody>
         </table>
         </br></br>
-  <%= will_paginate @activities %>
+  <%= will_paginate @activities, :renderer => 'PaginationListLinkRenderer' %>
 
   </div>
 
