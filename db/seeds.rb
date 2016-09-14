@@ -26,7 +26,6 @@ University.create(name: "숭실대학교", img: "http://i.imgur.com/QbGk3xh.jpg"
 University.create(name: "고려대학교", img: "http://i.imgur.com/2kkFOdQ.png", link_url: "http://oku.korea.ac.kr/oku/index.jsp", content: "고려대학교")
 University.create(name: "연세대학교", img: "http://i.imgur.com/kyDIpdw.jpg", link_url: "http://admission.yonsei.ac.kr/seoul/admission/html/main/main.asp", content: "연세대학교")
 University.create(name: "서울과학기술대학교", img: "http://i.imgur.com/JydlcMG.jpg", link_url: "http://admission.seoultech.ac.kr/", content: "서울과학기술대학교")
-
 UnivFollow.create(user_id: 1, university_id: 1)
 
 Event.create(title: '삼성 해외탐방단', content:'고등학생 30명 해외봉사단 모집합니다.', place:'캄보디아',event_type: '봉사', start_at:'2016-08-08', end_at: '2017-10-08')
