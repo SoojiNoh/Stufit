@@ -1,4 +1,4 @@
-<h5>활동내역</h5>
+<h5 class="center">활동내역</h5>
 
 
 <%= form_tag activities_path, :method => 'get', :id => "activities_search" do %>
@@ -14,15 +14,12 @@
 
 
 <head>
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-    
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"></script>
 </head>
-<%= link_to "새글 쓰기", new_activity_path,class: 'waves-effect waves-light btn right'%></br>
+<%= link_to "새글 쓰기", new_activity_path,class: 'waves-effect waves-light btn right'%><br>
 
 <div class="row">
 <table class="bordered centered" style="width: 100%;">

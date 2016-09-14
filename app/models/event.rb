@@ -26,4 +26,12 @@ class Event < ApplicationRecord
 
   mount_uploader :image, AvatarUploader
 
+  def self.search(search)
+  if search
+    where('title LIKE :search OR content LIKE :search', search: "%#{search}%")
+  else
+    where(nil)
+  end
+end
+
 end

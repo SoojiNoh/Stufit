@@ -1,7 +1,17 @@
-<h5 class="center">정보게시판 목록</h5>
+<h5 class="center">정보게시판</h5>
+
+<%= form_tag events_path, :method => 'get', :id => "events_search" do %>
+  <%= hidden_field_tag :direction, params[:direction]%>
+  <%= hidden_field_tag :sort, params[:sort]%>  
+  <p>
+    <%= text_field_tag :search, params[:search], :placeholder=>"검색어를 입력하세요" %>
+  <%= submit_tag "검색", :content => nil, :class=>'waves-effect waves-light btn'%><br>
 
 
+      </p>
+<% end %>
 <!--게시판 리스트-->
+<%= link_to "새글 쓰기", new_event_path ,class: 'waves-effect waves-light btn right'%><br>
 <div class="row ">
 <div class="col s12">
 <table class="col s12 bordered centered" style="width: 100%;">
@@ -37,10 +47,9 @@
 <br><br>
 <!--페이지 넘기기-->
 <ul class="pagination">
-<%= will_paginate @events, class:"waves-effect " %>
+<%= will_paginate @events, :renderer => 'PaginationListLinkRenderer' %>
 
 
  <!--버튼-->
-<%= link_to "새글 쓰기", new_event_path ,class: 'waves-effect waves-light btn right'%><br><br><br>
 </div>
 </div>
