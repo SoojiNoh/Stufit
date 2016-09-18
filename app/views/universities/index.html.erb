@@ -10,11 +10,10 @@
         <% end %>
       <%= link_to university_path(univ) do %>
         <%= image_tag "#{univ.img}", :size => '200x150' %>
-        <span><%= univ.name %></span>
-      </div>
-        <div class="card-action">
-          <%= link_to "입학처", "#{univ.link_url}" %>
+        <div style="text-align:center; margin-top:10px; margin-bottom:10px; font-weight:bold;">
+          <span><%= link_to univ.name, "#{univ.link_url}" %></span>
         </div>
+      </div>
       <% end %>
     </div>
   </div>
