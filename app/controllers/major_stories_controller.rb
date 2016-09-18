@@ -40,7 +40,7 @@ class MajorStoriesController < ApplicationController
   end
 
   def edit
-    @major_story = MajorStoty.find(params[:id])
+    @major_story = MajorStory.find(params[:id])
   end
 
   def destroy
