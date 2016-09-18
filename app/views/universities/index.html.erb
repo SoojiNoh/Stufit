@@ -1,6 +1,6 @@
 <div class="row">
 <% @universities.each do |univ| %>
-  <div class="col s3 m3">
+  <div class="col s2 m2">
     <div class="card">
       <div class="card-image">
         <% if current_user.universities.where(id: univ.id).take != nil  %>
@@ -9,10 +9,11 @@
           <%= link_to "/universities/univ/#{univ.id}" do %> <i class="empty_star material-icons">star</i> <% end %>
         <% end %>
       <%= link_to university_path(univ) do %>
-        <%= image_tag "#{univ.img}", size: '300x300' %>
+        <%= image_tag "#{univ.img}", :size => '200x150' %>
+        <span><%= univ.name %></span>
       </div>
         <div class="card-action">
-          <%= link_to univ.content+" 입학처", "#{univ.link_url}" %>
+          <%= link_to "입학처", "#{univ.link_url}" %>
         </div>
       <% end %>
     </div>
