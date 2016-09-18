@@ -1,6 +1,6 @@
 <div class="row">
 <% @universities.each do |univ| %>
-  <div class="col s2 m2">
+  <div class="col s2 m3 l2">
     <div class="card">
       <div class="card-image">
         <% if current_user.universities.where(id: univ.id).take != nil  %>
@@ -19,7 +19,7 @@
   </div>
 <% end %>
 </div>
-<%= link_to "대학등록", new_university_path,class: 'waves-effect waves-light btn' %>
 
 <!--페이지 넘기기-->
-<%= will_paginate @universities, :renderer => 'PaginationListLinkRenderer' %>
+<center style="margin-top:50px;"><%= will_paginate @universities, :renderer => 'PaginationListLinkRenderer' %></center>
+<div align="right" style="margin-top:10px; margin-bottom:20px;"><%= link_to "대학등록", new_university_path,class: 'waves-effect waves-light btn' %></div>
