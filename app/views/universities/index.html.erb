@@ -9,14 +9,10 @@
           <%= link_to "/universities/univ/#{univ.id}" do %> <i class="empty_star material-icons">star</i> <% end %>
         <% end %>
       <%= link_to university_path(univ) do %>
-        <%= image_tag "#{univ.img}" %>
-        <span class="card-title"><%= univ.name %></span>
+        <%= image_tag "#{univ.img}", size: '300x300' %>
       </div>
-        <div class="card-content">
-          <p><%= univ.content %></p>
-        </div>
         <div class="card-action">
-          <%= link_to "홈페이지", "http://#{univ.link_url}" %>
+          <%= link_to univ.content+" 입학처", "#{univ.link_url}" %>
         </div>
       <% end %>
     </div>
