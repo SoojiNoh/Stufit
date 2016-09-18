@@ -22,6 +22,7 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    @article = Article.find(params[:id])
   end
 
   def update
@@ -32,7 +33,7 @@ class ArticlesController < ApplicationController
       render action: "edit"
     end
   end
-  
+
   def destroy
     @article.destroy
     respond_to do |format|
@@ -45,7 +46,7 @@ private
 # Use callbacks to share common setup or constraints between actions.
     def set_article
       @article = Article.find(params[:id])
-    end  
+    end
 
 
   def article_params
