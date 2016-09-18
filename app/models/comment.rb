@@ -15,5 +15,6 @@ class Comment < ApplicationRecord
   # User : like : Comment relation => N:M
   has_many :likes
   has_many :users, through: :likes
+  
 
 end

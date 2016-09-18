@@ -33,4 +33,7 @@ class User < ApplicationRecord
   has_many :major_likes
   has_many :major_stories, through: :major_likes
 
+
+  has_and_belongs_to_many :paththroughs
+
 end

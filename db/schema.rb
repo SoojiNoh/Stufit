@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160827161322) do
+ActiveRecord::Schema.define(version: 20160918104351) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "activity_type"
@@ -192,6 +192,17 @@ ActiveRecord::Schema.define(version: 20160827161322) do
     t.index ["user_id"], name: "index_mock_tests_on_user_id"
   end
 
+  create_table "paththroughs", force: :cascade do |t|
+    t.string   "way"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "paththroughs_users", id: false, force: :cascade do |t|
+    t.integer "paththrough_id", null: false
+    t.integer "user_id",        null: false
+  end
+
   create_table "schedules", force: :cascade do |t|
     t.string   "title"
     t.string   "content"
@@ -234,6 +245,8 @@ ActiveRecord::Schema.define(version: 20160827161322) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string   "membertype"
+    t.string   "paththrough"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "name"

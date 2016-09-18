@@ -11,6 +11,17 @@
       <div class="row margin">
         <div class="input-field col s12">
           <i class="mdi-social-person-outline prefix"></i>
+          <%= f.label :membertype, 'membertype', class: "center-align" %><br>
+          <%= f.radio_button :membertype, "highschool", class: "center-align" %>
+          <%= f.label :membertype, 'highschool', :value => "highschool", class: "center-align" %>
+          <%= f.radio_button :membertype, "univ", class: "center-align" %>
+          <%= f.label :membertype, 'univ', :value=> "univ", class: "center-align" %>
+      
+        </div>
+      </div>
+      <div class="row margin">
+        <div class="input-field col s12">
+          <i class="mdi-social-person-outline prefix"></i>
           <%= f.label :name, 'name', class: "center-align" %>
           <%= f.text_field :name, id:"username" %>
         </div>
@@ -37,6 +48,19 @@
           <i class="mdi-action-lock-outline prefix"></i>
           <%= f.password_field :password_confirmation, autocomplete: "off" , id:"password-again"%>
           <%= f.label :password_confirmation %>
+        </div>
+      </div>
+          <div class="row margin">
+        <div class="input-field col s12">
+          <i class="mdi-social-person-outline prefix"></i>
+          <%= f.label "Area of Expertise" %><br />
+  <%= f.collection_check_boxes :paththrough_ids, Paththrough.all, :id, :way do |b| %>
+    <div class="collection-check-box">
+      <%= b.check_box %>
+      <%= b.label %>
+    </div>
+  <% end %>
+
         </div>
       </div>
       <div class="row">
