@@ -43,7 +43,6 @@ HashTag.create(name: "지구과학")
 HashTag.create(name: "경영학")
 HashTag.create(name: "경제학")
 
-<<<<<<< HEAD
 Paththrough.create(id:1, way:"facebook")
 Paththrough.create(id:2, way:"offline")
 Paththrough.create(id:3, way:"friend")
@@ -51,6 +50,3 @@ Paththrough.create(id:3, way:"friend")
 
 
 
-=======
-MajorStory.create(title: "서울대학교", content: "전기정보공학부", place: "3학년", body: "인터뷰 내용", file: "http://i.imgur.com/BV2YyYA.png")
->>>>>>> ef52e15fdf4bcf9e3f4f8c242988a9254045ea4f
