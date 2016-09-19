@@ -35,5 +35,6 @@ class User < ApplicationRecord
 
 
   has_and_belongs_to_many :paththroughs
-
+  
+    mount_uploader :image, AvatarUploader
 end

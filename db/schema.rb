@@ -201,6 +201,8 @@ ActiveRecord::Schema.define(version: 20160918104351) do
   create_table "paththroughs_users", id: false, force: :cascade do |t|
     t.integer "paththrough_id", null: false
     t.integer "user_id",        null: false
+    t.index ["paththrough_id", "user_id"], name: "index_paththroughs_users_on_paththrough_id_and_user_id"
+    t.index ["user_id", "paththrough_id"], name: "index_paththroughs_users_on_user_id_and_paththrough_id"
   end
 
   create_table "schedules", force: :cascade do |t|
@@ -245,6 +247,7 @@ ActiveRecord::Schema.define(version: 20160918104351) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string   "image"
     t.string   "membertype"
     t.string   "paththrough"
     t.string   "email",                  default: "", null: false
