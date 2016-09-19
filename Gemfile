@@ -5,6 +5,9 @@ gem "paperclip"
 gem 'jquery-turbolinks'
 gem 'mini_magick'
 
+gem 'sunspot_rails'
+gem 'sunspot_solr'
+
 gem 'impressionist'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'

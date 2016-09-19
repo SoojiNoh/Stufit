@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   #impressionist :actions=>[:show,:index]
   def index
     @user = current_user
-    @events =Event.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:page => params[:page], :per_page => 5)
+    @events =Event.all.order(sort_column + " " + sort_direction).paginate(:page => params[:page], :per_page => 5)
     #impressionist(@event)
     #Event.reorder("created_at DESC").paginate(:page => params[:page], :per_page => 10)
   end

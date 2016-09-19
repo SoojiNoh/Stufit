@@ -1,5 +1,14 @@
 class Event < ApplicationRecord
-  
+      searchable do
+  text :title, :boost => 5
+  text :content, :start_at
+  time :start_at
+  string :start_month
+end
+
+def start_month
+  start_at.strftime("%B %Y")
+end
   
   
   is_impressionable 
@@ -26,12 +35,5 @@ class Event < ApplicationRecord
 
   mount_uploader :image, AvatarUploader
 
-  def self.search(search)
-  if search
-    where('title LIKE :search OR content LIKE :search', search: "%#{search}%")
-  else
-    where(nil)
-  end
-end
 
 end
