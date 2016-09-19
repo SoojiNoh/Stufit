@@ -2,6 +2,7 @@ class ActivitiesController < ApplicationController
   helper_method :sort_column, :sort_direction
   
   def index
+        @user = current_user
     @activities = Activity.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:page => params[:page], :per_page => 5)
   end
 

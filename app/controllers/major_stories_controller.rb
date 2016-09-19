@@ -2,6 +2,7 @@ class MajorStoriesController < ApplicationController
  before_action :set_major_story, only: [:show, :edit, :update, :destroy]
 
   def index
+        @user = current_user
     @major_stories = MajorStory.search(params[:search]).paginate(:page => params[:page], :per_page => 8)
   end
 

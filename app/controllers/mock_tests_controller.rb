@@ -1,6 +1,7 @@
 class MockTestsController < ApplicationController
 
   def new
+        @user = current_user
     @mock_test = MockTest.new
 
     respond_to do |format|

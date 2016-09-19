@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
  before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
+        @user = current_user
     @articles = Article.all
   end
 
