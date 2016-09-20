@@ -1,6 +1,6 @@
 class MyPageController < ApplicationController
   def index
-        @user = current_user
+    @user = current_user
     @mock_tests = MockTest.all
 
     respond_to do |format|

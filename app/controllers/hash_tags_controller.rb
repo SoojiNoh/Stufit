@@ -1,6 +1,6 @@
 class HashTagsController < ApplicationController
   def index
-        @user = current_user
+    @user = current_user
     @hash_tags = HashTag.all
 
     respond_to do |format|

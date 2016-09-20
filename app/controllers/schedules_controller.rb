@@ -4,7 +4,7 @@ class SchedulesController < ApplicationController
   # GET /schedules
   # GET /schedules.json
   def index
-      @user = current_user
+    @user = current_user
     @events = current_user.events.all
     @schedules = Schedule.all
     if params[:search]
