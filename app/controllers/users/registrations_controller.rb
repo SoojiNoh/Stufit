@@ -60,7 +60,7 @@ class RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
   
-  params.require(:user).permit(:id, :membertype, paththrough_ids:[])
+  params.require(:user).permit(:id, :membertype, paththrough_ids:[], :image)
 
   
 end
