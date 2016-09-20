@@ -4,8 +4,8 @@
         <%= image_tag "#{@university.img}", :size => '200x200'%>
         <p><%= @university.content %></p>
         <a href="#"><%= @university.link_url %></a>
-        <%= link_to link_url, "#{univ.link_url}" %>
-
+  </div>
+</div>
 
 <% @university.comments.each do |comment| %>
      <h4>
@@ -14,8 +14,6 @@
      <%= link_to "댓글삭제", comment_path(comment), method: :delete %>
      </h4>
 <% end %>
-  </div>
-</div>
 
 <%= render partial: '/comments/new', locals: { :comment => @university.comments.new, university: @university.id, belong: "university"} %>
 
