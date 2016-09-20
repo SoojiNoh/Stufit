@@ -1,11 +1,11 @@
 <div class="row">
   <div class="col s12 m7">
-        <%= image_tag "#{@university.img}" %>
-        <span class="card-title"><%= @university.name %></span>
+        <div style="margin-top:50px;"><span class="card-title"><%= @university.name %></span><br>
+        <%= image_tag "#{@university.img}", :size => '200x200'%>
         <p><%= @university.content %></p>
         <a href="#"><%= @university.link_url %></a>
-  </div>
-</div>
+        <%= link_to link_url, "#{univ.link_url}" %>
+
 
 <% @university.comments.each do |comment| %>
      <h4>
@@ -14,5 +14,20 @@
      <%= link_to "댓글삭제", comment_path(comment), method: :delete %>
      </h4>
 <% end %>
+  </div>
+</div>
 
 <%= render partial: '/comments/new', locals: { :comment => @university.comments.new, university: @university.id, belong: "university"} %>
+
+
+
+  <ul class="collection">
+    <li class="collection-item avatar">
+      <%= image_tag "#{@university.img}", :class => "circle"%>
+      <span class="title"><%= @university.name %></span>
+      <p><%= @university.content %><br>
+         <%= @university.link_url %>
+      </p>
+      <!-- <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a> -->
+    </li>
+  </ul>
