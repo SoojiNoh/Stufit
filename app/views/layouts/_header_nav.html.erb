@@ -9,9 +9,7 @@
     <div class="header-search-wrapper hide-on-med-and-down">
       <i class="mdi-action-search"></i>
       <%= form_tag '/search', :method => :get do %>
-        <p>
           <%= text_field_tag :search, params[:search], class: 'header-search-input z-depth-2'%>
-        </p>
       <% end %>      
     </div>
     <ul class="right hide-on-med-and-down">
