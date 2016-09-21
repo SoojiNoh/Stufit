@@ -24,7 +24,7 @@ class HomeController < ApplicationController
   def search
     @search = Event.search do
       fulltext params[:search]
-      with(:start_at).less_than(Time.zone.now)
+      with(:start_at)
       facet(:start_month)
       with(:start_month, params[:month]) if params[:month].present?
     end

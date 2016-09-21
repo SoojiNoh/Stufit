@@ -1,5 +1,10 @@
 
-
+<%= form_tag '/search', :method => :get do %>
+        <p>
+          <%= text_field_tag :search, params[:search], class: 'header-search-input z-depth-2'%>
+          <%= submit_tag "Search", :name => nil %>
+        </p>
+      <% end %>     
 
 <!--chart dashboard start-->
 <div id="chart-dashboard">
