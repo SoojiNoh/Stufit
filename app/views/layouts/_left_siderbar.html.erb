@@ -6,10 +6,12 @@
       
       
       
-      <%unless @user.present?%>
+      
+            
+      <%unless @user.image.url.present?%>
       <%= image_tag "avatar.jpg", class: "circle responsive-img valign profile-image" %>
       <%else%>
-      <%= image_tag "#{@user.image}", class: "circle responsive-img valign profile-image" %>
+      <%= image_tag "#{current_user.image.url}", class: "circle responsive-img valign profile-image" %>
       <%end%>
       
       
