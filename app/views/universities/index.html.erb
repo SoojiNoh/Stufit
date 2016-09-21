@@ -22,4 +22,5 @@
 
 <!--페이지 넘기기-->
 <center style="margin-top:50px;"><%= will_paginate @universities, :renderer => 'PaginationListLinkRenderer' %></center>
+<!--대학등록 버튼-->
 <div align="right" style="margin-top:10px; margin-bottom:20px;"><%= link_to "대학등록", new_university_path,class: 'waves-effect waves-light btn' %></div>
