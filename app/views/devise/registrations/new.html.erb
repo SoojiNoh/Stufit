@@ -12,26 +12,25 @@
       <div class="row margin">
         <div class="input-field col s12">
           <i class="mdi-social-person-outline prefix"></i>
-            <%= f.label :image, '이미지'%><br><br>  
+            <%= f.label :image, 'Image'%><br><br>  
             <%= f.file_field :image %>
-            <%= f.hidden_field :image_cache %>
         </div>
       </div>      
       <div class="row margin">
         <div class="input-field col s12">
           <i class="mdi-social-person-outline prefix"></i>
-          <%= f.label :membertype, 'membertype', class: "center-align" %><br>
-          <%= f.radio_button :membertype, "highschool", class: "center-align" %>
-          <%= f.label :membertype, 'highschool', :value => "highschool", class: "center-align" %>
-          <%= f.radio_button :membertype, "univ", class: "center-align" %>
-          <%= f.label :membertype, 'univ', :value=> "univ", class: "center-align" %>
+          <%= f.label :membertype, 'Membertype', class: "center-align" %><br>
+          <%= f.radio_button :membertype, "Highschool", class: "center-align" %>
+          <%= f.label :membertype, 'Highschool', :value => "highschool", class: "center-align" %>
+          <%= f.radio_button :membertype, "Univ", class: "center-align" %>
+          <%= f.label :membertype, 'Univ', :value=> "univ", class: "center-align" %>
       
         </div>
       </div>
       <div class="row margin">
         <div class="input-field col s12">
           <i class="mdi-social-person-outline prefix"></i>
-          <%= f.label :name, 'name', class: "center-align" %>
+          <%= f.label :name, 'Name', class: "center-align" %>
           <%= f.text_field :name, id:"username" %>
         </div>
       </div>
@@ -62,7 +61,7 @@
           <div class="row margin">
         <div class="input-field col s12">
           <i class="mdi-social-person-outline prefix"></i>
-          <%= f.label "Area of Expertise" %><br />
+          <%= f.label "Paththrough" %><br />
   <%= f.collection_check_boxes :paththrough_ids, Paththrough.all, :id, :way do |b| %>
     <div class="collection-check-box">
       <%= b.check_box %>

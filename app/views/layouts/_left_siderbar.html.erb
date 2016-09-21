@@ -3,15 +3,15 @@
   <li class="user-details cyan darken-2">
   <div class="row">
     <div class="col col s4 m4 l4">
-      
-      
-      
-      <%unless @user.present?%>
+      <%if @user.nil?%>
       <%= image_tag "avatar.jpg", class: "circle responsive-img valign profile-image" %>
       <%else%>
-      <%= image_tag "#{@user.image}", class: "circle responsive-img valign profile-image" %>
+      <%unless @user.image.present?%>
+      <%= image_tag "avatar.jpg", class: "circle responsive-img valign profile-image" %>
+      <%else%>
+      <%= image_tag "#{current_user.image}", class: "circle responsive-img valign profile-image" %>
       <%end%>
-      
+      <%end%>
       
       <%#if @user.image.present?%>
         <%#= image_tag "#{current_user.image}", class: "circle responsive-img valign profile-image" %>
