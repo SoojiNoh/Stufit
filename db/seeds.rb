@@ -66,13 +66,13 @@ University.create(name: "홍익대학교", remote_img_url: "http://i.imgur.com/f
 
 UnivFollow.create(user_id: 1, university_id: 1)
 
-Event.create(title: '삼성 해외탐방단', content:'고등학생 30명 해외봉사단 모집합니다.', place:'캄보디아',event_type: '봉사', start_at:'2016-08-08', end_at: '2017-10-08')
-Event.create(title: '모의투자대회', content:'금융에 관심있는 고등학생 대상 모의투자대회', place:'서울 여의도',event_type: '경제', start_at:'2016-07-01', end_at: '2016-12-08')
-Event.create(title: '창작글짓기대회', content:'창작 글짓기 대회', place:'서울 광화문',event_type: '경진대회', start_at:'2016-11-05', end_at: '2017-12-12')
-Event.create(title: 'ybm영어말하기대회', content:'고등학생 대상 자신만의 이야기를 영어로말해보세요. 참가비 10만원', place:'서울 역삼동',event_type: '대회', start_at:'2016-10-05', end_at: '2017-11-12')
-Event.create(title: '수학경시대회', content:'고등학교 1학년 대상으로 수학경시대회를 개최합니다. 참가비 3만원', place:'서울 종로구',event_type: '경시대회', start_at:'2016-12-05', end_at: '2016-12-12')
-Event.create(title: '아이디어 공모전', content:'고등학교 2,3학년 대상 발명 아이디어 공모전', place:'서울 종로구',event_type: '공모전', start_at:'2016-10-05', end_at: '2017-10-08')
-Event.create(title: '대한민국 청소년 토론 대회당', content:'고등학생 30명 토론대회 참가자모집합니다.', place:'서울 강남',event_type: '대회', start_at:'2016-08-08', end_at: '2017-10-08')
+#Event.create(title: '삼성 해외탐방단', content:'고등학생 30명 해외봉사단 모집합니다.', place:'캄보디아',event_type: '봉사', start_at:'2016-08-08', end_at: '2017-10-08')
+#Event.create(title: '모의투자대회', content:'금융에 관심있는 고등학생 대상 모의투자대회', place:'서울 여의도',event_type: '경제', start_at:'2016-07-01', end_at: '2016-12-08')
+#Event.create(title: '창작글짓기대회', content:'창작 글짓기 대회', place:'서울 광화문',event_type: '경진대회', start_at:'2016-11-05', end_at: '2017-12-12')
+#Event.create(title: 'ybm영어말하기대회', content:'고등학생 대상 자신만의 이야기를 영어로말해보세요. 참가비 10만원', place:'서울 역삼동',event_type: '대회', start_at:'2016-10-05', end_at: '2017-11-12')
+#Event.create(title: '수학경시대회', content:'고등학교 1학년 대상으로 수학경시대회를 개최합니다. 참가비 3만원', place:'서울 종로구',event_type: '경시대회', start_at:'2016-12-05', end_at: '2016-12-12')
+#Event.create(title: '아이디어 공모전', content:'고등학교 2,3학년 대상 발명 아이디어 공모전', place:'서울 종로구',event_type: '공모전', start_at:'2016-10-05', end_at: '2017-10-08')
+#Event.create(title: '대한민국 청소년 토론 대회당', content:'고등학생 30명 토론대회 참가자모집합니다.', place:'서울 강남',event_type: '대회', start_at:'2016-08-08', end_at: '2017-10-08')
 
 HashTag.create(name: "물리학")
 HashTag.create(name: "생물학")

@@ -1,56 +1,72 @@
+<div id="login-page" class="row">
+  <div class="col s12 z-depth-4 card-panel">
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
-    <div class="field">
-    <%= f.label :image, '이미지'%>  
+<div class="row">
+        <div class="input-field col s12 center">
+    <%= f.label :image, 'Image'%><br><br>  
     <%= f.file_field :image %>
     </div>
+    </div>
   
-  <div class="field">
+<div class="row">
+        <div class="input-field col s12">
       <%= f.label :membertype, 'membertype', class: "center-align" %><br>
       <%= f.radio_button :membertype, "highschool", class: "center-align" %>
       <%= f.label :membertype, 'highschool', :value => "highschool", class: "center-align" %>
       <%= f.radio_button :membertype, "univ", class: "center-align" %>
       <%= f.label :membertype, 'univ', :value=> "univ", class: "center-align" %>
   </div>
-  <div class="field">
+  </div>
+<div class="row">
+        <div class="input-field col s12 center">
         <%= f.label :name, 'name', class: "center-align" %>
         <%= f.text_field :name, id:"username" %>
   </div>
+  </div>
 
 
-  <div class="field">
+<div class="row">
+        <div class="input-field col s12 center">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
+  </div>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+<div class="row">
+        <div class="input-field col s12">
+    <%= f.label :password %> <i><br><br>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
     <% if @minimum_password_length %>
       <br />
       <em><%= @minimum_password_length %> characters minimum</em>
     <% end %>
   </div>
-
-  <div class="field">
+</div>
+<div class="row">
+        <div class="input-field col s12 center">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+<div class="row">
+        <div class="input-field col s12 center">
+    <%= f.label :current_password %> <i><br><br>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
   </div>
+      <div class="row">
+        <div class="input-field col s12">
+    <%= f.submit "Update", class: "btn waves-effect waves-light col s12" %>
+  </div>
+      </div>
 <% end %>
 
 <h3>Cancel my account</h3>
@@ -58,3 +74,12 @@
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+</div>
+</div>
+<script charset="utf-8">
+  $(function(){
+    setTimeout(function() {
+      $('body').addClass('cyan');      
+    }, 50);
+  });
+</script>

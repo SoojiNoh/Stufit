@@ -248,6 +248,7 @@ ActiveRecord::Schema.define(version: 20160918104351) do
 
   create_table "users", force: :cascade do |t|
     t.string   "image"
+    t.string   "photo"
     t.string   "membertype"
     t.string   "paththrough"
     t.string   "email",                  default: "", null: false
