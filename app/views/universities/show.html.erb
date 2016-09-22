@@ -1,31 +1,28 @@
+<div align="right"><%= link_to "목록", {controller: "universities", action: "index"}, class: "waves-effect waves-light btn" %></div>
 <div class="row">
-  <div class="col s12 m7">
-        <div style="margin-top:50px;"><span class="card-title"><%= @university.name %></span><br>
-        <%= image_tag "#{@university.img}", :size => '200x200'%>
-        <p><%= @university.content %></p>
-        <a href="#"><%= @university.link_url %></a>
+  <div class="col s12">
+    <ul class="collection">
+      <li class="collection-item avatar">
+        <%= image_tag "#{@university.img}", :class => "circle"%>
+        <span class="title"><%= @university.name %></span>
+        <p><%= @university.content %><br>
+          입학처 바로가기: <%= link_to "#{@university.link_url}", @university.link_url %>
+        </p>
+        <!-- <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a> -->
+      </li>
+    </ul>
+<!-- 덧글창 -->
+    <ul class="collection">
+      <li class="collection-item"><strong>댓글</strong>
+      <% @university.comments.each do |comment| %>
+        <li class="collection-item">
+          <strong><%= comment.user.name %></strong><br>
+                  <%= comment.content %>
+          <div align="right"><%= link_to "삭제", comment_path(comment), method: :delete, data: { confirm: "로레알 삭제ㄱㄱ?" } %></div>
+        </li>
+      <% end %>
+      <%= render partial: '/comments/new', locals: { :comment => @university.comments.new, university: @university.id, belong: "university"} %>
+      </li>
+    </ul>
   </div>
 </div>
-
-<% @university.comments.each do |comment| %>
-     <h4>
-     <%= comment.user.name %>
-     <%= comment.content %>
-     <%= link_to "댓글삭제", comment_path(comment), method: :delete %>
-     </h4>
-<% end %>
-
-<%= render partial: '/comments/new', locals: { :comment => @university.comments.new, university: @university.id, belong: "university"} %>
-
-
-
-  <ul class="collection">
-    <li class="collection-item avatar">
-      <%= image_tag "#{@university.img}", :class => "circle"%>
-      <span class="title"><%= @university.name %></span>
-      <p><%= @university.content %><br>
-         <%= @university.link_url %>
-      </p>
-      <!-- <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a> -->
-    </li>
-  </ul>
