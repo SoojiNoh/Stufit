@@ -1,4 +1,4 @@
-<%= form_for (@event) do |f| %>
+<%= form_for (@event) multipart: true do |f| %>
 <%= render partial: 'form', locals: { :f => f} %>
 
 <%= link_to '이전', @event %> 
