@@ -11,11 +11,14 @@ class HomeController < ApplicationController
     if !user_signed_in?
       @task_name = "앞으로의 활동"
       @tasks = Event.where("start_at> ? ", "%#{@today}%")
+      @schedules = Schedule.where("start_at> ? ", "%#{@today}%")
     else
       @task_name = "내가 해야할 것"
       @tasks = current_user.events.all
+      @schedules = Schedule.where("start_at> ? ", "%#{@today}%")
     end
     @tasks.order(end_at: :desc)
+    @schedules.order(end_at: :desc)
     
   
   end
