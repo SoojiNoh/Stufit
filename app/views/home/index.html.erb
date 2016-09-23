@@ -63,7 +63,7 @@
     <!-- my Tasks -->
     <div class="col s12 m12 l4">
       <ul id="task-card" class="collection with-header">
-        <li class="collection-header cyan">
+        <li class="collection-header" style="background-color:#64b5f6">
           <h4 class="task-card-title"><%=@task_name%></h4>
           <p class="task-card-date"><%=@today.to_s%> </p>
           <% @task_num = 0 %>
@@ -146,7 +146,13 @@
     }
   </script>
   <!--Carousel-->
+    <style>
 
+  .task-card-title{
+    background-color: #64b5f6;
+}
+ .task-card-date{
+    background-color: #64b5f6;
+}
 
-
-    
+</style>
