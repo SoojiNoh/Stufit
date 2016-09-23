@@ -1,11 +1,17 @@
 <div id="login-page" class="row">
   <div class="col s12 z-depth-4 card-panel">
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
+  <div class="row">
+        <div class="input-field col s12 center">
+          <%= image_tag "#{asset_path "http://i.imgur.com/KZFqXNw.png"}" %>
+        <p class="center login-form-text">   온라인에서 시작하는 입시관리 stu-fit  </p>
+        </div>
+      </div>
+
 <div class="row">
         <div class="input-field col s12">
+          <i class="mdi-social-person-outline prefix"></i>
     <%= f.label :image, 'Image'%><br><br>  
     <%= f.file_field :image %>
     </div>
@@ -13,6 +19,7 @@
   
 <div class="row">
         <div class="input-field col s12">
+          <i class="mdi-social-person-outline prefix"></i>
       <%= f.label :membertype, 'Membertype', class: "center-align" %><br>
       <%= f.radio_button :membertype, "highschool", class: "center-align" %>
       <%= f.label :membertype, 'Highschool', :value => "highschool", class: "center-align" %>
@@ -21,7 +28,8 @@
   </div>
   </div>
 <div class="row">
-        <div class="input-field col s12 center">
+        <div class="input-field col s12">
+          <i class="mdi-social-person-outline prefix"></i>
         <%= f.label :name, 'Name', class: "center-align" %><br>
         <%= f.text_field :name, id:"username" %>
   </div>
@@ -29,7 +37,8 @@
 
 
 <div class="row">
-        <div class="input-field col s12 center">
+        <div class="input-field col s12">
+          <i class="mdi-communication-email prefix"></i>
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
@@ -41,6 +50,7 @@
 
 <div class="row">
         <div class="input-field col s12">
+          <i class="mdi-action-lock-outline prefix"></i>
     <%= f.label :password %> <i><br><br>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
     <% if @minimum_password_length %>
@@ -50,14 +60,16 @@
   </div>
 </div>
 <div class="row">
-        <div class="input-field col s12 center">
+        <div class="input-field col s12">
+          <i class="mdi-action-lock-outline prefix"></i>
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
   </div>
 
 <div class="row">
-        <div class="input-field col s12 center">
+        <div class="input-field col s12">
+    <i class="mdi-action-lock-outline prefix"></i>
     <%= f.label :current_password %> <i><br><br>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
@@ -76,10 +88,17 @@
 <%= link_to "Back", :back %>
 </div>
 </div>
-<script charset="utf-8">
-  $(function(){
-    setTimeout(function() {
-      $('body').addClass('cyan');      
-    }, 50);
-  });
-</script>
+<style>
+  body {
+    background-color:  #64b5f6;
+}
+
+</style>
+
+<!--<script charset="utf-8">
+  //$(function(){
+    //setTimeout(function() {
+      //$('body').addClass('cyan');      
+    //}, 50);
+  //});
+//</script>--!>
