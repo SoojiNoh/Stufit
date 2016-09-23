@@ -66,13 +66,130 @@ University.create(name: "홍익대학교", remote_img_url: "http://i.imgur.com/f
 
 UnivFollow.create(user_id: 1, university_id: 1)
 
-#Event.create(title: '삼성 해외탐방단', content:'고등학생 30명 해외봉사단 모집합니다.', place:'캄보디아',event_type: '봉사', start_at:'2016-08-08', end_at: '2017-10-08')
-#Event.create(title: '모의투자대회', content:'금융에 관심있는 고등학생 대상 모의투자대회', place:'서울 여의도',event_type: '경제', start_at:'2016-07-01', end_at: '2016-12-08')
-#Event.create(title: '창작글짓기대회', content:'창작 글짓기 대회', place:'서울 광화문',event_type: '경진대회', start_at:'2016-11-05', end_at: '2017-12-12')
-#Event.create(title: 'ybm영어말하기대회', content:'고등학생 대상 자신만의 이야기를 영어로말해보세요. 참가비 10만원', place:'서울 역삼동',event_type: '대회', start_at:'2016-10-05', end_at: '2017-11-12')
-#Event.create(title: '수학경시대회', content:'고등학교 1학년 대상으로 수학경시대회를 개최합니다. 참가비 3만원', place:'서울 종로구',event_type: '경시대회', start_at:'2016-12-05', end_at: '2016-12-12')
-#Event.create(title: '아이디어 공모전', content:'고등학교 2,3학년 대상 발명 아이디어 공모전', place:'서울 종로구',event_type: '공모전', start_at:'2016-10-05', end_at: '2017-10-08')
-#Event.create(title: '대한민국 청소년 토론 대회당', content:'고등학생 30명 토론대회 참가자모집합니다.', place:'서울 강남',event_type: '대회', start_at:'2016-08-08', end_at: '2017-10-08')
+# Event.create(title: '삼성 해외탐방단', content:'고등학생 30명 해외봉사단 모집합니다.', place:'캄보디아',event_type: '봉사', start_at:'2016-08-08', end_at: '2017-10-08')
+# Event.create(title: '모의투자대회', content:'금융에 관심있는 고등학생 대상 모의투자대회', place:'서울 여의도',event_type: '경제', start_at:'2016-07-01', end_at: '2016-12-08')
+# Event.create(title: '창작글짓기대회', content:'창작 글짓기 대회', place:'서울 광화문',event_type: '경진대회', start_at:'2016-11-05', end_at: '2017-12-12')
+# Event.create(title: 'ybm영어말하기대회', content:'고등학생 대상 자신만의 이야기를 영어로말해보세요. 참가비 10만원', place:'서울 역삼동',event_type: '대회', start_at:'2016-10-05', end_at: '2017-11-12')
+# Event.create(title: '수학경시대회', content:'고등학교 1학년 대상으로 수학경시대회를 개최합니다. 참가비 3만원', place:'서울 종로구',event_type: '경시대회', start_at:'2016-12-05', end_at: '2016-12-12')
+# Event.create(title: '아이디어 공모전', content:'고등학교 2,3학년 대상 발명 아이디어 공모전', place:'서울 종로구',event_type: '공모전', start_at:'2016-10-05', end_at: '2017-10-08')
+# Event.create(title: '대한민국 청소년 토론 대회당', content:'고등학생 30명 토론대회 참가자모집합니다.', place:'서울 강남',event_type: '대회', start_at:'2016-08-08', end_at: '2017-10-08')
+Event.create(
+    title: ' 2016 대한민국 청소년 아나운서 리포터 경연대회',
+    content:'사단법인 한국청소년방송단연맹과 한국 방송정보교육단체연합회가 함께하는 2016 대한민국 청소년 아나운서 리포터 경연대회를 개최합니다. 많은 참여 부탁드립니다.',
+    place: 'www.kyba.or.kr',
+    event_type: '대회',
+    start_at:'2016-8-26',
+    end_at: '2016-12-29')
+    # http://www.kbatv.org/sub/event/event_view.asp?seq=417&page=1&part=
+
+Event.create(
+    title: '해양 안전 공모전',
+    content:'해양 안전에 대한 필요성이나 해양 안전 문화를 확산시킬 수 있는 포스터, 웹툰, 체험수기 등을 공모합니다. 전국 학생들의 많은 참여 부탁드립니다.',
+    place:'http://www.해양안전.com/',
+    event_type: '공모전',
+    start_at:'2016-09-09',
+    end_at: '2016-10-21')
+    
+Event.create(
+    title: '제 17회 서울청소년자원봉사대회',
+    content:'서울특별시청소년활동진흥센터에서는 서울지역 내 청소년봉사활동에 이바지한 청소년 및 지도자들을 격려하고 우수활동사례를 확산시키기 위해 서울특별시와 여성가족부가 주최하는 제 17회 서울청소년자원봉사대회를 개최합니다.',
+    place: 'http://www.sy0404.or.kr/',
+    event_type: '대회',
+    start_at:'2016-9-5',
+    end_at: '2016-10-17')
+    # http://www.sy0404.or.kr/
+
+
+Event.create(
+    title: '전국 고교 일일방송캠프',
+    content:'사단법인 한국청소년방송단연맹이 주최하는, 대한민국 청소년이면 누구나 참여하고 있는 전국고교 일일방송캠프를 개최합니다. 많은 참여 부탁드립니다.',
+    place: 'www.kyba.or.kr',
+    event_type: '캠프',
+    start_at:'2016-8-25',
+    end_at: '2016-12-29')
+    # http://www.kbatv.org/sub/event/broadcast.asp?part=B25
+
+
+Event.create(
+    title: '제8회 전국 청소년 인성 실천 대회',
+    content:'세계화교육문화재단에서 주최하는 제8회 전국 청소년 인성 실천 대회를 개최합니다. 전국 학생들의 많은 참여 부탁드립니다.',
+    place:'충남대학교 백마교양교육관 ',
+    event_type: '대회',
+    start_at:'2016-10-04',
+    end_at: '2016-10-10')
+
+Event.create(title: '제5회 전국 청소년 환경 프레젠테이션 대회',
+    content:'세계화교육문화재단에서 주최하는 제5회 전국 청소년 환경 프레젠테이션 대회를 개최합니다. 전국 학생들의 많은 참여 부탁드립니다.',
+    place:'대전장대초등학교, 대전장대중학교, 충남대학교 백마교양교육관 ',
+    event_type: '대회',
+    start_at:'2016-10-04',
+    end_at: '2016-10-10')
+    
+Event.create(
+    title: '제3회 대한민국 청소년 공공외교 실천 대회',
+    content:'세계화교육문화재단에서 주최하는 제 3회 대한민국 청소년 공공외교 실천 대회를 개최합니다. 전국 학생들의 많은 참여 부탁드립니다.',
+    place:'충남대학교 백마교양교육관',
+    event_type: '대회',
+    start_at:'2016-10-04',
+    end_at: '2016-10-10')
+    # http://www.globaleducation.or.kr/?c=user&mcd=no03_01&me=bbs_detail&idx=1209&cur_page=1&sParam=
+    
+    
+Event.create(
+    title: '2016 Global SW Education Forum',
+    content:'교육부, 미래 창조과학부와 한국과학창의재단은 소프트웨어 교육 정책, 연구, 산업, 실천에 대한 국내외 동향을 공유하고 소프트웨어 교육의 발전 방향을 모색하기 위한 2016 글로벌 소프트웨어 교육 포럼을 개최합니다. 여러분의 많은 관심과 참여 부탁드립니다.',
+    place:'코엑스',
+    event_type: '포럼',
+    start_at:'2016-10-24',
+    end_at: '2016-10-25')
+    
+Event.create(
+    title: 'MakexSW학생 작품 공모전',
+    content:'교육부, 미래 창조과학부와 한국과학창의재단은 소프트웨어로 만든 학생들의 작품을 발굴하고 널리 알리고자 Make x SW 학생 작품 공모전을 개최합니다. 우수작은 10월 24일 2016 글로벌 소프트웨어 교육 포럼의 개막식 참가작으로 선정되오니 여러분의 많은 참여 부탁드립니다.
+    주제:소프트웨어로 만드는 미래
+    공모대상: 전국 초, 중, 고학생 누구나!',
+    place:'http://www.gswef.kr/',
+    event_type: '공모전',
+    start_at:'2016-9-23',
+    end_at: '2016-10-10')
+    # http://www.gswef.kr/forum_1.php
+    
+Event.create(
+    title: ' 2016 전파콘텐츠 공모전',
+    content:'전파를 활용한 다양한 아이디어 콘텐츠를 공모합니다.',
+    place:'http://www.kca.kr/open_content/bbs.do?act=detail&msg_no=12163&bcd=notice ',
+    image:'/app/전파콘텐츠.png',
+    event_type: '공모전',
+    start_at:'2016-9-1',
+    end_at: '2016-10-31')
+    # http://www.kca.kr/open_content/bbs.do?act=detail&msg_no=12163&bcd=notice
+
+Event.create(
+    title: ' 2016 전국 중∙고등학교 학생 ＇우리 땅 독도＇ 산문 공모전',
+    content:'독도의용수비기념사업회에서는 2016 전국 중고등학교 학생 "우리땅 독도" 산문 공모전을 개최합니다. 다음 세대의 주인공인 청소년들이 독도가 우리 땅인 이유를 올바르게 인식하고 독도의용수비대의 독도수호정신을 계승하기 위한 공모전에 중고등학교 학생들이 많이 참여하여 주시기 바랍니다.',
+    place: 'www.dokdofoundthion.or.k',
+    event_type: '공모전',
+    start_at:'2016-9-19',
+    end_at: '2016-11-4')
+    # http://www.dokdofoundation.or.kr/bbs/board.php?bo_table=12_board&wr_id=122
+    
+Event.create(
+    title: '2016 꿈을 잇(IT)다 미디어 페스티벌',
+    content:'서울특별시 교육부에서는 청소년들의 꿈을 이야기할 수 있는 꿈을 잇(IT)다 미디어 페스티벌을 개최합니다. 여러분들의 많은 관심 부탁드립니다.',
+    place: 'www.edunet.net',
+    event_type: '공모전',
+    start_at:'2016-8-29',
+    end_at: '2016-11-7')
+    # http://www.edunet.net/redu/etcsvc/nvNoticeForm.do?menu_id=0049
+
+Event.create(
+    title: '2017 발명창의력 10종경기 한국 대회 ',
+    content:'세계 최고의 창의력 프로그램으로 진행되는 2017 발명창의력10종경기 한국대회를 개최합니다. 여러분의 많은 관심 부탁드립니다.',
+    place: '아주대학교',
+    event_type: '대회',
+    start_at:'2017-1-6',
+    end_at: '2017-1-8')
+
 
 HashTag.create(name: "물리학")
 HashTag.create(name: "생물학")

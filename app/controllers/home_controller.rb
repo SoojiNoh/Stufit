@@ -3,8 +3,8 @@ class HomeController < ApplicationController
   require 'date'
   
   def index
-     @user = current_user
-    
+    @user = current_user
+    @events = current_user.events.all
     @major_stories = MajorStory.all
     @today =Date.today.to_s
     
