@@ -8,10 +8,10 @@
         <% else %>
           <%= link_to "/universities/univ/#{univ.id}" do %> <i class="empty_star material-icons">star</i> <% end %>
         <% end %>
-      <%= link_to university_path(univ) do %>
-        <%= image_tag "#{univ.img}", :size => '200x160' %>
+      <%= link_to univ.link_url do %>
+        <%= image_tag "#{univ.img}", :size => '200x150' %>
         <div style="text-align:center; margin-top:10px; margin-bottom:10px; font-weight:bold;">
-          <span><%= link_to univ.name, "#{univ.link_url}" %></span>
+          <span><%= link_to univ.name, "#{university_path(univ)}" %></span>
         </div>
       </div>
       <% end %>
