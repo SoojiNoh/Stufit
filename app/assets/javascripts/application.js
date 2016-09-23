@@ -19,4 +19,6 @@
 //= require fullcalendar
 //= require ckeditor/init
 //= require turbolinks
+//= require owl.carousel
+
 $.turbo.use('pjax:start', 'pjax:end');
