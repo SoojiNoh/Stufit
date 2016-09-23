@@ -23,13 +23,15 @@
     </div>
     <div class="col col s8 m8 l8">
       <ul id="profile-dropdown" class="dropdown-content">
-        <li><a href="#"><i class="mdi-communication-live-help"></i> Help</a>
+        <li><%= link_to help_path do %>
+          <i class="mdi-communication-live-help"></i> Help
+        <%end%>
         </li>
         <li class="divider"></li>
         
         <% if user_signed_in? %>
-        <li><%= link_to edit_user_registration_path do%>
-          <i class="mdi-action-settings"></i> Settings
+        <li><%= link_to edit_user_registration_path do %>
+          <i class="mdi-action-settings"></i> 설정
         <%end%>
         </li>
         <li><%= link_to '로그아웃', destroy_user_session_path, method: 'delete' %></a>
