@@ -3,27 +3,29 @@
 <div id="chart-dashboard">
   <div class="row">  
     <% unless user_signed_in?%>
-      <div class="col s12 m6 l12">
+      <div class="col s12 m12 110">
         <div class="card">
-          <div class="owl-carousel" style="">
-            <div> <%= image_tag "#{asset_path "home_mockups_1.png"}", alt: "blog-img", size: "900x400"%> </div>
-            <div> <%= image_tag "#{asset_path "stufit_thumnail.png"}", alt: "blog-img", size: "900x400"%> </div>
-            <div> <%= image_tag "#{asset_path "style_typography_roboto.png"}", alt: "blog-img", size: "900x400"%> </div>
+          <div class="owl-carousel" style="text-align : center; margin-top : 30px;">
+            <div> <%= image_tag "#{asset_path "stufit_tutorial01.png"}", alt: "blog-img", size: "700x500"%> </div>
+            <div> <%= image_tag "#{asset_path "stufit_tutorial02.png"}", alt: "blog-img", size: "700x500"%> </div>
+            <div> <%= image_tag "#{asset_path "stufit_tutorial03.png"}", alt: "blog-img", size: "700x500"%> </div>
+            <div> <%= image_tag "#{asset_path "stufit_tutorial04.png"}", alt: "blog-img", size: "700x500"%> </div>
           </div>
         </div>
       </div>
     <%else%>
       
-      <div class="col s12 m6 l7">
+      <div class="col s12 m12 l7">
         <div class="card">
-          <div class="owl-carousel" style="">
-            <div> <%= image_tag "#{asset_path "home_mockups_1.png"}", alt: "blog-img", size: "600x380"%> </div>
-            <div> <%= image_tag "#{asset_path "stufit_thumnail.png"}", alt: "blog-img", size: "600x380"%> </div>
-            <div> <%= image_tag "#{asset_path "style_typography_roboto.png"}", alt: "blog-img", size: "600x380"%> </div>
+          <div class="owl-carousel" style="text-align : center; margin-top : 30px;">
+            <div> <%= image_tag "#{asset_path "stufit_tutorial01.png"}", alt: "blog-img", size: "500x380"%> </div>
+            <div> <%= image_tag "#{asset_path "stufit_tutorial02.png"}", alt: "blog-img", size: "500x380"%> </div>
+            <div> <%= image_tag "#{asset_path "stufit_tutorial03.png"}", alt: "blog-img", size: "600x380"%> </div>
+            <div> <%= image_tag "#{asset_path "stufit_tutorial04.png"}", alt: "blog-img", size: "600x380"%> </div>
           </div>
         </div>
       </div>
-      <div class="col s12 m6 l5">
+      <div class="col s12 m12 l5">
         <div class="card">
           <div id='calendar' style="margin:30px; size:1000px;"></div>
         </div>
@@ -153,7 +155,7 @@
   
   <!--Carousel-->
   
-  <script data-turbolinks-track="reload">
+  <script>
    $(document).ready(function() {
      $(".owl-carousel").owlCarousel({
      autoPlay : 3000,
@@ -165,6 +167,7 @@
      autoHeight : true,
      transitionStyle:"fade",
      lazyLoad : true,
+     
      });
        });
     </script>
