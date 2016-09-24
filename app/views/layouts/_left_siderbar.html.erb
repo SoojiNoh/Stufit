@@ -34,8 +34,7 @@
           <i class="mdi-action-settings"></i> 설정
         <%end%>
         </li>
-        <li><%= link_to '로그아웃', destroy_user_session_path, method: 'delete' %></a>
-        </li>
+        <li><%= link_to '로그아웃', destroy_user_session_path, method: 'delete' %></li>
       </ul>
       <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown"><%=current_user.name%><i class="mdi-navigation-arrow-drop-down right"></i></a>
       <p class="user-roal"><%=current_user.email%></p>
@@ -55,7 +54,7 @@
   </div>
   </li>
   <ul class="collapsible collapsible-accordion">
-    <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-perm-identity"></i> 내 서비스</a>
+    <li class="bold"><a class="collapsible-header active waves-effect waves-cyan"><i class="mdi-action-perm-identity"></i> 내 서비스</a>
     <div class="collapsible-body">
       <ul>
         <li><a href="/activities"><i class="large mdi-device-now-widgets "></i>활동내역</a>
@@ -85,3 +84,11 @@
       <i class="mdi-navigation-menu" ></i></a>
     </aside>
 
+
+<script>
+   $(document).ready(function(){
+    $('.collapsible').collapsible({
+      accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    });
+  });
+</script>
