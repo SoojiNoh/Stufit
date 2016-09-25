@@ -25,7 +25,7 @@
   
   
   <div class="col s5">
-    <h4>스튜핏 스케줄</h4>
+    <h4>스튜핏 스케줄</h4><br><br>
 
   
   
@@ -46,8 +46,8 @@
             <% @events.each do |event| %>
               <tr>
                 <td><%= event.title %></td>
-                <td><%= event.start_at %></td>
-                <td><%= event.end_at %></td>
+                <td><%= truncate(event.start_at.in_time_zone("Asia/Seoul").strftime("%Y년%m월%d일"), :length => 15) %></td>
+                <td><%= truncate(event.end_at.in_time_zone("Asia/Seoul").strftime("%Y년%m월%d일"), :length => 15) %></td>
                 <td><%= link_to '자세히', event %></td>
                 <td>
                 <% if current_user.events.where(id: event.id).take != nil  %>
@@ -59,7 +59,8 @@
             <% end %>
           </tbody>
           <% else %>
-            <p>There are no events containing the term(s) <%= params[:search] %>.</p>
+          <!--주석-->
+            <!--<p>There are no events containing the term(s) .</p>-->
           <%end%>
       
         <% if @schedules.present? %>
@@ -76,11 +77,11 @@
             <% end %>
           </tbody>
           <% else %>
-            <p>There are no schedules <%= params[:search] %>.</p>
+            <p> <%= params[:search] %></p>
           <% end %>
-      </table>
-    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-       <%= link_to '일정추가', new_schedule_path %>
+      </table><br><br>
+
+       <%= link_to '일정추가', new_schedule_path, class: 'waves-effect waves-light btn right' %>
      </button>
   </div>
 </div>
