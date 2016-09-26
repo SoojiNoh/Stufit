@@ -7,7 +7,6 @@ gem 'mini_magick'
 
 gem 'owlcarousel-rails'
 
-
 gem 'impressionist'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
