@@ -24,17 +24,26 @@
         
         <% if user_signed_in? %>
         <li><%= link_to edit_user_registration_path do %>
-          <i class="mdi-action-settings"></i> 설정
+          <i class="mdi-action-settings"></i>Profile
         <%end%>
         </li>
-        <li><%= link_to '로그아웃', destroy_user_session_path, method: 'delete' %></li>
+        
+        <li><%= link_to destroy_user_session_path, method: 'delete' do %>
+        <i class="material-icons">vpn_key</i>Logout
+        <%end%>
+      </li>
       </ul>
       <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown"><%=current_user.name%><i class="mdi-navigation-arrow-drop-down right"></i></a>
       <p class="user-roal"><%=current_user.email%></p>
     
         <% else %>
-        <li><%= link_to '회원가입', new_user_registration_path , method: 'get' %></li>
-        <li><%= link_to '로그인', new_user_session_path, method: 'get' %></li>
+        <li><%= link_to new_user_registration_path , method: 'get' do%>
+        <i class="material-icons">assignment_ind</i>Register
+        <%end%>
+        </li>
+        <li><%= link_to new_user_session_path, method: 'get' do %>
+        <i class="material-icons">vpn_key</i>Login
+        <%end%></li>
       </ul>
       <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">로그인하세요<i class="mdi-navigation-arrow-drop-down right"></i></a>
       <p class="user-roal">환영합니다.</p>
