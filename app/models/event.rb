@@ -1,10 +1,5 @@
 class Event < ApplicationRecord
-      searchable do
-  text :title, :boost => 5
-  text :content, :start_at
-  time :start_at
-  string :start_month
-end
+
 
 def start_month
   start_at.strftime("%B %Y")

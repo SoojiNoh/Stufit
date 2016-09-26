@@ -7,8 +7,6 @@ gem 'mini_magick'
 
 gem 'owlcarousel-rails'
 
-gem 'sunspot_rails'
-gem 'sunspot_solr'
 
 gem 'impressionist'
 gem 'fullcalendar-rails'
