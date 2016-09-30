@@ -16,7 +16,7 @@ class MajorStory < ApplicationRecord
 
   def self.search(search)
     if search
-      where('title LIKE :search OR content LIKE :search OR place LIKE :search OR file LIKE :search', search: "%#{search}%")
+      where('univ LIKE :search OR major LIKE :search OR grade LIKE :search OR content LIKE :search', search: "%#{search}%")
     else
       where(nil)
     end

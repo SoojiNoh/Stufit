@@ -1,13 +1,35 @@
-
-<h3><%= @major_story.title.html_safe %> <%= @major_story.content %></h3>
-<h4><%= @major_story.place %> <%= @major_story.major_type %></h4>
-
-<div class ="col s12 m12">
-  <p><%= @major_story.body.html_safe %></p>
+<div class="progress">
+  <div class="determinate" style="width: 70%"></div>
 </div>
 
+<h5>학교 | <%= @major_story.univ.html_safe %></h5>
+<h6>전공 | <%= @major_story.major %></h6>
 
+<h6>학년 | <%= @major_story.grade %></h6> 
+<h6>이름 | <%= @major_story.name %></h6>
 
-<%= link_to "삭제", major_story_path(@major_story), method: "delete" %>|
-<%= link_to 'Edit', edit_major_story_path(@major_story) %> |
-<%= link_to 'Back', major_stories_path %>
+   <div class="progress">
+       <div class="determinate" style="width: 70%"></div>
+     </div>
+
+<div class ="col s12 m12">
+  <p><%= @major_story.content.html_safe %></p>
+<%= image_tag "#{@major_story.file}" , height: '300', width: '400' %>
+</div>
+
+<br><br><br><br><br><br>
+
+<h6>댓글</h6>
+    <div>
+   <% @major_story.comments.each do |comment| %>
+     <%= comment.user.name %><br>
+     <%= comment.content %>
+     <%= link_to "삭제", comment_path(comment), method: :delete, class: 'waves-effect waves-light btn' %>
+   <% end %>
+</div><br>
+<div>
+   <%= render partial: 'comments/new', locals: { :comment => @major_story.comments.new , major_story: @major_story.id, belong: "major_story"} %>
+</div><br>
+<%= link_to "목록", major_stories_path, class: 'waves-effect waves-light btn' %>
+<%= link_to "수정", edit_major_story_path(@major_story), class: 'waves-effect waves-light btn' %> 
+<%= link_to "삭제", major_story_path(@major_story), method: "delete", class: 'waves-effect waves-light btn' %>

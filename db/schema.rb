@@ -168,12 +168,12 @@ ActiveRecord::Schema.define(version: 20160918104351) do
   end
 
   create_table "major_stories", force: :cascade do |t|
-    t.string   "title"
-    t.string   "content"
-    t.string   "place"
+    t.string   "univ"
+    t.string   "major"
+    t.string   "grade"
+    t.string   "name"
     t.string   "file"
-    t.string   "major_type"
-    t.text     "body"
+    t.text     "content"
     t.integer  "university_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false

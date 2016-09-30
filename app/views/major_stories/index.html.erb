@@ -13,10 +13,11 @@
       <div class="card-image">
       <%= link_to major_story_path(major_story) do %>
           <%= image_tag "#{major_story.file}" , height: '300', width: '400' %>
-        <span class="card-title"><%= major_story.content %></span>
+        <span class="card-title"><%= major_story.univ %></span>
       </div>
         <div class="card-content">
-          <p><%= major_story.content %></p><br><%= major_story.place %>
+          <p><%= major_story.major %></p><br>
+          <%= major_story.grade %>
         </div>
         <div class="card-action">
           <%= link_to "자세히 보기", major_story %>
