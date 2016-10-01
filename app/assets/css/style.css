@@ -13,6 +13,11 @@
 /*----------------------------------------
   General Layout Style
 ------------------------------------------*/
+.btn {
+  background-color: #03A9F4;
+  color: white;
+}
+
 body {
   background-color: #f9f9f9;
 }

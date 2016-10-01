@@ -1,11 +1,5 @@
 <h5 class="center">대학알리GO</h5>
-<!--대학등록 버튼(로그인 했을 때만)-->
-<% if !user_signed_in? %>
-<% else %>
-  <div align="right" style="margin-top:10px; margin-bottom:20px;">
-    <%= link_to "대학등록", new_university_path,class: 'waves-effect waves-light btn' %>
-  </div>
-<% end %>
+
 <div class="row">
 <% @universities.each do |univ| %>
   <div class="col s2 m3 l2">
@@ -27,6 +21,14 @@
   </div>
 <% end %>
 </div>
+
+<!--대학등록 버튼(로그인 했을 때만)-->
+<% if !user_signed_in? %>
+<% else %>
+  <div align="right" style="margin-top:10px; margin-bottom:20px;">
+    <%= link_to "대학등록", new_university_path,class: 'waves-effect waves-light btn blue' %>
+  </div>
+<% end %>
 
 <!--페이지 넘기기-->
   <ul class="pagination" align="center">

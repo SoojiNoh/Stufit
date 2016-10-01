@@ -5,12 +5,10 @@
   <%= hidden_field_tag :sort, params[:sort]%>  
   <p>
     <%= text_field_tag :search, params[:search], :placeholder=>"검색어를 입력하세요" %>
-  <%= submit_tag "검색", :content => nil, :class=>'waves-effect waves-light btn'%><br>
-
-
+  <%= submit_tag "검색", :content => nil, :class=>'waves-effect waves-light btn blue'%>
       </p>
 <% end %>
-
+<br>
 
 <head>
     <!-- Compiled and minified JavaScript -->
@@ -18,7 +16,6 @@
     <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"></script>
 </head>
-<%= link_to "새글 쓰기", new_activity_path,class: 'waves-effect waves-light btn right'%><br>
 
 <div class="row">
 <table class="bordered centered" style="width: 100%;">
@@ -52,9 +49,10 @@
         </tr>
         </tbody>
         </table>
-        </div>
-        <br>
+        </div><br>
         
+      <%= link_to "새글 쓰기", new_activity_path, class: 'waves-effect waves-light btn right blue'%><br>
+
   <ul class="pagination" align="center">
   <%= will_paginate @activities, :renderer => 'PaginationListLinkRenderer' %>
  <!--버튼-->

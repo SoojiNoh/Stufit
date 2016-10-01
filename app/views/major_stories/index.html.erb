@@ -5,14 +5,10 @@
   <%= hidden_field_tag :sort, params[:sort]%>
   <p>
     <%= text_field_tag :search, params[:search], :placeholder=>"검색어를 입력하세요" %>
-  <div><%= submit_tag "검색", :content => nil, class: 'waves-effect waves-light btn' %>
+  <div><%= submit_tag "검색", :content => nil, class: 'waves-effect waves-light btn blue' %>
   </div>
   </p>
 <% end %>
-
-  <div align="right" style="margin-top:10px; margin-bottom:20px;">
-    <%= link_to '전공추가', new_major_story_path, class: 'waves-effect waves-light btn' %>
-  </div>
 
 <!-- Square card -->
 
@@ -36,8 +32,11 @@
     </div>
   </div>
 <% end %>
-</div>
+</div><br>
 
+  <div align="right" style="margin-top:10px; margin-bottom:20px;">
+    <%= link_to '전공추가', new_major_story_path, class: 'waves-effect waves-light btn blue' %>
+  </div><br>
 <ul class="pagination" align="center">
 <%= will_paginate @major_stories, :renderer => 'PaginationListLinkRenderer' %>
   </ul>
