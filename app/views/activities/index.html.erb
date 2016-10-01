@@ -1,6 +1,5 @@
 <h5 class="center">활동내역</h5>
 
-
 <%= form_tag activities_path, :method => 'get', :id => "activities_search" do %>
   <%= hidden_field_tag :direction, params[:direction]%>
   <%= hidden_field_tag :sort, params[:sort]%>  
@@ -53,14 +52,11 @@
         </tr>
         </tbody>
         </table>
-        </br></br>
-          <ul class="pagination" align="center">
+        </div>
+        <br>
+        
+  <ul class="pagination" align="center">
   <%= will_paginate @activities, :renderer => 'PaginationListLinkRenderer' %>
-
-  </div>
-
-   <!--버튼-->
-  
-
-</ul>
+ <!--버튼-->
+  </ul>
 

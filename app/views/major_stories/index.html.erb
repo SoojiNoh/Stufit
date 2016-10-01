@@ -1,5 +1,4 @@
-
-<h1>전공 스토리</h1>
+<h5 class="center">전공 스토리</h5>
 <!--search -->
 <%= form_tag major_stories_path, :method => 'get', :id => "activities_search", :style=>"margin-top:50px" do %>
   <%= hidden_field_tag :direction, params[:direction]%>
@@ -39,9 +38,8 @@
 <% end %>
 </div>
 
-<br>
-
-<%= will_paginate @major_stories %>
-
+<ul class="pagination" align="center">
+<%= will_paginate @major_stories, :renderer => 'PaginationListLinkRenderer' %>
+  </ul>
 
 

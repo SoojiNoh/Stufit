@@ -3,6 +3,8 @@
 <%= form_for @event, multipart: true do |d| %>
   <%= render partial: 'form', locals: { :f => d} %>
 <% end %>
+<br>
+<%= link_to '목록으로', events_path, class:"btn waves-effect waves-light" %>
 
 <script>
     $(document).ready(function() {

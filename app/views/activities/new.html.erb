@@ -17,6 +17,8 @@ table td.absorbing-column {
 <%= form_for @activity, multipart: true do |a| %>
 <%= render partial: 'form', locals: { :f => a} %>
 <% end %>
+<br>
+<%= link_to '목록으로', activities_path, class:"btn waves-effect waves-light" %>
 
 <script>
     $(document).ready(function() {

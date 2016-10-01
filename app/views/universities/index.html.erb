@@ -1,4 +1,4 @@
-<h5>대학알리GO</h5>
+<h5 class="center">대학알리GO</h5>
 <!--대학등록 버튼(로그인 했을 때만)-->
 <% if !user_signed_in? %>
 <% else %>
@@ -29,5 +29,7 @@
 </div>
 
 <!--페이지 넘기기-->
-<center style="margin-top:50px;"><%= will_paginate @universities, :renderer => 'PaginationListLinkRenderer' %></center>
+  <ul class="pagination" align="center">
+  <%= will_paginate @universities, :renderer => 'PaginationListLinkRenderer' %>
+  </ul>
 

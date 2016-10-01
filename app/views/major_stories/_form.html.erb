@@ -40,7 +40,8 @@
     <%= f.text_area :q3 %><!-- 인터뷰 내용 -->
   </div>
     <div>
-    <%= f.label :q4, "4.대학생이 된 후 한 기억에 남는 활동은?" %>
+    <%= f.label :q4, "4.1(정시 입학생 대상) 대학생이 된 후 한 기억에 남는 활동은?" %><br>
+    <%= f.label :q4, "4.2(수시 입학생 대상) OO전형에 들어올 학생들을 위한 팁 좀 부탁해!" %>
     <%= f.text_area :q4 %><!-- 인터뷰 내용 -->
   </div>
     <div>
@@ -52,7 +53,7 @@
     <%= f.text_area :q6 %><!-- 인터뷰 내용 -->
   </div>
   <div class="field">
-    <%= f.label :file, "썸네일 이미지" %><br>
+    <%= f.label :file, "대표 이미지" %><br>
     <%= f.file_field :file %><!-- 이미지 -->
   </div>
   <div class="field">

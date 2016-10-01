@@ -1,3 +1,5 @@
 <%= form_for @university,multipart: true do |f| %>
   <%= render partial: 'form', locals: { :f => f } %>
 <% end %>
+<br>
+<%= link_to '목록으로', universities_path, class:"btn waves-effect waves-light" %>
