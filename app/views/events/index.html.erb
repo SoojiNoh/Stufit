@@ -47,5 +47,5 @@
   <%= link_to "새글 쓰기", new_event_path ,class: 'waves-effect waves-light btn right blue'%><br>
   <!--페이지 넘기기-->
   <ul class="pagination" align="center">
-  <%= will_paginate @events, :renderer => 'PaginationListLinkRenderer' %>
+  <%= will_paginate @events %>
 </ul>

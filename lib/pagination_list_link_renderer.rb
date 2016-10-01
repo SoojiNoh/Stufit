@@ -1,5 +1,5 @@
 class PaginationListLinkRenderer < WillPaginate::ActionView::LinkRenderer
-
+  WllPaginate::ViewHelpers.pagination_options[:renderer] = 'PaginationListLinkRenderer'
   protected
 
     def page_number(page)
