@@ -4375,6 +4375,7 @@ nav ul a span.badge {
 }
 
 .mdi-action-stars:before {
+    background-color: #03A9F4;
   content: "\e67a";
 }
 

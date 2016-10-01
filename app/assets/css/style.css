@@ -18,6 +18,13 @@
   color: white;
 }
 
+
+.btn-floating{
+  background-color: #03A9F4;
+  color: white;
+}
+
+
 body {
   background-color: #f9f9f9;
 }
