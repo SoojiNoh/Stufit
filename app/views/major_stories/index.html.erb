@@ -1,10 +1,21 @@
 
 <h1>전공 스토리</h1>
+<!--search -->
+<%= form_tag major_stories_path, :method => 'get', :id => "activities_search", :style=>"margin-top:50px" do %>
+  <%= hidden_field_tag :direction, params[:direction]%>
+  <%= hidden_field_tag :sort, params[:sort]%>
+  <p>
+    <%= text_field_tag :search, params[:search], :placeholder=>"검색어를 입력하세요" %>
+  <div><%= submit_tag "검색", :content => nil, class: 'waves-effect waves-light btn' %>
+  </div>
+  </p>
+<% end %>
 
-
+  <div align="right" style="margin-top:10px; margin-bottom:20px;">
+    <%= link_to '전공추가', new_major_story_path, class: 'waves-effect waves-light btn' %>
+  </div>
 
 <!-- Square card -->
-
 
 <div class="row">
 <% @major_stories.each do |major_story| %>
@@ -29,25 +40,8 @@
 </div>
 
 <br>
-<div class ="col s3 m3", margin-top : 50px>
-  <%= link_to '전공추가', new_major_story_path %>
-</div>
-<div class = "col s6 m6">
-</div>
+
 <%= will_paginate @major_stories %>
-<!--search -->
-<div class = "col s3 m3">
-
-
-<%= form_tag major_stories_path, :method => 'get', :id => "activities_search", :style=>"margin-top:50px" do %>
-  <%= hidden_field_tag :direction, params[:direction]%>
-  <%= hidden_field_tag :sort, params[:sort]%>
-  <p>
-    <%= text_field_tag :search, params[:search], :placeholder=>"검색어를 입력하세요" %>
-  <div><%= submit_tag "검색", :content => nil, class: 'waves-effect waves-light btn' %>
-  </div>
 
 
 
-  </p>
-<% end %>
