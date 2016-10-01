@@ -46,22 +46,24 @@
     </div>
     
    <!--버튼 기능-->
+   <%= link_to "목록", events_path,class: 'waves-effect waves-light btn' %>
      <%= link_to "수정", edit_event_path(@event),class: 'waves-effect waves-light btn' %>
      <%= link_to "삭제", event_path(@event), method: "delete",class: 'waves-effect waves-light btn' %>
-     <%= link_to "목록", events_path,class: 'waves-effect waves-light btn' %>
      <%= link_to '새 글쓰기', new_event_path ,class: 'waves-effect waves-light btn' %>
-     <br><br><br><br><br><br>
-     
+
      <!--댓글-->
-     <h6>댓글</h6>
-    <div>
-   <% @event.comments.each do |comment| %>
-     <%= comment.user.name %><br>
+<ul class="collection">
+      <li class="collection-item">
+<strong>댓글</strong>
+<% @event.comments.each do |comment| %>
+<li class="collection-item">
+    <strong><%= comment.user.name %></strong><br>
      <%= comment.content %>
-     <%= link_to "댓글 삭제", comment_path(comment), method: :delete,class: 'waves-effect waves-light btn' %>
+     <div align="right"><%= link_to "댓글 삭제", comment_path(comment), method: :delete,class: 'waves-effect waves-light btn' %></div>
    <% end %>
-</div>
-<div>
+
    <%= render partial: 'comments/new', locals: { :comment => @event.comments.new , event: @event.id, belong: "event"} %>
-</div></br>
+</li>
+</li>
+</ul>
  

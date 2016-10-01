@@ -19,9 +19,10 @@
           <strong><%= comment.user.name %></strong><br>
                   <%= comment.content %>
           <div align="right"><%= link_to "삭제", comment_path(comment), method: :delete, data: { confirm: "로레알 삭제ㄱㄱ?" } %></div>
-        </li>
       <% end %>
       <%= render partial: '/comments/new', locals: { :comment => @university.comments.new, university: @university.id, belong: "university"} %>
+        </li>
+      
       </li>
     </ul>
   </div>

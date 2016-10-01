@@ -7,9 +7,13 @@ class CreateMajorStories < ActiveRecord::Migration[5.0]
       t.string :grade
       t.string :name
       t.string :file
-      
+      t.text :q1
+      t.text :q2
+      t.text :q3
+      t.text :q4
+      t.text :q5      
+      t.text :q6      
 
-      t.text :content
 
       t.references :university, index: true, foreign_key: true
 

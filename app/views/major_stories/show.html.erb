@@ -13,23 +13,38 @@
      </div>
 
 <div class ="col s12 m12">
-  <p><%= @major_story.content.html_safe %></p>
+    
+  <p>1.학과에 대해서 자세히 설명해줘</p>
+  <p><%= @major_story.q1.html_safe %></p><br>
+  <p>2.학년별로 배우는 내용에 대해 간략하게 설명해줘</p>
+  <p><%= @major_story.q2.html_safe %></p><br>
+  <p>3.학과에 만족해?</p>
+  <p><%= @major_story.q3.html_safe %></p><br>
+  <p>4.대학생이 된 후 한 기억에 남는 활동은?"</p>
+  <p><%= @major_story.q4.html_safe %></p><br>
+  <p>5.생각하고 있는 진로?</p>
+  <p><%= @major_story.q5.html_safe %></p><br>
+  <p>6.공식질문: 절대 우리 과에 오지 말아야 할 사람은?</p>
+  <p><%= @major_story.q6.html_safe %></p><br>
 <%= image_tag "#{@major_story.file}" , height: '300', width: '400' %>
 </div>
-
-<br><br><br><br><br><br>
-
-<h6>댓글</h6>
-    <div>
-   <% @major_story.comments.each do |comment| %>
-     <%= comment.user.name %><br>
-     <%= comment.content %>
-     <%= link_to "삭제", comment_path(comment), method: :delete, class: 'waves-effect waves-light btn' %>
-   <% end %>
-</div><br>
-<div>
-   <%= render partial: 'comments/new', locals: { :comment => @major_story.comments.new , major_story: @major_story.id, belong: "major_story"} %>
-</div><br>
 <%= link_to "목록", major_stories_path, class: 'waves-effect waves-light btn' %>
 <%= link_to "수정", edit_major_story_path(@major_story), class: 'waves-effect waves-light btn' %> 
 <%= link_to "삭제", major_story_path(@major_story), method: "delete", class: 'waves-effect waves-light btn' %>
+<%= link_to '새 글쓰기', new_major_story_path ,class: 'waves-effect waves-light btn' %>
+<ul class="collection">
+      <li class="collection-item">
+<strong>댓글</strong>
+
+   <% @major_story.comments.each do |comment| %>
+<li class="collection-item">
+    <strong><%= comment.user.name %></strong><br>
+     <%= comment.content %>
+     <div align="right"><%= link_to "삭제", comment_path(comment), method: :delete, class: 'waves-effect waves-light btn' %></div>
+   <% end %>
+
+   <%= render partial: 'comments/new', locals: { :comment => @major_story.comments.new , major_story: @major_story.id, belong: "major_story"} %>
+</li>
+</li>
+</ul>
+

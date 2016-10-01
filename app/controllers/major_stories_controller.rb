@@ -73,6 +73,6 @@ class MajorStoriesController < ApplicationController
   end
 
   def major_story_params
-    params.require(:major_story).permit(:univ, :major, :grade, :name, :file, :content, :universtiy)
+    params.require(:major_story).permit(:univ, :major, :grade, :name, :file, :q1,:q2,:q3,:q4,:q5,:q6, :universtiy)
   end
 end

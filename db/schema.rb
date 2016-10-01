@@ -173,7 +173,12 @@ ActiveRecord::Schema.define(version: 20160918104351) do
     t.string   "grade"
     t.string   "name"
     t.string   "file"
-    t.text     "content"
+    t.text     "q1"
+    t.text     "q2"
+    t.text     "q3"
+    t.text     "q4"
+    t.text     "q5"
+    t.text     "q6"
     t.integer  "university_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false

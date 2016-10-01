@@ -6,7 +6,7 @@
       <%if @user.nil?%>
         <%= image_tag "stufit_thumnail.png", class: "circle responsive-img valign profile-image" %>
       <%else%>
-        <%unless @user.image.present?%>
+        <%unless @user.image?%>
           <%= image_tag "stufit_thumnail.png", class: "circle responsive-img valign profile-image" %>
         <%else%>
           <%= image_tag "#{current_user.image}", class: "circle responsive-img valign profile-image" %>
