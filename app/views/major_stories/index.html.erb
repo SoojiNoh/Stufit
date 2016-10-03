@@ -27,6 +27,12 @@
         </div>
         <div class="card-action">
           <%= link_to "자세히 보기", major_story %>
+          <% if current_user.is_like?(major_story) %>
+                <%= link_to image_tag("/assets/heart.png"), major_story_major_story_like_path(major_story), method: "post" %>
+            <% else %>
+                <%= link_to image_tag("/assets/heart_empty.png"), major_story_major_story_like_path(major_story), method: "post" %>
+            <% end %>
+            <%= major_story.major_story_likes.size %>
         </div>
       <% end %>
     </div>

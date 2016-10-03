@@ -38,18 +38,21 @@ class User < ApplicationRecord
 
   # User : Event_like : Event relation => N:M
   has_many :event_likes
-  
-  # 1:N 관계인 likes를 이용해서 Post와 N:N 관계를 구현
-  # 특정 유저가 좋아요를 누른 posts를 얻을 수 있음.
-  # ex) user.likes_posts
   has_many :event_liked_events, through: :event_likes, source: :event
-  
 
+  # User와 Like는 1:N 관계
+  has_many :major_story_likes
+  has_many :major_story_liked_major_stories, through: :major_story_likes, source: :major_story
+  
   # for checking user did like
   def is_like?(event)
     EventLike.find_by(user_id: self.id, event_id: event.id).present?
   end
-
+  
+  # for checking user did like
+  def is_like?(major_story)
+    MajorStoryLike.find_by(user_id: self.id, major_story_id: major_story.id).present?
+  end
 
   mount_uploader :image, AvatarUploader
     

@@ -21,9 +21,10 @@ class MajorStory < ApplicationRecord
       where(nil)
     end
   end
-  # User : Major_like : Major_story relation => N:M
-  has_many :major_likes
-  has_many :users, through: :major_likes
+  
+  # User : MajorStorylike : Major_story relation => N:M
+  has_many :major_story_likes
+  has_many :major_story_liked_users, through: :major_story_likes, source: :user
 
   mount_uploader :file, AvatarUploader
 

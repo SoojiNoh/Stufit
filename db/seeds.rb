@@ -75,8 +75,7 @@ Event.create(
     event_type: '대회',
     start_at:'2016-8-26',
     end_at: '2016-12-29')
-    # http://www.kbatv.org/sub/event/event_view.asp?seq=417&page=1&part=
-
+    # 1. http://www.kbatv.org/sub/event/event_view.asp?seq=417&page=1&part=
 Event.create(
     title: '해양 안전 공모전',
     content:'해양 안전에 대한 필요성이나 해양 안전 문화를 확산시킬 수 있는 포스터, 웹툰, 체험수기 등을 공모합니다. 전국 학생들의 많은 참여 부탁드립니다.',
@@ -84,7 +83,6 @@ Event.create(
     event_type: '공모전',
     start_at:'2016-09-09',
     end_at: '2016-10-21')
-    
 Event.create(
     title: '제 17회 서울청소년자원봉사대회',
     content:'서울특별시청소년활동진흥센터에서는 서울지역 내 청소년봉사활동에 이바지한 청소년 및 지도자들을 격려하고 우수활동사례를 확산시키기 위해 서울특별시와 여성가족부가 주최하는 제 17회 서울청소년자원봉사대회를 개최합니다.',
@@ -92,9 +90,7 @@ Event.create(
     event_type: '대회',
     start_at:'2016-9-5',
     end_at: '2016-10-17')
-    # http://www.sy0404.or.kr/
-
-
+    # 3 http://www.sy0404.or.kr/
 Event.create(
     title: '전국 고교 일일방송캠프',
     content:'사단법인 한국청소년방송단연맹이 주최하는, 대한민국 청소년이면 누구나 참여하고 있는 전국고교 일일방송캠프를 개최합니다. 많은 참여 부탁드립니다.',
@@ -102,9 +98,7 @@ Event.create(
     event_type: '캠프',
     start_at:'2016-8-25',
     end_at: '2016-12-29')
-    # http://www.kbatv.org/sub/event/broadcast.asp?part=B25
-
-
+    # 4 http://www.kbatv.org/sub/event/broadcast.asp?part=B25
 Event.create(
     title: '제8회 전국 청소년 인성 실천 대회',
     content:'세계화교육문화재단에서 주최하는 제8회 전국 청소년 인성 실천 대회를 개최합니다. 전국 학생들의 많은 참여 부탁드립니다.',
@@ -112,14 +106,12 @@ Event.create(
     event_type: '대회',
     start_at:'2016-10-04',
     end_at: '2016-10-10')
-
 Event.create(title: '제5회 전국 청소년 환경 프레젠테이션 대회',
     content:'세계화교육문화재단에서 주최하는 제5회 전국 청소년 환경 프레젠테이션 대회를 개최합니다. 전국 학생들의 많은 참여 부탁드립니다.',
     place:'대전장대초등학교, 대전장대중학교, 충남대학교 백마교양교육관 ',
     event_type: '대회',
     start_at:'2016-10-04',
     end_at: '2016-10-10')
-    
 Event.create(
     title: '제3회 대한민국 청소년 공공외교 실천 대회',
     content:'세계화교육문화재단에서 주최하는 제 3회 대한민국 청소년 공공외교 실천 대회를 개최합니다. 전국 학생들의 많은 참여 부탁드립니다.',
@@ -127,9 +119,7 @@ Event.create(
     event_type: '대회',
     start_at:'2016-10-04',
     end_at: '2016-10-10')
-    # http://www.globaleducation.or.kr/?c=user&mcd=no03_01&me=bbs_detail&idx=1209&cur_page=1&sParam=
-    
-    
+    # 7 http://www.globaleducation.or.kr/?c=user&mcd=no03_01&me=bbs_detail&idx=1209&cur_page=1&sParam=
 Event.create(
     title: '2016 Global SW Education Forum',
     content:'교육부, 미래 창조과학부와 한국과학창의재단은 소프트웨어 교육 정책, 연구, 산업, 실천에 대한 국내외 동향을 공유하고 소프트웨어 교육의 발전 방향을 모색하기 위한 2016 글로벌 소프트웨어 교육 포럼을 개최합니다. 여러분의 많은 관심과 참여 부탁드립니다.',
@@ -137,7 +127,6 @@ Event.create(
     event_type: '포럼',
     start_at:'2016-10-24',
     end_at: '2016-10-25')
-    
 Event.create(
     title: 'MakexSW학생 작품 공모전',
     content:'교육부, 미래 창조과학부와 한국과학창의재단은 소프트웨어로 만든 학생들의 작품을 발굴하고 널리 알리고자 Make x SW 학생 작품 공모전을 개최합니다. 우수작은 10월 24일 2016 글로벌 소프트웨어 교육 포럼의 개막식 참가작으로 선정되오니 여러분의 많은 참여 부탁드립니다.
@@ -147,8 +136,7 @@ Event.create(
     event_type: '공모전',
     start_at:'2016-9-23',
     end_at: '2016-10-10')
-    # http://www.gswef.kr/forum_1.php
-    
+    # 9 http://www.gswef.kr/forum_1.php
 Event.create(
     title: ' 2016 전파콘텐츠 공모전',
     content:'전파를 활용한 다양한 아이디어 콘텐츠를 공모합니다.',
@@ -157,8 +145,7 @@ Event.create(
     event_type: '공모전',
     start_at:'2016-9-1',
     end_at: '2016-10-31')
-    # http://www.kca.kr/open_content/bbs.do?act=detail&msg_no=12163&bcd=notice
-
+    # 10 http://www.kca.kr/open_content/bbs.do?act=detail&msg_no=12163&bcd=notice
 Event.create(
     title: ' 2016 전국 중∙고등학교 학생 ＇우리 땅 독도＇ 산문 공모전',
     content:'독도의용수비기념사업회에서는 2016 전국 중고등학교 학생 "우리땅 독도" 산문 공모전을 개최합니다. 다음 세대의 주인공인 청소년들이 독도가 우리 땅인 이유를 올바르게 인식하고 독도의용수비대의 독도수호정신을 계승하기 위한 공모전에 중고등학교 학생들이 많이 참여하여 주시기 바랍니다.',
@@ -167,7 +154,6 @@ Event.create(
     start_at:'2016-9-19',
     end_at: '2016-11-4')
     # http://www.dokdofoundation.or.kr/bbs/board.php?bo_table=12_board&wr_id=122
-    
 Event.create(
     title: '2016 꿈을 잇(IT)다 미디어 페스티벌',
     content:'서울특별시 교육부에서는 청소년들의 꿈을 이야기할 수 있는 꿈을 잇(IT)다 미디어 페스티벌을 개최합니다. 여러분들의 많은 관심 부탁드립니다.',
@@ -176,7 +162,6 @@ Event.create(
     start_at:'2016-8-29',
     end_at: '2016-11-7')
     # http://www.edunet.net/redu/etcsvc/nvNoticeForm.do?menu_id=0049
-
 Event.create(
     title: '2017 발명창의력 10종경기 한국 대회 ',
     content:'세계 최고의 창의력 프로그램으로 진행되는 2017 발명창의력10종경기 한국대회를 개최합니다. 여러분의 많은 관심 부탁드립니다.',
@@ -184,52 +169,40 @@ Event.create(
     event_type: '대회',
     start_at:'2017-1-6',
     end_at: '2017-1-8')
-
 Event.create(
     title: '2016 성남시 청소년 제안 주간 <차별받지 않는 행복한 청소년>',
     content:'청소년 참여 활동에 관심 있는 청소년들이 제안주간 주제에서  등 주제별 나뉘어 포럼실시 
          - 분야 : 청소년 노동, 교육환경, 지역사회, 청소년 복지, 청소년 문화 / 5개분야
-<주제 1 : 2017.청소년 희망비전 제시(분야별)>
-<주제 2 : 희망비전 제시에 따른 실행과제 도출>',
+        <주제 1 : 2017.청소년 희망비전 제시(분야별)>
+        <주제 2 : 희망비전 제시에 따른 실행과제 도출>',
     place: '아주대학교',
     event_type: '대회',
     start_at:'2016-09-19',
     end_at: '2016-10-16')
-    
 Event.create(
     title: '2016 대한민국 화이트햇 콘테스트',
-    content:'21세기 미래 사이버 시대의 주역이 될 화이트 해커들을 위한 ‘명품’ 콘테스트가 열립니다. 
-이번 콘테스트는 2009년의 7.7 분산서비스거부(DDoS) 대란, 2011년의 농협 전산망 마비에 이어 2013년 3월에 발생한 3.20 사이버 테러, 6.25 사이버 공격 등 사이버안보 위협이 점차 고조됨에 따라 국가차원의 사이버 인재 발굴ㆍ육성이 필요하다는 취지에서 국방부, 국정원 주최, 국군사이버사령부 주관으로 개최 합니다.
-
-대회 규모 및 총상금(7,100만원) 등 국내 최대ㆍ최고 권위의 대회를 지향한 이번대회는 대한민국 국적의 청소년(중ㆍ고등학생)과 일반인(대학생ㆍ대학원생 포함)이면 누구나 참여할 수 있습니다.
-
-화이트해커 선포식에서는 청소년들과 일반인들을 위한 병무ㆍ진학 상담은 물론, 유명해커들의 해킹시연과 만남, 해킹방어대회와 사이버정책 및 기술 공모전 우수자들에 대한 시상식이 예정되어 있습니다. ‘화이트해커 선포식’에 참석해 주시는 분들을 위한 기념품과 경품이 준비되어 있으니 많은 참여 바랍니다.',
+    content:'21세기 미래 사이버 시대의 주역이 될 화이트 해커들을 위한 ‘명품’ 콘테스트가 열립니다. 이번 콘테스트는 2009년의 7.7 분산서비스거부(DDoS) 대란, 2011년의 농협 전산망 마비에 이어 2013년 3월에 발생한 3.20 사이버 테러, 6.25 사이버 공격 등 사이버안보 위협이 점차 고조됨에 따라 국가차원의 사이버 인재 발굴ㆍ육성이 필요하다는 취지에서 국방부, 국정원 주최, 국군사이버사령부 주관으로 개최 합니다. 대회 규모 및 총상금(7,100만원) 등 국내 최대ㆍ최고 권위의 대회를 지향한 이번대회는 대한민국 국적의 청소년(중ㆍ고등학생)과 일반인(대학생ㆍ대학원생 포함)이면 누구나 참여할 수 있습니다. 화이트해커 선포식에서는 청소년들과 일반인들을 위한 병무ㆍ진학 상담은 물론, 유명해커들의 해킹시연과 만남, 해킹방어대회와 사이버정책 및 기술 공모전 우수자들에 대한 시상식이 예정되어 있습니다. 화이트해커 선포식에 참석해 주시는 분들을 위한 기념품과 경품이 준비되어 있으니 많은 참여 바랍니다.',
     place: 'The-K 호텔 컨벤션센터(서울 양재동)',
     event_type: '대회',
     start_at:'2016-10-08',
     end_at: '2016-11-01')
-    #16. http://www.whitehatcontest.kr/ 
-
+    #14. http://www.whitehatcontest.kr/ 
 Event.create(
     title: 'Global Classrooms: Seoul 2017',
-    content:"Global Classrooms tend to provide students with the chance to get interested in global issues and international organizations. What is more, students would be able to acquire knowledge and skills in a globalized society and enthusiastic citizenship. Occurring in 24 major cities around the world, Global Classrooms tries to reduce the Model United Nations program gap within various Model United Nations communities.
-
-Global Classrooms: Seoul was first held in 2008 due to Kyung Hee University and United Nations Association of United States of America`s partnership. This conference act as a link between Korean Model United Nations network and Model United Nations communities abroad. Through this conference, students will represent a delegate and discuss about various global agendas, which would facilitate acquiring global issues easily. Since the official language is "English", this conference would act as a place to learn, live, and lead to approach English from the pragmatic perspective.",
+    content:'Global Classrooms tend to provide students with the chance to get interested in global issues and international organizations. What is more, students would be able to acquire knowledge and skills in a globalized society and enthusiastic citizenship. Occurring in 24 major cities around the world, Global Classrooms tries to reduce the Model United Nations program gap within various Model United Nations communities. Global Classrooms: Seoul was first held in 2008 due to Kyung Hee University and United Nations Association of United States of America`s partnership. This conference act as a link between Korean Model United Nations network and Model United Nations communities abroad. Through this conference, students will represent a delegate and discuss about various global agendas, which would facilitate acquiring global issues easily. Since the official language is English, this conference would act as a place to learn, live, and lead to approach English from the pragmatic perspective.',
     place: '경희대학교 국제캠퍼스',
     event_type: '대회',
     start_at:'2017-01-04',
     end_at: '2016-01-07')
-    #17. http://www.kicmun.org/
-    
+     # 16. httsp://www.kicmun.org/
 Event.create(
-    title: '제7회 대한민국 나눔대축체',
-    content:"Global Classrooms tend to provide students with the chance to get interested in global issues and international organizations. What is more, students would be able to acquire knowledge and skills in a globalized society and enthusiastic citizenship. Occurring in 24 major cities around the world, Global Classrooms tries to reduce the Model United Nations program gap within various Model United Nations communities.
-
-Global Classrooms: Seoul was first held in 2008 due to Kyung Hee University and United Nations Association of United States of America`s partnership. This conference act as a link between Korean Model United Nations network and Model United Nations communities abroad. Through this conference, students will represent a delegate and discuss about various global agendas, which would facilitate acquiring global issues easily. Since the official language is "English", this conference would act as a place to learn, live, and lead to approach English from the pragmatic perspective.",
-    place: '경희대학교 국제캠퍼스',
-    event_type: '대회',
-    start_at:'2017-01-04',
-    end_at: '2016-01-07')
+    title: '서울시 <그린멘토 특강>',
+    content:"우리 땅 생명이야기를 주제로 이화여대 에코과학부 장이권 교수님의 멘토 특강을 진행할 예정입니다. 약 90분간 진행될 예정입니다. 참가신청은 http://goo.gl/forms/himE7a7WdM1wYTLn2 에서 할 수 있습니다.",
+    place: '서울시청 서소문청사 13층 회의실',
+    event_type: '멘토링',
+    start_at:'2016-10-15',
+    end_at: '2016-10-15')
+     # 17. http://www.seouledc.or.kr/content/index.sgk?gubun=senews&dname=news&mode=view&no=266&board_id=12&board_skin=list&page=1&title_sc=&sc_name=
 
 
 
@@ -665,7 +638,7 @@ MajorStory.create(
     주장에 대한 근거를 논리적으로 잘 말하는 것이 중요해. 또 문제를 제대로 못 풀더라도 자신감이 중요해(물론 겸손해야 하지). 이 학생이 문제를 푸는 것도 중요하지만 얼마나 끝까지 문제를
     해결하려는 의지가 있는가를 보시려는 것도 있어! 그러니까 문제를 모르더라도 자신감 있게 행동해야 해!
         **면접상황REPLAY: 우선 대기실에 다같이 앉아있다가. 5명씩 불려서 다른 강의실로 이동해서 15분제한시간동안 문제가 주어져. 그리고 풀이(생각)하는 시간을 주고 시간이 끝나면 교수님들이
-    계시는 강의실로 이동해(교수님 2명, 학생 1명인 2:1면접). 나는 들어서는 순간 큰 소리로 공손하게 인사를 했고, 앉자마자 문제에 대한 풀이를 설명했어. 아마 교수님께서는 학생의 의견에 대해서
+    계시는 강의실로 이동해(교수님 2명, 학생 1명인 2:1면접). 나는 들어서는 순��� 큰 소리로 공손하게 인사를 했고, 앉자마자 문제에 대한 풀이를 설명했어. 아마 교수님께서는 학생의 의견에 대해서
     무서울 정도로 무조건 반박하실 거니깐 마음 단단히 먹어야 해.
         **기억나는 면접질문: 지역축제 문제점을 경영학부의 관점으로 답변하는 문제',
     q5: '나는 해외연수를 갔다 와서 외국계 기업 쪽으로 취업을 해보고 싶어. 그 이유는 한 학기 동안 외국계기업에서 제공하는 멘토링을 했었는데, 조직구조나 환경이 너무 마음에 들었거든.(물론
@@ -675,7 +648,7 @@ MajorStory.create(
     created_at: '2016-08-20')
 #12번
 MajorStory.create(
-    univ: '숙명여자대학교',
+    univ: '숙���여자대학교',
     major: '컴퓨터과학부',
     grade: '3학년',
     name: '노OO',
@@ -1460,7 +1433,7 @@ MajorStory.create(
 
 있는 교육실습을 나가게 돼. 임용고시의 꿈을 접을 수도, 더 키울 수도 있는 계기가 될거야ㅎㅎㅎ',
     q3:
-        '동국대 교육학과에는 다른 과에 비해 교수님이 많이 계셔. 무려 11명의 교수님이 계셔서 다양한 수업을
+        '동국대 교육학과에는 다른 과에 비해 교수님이 많이 계셔. 무려 11명의 교수님이 ���셔서 다양한 수업을
 
 듣고 배울 점도 많은 것 같아
         >>> 만족도(5점 만점): 4점',
@@ -1474,7 +1447,7 @@ MajorStory.create(
 복수전공을 해서 임용고시를 본다거나 기업 HRD관리자, 교육공무원 등이 있어.',
     q6: '“교육에 관심이 1도 없는 사람.. “ 이유는 성적 맞춰서 와서 전과하는 사람도 많이 봤고 배우는 내용에
 
-전혀 흥미를 못 느끼기 때문에 우리 과 오지마~애들아~~',
+전혀 흥미��� 못 느끼기 때문에 우리 과 오지마~애들아~~',
     #university_id:
     created_at: '2016-08-24')
 
@@ -2263,7 +2236,7 @@ MajorStory.create(
     name: '손OO',
     remote_file_url: 'http://i.imgur.com/cyJpi3z.png',
     q1:
-        '나는 고등학교 때 경제동아리에서 활동했었는데 여러 가지 경험을 통해 경제와 경영에 관심이 생겨서
+        '나는 고등학교 때 경제동아리에서 활동했었는데 여러 가지 경험을 통해 경제와 경영에 관���이 생겨서
 
 경영학과에 진학하게 된 케이스야. 다수의 다른 경영학과들도 마찬가지겠지만 일단 과목마다 팀플이
 

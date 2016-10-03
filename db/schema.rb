@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161003161642) do
+ActiveRecord::Schema.define(version: 20161003171839) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "activity_type"
@@ -149,15 +149,6 @@ ActiveRecord::Schema.define(version: 20161003161642) do
     t.index ["user_id"], name: "index_impressions_on_user_id"
   end
 
-  create_table "likes", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "comment_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["comment_id"], name: "index_likes_on_comment_id"
-    t.index ["user_id"], name: "index_likes_on_user_id"
-  end
-
   create_table "major_follows", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "major_story_id"
@@ -192,6 +183,15 @@ ActiveRecord::Schema.define(version: 20161003161642) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["university_id"], name: "index_major_stories_on_university_id"
+  end
+
+  create_table "major_story_likes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "major_story_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["major_story_id"], name: "index_major_story_likes_on_major_story_id"
+    t.index ["user_id"], name: "index_major_story_likes_on_user_id"
   end
 
   create_table "mock_tests", force: :cascade do |t|

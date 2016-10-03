@@ -1,0 +1,2 @@
+module MajorStoryLikesHelper
+end

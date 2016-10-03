@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   get '/universities/univ/:id' => 'universities#univ_follow_create'
   get '/universities/univ_destroy/:id' => 'universities#univ_follow_destroy'
   
-  resources :major_stories
+  resources :major_stories do
+    post "/major_story_like", to: "major_story_likes#like_toggle"
+  end
   
   resources :events do
     post "/event_like", to: "event_likes#like_toggle"
