@@ -843,7 +843,7 @@ MajorStory.create(
     major: '광고홍보학과',
     grade: '4학년',
     name: '김OO',
-    remote_file_url: '',
+    remote_file_url: 'http://i.imgur.com/BtfdQbG.png',
     q1:
         '동국대 광고홍보학과는 광고인 혹은 홍보인이 되기 위한 지식을 배우
 
