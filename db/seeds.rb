@@ -185,6 +185,53 @@ Event.create(
     start_at:'2017-1-6',
     end_at: '2017-1-8')
 
+Event.create(
+    title: '2016 성남시 청소년 제안 주간 <차별받지 않는 행복한 청소년>',
+    content:'청소년 참여 활동에 관심 있는 청소년들이 제안주간 주제에서  등 주제별 나뉘어 포럼실시 
+         - 분야 : 청소년 노동, 교육환경, 지역사회, 청소년 복지, 청소년 문화 / 5개분야
+<주제 1 : 2017.청소년 희망비전 제시(분야별)>
+<주제 2 : 희망비전 제시에 따른 실행과제 도출>',
+    place: '아주대학교',
+    event_type: '대회',
+    start_at:'2016-09-19',
+    end_at: '2016-10-16')
+    
+Event.create(
+    title: '2016 대한민국 화이트햇 콘테스트',
+    content:'21세기 미래 사이버 시대의 주역이 될 화이트 해커들을 위한 ‘명품’ 콘테스트가 열립니다. 
+이번 콘테스트는 2009년의 7.7 분산서비스거부(DDoS) 대란, 2011년의 농협 전산망 마비에 이어 2013년 3월에 발생한 3.20 사이버 테러, 6.25 사이버 공격 등 사이버안보 위협이 점차 고조됨에 따라 국가차원의 사이버 인재 발굴ㆍ육성이 필요하다는 취지에서 국방부, 국정원 주최, 국군사이버사령부 주관으로 개최 합니다.
+
+대회 규모 및 총상금(7,100만원) 등 국내 최대ㆍ최고 권위의 대회를 지향한 이번대회는 대한민국 국적의 청소년(중ㆍ고등학생)과 일반인(대학생ㆍ대학원생 포함)이면 누구나 참여할 수 있습니다.
+
+화이트해커 선포식에서는 청소년들과 일반인들을 위한 병무ㆍ진학 상담은 물론, 유명해커들의 해킹시연과 만남, 해킹방어대회와 사이버정책 및 기술 공모전 우수자들에 대한 시상식이 예정되어 있습니다. ‘화이트해커 선포식’에 참석해 주시는 분들을 위한 기념품과 경품이 준비되어 있으니 많은 참여 바랍니다.',
+    place: 'The-K 호텔 컨벤션센터(서울 양재동)',
+    event_type: '대회',
+    start_at:'2016-10-08',
+    end_at: '2016-11-01')
+    #16. http://www.whitehatcontest.kr/ 
+
+Event.create(
+    title: 'Global Classrooms: Seoul 2017',
+    content:"Global Classrooms tend to provide students with the chance to get interested in global issues and international organizations. What is more, students would be able to acquire knowledge and skills in a globalized society and enthusiastic citizenship. Occurring in 24 major cities around the world, Global Classrooms tries to reduce the Model United Nations program gap within various Model United Nations communities.
+
+Global Classrooms: Seoul was first held in 2008 due to Kyung Hee University and United Nations Association of United States of America`s partnership. This conference act as a link between Korean Model United Nations network and Model United Nations communities abroad. Through this conference, students will represent a delegate and discuss about various global agendas, which would facilitate acquiring global issues easily. Since the official language is "English", this conference would act as a place to learn, live, and lead to approach English from the pragmatic perspective.",
+    place: '경희대학교 국제캠퍼스',
+    event_type: '대회',
+    start_at:'2017-01-04',
+    end_at: '2016-01-07')
+    #17. http://www.kicmun.org/
+    
+Event.create(
+    title: '제7회 대한민국 나눔대축체',
+    content:"Global Classrooms tend to provide students with the chance to get interested in global issues and international organizations. What is more, students would be able to acquire knowledge and skills in a globalized society and enthusiastic citizenship. Occurring in 24 major cities around the world, Global Classrooms tries to reduce the Model United Nations program gap within various Model United Nations communities.
+
+Global Classrooms: Seoul was first held in 2008 due to Kyung Hee University and United Nations Association of United States of America`s partnership. This conference act as a link between Korean Model United Nations network and Model United Nations communities abroad. Through this conference, students will represent a delegate and discuss about various global agendas, which would facilitate acquiring global issues easily. Since the official language is "English", this conference would act as a place to learn, live, and lead to approach English from the pragmatic perspective.",
+    place: '경희대학교 국제캠퍼스',
+    event_type: '대회',
+    start_at:'2017-01-04',
+    end_at: '2016-01-07')
+
+
 
 HashTag.create(name: "물리학")
 HashTag.create(name: "생물학")
@@ -655,7 +702,7 @@ MajorStory.create(
     그냥 알아요~
         컴퓨터과학부의 경우 학년이 올라가면서 조그만 코딩과제부터 팀 프로젝트까지 난이도가 올라갔지만, 그만큼 컴퓨터에 대한 흥미도도 올라갔던 것 같아요. 특히 저는 그래픽스수업이 기억에
     남아요. 유니티로 직접 게임개발을 하는 것이 최종과제였는데, 수업특성상 교수님은 이론 중심으로만 설명해주시고, 실습이나 심화학습은 저희가 스스로 찾고 노력해야 해서 중간에 힘들어하는 학생도
-    매우 많았답니다. 그렇지만 힘든 만큼 기억에 깊게 남아있는 것 같아요. 팀 파트너와 연속으로 도서관에서 밤을 새며, 게임프로젝트에 매진했죠. 물론 처음 해보는거라 허접할 수 있지만,
+    매우 많았답니다. 그렇지만 힘든 만큼 기억에 깊게 남아있는 것 같아요. 팀 파트너와 연속으로 도서관에서 밤을 새며, 게임프로젝트에 매진했죠. 물론 처음 해보는거라 허접��� 수 있지만,
     그래픽환경에서 각 개체가 어떤 식으로 서로 소통하고 관계를 맺고 기능을 수행하는 것들에 대한 직감을 키울 수 있던 것 같아요.
         물론 여대이기도 하고, 제가 학과 공부 이외의 활동에 흥미를 많이 느껴서 저는 대외활동을 추천 드리고 싶어요. 특히 1,2학년 같은 저 학년 때에는 대외활동이 대학활동의 활력소가 된답니다. 저
     같은 경우도 훗날 제 청춘 속 추억을 떠올리라고 하면 대외활동을 떠올릴 것 같아요. 특히 1학년 때 지원했던 Thumb이라는 대학생연합자작곡동아리는 제 인생동아리라 할 만큼 과거 저의 탁월한

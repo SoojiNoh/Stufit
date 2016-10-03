@@ -16,7 +16,6 @@
     <thead>
       <tr>
         <th><%= sortable "title", "제목"%></th>
-        <th><%= sortable "content", "내용"%></th>
         <th><%= sortable "created_at", "작성일"%></th>
         <th>조회수</th>
         <th>즐겨찾기</th>
@@ -28,7 +27,6 @@
       <% @events.each do |event| %>
         <tr>
           <td><%= link_to event.title, event_path(event) %></td>
-          <td><%= link_to "#{truncate(event.content, :length => 16, :separator=>' ')}", event_path(event) %></td>
           <td><%= truncate(event.created_at.in_time_zone("Asia/Seoul").strftime("%Y년%m월%d일"), :length => 14, :separator=>' ')%></td>
           <td><%= event.impressions.count %> </td> <!--조회수 event.impressionist -->
           
