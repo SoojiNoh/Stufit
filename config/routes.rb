@@ -3,34 +3,35 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :articles
+  
   resources :universities
+  get '/universities/univ/:id' => 'universities#univ_follow_create'
+  get '/universities/univ_destroy/:id' => 'universities#univ_follow_destroy'
+  
   resources :major_stories
-  resources :events
+  
+  resources :events do
+    post "/event_like", to: "event_likes#like_toggle"
+  end
+  get '/events/eventfollow/:id' => 'events#event_follow_create'
+  get '/events/eventfollow_destroy/:id' => 'events#event_follow_destroy'
+  #post '/events/:event_id/like' => 'likes#like_toggle'
+  
   resources :activities
+  get '/activities/image/:id'=>'activities#image'
+  
   resources :mock_tests
   resources :comments
   resources :schedules
   resources :hash_tags, only: [:index,:show]
 
-
   get '/' => 'home#index'
   get 'home/index'
-  get 'stufit/index'
   get '/search' => 'home#search'
-
+  
+  get 'stufit/index'
   get 'my_page/index'
-
-  get '/universities/univ/:id' => 'universities#univ_follow_create'
-  get '/universities/univ_destroy/:id' => 'universities#univ_follow_destroy'
-
-  get '/events/eventfollow/:id' => 'events#event_follow_create'
-  get '/events/eventfollow_destroy/:id' => 'events#event_follow_destroy'
-
-  
   get 'facebook/index'
-
-  get '/activities/image/:id'=>'activities#image'
-  
   get '/help' => 'help#index'
 
 

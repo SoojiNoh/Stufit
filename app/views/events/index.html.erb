@@ -12,12 +12,13 @@
 
 <div class="row ">
 <div class="col s12">
-  <table class="col s12 bordered centered" style="width: 100%;">
+  <table class="col s12 bordered centered" style="width: 100%">
     <thead>
       <tr>
         <th><%= sortable "title", "제목"%></th>
         <th><%= sortable "created_at", "작성일"%></th>
         <th>조회수</th>
+        <th>좋아요</th>
         <th>즐겨찾기</th>
       </tr>
     </thead>
@@ -26,11 +27,18 @@
       <!--게시판 리스트-->
       <% @events.each do |event| %>
         <tr>
-          <td><%= link_to event.title, event_path(event) %></td>
-          <td><%= truncate(event.created_at.in_time_zone("Asia/Seoul").strftime("%Y년%m월%d일"), :length => 14, :separator=>' ')%></td>
-          <td><%= event.impressions.count %> </td> <!--조회수 event.impressionist -->
-          
-          <td>
+          <td width="50%"><%= link_to event.title, event_path(event) %></td>
+          <td width="20%"><%= truncate(event.created_at.in_time_zone("Asia/Seoul").strftime("%Y년%m월%d일"), :length => 14, :separator=>' ')%></td>
+          <td width="10%"><%= event.impressions.count %> </td> <!--조회수 event.impressionist -->
+          <td width="10%">
+            <% if current_user.is_like?(event) %>
+                <%= link_to image_tag("/assets/heart.png"), event_event_like_path(event), method: "post" %>
+            <% else %>
+                <%= link_to image_tag("/assets/heart_empty.png"), event_event_like_path(event), method: "post" %>
+            <% end %>
+            <%= event.event_likes.size %>
+          </td>
+          <td width="10%">
             <% if current_user.nil? %>
             <%= link_to "/events/eventfollow/#{event.id}" do %> <i class="empty_star material-icons">star</i> <% end %>
            <% else %>
