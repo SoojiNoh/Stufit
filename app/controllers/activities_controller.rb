@@ -3,7 +3,7 @@ class ActivitiesController < ApplicationController
   
   def index
     @user = current_user
-    @activities = Activity.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:page => params[:page], :per_page => 5)
+    @activities = @user.activities.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:page => params[:page], :per_page => 5)
   end
 
   def new
