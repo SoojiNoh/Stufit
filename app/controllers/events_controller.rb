@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   helper_method :sort_column, :sort_direction
-  
+  skip_before_action :authenticate_user!, :only => [:index]
   #impressionist :actions=>[:show,:index]
   def index
     @user = current_user

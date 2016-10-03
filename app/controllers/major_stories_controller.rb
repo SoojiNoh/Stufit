@@ -1,6 +1,7 @@
 class MajorStoriesController < ApplicationController
  before_action :set_major_story, only: [:show, :edit, :update, :destroy]
-
+ skip_before_action :authenticate_user!, :only => [:index]
+ 
   def index
     @user = current_user
     @major_stories = MajorStory.search(params[:search]).paginate(:page => params[:page], :per_page => 20)

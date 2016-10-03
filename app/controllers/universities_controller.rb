@@ -1,6 +1,6 @@
 class UniversitiesController < ApplicationController
 #  skip_before_action :authenticate_user!, only: [:index]
-
+  skip_before_action :authenticate_user!, :only => [:index]
   def index
     @user = current_user
     @universities = University.paginate(:page => params[:page], :per_page => 24)
