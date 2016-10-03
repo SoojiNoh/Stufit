@@ -14,11 +14,11 @@
 
 <div class="row">
 <% @major_stories.each do |major_story| %>
-  <div class="col s12 m3">
+  <div class="col s3 m3 l3">
     <div class="card">
       <div class="card-image">
       <%= link_to major_story_path(major_story) do %>
-          <%= image_tag "#{major_story.file}" , height: '300', width: '400' %>
+          <%= image_tag "#{major_story.file}", :size => '200x200' %>
         <span class="card-title"><%= major_story.univ %></span>
       </div>
         <div class="card-content">
@@ -34,11 +34,12 @@
 <% end %>
 </div><br>
 
-  <div align="right" style="margin-top:10px; margin-bottom:20px;">
-    <%= link_to '전공추가', new_major_story_path, class: 'waves-effect waves-light btn blue' %>
-  </div><br>
-<ul class="pagination" align="center">
-<%= will_paginate @major_stories, :renderer => 'PaginationListLinkRenderer' %>
-  </ul>
+<!-- 전공추가 버튼-->
+<div align="right" style="margin-top:10px; margin-bottom:20px;">
+  <%= link_to '전공추가', new_major_story_path, class: 'waves-effect waves-light btn blue' %>
+</div><br>
 
-
+<!--Pagination -->
+<div align="center">
+  <%= will_paginate @major_stories, previous_lable: "이전", next_lable: "다음"%>
+</div>

@@ -3,7 +3,7 @@ class UniversitiesController < ApplicationController
 
   def index
     @user = current_user
-    @universities = University.paginate(:page => params[:page], :per_page => 12)
+    @universities = University.paginate(:page => params[:page], :per_page => 24)
     
     respond_to do |format|
       format.html # index.html.erb

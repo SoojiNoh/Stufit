@@ -23,15 +23,16 @@
 </div>
 
 <!--대학등록 버튼(로그인 했을 때만)-->
-<% if !user_signed_in? %>
-<% else %>
+<!--
+<%# if !user_signed_in? %>
+<%# else %>
   <div align="right" style="margin-top:10px; margin-bottom:20px;">
-    <%= link_to "대학등록", new_university_path,class: 'waves-effect waves-light btn blue' %>
+    <%#= link_to "대학등록", new_university_path,class: 'waves-effect waves-light btn blue' %>
   </div>
-<% end %>
+<%# end %>
+//-->
 
 <!--페이지 넘기기-->
-  <ul class="pagination" align="center">
-  <%= will_paginate @universities %>
-  </ul>
-
+<div align="center">
+<%= will_paginate @universities, previous_lable: "이전", next_lable: "다음" %>
+</div>
