@@ -30,7 +30,7 @@
   
   
 
-     
+     <h5><p>내가 찜한 대외 알리Go</p></h5>
       <table>
         <thead>
           <tr style="text-align: center;">
@@ -62,7 +62,22 @@
           <!--주석-->
             <!--<p>There are no events containing the term(s) .</p>-->
           <%end%>
-      
+          </table>
+          <ul class="pagination" align="center">
+  <%= will_paginate @events, :param_name => 'event_page' %>
+ <!--버튼-->
+  </ul>      
+<h5><p>나의 일정</p></h5>
+  <table>
+        <thead>
+          <tr style="text-align: center;">
+            <th colspan="1">일정</th>
+            <th colspan="1">시작시점</th>
+            <th>종료시점</th>
+            <th></th>
+          </tr>
+        </thead>
+  
         <% if @schedules.present? %>
           <tbody>
             <% @schedules.each do |schedule| %>
@@ -83,6 +98,10 @@
 
        <%= link_to '일정추가', new_schedule_path, class: 'waves-effect waves-light btn right' %>
      </button>
+    <ul class="pagination" align="center">
+  <%= will_paginate @schedules, :param_name => 'schedule_page' %>
+ <!--버튼-->
+  </ul>  
   </div>
 </div>
 
