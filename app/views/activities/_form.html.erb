@@ -1,45 +1,50 @@
-
+<div class="field">
 <%= f.label :hash_activities, 'hash_activities', :class=>"mdl-textfield__input", :for=>"sample1" %>
 <%= f.select :hash_activities, options_for_select(HashTag.all.collect{ |u| [u.name,u.id] }, :class=>"mdl-textfield__input", :type=>"text", :id=>"sample1"  ),{},{ :multiple => true}%>
-
+</div>
  
- <table class="centered highlight" >
-  <thead>
-    <tr>
-      <th data-field="id"><%= f.label :activity_type, '교내/교외'%></th>
-      <th data-field="name"><%= f.label :style, '분류'%></th>
-      <th data-field="price"><%= f.label :title, '제목'%></th>
-      <th data-field="price"><%= f.label :content, '내용'%></th>
-      <th data-field="price"><%= f.label :host_name, '주관기관'%></th>
-      <th data-field="name"><%= f.label :issuednumber, '발급번호'%></th>
-      <th data-field="price"><%= f.label :grade, '급수'%></th>
-    </tr>
-  </thead>
+<div class="field"> 
+  <%= f.label :activity_type, '교내/교외'%>
+<%= f.select(:activity_type, ['교내', '교외'], {} ) %>
+</div>
 
-  <tbody>
-    <tr>
-      <td width="7%"><%= f.select(:activity_type, ['교내', '교외'], {} ) %></td>
-      <td width="10%"><%= f.text_field :style%></td>
-      <td width="10%"><%= f.text_field :title  %></td>
-      <td width="13%"><%= f.text_field :content %></td>
-      <td width="10%"><%= f.text_field :host_name %></td>
-      <td width="10%"><%= f.text_field :issuednumber%></td>
-      <td width="10%"><%= f.text_field :grade%></td>
-    </tr>
-  </tbody>
-  <thead>
-    <tr>
-      <th data-field="price"><%= f.label :date, '시작일'%></th>
-      <th data-field="price"><%= f.label :date, '종료일'%></th>
-      <th data-field="price"><%= f.label :image, '이미지'%></th>
+<div class="field">
+      <%= f.label :style, '분류'%>
+      <%= f.text_field :style%>
+</div>
+<div class="field">
+      <%= f.label :title, '제목'%>
+      <%= f.text_field :title  %>
+</div>
+<div class="field">
+      <%= f.label :content, '내용'%>
+      <%= f.text_field :content %>
+</div>
+<div class="field">
+      <%= f.label :host_name, '주관기관'%>
+      <%= f.text_field :host_name %>
+</div>
+<div class="field">
+      <%= f.label :issuednumber, '발급번호'%>
+      <%= f.text_field :issuednumber%>
+</div>
+<div class="field">
+      <%= f.label :grade, '급수'%>
+      <%= f.text_field :grade%>    
+</div>
 
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td width="10%"><%= f.date_field :start_at %></td>
-      <td width="10%"><%= f.date_field :end_at %></td>
-      <td width="10%"><%= f.file_field :image %></td></tr>
-  </tbody>
-</table>
+<div class="field">    
+<%= f.label :date, '시작일'%>
+<%= f.date_field :start_at %>
+</div>
+<div class="field">
+<%= f.label :date, '종료일'%>
+<%= f.date_field :end_at %>
+</div>
+<div class="field">
+<%= f.label :image, '이미지'%>
+<%= f.file_field :image %>
+</div><br>
+
 <%=f.submit "올리기", class:"btn waves-effect waves-light" %>
 
