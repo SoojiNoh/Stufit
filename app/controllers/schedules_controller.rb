@@ -6,11 +6,11 @@ class SchedulesController < ApplicationController
   def index
     @user = current_user
     @events = current_user.events.paginate(:page => params[:event_page], :per_page => 5)
-    @schedules = Schedule.paginate(:page => params[:schedule_page], :per_page => 5)
+    @schedules = current_user.schedules.paginate(:page => params[:schedule_page], :per_page => 5)
     if params[:search]
-      @schedules = Schedule.search(params[:search]).order("created_at DESC").paginate(:page => params[:schedule_page], :per_page => 5)
+      @schedules = current_user.schedules.search(params[:search]).order("created_at DESC").paginate(:page => params[:schedule_page], :per_page => 5)
     else
-      @schedules = Schedule.all.order('created_at DESC').paginate(:page => params[:schedule_page], :per_page => 5)
+      @schedules = current_user.schedules.all.order('created_at DESC').paginate(:page => params[:schedule_page], :per_page => 5)
     end
   end
 
@@ -31,7 +31,8 @@ class SchedulesController < ApplicationController
   # POST /schedules.json
   def create
     @schedule = Schedule.new(schedule_params)
-
+    @schedule.user = current_user
+    
     respond_to do |format|
       if @schedule.save
         format.html { redirect_to @schedule, notice: 'Schedule was successfully created.' }
