@@ -1,14 +1,16 @@
 <h5 class="center">전공 스토리</h5>
+
 <!--search -->
-<%= form_tag major_stories_path, :method => 'get', :id => "activities_search", :style=>"margin-top:50px" do %>
-  <%= hidden_field_tag :direction, params[:direction]%>
-  <%= hidden_field_tag :sort, params[:sort]%>
-  <p>
-    <%= text_field_tag :search, params[:search], :placeholder=>"검색어를 입력하세요" %>
-  <div><%= submit_tag "검색", :content => nil, class: 'waves-effect waves-light btn blue' %>
-  </div>
-  </p>
-<% end %>
+<div class="container">
+  <%= form_tag major_stories_path, :method => 'get', :id => "activities_search", :style=>"margin-top:50px" do %>
+    <%= hidden_field_tag :direction, params[:direction]%>
+    <%= hidden_field_tag :sort, params[:sort]%>
+    <p>
+      <%= text_field_tag :search, params[:search], :placeholder=>"검색어를 입력하세요" %>
+    <div><%= submit_tag "검색", :content => nil, class: 'waves-effect waves-light btn blue' %></div>
+    </p>
+  <% end %>
+</div>
 
 <!-- Square card -->
 
@@ -18,21 +20,21 @@
     <div class="card">
       <div class="card-image">
       <%= link_to major_story_path(major_story) do %>
-          <%= image_tag "#{major_story.file}", :size => '200x200' %>
-        <span class="card-title"><%= major_story.univ %></span>
+          <%= image_tag "#{major_story.file}", :size => '250x250' %>
       </div>
         <div class="card-content">
-          <p><%= major_story.major %></p><br>
-          <%= major_story.grade %>
+          <p><%= major_story.univ %></p>
+          <p><strong><%= major_story.major %></strong></p>
         </div>
         <div class="card-action">
-          <%= link_to "자세히 보기", major_story %>
+
+          <!-- like function -->
           <% if current_user.is_like?(major_story) %>
                 <%= link_to image_tag("/assets/heart.png"), major_story_major_story_like_path(major_story), method: "post" %>
             <% else %>
                 <%= link_to image_tag("/assets/heart_empty.png"), major_story_major_story_like_path(major_story), method: "post" %>
-            <% end %>
-            <%= major_story.major_story_likes.size %>
+          <%end%>
+          <%= major_story.major_story_likes.size %>
         </div>
       <% end %>
     </div>
