@@ -24,8 +24,9 @@ end
   has_many :hash_tags, through: :hash_events
   accepts_nested_attributes_for :hash_events
 
-  # User : UserSchedule : Schedule relation => N:M
+  # User : UserEvent : Event relation => N:M
   has_many :user_events
+  
   has_many :users, through: :user_events
 
   #event 검색 _수지
