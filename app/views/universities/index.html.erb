@@ -36,7 +36,7 @@
 <%# end %>
 //-->
 
-<!--페이지 넘기기-->
-<div align="center">
-<%= will_paginate @universities, previous_lable: "이전", next_lable: "다음" %>
+  <!--Pagination -->
+<div class="digg_pagination" align="center">
+  <%= will_paginate @universities, :previous_lable => "이전", :next_lable => "다음", :container => false %>
 </div>

@@ -53,8 +53,6 @@
         
       <%= link_to "새글 쓰기", new_activity_path, class: 'waves-effect waves-light btn right blue'%><br>
 
-  <ul class="pagination" align="center">
-  <%= will_paginate @activities %>
- <!--버튼-->
-  </ul>
-
+  <div class="digg_pagination" align="center">
+    <%= will_paginate @activities, :previous_lable => "이전", :next_lable => "다음", :container => false %>
+  </div>

@@ -53,6 +53,6 @@
 </div><br>
 
 <!--Pagination -->
-<div align="center">
-  <%= will_paginate @major_stories, previous_lable: "이전", next_lable: "다음"%>
+<div class="digg_pagination" align="center">
+  <%= will_paginate @major_stories, previous_lable: "이전", next_lable: "다음", :container => false %>
 </div>

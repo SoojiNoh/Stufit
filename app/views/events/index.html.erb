@@ -59,9 +59,13 @@
       <% end %>
     </tbody>
   </table>
-  </div></div><br>
+  </div>
+  </div><br>
+  
   <%= link_to "새글 쓰기", new_event_path ,class: 'waves-effect waves-light btn right blue'%><br>
-  <!--페이지 넘기기-->
-  <ul class="pagination" align="center">
-  <%= will_paginate @events %>
+
+  <!--Pagination -->
+  <div class="digg_pagination" align="center">
+    <%= will_paginate @events, :previous_lable => "이전", :next_lable => "다음", :container => false %>
+  </div>
 </ul>
