@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  rolify
+  include Authority::UserAbilities
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -25,15 +28,16 @@ class User < ApplicationRecord
   has_many :major_follows
   has_many :major_stories, through: :major_follows
 
-  # User : UserSchedule : Schedule relation => N:M
-  has_many :user_events
-  has_many :events, through: :user_events
+  has_many :events # User : Events => 1:N
+  #User : UserEvents : Favorite Events
+  has_many :user_events 
+  has_many :favorite_events, through: :user_events
 
   # User : Major_like : Major_story relation => N:M
   has_many :major_likes
   has_many :major_stories, through: :major_likes
 
-  # 주석 달아주세용
+  # user : paththroughs => M:N
   has_and_belongs_to_many :paththroughs
 
   # User : Event_like : Event relation => N:M

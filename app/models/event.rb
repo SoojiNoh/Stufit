@@ -1,5 +1,7 @@
 class Event < ApplicationRecord
 
+  resourcify
+  include Authority::Abilities
 
 def start_month
   start_at.strftime("%B %Y")
@@ -25,9 +27,9 @@ end
   accepts_nested_attributes_for :hash_events
 
   # User : UserEvent : Event relation => N:M
-  has_many :user_events
   
-  has_many :users, through: :user_events
+  has_many :user_events
+  belongs_to :user
 
   #event 검색 _수지
   

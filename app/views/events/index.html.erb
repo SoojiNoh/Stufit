@@ -42,8 +42,8 @@
             <% if current_user.nil? %>
             <%= link_to "/events/eventfollow/#{event.id}" do %> <i class="empty_star material-icons">star</i> <% end %>
            <% else %>
-           <% if current_user.events.where(id: event.id).take != nil  %>
-             <%= link_to "/events/eventfollow_destroy/#{UserEvent.where(user: current_user, event: event).take.id}" do %><i class="pull_star material-icons">star</i> <% end %>
+           <% if current_user.favorite_events.where(id: event.id).take != nil  %>
+             <%= link_to "/events/eventfollow_destroy/#{UserEvent.where(user: current_user, favorite_event: event).take.id}" do %><i class="pull_star material-icons">star</i> <% end %>
            <% else %>
              <%= link_to "/events/eventfollow/#{event.id}" do %> <i class="empty_star material-icons">star</i> <% end %>
            <% end %>

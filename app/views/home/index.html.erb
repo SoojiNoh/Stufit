@@ -88,7 +88,7 @@
             </label>
             <span class="task-cat teal"><%=task.event_type%></span>
             
-            <%if user_signed_in?%><%= link_to "/events/eventfollow_destroy/#{UserEvent.where(user: current_user, event: task).take.id}" do %><i class="pull_star material-icons">star</i> <% end %><% end %>
+            <% if user_signed_in? && current_user.favorite_events.where(id: task.id).take != nil %><%= link_to "/events/eventfollow_destroy/#{UserEvent.where(user: current_user, favorite_event: task).take.id}" do %><i class="pull_star material-icons">star</i> <% end %><% end %>
             </li>
             
           <%else%><%end%><% end %>

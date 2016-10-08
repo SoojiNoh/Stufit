@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161003171839) do
+ActiveRecord::Schema.define(version: 20161008032206) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "activity_type"
@@ -86,10 +86,18 @@ ActiveRecord::Schema.define(version: 20161003171839) do
     t.datetime "start_at"
     t.datetime "end_at"
     t.integer  "impressions_count"
+    t.integer  "user_id"
     t.integer  "university_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.index ["university_id"], name: "index_events_on_university_id"
+    t.index ["user_id"], name: "index_events_on_user_id"
+  end
+
+  create_table "favorite_events", force: :cascade do |t|
+    t.string   "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "hash_activities", force: :cascade do |t|
@@ -219,6 +227,16 @@ ActiveRecord::Schema.define(version: 20161003171839) do
     t.index ["user_id", "paththrough_id"], name: "index_paththroughs_users_on_user_id_and_paththrough_id"
   end
 
+  create_table "roles", force: :cascade do |t|
+    t.string   "name"
+    t.string   "resource_type"
+    t.integer  "resource_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
+    t.index ["name"], name: "index_roles_on_name"
+  end
+
   create_table "schedules", force: :cascade do |t|
     t.string   "title"
     t.string   "content"
@@ -282,6 +300,12 @@ ActiveRecord::Schema.define(version: 20161003171839) do
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "users_roles", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "role_id"
+    t.index ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
   end
 
 end

@@ -14,7 +14,10 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.create(event_params)
+    @event = Event.new(event_params)
+    @event.user = current_user
+    @event.save
+
     @hash = params[:event][:hash_events]
     @hash.each do |hash|
       unless hash == nil
@@ -32,10 +35,12 @@ class EventsController < ApplicationController
 
   def edit
     @event=Event.find(params[:id])
+    authorize_action_for @event
   end
 
   def update
     @event=Event.find(params[:id])
+    authorize_action_for @event
     @event.update(event_params)
 
     redirect_to event_path(@event)
@@ -43,6 +48,7 @@ class EventsController < ApplicationController
 
   def destroy
     @event=Event.find(params[:id])
+    authorize_action_for @event
     @event.destroy
     redirect_to events_path
   end
