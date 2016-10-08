@@ -49,18 +49,15 @@ class User < ApplicationRecord
   has_many :major_story_liked_major_stories, through: :major_story_likes, source: :major_story
   
   # for checking user did like
-  def is_like?(event)
+  def is_event_like?(event)
     EventLike.find_by(user_id: self.id, event_id: event.id).present?
   end
   
   # for checking user did like
-  def is_like?(major_story)
+  def is_major_like?(major_story)
     MajorStoryLike.find_by(user_id: self.id, major_story_id: major_story.id).present?
   end
 
   mount_uploader :image, AvatarUploader
-    
-    
-    
-    
+
 end
