@@ -213,9 +213,9 @@ HashTag.create(name: "지구과학")
 HashTag.create(name: "경영학")
 HashTag.create(name: "경제학")
 
-Paththrough.create(id:1, way:"facebook")
-Paththrough.create(id:2, way:"offline")
-Paththrough.create(id:3, way:"friend")
+Paththrough.create(way:"facebook")
+Paththrough.create(way:"offline")
+Paththrough.create(way:"friend")
 
 #1번
 MajorStory.create(
