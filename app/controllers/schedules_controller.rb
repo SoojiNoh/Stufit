@@ -5,7 +5,7 @@ class SchedulesController < ApplicationController
   # GET /schedules.json
   def index
     @user = current_user
-    @events = current_user.events.paginate(:page => params[:event_page], :per_page => 5)
+    @events = current_user.favorite_events.paginate(:page => params[:event_page], :per_page => 5)
     @schedules = current_user.schedules.paginate(:page => params[:schedule_page], :per_page => 5)
     if params[:search]
       @schedules = current_user.schedules.search(params[:search]).order("created_at DESC").paginate(:page => params[:schedule_page], :per_page => 5)

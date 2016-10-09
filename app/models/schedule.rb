@@ -1,5 +1,5 @@
 class Schedule < ApplicationRecord
-    belongs_to :user, optional: true
+    belongs_to :user
     
    
    def self.search(search)

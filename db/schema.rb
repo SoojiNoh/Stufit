@@ -86,10 +86,12 @@ ActiveRecord::Schema.define(version: 20161008032206) do
     t.datetime "start_at"
     t.datetime "end_at"
     t.integer  "impressions_count"
+    t.integer  "user_id"
     t.integer  "university_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.index ["university_id"], name: "index_events_on_university_id"
+    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "favorite_events", force: :cascade do |t|
@@ -155,15 +157,6 @@ ActiveRecord::Schema.define(version: 20161008032206) do
     t.index ["user_id"], name: "index_impressions_on_user_id"
   end
 
-  create_table "likes", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "comment_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["comment_id"], name: "index_likes_on_comment_id"
-    t.index ["user_id"], name: "index_likes_on_user_id"
-  end
-
   create_table "major_follows", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "major_story_id"
@@ -183,12 +176,17 @@ ActiveRecord::Schema.define(version: 20161008032206) do
   end
 
   create_table "major_stories", force: :cascade do |t|
-    t.string   "title"
-    t.string   "content"
-    t.string   "place"
+    t.string   "univ"
+    t.string   "major"
+    t.string   "grade"
+    t.string   "name"
     t.string   "file"
-    t.string   "major_type"
-    t.text     "body"
+    t.text     "q1"
+    t.text     "q2"
+    t.text     "q3"
+    t.text     "q4"
+    t.text     "q5"
+    t.text     "q6"
     t.integer  "university_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
@@ -248,9 +246,11 @@ ActiveRecord::Schema.define(version: 20161008032206) do
     t.datetime "start_at"
     t.datetime "end_at"
     t.integer  "university_id"
+    t.integer  "user_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["university_id"], name: "index_schedules_on_university_id"
+    t.index ["user_id"], name: "index_schedules_on_user_id"
   end
 
   create_table "univ_follows", force: :cascade do |t|
