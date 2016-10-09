@@ -11,9 +11,9 @@ class HomeController < ApplicationController
       @tasks = Event.where("start_at> ? ", "%#{@today}%")
       @schedules = Schedule.where("start_at> ? ", "%#{@today}%")
     else
-      @events = current_user.events.all
+      @events = current_user.favorite_events.all
       @task_name = "내가 해야할 것"
-      @tasks = current_user.events.all
+      @tasks = current_user.favorite_events.all
       @schedules = Schedule.where("start_at> ? ", "%#{@today}%")
     end
     @tasks.order(end_at: :desc)
