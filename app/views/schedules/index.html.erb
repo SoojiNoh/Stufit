@@ -50,8 +50,8 @@
                 <td><%= truncate(event.end_at.in_time_zone("Asia/Seoul").strftime("%Y년%m월%d일"), :length => 15) %></td>
                 <td><%= link_to '자세히', event %></td>
                 <td>
-                <% if current_user.events.where(id: event.id).take != nil  %>
-                  <%= link_to "/events/eventfollow_destroy/#{UserEvent.where(user: current_user, event: event).take.id}" do %><i class="pull_star material-icons">star</i> <% end %>
+                <% if current_user.favorite_events.where(id: event.id).take != nil  %>
+                  <%= link_to "/events/eventfollow_destroy/#{UserEvent.where(user: current_user, favorite_event: event).take.id}" do %><i class="pull_star material-icons">star</i> <% end %>
                 <% else %>
                   <%= link_to "/events/eventfollow/#{event.id}" do %> <i class="empty_star material-icons">star</i> <% end %>
                 <% end %></td>
