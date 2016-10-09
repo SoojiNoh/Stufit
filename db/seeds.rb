@@ -68,7 +68,7 @@ University.create(name: "홍익대학교", remote_img_url: "http://i.imgur.com/f
 
 # UnivFollow.create(user_id: 1, university_id: 1)
 
-Event.create(
+Event.create!(
     title: ' 2016 대한민국 청소년 아나운서 리포터 경연대회',
     content:'사단법인 한국청소년방송단연맹과 한국 방송정보교육단체연합회가 함께하는 2016 대한민국 청소년 아나운서 리포터 경연대회를 개최합니다. 많은 참여 부탁드립니다.',
     place: 'www.kyba.or.kr',
@@ -76,14 +76,14 @@ Event.create(
     start_at:'2016-8-26',
     end_at: '2016-12-29')
     # 1. http://www.kbatv.org/sub/event/event_view.asp?seq=417&page=1&part=
-Event.create(
+Event.create!(
     title: '해양 안전 공모전',
     content:'해양 안전에 대한 필요성이나 해양 안전 문화를 확산시킬 수 있는 포스터, 웹툰, 체험수기 등을 공모합니다. 전국 학생들의 많은 참여 부탁드립니다.',
     place:'http://www.해양안전.com/',
     event_type: '공모전',
     start_at:'2016-09-09',
     end_at: '2016-10-21')
-Event.create(
+Event.create!(
     title: '제 17회 서울청소년자원봉사대회',
     content:'서울특별시청소년활동진흥센터에서는 서울지역 내 청소년봉사활동에 이바지한 청소년 및 지도자들을 격려하고 우수활동사례를 확산시키기 위해 서울특별시와 여성가족부가 주최하는 제 17회 서울청소년자원봉사대회를 개최합니다.',
     place: 'http://www.sy0404.or.kr/',
@@ -91,7 +91,7 @@ Event.create(
     start_at:'2016-9-5',
     end_at: '2016-10-17')
     # 3 http://www.sy0404.or.kr/
-Event.create(
+Event.create!(
     title: '전국 고교 일일방송캠프',
     content:'사단법인 한국청소년방송단연맹이 주최하는, 대한민국 청소년이면 누구나 참여하고 있는 전국고교 일일방송캠프를 개최합니다. 많은 참여 부탁드립니다.',
     place: 'www.kyba.or.kr',
@@ -106,7 +106,8 @@ Event.create(
     event_type: '대회',
     start_at:'2016-10-04',
     end_at: '2016-10-10')
-Event.create(title: '제5회 전국 청소년 환경 프레젠테이션 대회',
+Event.create(
+    title: '제5회 전국 청소년 환경 프레젠테이션 대회',
     content:'세계화교육문화재단에서 주최하는 제5회 전국 청소년 환경 프레젠테이션 대회를 개최합니다. 전국 학생들의 많은 참여 부탁드립니다.',
     place:'대전장대초등학교, 대전장대중학교, 충남대학교 백마교양교육관 ',
     event_type: '대회',
@@ -204,7 +205,14 @@ Event.create(
     end_at: '2016-10-15')
      # 17. http://www.seouledc.or.kr/content/index.sgk?gubun=senews&dname=news&mode=view&no=266&board_id=12&board_skin=list&page=1&title_sc=&sc_name=
 
-
+Event.create(
+    title: 'Global Classrooms: Seoul 2017',
+    content:'Global Classrooms tend to provide students with the chance to get interested in global issues and international organizations. What is more, students would be able to acquire knowledge and skills in a globalized society and enthusiastic citizenship. Occurring in 24 major cities around the world, Global Classrooms tries to reduce the Model United Nations program gap within various Model United Nations communities. Global Classrooms: Seoul was first held in 2008 due to Kyung Hee University and United Nations Association of United States of America`s partnership. This conference act as a link between Korean Model United Nations network and Model United Nations communities abroad. Through this conference, students will represent a delegate and discuss about various global agendas, which would facilitate acquiring global issues easily. Since the official language is English, this conference would act as a place to learn, live, and lead to approach English from the pragmatic perspective.',
+    place: '경희대학교 국제캠퍼스',
+    event_type: '대회',
+    start_at:'2017-01-04',
+    end_at: '2016-01-07')
+     # 16. httsp://www.kicmun.org/
 
 HashTag.create(name: "물리학")
 HashTag.create(name: "생물학")
@@ -656,7 +664,7 @@ MajorStory.create(
     q1:
         '우리학과는 컴퓨터를 소프트웨어적으로 접근하고 있는 것 같아요. 음 소프트웨어부터 설명하자면, 컴퓨터의 몸 뚱아리가 하드(딱딱한)웨어라면 컴퓨터의 소울, 생각이 소프트(부드러운)웨어입니다.
     그래서, 컴퓨터의 성격, 사고하는 방식에 대한 감을 잡으면 학과공부를 하는데 수월할 것 같아요. 어떻게 보면 컴퓨터가 사고하는 방식과 인간이 사고하는 방식이 비슷해요. 라면 끓이는 레시피를 한
-    줄 한 줄 컴퓨터언어로 풀어내면 그게 코딩이 되는 거예요. 물론 직접 이를 컴퓨터에 실행하면 실수도 많을 거예요. 그 실수를 고치는 게 디버깅이죠. 결국 우리는 1학년부터 4학년까지 공부하며 컴퓨터의
+    줄 한 줄 컴퓨터���어로 풀어내면 그게 코딩이 되는 거예요. 물론 직접 이를 컴퓨터에 실행하면 실수도 많을 거예요. 그 실수를 고치는 게 디버깅이죠. 결국 우리는 1학년부터 4학년까지 공부하며 컴퓨터의
     사고를 이해하고, 이를 이용하여 라면을 끓이는 것이 목표랍니다!',
     q2:
         '1학년: 전공과목으로는 소프트웨어의 이해라고, 처음에 컴퓨터과학을 접하는 학생들이 보다 쉽게 컴퓨터적 사고를 할 수 있도록 도와주는 프로그램 언어 입문과목이 있어요. 비유를 들자면, 코끼리를
@@ -1460,7 +1468,7 @@ MajorStory.create(
     remote_file_url: 'http://i.imgur.com/W8T81fa.png',
     q1:
         '-모두가 알고 있듯이 중어중문과는 중국의 역사, 문화, 사회, 경제, 언어 등 중국과 관련한 다양한 분야를 배우는 과야. 그 중에서도 주로 중국어학/ 중국문학/중국 통번역 세 파트를 중심으로 수업이
-    마련되어있어. 중국에 대한 지식뿐만 아니라 그와 관련한 실무적 역량���지도 쌓을 수 있는 과라고 할 수 있어.',
+    마련되어있어. 중국에 대한 지식뿐만 아니라 그와 관련한 실무적 역량���지도 쌓��� 수 있는 과라고 할 수 있어.',
     q2:
         '-1학년: 1학년때에는 중국어 수업을 중심으로 커리큘럼이 마련되어있어. 언어는 다른 분야들에 비해 습득하는데 오랜 기간이 걸리기 때문에 1학년때부터 기초를 탄탄히 준비해 나가게 돼. 주로 중국어에
     대한 흥미를 끌어올리고 기초적인 지식을 쌓기 위한 초급수업을 들어. 이때 초급수업 중에서도 왕초보반이 따로 마련되어 있어서 중국어를 한번도 접해보지 못한 학생들도 공부를 쉽게 시작할 수 있어.
@@ -2264,7 +2272,7 @@ CPA(공인회계사)를 준비하고 있어. 그리고 마케팅관리나 조직
         >>> 만족도(5점 만점): 5점',
     q4: '나는 미래인재전형이라는 입학사정관전형을 통해서 경영학과에 들어왔어. 3:1인가 2:1의 면접으로
 
-실제 경영학과 교수님들께서 면접관으로 들어오셨고 전혀 어려운 분위기는 아니었어. 교수님들이
+실제 경영학과 교수님들께서 면접관으로 들어오셨고 전혀 어려운 분위기는 아니었어. 교���님들이
 
 농담도 하시면서 긴장을 많이 풀어주셔서 답변을 잘 할 수 있었던 것 같애. 면접 전에 논술 지문을
 

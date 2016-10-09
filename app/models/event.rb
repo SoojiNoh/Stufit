@@ -29,7 +29,7 @@ end
   # User : UserEvent : Event relation => N:M
   
   has_many :user_events
-  belongs_to :user
+  belongs_to :user, optional: true
 
   #event 검색 _수지
   
