@@ -33,15 +33,15 @@
           <td width="10%">
           <!-- like function -->
           <% if user_signed_in? %>
-            <% if current_user.is_major_like?(major_story) %>
-              <%= link_to image_tag("/assets/heart.png"), major_story_major_story_like_path(major_story), method: "post" %>
+            <% if current_user.is_event_like?(event) %>
+              <%= link_to image_tag("/assets/heart.png"), event_event_like_path(event), method: "post" %>
             <% else %>
-              <%= link_to image_tag("/assets/heart_empty.png"), major_story_major_story_like_path(major_story), method: "post" %>
+              <%= link_to image_tag("/assets/heart_empty.png"), event_event_like_path(event), method: "post" %>
             <% end %>
-            <%= major_story.major_story_likes.size %>
+            <%= event.event_likes.size %>
           <% else %>
             <%= image_tag("/assets/heart_empty.png") %>
-            <%= major_story.major_story_likes.size %>
+            <%= event.event_likes.size %>
           <%end%>
           </td>
           <td width="10%">
