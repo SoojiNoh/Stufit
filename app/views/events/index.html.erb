@@ -34,13 +34,13 @@
           <!-- like function -->
           <% if user_signed_in? %>
             <% if current_user.is_event_like?(event) %>
-              <%= link_to image_tag("/assets/heart.png"), event_event_like_path(event), method: "post" %>
+              <%= link_to event_event_like_path(event), method: "post" do %><%= image_tag "#{asset_path "heart.png"}", alt: "blog-img"%><%end%>
             <% else %>
-              <%= link_to image_tag("/assets/heart_empty.png"), event_event_like_path(event), method: "post" %>
+              <%= link_to event_event_like_path(event), method: "post" do %><%= image_tag "#{asset_path "heart_empty.png"}", alt: "blog-img"%><%end%>
             <% end %>
             <%= event.event_likes.size %>
           <% else %>
-            <%= image_tag("/assets/heart_empty.png") %>
+            <%= image_tag "#{asset_path "heart.png"}" %>
             <%= event.event_likes.size %>
           <%end%>
           </td>

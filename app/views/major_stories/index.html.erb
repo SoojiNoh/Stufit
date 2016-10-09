@@ -31,13 +31,13 @@
           <!-- like function -->
           <% if user_signed_in? %>
             <% if current_user.is_major_like?(major_story) %>
-              <%= link_to image_tag("/assets/heart.png"), major_story_major_story_like_path(major_story), method: "post" %>
+              <%= link_to major_story_major_story_like_path(major_story), method: "post" do %><%= image_tag "#{asset_path "heart.png"}", alt: "blog-img"%><%end%>
             <% else %>
-              <%= link_to image_tag("/assets/heart_empty.png"), major_story_major_story_like_path(major_story), method: "post" %>
+              <%= link_to major_story_major_story_like_path(major_story), method: "post" do %><%= image_tag "#{asset_path "heart_empty.png"}", alt: "blog-img"%><%end%>
             <% end %>
             <%= major_story.major_story_likes.size %>
           <% else %>
-          <%= image_tag("/assets/heart_empty.png") %>
+          <%= image_tag "#{asset_path "heart_empty.png"}" %>
           <%= major_story.major_story_likes.size %>
           <%end%>
         </div>
