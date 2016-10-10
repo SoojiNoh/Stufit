@@ -24,10 +24,13 @@ class User < ApplicationRecord
   has_many :univ_follows
   has_many :universities, through: :univ_follows
 
-  # User : Major_follow : Major_story relation => N:M
-  has_many :major_follows
-  has_many :major_stories, through: :major_follows
 
+  has_many :major_stories  #User : Major_Stories 1:N
+  # User : Major_follow : major_favorites relation => N:M
+  has_many :major_follows
+  has_many :major_favorites, through: :major_follows
+  
+    
   has_many :events # User : Events => 1:N
   #User : UserEvents : Favorite Events
   has_many :user_events 

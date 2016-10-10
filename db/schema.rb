@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161008032206) do
+ActiveRecord::Schema.define(version: 20161010040732) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "activity_type"
@@ -157,12 +157,17 @@ ActiveRecord::Schema.define(version: 20161008032206) do
     t.index ["user_id"], name: "index_impressions_on_user_id"
   end
 
+  create_table "major_favorites", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "major_follows", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "major_story_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["major_story_id"], name: "index_major_follows_on_major_story_id"
+    t.integer  "major_favorite_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["major_favorite_id"], name: "index_major_follows_on_major_favorite_id"
     t.index ["user_id"], name: "index_major_follows_on_user_id"
   end
 
@@ -187,10 +192,12 @@ ActiveRecord::Schema.define(version: 20161008032206) do
     t.text     "q4"
     t.text     "q5"
     t.text     "q6"
+    t.integer  "user_id"
     t.integer  "university_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["university_id"], name: "index_major_stories_on_university_id"
+    t.index ["user_id"], name: "index_major_stories_on_user_id"
   end
 
   create_table "major_story_likes", force: :cascade do |t|

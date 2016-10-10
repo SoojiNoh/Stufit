@@ -3,7 +3,7 @@ class CreateMajorFollows < ActiveRecord::Migration[5.0]
     create_table :major_follows do |t|
 
       t.references :user, index:true, foreign_key: true
-      t.references :major_story, index:true, foreign_key: true
+      t.references :major_favorite, index:true, foreign_key: true
 
       t.timestamps
     end

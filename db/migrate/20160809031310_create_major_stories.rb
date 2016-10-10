@@ -14,7 +14,7 @@ class CreateMajorStories < ActiveRecord::Migration[5.0]
       t.text :q5      
       t.text :q6      
 
-
+      t.references :user, index: true, foreign_key: true
       t.references :university, index: true, foreign_key: true
 
       t.timestamps

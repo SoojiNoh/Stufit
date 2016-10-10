@@ -1,5 +1,8 @@
 class MajorStory < ApplicationRecord
-
+  
+  resourcify
+  include Authority::Abilities
+  
   # University : Major_story relation => 1:N
   belongs_to :university, optional: true
 
@@ -12,7 +15,7 @@ class MajorStory < ApplicationRecord
 
   # User : Major_follow : Major_story relation => N:M
   has_many :major_follows
-  has_many :users, through: :major_follows
+  belongs_to :user, optional: true
 
   def self.search(search)
     if search

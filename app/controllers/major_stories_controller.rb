@@ -19,7 +19,7 @@ class MajorStoriesController < ApplicationController
 
   def create
     @major_story = MajorStory.new(major_story_params)
-
+    @major_story.user = current_user
     if @major_story.save
       redirect_to major_stories_path, notice: "The article has been successfully created."
     else
@@ -32,6 +32,7 @@ class MajorStoriesController < ApplicationController
   def update
     respond_to do |format|
       if @major_story.update(major_story_params)
+        authorize_action_for @major_story
         format.html { redirect_to @major_story, notice: 'major_story was successfully updated.' }
         format.json { render :show, status: :ok, location: @major_story }
       else
@@ -43,11 +44,12 @@ class MajorStoriesController < ApplicationController
 
   def edit
     @major_story = MajorStory.find(params[:id])
+  authorize_action_for @major_story
   end
 
   def destroy
     @major_story.destroy
-
+    authorize_action_for @major_story
     respond_to do |format|
       format.html { redirect_to(major_stories_url) }
       format.xml  { head :ok }
