@@ -55,7 +55,7 @@
         <div class="input-field col s12">
           <i class="mdi-social-person-outline prefix"></i>
           <%= f.label "Paththrough" %><br />
-          <%= f.collection_check_boxes :paththrough_ids, Paththrough.all, :id, :way do |b| %>
+          <%= f.collection_check_boxes :paththrough_ids, Paththrough.limit(3), :id, :way do |b| %>
             <div class="collection-check-box">
               <%= b.check_box %>
               <%= b.label %>
