@@ -46,9 +46,11 @@
     </div>
     
    <!--버튼 기능-->
-   <%= link_to "목록", events_path,class: 'waves-effect waves-light btn' %>
-     <%= link_to "수정", edit_event_path(@event) if @event.updatable_by? current_user %>
-     <%= link_to "삭제", event_path(@event), method: "delete",class: 'waves-effect waves-light btn', data: { confirm: 'Are you sure?' } if @event.deletable_by? current_user %>
+   <%= link_to "목록", events_path, class: 'waves-effect waves-light btn' %>
+     <%if @event.updatable_by? current_user%>
+     <%= link_to "수정", edit_event_path(@event), class: 'waves-effect waves-light btn' %>
+     <%end%>
+     <%= link_to "삭제", event_path(@event), method: "delete", class: 'waves-effect waves-light btn', data: { confirm: 'Are you sure?' } if @event.deletable_by? current_user %>
      <%= link_to '새 글쓰기', new_event_path ,class: 'waves-effect waves-light btn' %>
 
      <!--댓글-->
