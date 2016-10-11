@@ -17,8 +17,8 @@ class User < ApplicationRecord
   has_many :schedules
 
   # User : like : Comment relation => N:M
-  has_many :likes
-  has_many :comments, through: :likes
+  #has_many :likes
+  has_many :comments#, through: :likes
 
   # University : univ_follow : User relation => N:M
   has_many :univ_follows

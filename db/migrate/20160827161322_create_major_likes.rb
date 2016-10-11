@@ -3,7 +3,7 @@ class CreateMajorLikes < ActiveRecord::Migration[5.0]
     create_table :major_likes do |t|
 
       t.references :user, index: true
-      t.references :major_story, index: true
+      t.references :major_story, index: true, foreign_key: true
 
       t.timestamps
     end

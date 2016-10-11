@@ -19,6 +19,6 @@ class Activity < ApplicationRecord
   else
     where(nil)
   end
-end
+  end
   
 end

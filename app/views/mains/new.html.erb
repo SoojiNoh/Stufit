@@ -1,0 +1,18 @@
+
+<div class="row">
+<%= form_for @main, multipart: true do |a| %>
+<%= render partial: 'form1', locals: { :f => a} %>
+<% end %>
+<br>
+<div class="row">
+<%= form_for @main, multipart: true do |a| %>
+<%= render partial: 'form2', locals: { :f => a} %>
+<% end %>
+<br>
+<div class="row">
+<%= form_for @main, multipart: true do |a| %>
+<%= render partial: 'form3', locals: { :f => a} %>
+<% end %>
+</div>
+<br>
+<%= link_to '목록으로', mains_path, class:"btn waves-effect waves-light" %>

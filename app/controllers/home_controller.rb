@@ -3,6 +3,9 @@ class HomeController < ApplicationController
   require 'date'
   
   def index
+    @mains1 = Main.where("image1 is NOT NULL").last
+    @mains2 = Main.where("image2 is NOT NULL").last
+    @mains3 = Main.where("image3 is NOT NULL").last
     @today =Date.today.to_s
     
     if !user_signed_in?
@@ -19,6 +22,7 @@ class HomeController < ApplicationController
     @tasks.order(end_at: :desc)
     @schedules.order(end_at: :desc)
     
+  
   
   end
   

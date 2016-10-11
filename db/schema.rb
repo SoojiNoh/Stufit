@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161010040732) do
+ActiveRecord::Schema.define(version: 20161010194455) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "activity_type"
@@ -157,9 +157,18 @@ ActiveRecord::Schema.define(version: 20161010040732) do
     t.index ["user_id"], name: "index_impressions_on_user_id"
   end
 
-  create_table "major_favorites", force: :cascade do |t|
+  create_table "mains", force: :cascade do |t|
+    t.string   "image1"
+    t.string   "image2"
+    t.string   "image3"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "major_favorites", force: :cascade do |t|
+    t.string   "major_stroy_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "major_follows", force: :cascade do |t|
@@ -288,6 +297,7 @@ ActiveRecord::Schema.define(version: 20161010040732) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.boolean  "admin"
     t.string   "image"
     t.string   "photo"
     t.string   "membertype"

@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'rails_admin'
 gem 'rolify'     # role 관리
 gem 'authority'  # 권한설정
 

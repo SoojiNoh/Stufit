@@ -2,6 +2,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
   def change
     create_table :users do |t|
       ## Database authenticatable
+      t.boolean :admin
       t.string :image, optional: true
       t.string :photo
       t.string :membertype
