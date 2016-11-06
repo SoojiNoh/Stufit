@@ -1,5 +1,8 @@
 class Comment < ApplicationRecord
 
+   resourcify
+  include Authority::Abilities
+
   # User : Comment relation => 1:N
   belongs_to :user, optional: true
 

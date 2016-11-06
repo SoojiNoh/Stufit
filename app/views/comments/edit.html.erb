@@ -1,0 +1,16 @@
+<%= form_for @comment do |f| %>
+  <%= current_user.name %>
+  <%= f.text_field :content %>
+
+  <%# if belong=="university" %>
+    <%#= f.hidden_field :university_id, value: university %>
+  <%# end %>
+  <%# if belong=="major_story" %>
+    <%#= f.hidden_field :major_story_id, value: major_story %>
+  <%# end %>
+  <%# if belong=="event" %>
+    <%#= f.hidden_field :event_id, value: event %>
+  <%# end %>
+
+  <%= f.submit "submit", class: 'waves-effect waves-light btn'%>
+<% end %>
