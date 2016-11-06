@@ -22,7 +22,7 @@
       </div>
       <div class="row margin">
         <div class="input-field col s12">
-          <i class="mdi-social-person-outline prefix"></i>
+          <i class="small material-icons prefix">person_pin</i>
           <%= f.label :name, 'Name', class: "center-align" %>
           <%= f.text_field :name, id:"username" %>
         </div>
@@ -51,9 +51,16 @@
           <%= f.label :password_confirmation %>
         </div>
       </div>
+        <div class="row margin">
+        <div class="input-field col s12">
+          <i class="small material-icons prefix">insert_chart</i>
+          <%= f.label :highschool, "Highschool" %>
+          <%= f.text_field :highschool, id:"highschool", placeholder: "ex)반포고등학교" %>
+        </div>
+      </div>
           <div class="row margin">
         <div class="input-field col s12">
-          <i class="mdi-social-person-outline prefix"></i>
+          <i class="small material-icons prefix">open_in_browser</i>
           <%= f.label "Paththrough" %><br />
           <%= f.collection_check_boxes :paththrough_ids, Paththrough.limit(3), :id, :way do |b| %>
             <div class="collection-check-box">
