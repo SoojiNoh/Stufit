@@ -1,76 +1,74 @@
-   <div class="progress">
-       <div class="determinate" style="width: 70%"></div>
-     </div>
-    <!--제목부분-->
-  
-    <h5> 제목 | <%= @event.title %> </h5>
-    <h6> 작성일 :  <%= @event.created_at.in_time_zone("Asia/Seoul").strftime("%Y. %m. %d.    %H : %M") %> </h6>
-    <h6> 조회수 : <%=@event.impressions.count%></h6>
-
-
-    <div class="progress">
-       <div class="determinate" style="width: 70%"></div>
-    </div>
-    
-    <!--내용부분-->
-    
-    <br><p><%= @event.content %></p><br>
-    <%= image_tag "#{@event.image}" %><br><br>
-    
-    <!--그 외 정보-->
-    
-    장소 : <%= @event.place %><br>
-    분류 : <%= @event.event_type %><br>
-    일정 : <%= @event.start_at.in_time_zone("Asia/Seoul").strftime("%Y. %m. %d.  %H : %M") %>
-     ~  <%= @event.end_at.in_time_zone("Asia/Seoul").strftime("%Y. %m. %d.  %H : %M") %><br>
-    첨부파일 <br><%= @event.file %>
-    <div class="progress">
-       <div class="determinate" style="width: 70%"></div>
-    </div>
-
-
-   <!--해쉬태그-->
-   <h6>연관 태그</h6>
-   <p>
-   <% @event.hash_tags.each do |hash| %>
-   <span class="chip">
-    <span class="chip"><%= link_to "#{hash.name}", hash_tag_path(hash) %></span>
-</span>
-
-   <% end %>
-   </p>
+<div class="progress">
+  <div class="determinate" style="width: 70%"></div>
 </div>
 
-    <div class="progress">
-       <div class="determinate" style="width: 70%"></div>
-    </div>
-    
-   <!--버튼 기능-->
-   <%= link_to "목록", events_path, class: 'waves-effect waves-light btn' %>
-     <%if @event.updatable_by? current_user%>
-     <%= link_to "수정", edit_event_path(@event), class: 'waves-effect waves-light btn' %>
-     <%end%>
-     <%= link_to "삭제", event_path(@event), method: "delete", class: 'waves-effect waves-light btn', data: { confirm: 'Are you sure?' } if @event.deletable_by? current_user %>
-     <%= link_to '새 글쓰기', new_event_path ,class: 'waves-effect waves-light btn' %>
+<!--제목부분-->
+<h5> 제목 | <%= @event.title %> </h5>
+<h6> 작성일 :  <%= @event.created_at.in_time_zone("Asia/Seoul").strftime("%Y. %m. %d.    %H : %M") %> </h6>
+<h6> 조회수 : <%=@event.impressions.count%></h6>
 
-     <!--댓글-->
+
+<div class="progress">
+  <div class="determinate" style="width: 70%"></div>
+</div>
+
+<!--내용부분-->
+<br><p><%= @event.content %></p><br>
+<%= image_tag "#{@event.image}" %><br><br>
+
+<!--그 외 정보-->
+
+장소 : <%= @event.place %><br>
+분류 : <%= @event.event_type %><br>
+일정 : <%= @event.start_at.in_time_zone("Asia/Seoul").strftime("%Y. %m. %d.  %H : %M") %>
+~  <%= @event.end_at.in_time_zone("Asia/Seoul").strftime("%Y. %m. %d.  %H : %M") %><br>
+첨부파일 <br><%= @event.file %>
+<div class="progress">
+<div class="determinate" style="width: 70%"></div>
+</div>
+
+
+<!--해쉬태그-->
+<h6>연관 태그</h6>
+<p>
+<% @event.hash_tags.each do |hash| %>
+<span class="chip">
+<span class="chip"><%#= render_with_hashtags(hash) %><%= link_to "#{hash.name}", hash_tag_path(hash) %></span>
+</span>
+
+<% end %>
+</p>
+</div>
+
+<div class="progress">
+<div class="determinate" style="width: 70%"></div>
+</div>
+
+<!--버튼 기능-->
+<%= link_to "목록", events_path, class: 'waves-effect waves-light btn' %>
+<%if @event.updatable_by? current_user%>
+<%= link_to "수정", edit_event_path(@event), class: 'waves-effect waves-light btn' %>
+<%end%>
+<%= link_to "삭제", event_path(@event), method: "delete", class: 'waves-effect waves-light btn', data: { confirm: 'Are you sure?' } if @event.deletable_by? current_user %>
+<%= link_to '새 글쓰기', new_event_path ,class: 'waves-effect waves-light btn' %>
+
+<!--댓글-->
 <ul class="collection">
+  <li class="collection-item">
+    <strong>댓글</strong>
+    <% @event.comments.each do |comment| %>
       <li class="collection-item">
-<strong>댓글</strong>
-<% @event.comments.each do |comment| %>
-<li class="collection-item">
-    <strong><%= comment.user.name %></strong><br>
-     <%= comment.content %>
-     <%if comment.updatable_by? current_user%>
-     <div align="right"><%= link_to "수정", edit_comment_path(comment), class: 'waves-effect waves-light btn' %></div>
-     <%end%>
-     <%if comment.deletable_by? current_user%>
-     <div align="right"><%= link_to "삭제", comment_path(comment), method: :delete,class: 'waves-effect waves-light btn' %></div>
-   <%end%>
-   <% end %>
+        <strong><%= comment.user.name %></strong><br>
+        <%= comment.content %>
+        <% if comment.updatable_by? current_user %>
+          <div align="right"><%= link_to "수정", edit_comment_path(comment), class: 'waves-effect waves-light btn' %></div>
+        <% end %>
+        <%if comment.deletable_by? current_user%>
+          <div align="right"><%= link_to "삭제", comment_path(comment), method: :delete,class: 'waves-effect waves-light btn' %></div>
+        <% end %>
+        <% end %>
 
-   <%= render partial: 'comments/new', locals: { :comment => @event.comments.new , event: @event.id, belong: "event"} %>
-</li>
-</li>
+         <%= render partial: 'comments/new', locals: { :comment => @event.comments.new , event: @event.id, belong: "event"} %>
+      </li>
+  </li>
 </ul>
- 

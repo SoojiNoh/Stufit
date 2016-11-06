@@ -1,0 +1,71 @@
+<h5 class="center">정보게시판</h5>
+  <%= form_tag events_path, :method => 'get', :id => "events_search" do %>
+  <%= hidden_field_tag :direction, params[:direction]%>
+  <%= hidden_field_tag :sort, params[:sort]%>  
+  <p>
+    <%= text_field_tag :search, params[:search], :placeholder=>"검색어를 입력하세요" %>
+    <%= submit_tag "검색", :content => nil, :class=>'waves-effect waves-light btn blue'%>
+  </p>
+  <% end %>
+<br>
+<!--버튼-->
+
+<div class="row ">
+<div class="col s12">
+  <table class="col s12 bordered centered" style="width: 100%">
+    <thead>
+      <tr>
+        <th><%= sortable "title", "제목"%></th>
+        <th><%= sortable "created_at", "작성일"%></th>
+        <th>조회수</th>
+        <th>좋아요</th>
+        <th>즐겨찾기</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <!--게시판 리스트-->
+      <% @tag_events.each do |event| %>
+        <tr>
+          <td width="50%"><%= link_to event.title, event_path(event) %></td>
+          <td width="20%"><%= truncate(event.created_at.in_time_zone("Asia/Seoul").strftime("%Y년%m월%d일"), :length => 14, :separator=>' ')%></td>
+          <td width="10%"><%= event.impressions.count %> </td> <!--조회수 event.impressionist -->
+          <td width="10%">
+          <!-- like function -->
+          <% if user_signed_in? %>
+            <% if current_user.is_event_like?(event) %>
+              <%= link_to event_event_like_path(event), method: "post" do %><%= image_tag "#{asset_path "heart.png"}", alt: "blog-img"%><%end%>
+            <% else %>
+              <%= link_to event_event_like_path(event), method: "post" do %><%= image_tag "#{asset_path "heart_empty.png"}", alt: "blog-img"%><%end%>
+            <% end %>
+            <%= event.event_likes.size %>
+          <% else %>
+            <%= image_tag "#{asset_path "heart.png"}" %>
+            <%= event.event_likes.size %>
+          <%end%>
+          </td>
+          <td width="10%">
+            <% if current_user.nil? %>
+            <%= link_to "/events/eventfollow/#{event.id}" do %> <i class="empty_star material-icons">star</i> <% end %>
+           <% else %>
+           <% if current_user.favorite_events.where(id: event.id).take != nil  %>
+             <%= link_to "/events/eventfollow_destroy/#{UserEvent.where(user: current_user, favorite_event: event).take.id}" do %><i class="pull_star material-icons">star</i> <% end %>
+           <% else %>
+             <%= link_to "/events/eventfollow/#{event.id}" do %> <i class="empty_star material-icons">star</i> <% end %>
+           <% end %>
+           <% end %>
+           </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
+  </div><br>
+  
+  <%= link_to "새글 쓰기", new_event_path ,class: 'waves-effect waves-light btn right blue'%><br>
+
+  <!--Pagination -->
+  <div class="digg_pagination" align="center">
+    <%= will_paginate @events, :previous_lable => "이전", :next_lable => "다음", :container => false %>
+  </div>
+</ul>
