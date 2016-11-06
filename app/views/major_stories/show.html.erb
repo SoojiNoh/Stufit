@@ -34,8 +34,9 @@
 <%if @major_story.updatable_by? current_user%>
 <%= link_to "수정", edit_major_story_path(@major_story), class: 'waves-effect waves-light btn' %> 
 <%end%>
+<%if @major_story.deletable_by? current_user%>
 <%= link_to "삭제", major_story_path(@major_story), method: "delete", class: 'waves-effect waves-light btn', data: { confirm: 'Are you sure?' } if @major_story.deletable_by? current_user %>
-
+<%end%>
 <%= link_to '새 글쓰기', new_major_story_path ,class: 'waves-effect waves-light btn' %>
 <ul class="collection">
       <li class="collection-item">
@@ -45,8 +46,12 @@
 <li class="collection-item">
     <strong><%= comment.user.name %></strong><br>
      <%= comment.content %>
+    <%if comment.updatable_by? current_user%>
     <div align="right"><%= link_to "수정", edit_comment_path(comment), class: 'waves-effect waves-light btn' %></div>
+    <%end%>
+    <%if comment.deletable_by? current_user%>
      <div align="right"><%= link_to "삭제", comment_path(comment), method: :delete, class: 'waves-effect waves-light btn' %></div>
+   <% end %>
    <% end %>
 
    <%= render partial: 'comments/new', locals: { :comment => @major_story.comments.new , major_story: @major_story.id, belong: "major_story"} %>
