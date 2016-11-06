@@ -17,8 +17,9 @@
       <% @university.comments.each do |comment| %>
         <li class="collection-item">
           <strong><%= comment.user.name %></strong><br>
-                  <%= comment.content %>
-          <div align="right"><%= link_to "삭제", comment_path(comment), method: :delete, data: { confirm: "로레알 삭제ㄱㄱ?" } %></div>
+                  <%= comment.content %>  
+          <div align="right"><%= link_to "수정", edit_comment_path(comment), class: 'waves-effect waves-light btn' %></div>        
+          <div align="right"><%= link_to "삭제", comment_path(comment), method: :delete, data: { confirm: "로레알 삭제ㄱㄱ?" }, class: 'waves-effect waves-light btn' %></div>
       <% end %>
       <%= render partial: '/comments/new', locals: { :comment => @university.comments.new, university: @university.id, belong: "university"} %>
         </li>
