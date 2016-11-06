@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161010194455) do
+ActiveRecord::Schema.define(version: 20161106030007) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "activity_type"
@@ -65,6 +65,15 @@ ActiveRecord::Schema.define(version: 20161010194455) do
     t.index ["major_story_id"], name: "index_comments_on_major_story_id"
     t.index ["university_id"], name: "index_comments_on_university_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "consults", force: :cascade do |t|
+    t.string   "title"
+    t.string   "content"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_consults_on_user_id"
   end
 
   create_table "event_likes", force: :cascade do |t|

@@ -51,6 +51,10 @@ class User < ApplicationRecord
   has_many :major_story_likes
   has_many :major_story_liked_major_stories, through: :major_story_likes, source: :major_story
   
+  # User : Consults게시글은 1:N 관계
+  has_many :consults
+  
+  
   # for checking user did like
   def is_event_like?(event)
     EventLike.find_by(user_id: self.id, event_id: event.id).present?

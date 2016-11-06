@@ -4,7 +4,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       ## Database authenticatable
       t.boolean :admin
       t.string :image, optional: true
-      t.string :photo
       t.string :membertype
       t.string :paththrough      
       t.string :email,              null: false, default: ""

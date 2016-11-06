@@ -12,6 +12,9 @@ class Comment < ApplicationRecord
   # Event : Comment relation => 1:N
   belongs_to :event, optional: true
 
+  # Consult : Comment relation => 1:N
+  belongs_to :consult, optional: true
+
   # User : like : Comment relation => N:M
   #has_many :likes
   has_many :users#, through: :likes

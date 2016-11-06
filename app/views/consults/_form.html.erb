@@ -1,0 +1,29 @@
+<%= form_for(@consult) do |f| %>
+  <% if @consult.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@consult.errors.count, "error") %> prohibited this consult from being saved:</h2>
+
+      <ul>
+      <% @consult.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field" col="3">
+    <%= f.label :title,"컨설턴트"  %><br>
+    <%= f.text_field :title %> <!-- 인터뷰 제목 -->
+  </div>
+  <div class="field">
+    <%= f.label :content, "소개" %><br>
+    <%= f.text_field :content %> <!-- 학교이름 -->
+  </div>
+  <div class="field">
+    <%= f.label :image, "대표 이미지" %><br>
+    <%= f.file_field :image %><!-- 이미지 -->
+  </div>
+  <div class="actions">
+    <%= f.submit "올리기", class: 'waves-effect waves-light btn'%>
+  </div>
+<% end %>
