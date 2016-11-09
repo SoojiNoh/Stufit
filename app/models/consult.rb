@@ -1,6 +1,8 @@
 class Consult < ApplicationRecord
     belongs_to :user
     
+    include Authority::Abilities
+    
   # Comment : Consult relation => N:1
   has_many :comments
 
