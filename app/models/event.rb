@@ -1,11 +1,11 @@
 class Event < ApplicationRecord
-
+  
   resourcify
   include Authority::Abilities
 
-def start_month
-  start_at.strftime("%B %Y")
-end
+  def start_month
+    start_at.strftime("%B %Y")
+  end
   
   # Post와 Like는 1:N 관계
   has_many :event_likes
@@ -26,8 +26,28 @@ end
   has_many :hash_tags, through: :hash_events
   accepts_nested_attributes_for :hash_events
 
-  # User : UserEvent : Event relation => N:M
+  # create event hashtag
+  after_create do
+    event = Event.find_by(id: self.id) 
+    hashtags = self.content.scan(/#\w+/)       #w+ means numbers or letters also
+    hashtags.uniq.map do |hashtag|          #uniq if there #pizza #pizza then we only store 1 pizza
+      tag = HashTag.find_or_create_by(name: hashtag.downcase.delete('#'))
+      event.hash_tags << tag
+    end
+  end
   
+  before_update do
+    event = Event.find_by(id: self.id) 
+    event.hash_tags.clear                         #we delete all and add again
+    hashtags = self.content.scan(/#\w+/)       
+      hashtags.uniq.map do |hashtag|      
+      tag = HashTag.find_or_create_by(name: hashtag.downcase.delete('#'))
+      event.hash_tags << tag
+    end
+  end
+
+
+  # User : UserEvent : Event relation => N:M
   has_many :user_events
   belongs_to :user, optional: true
 

@@ -59,8 +59,10 @@ ActiveRecord::Schema.define(version: 20161106030007) do
     t.integer  "event_id"
     t.integer  "university_id"
     t.integer  "major_story_id"
+    t.integer  "consult_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.index ["consult_id"], name: "index_comments_on_consult_id"
     t.index ["event_id"], name: "index_comments_on_event_id"
     t.index ["major_story_id"], name: "index_comments_on_major_story_id"
     t.index ["university_id"], name: "index_comments_on_university_id"
@@ -70,6 +72,7 @@ ActiveRecord::Schema.define(version: 20161106030007) do
   create_table "consults", force: :cascade do |t|
     t.string   "title"
     t.string   "content"
+    t.string   "image"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -109,7 +112,7 @@ ActiveRecord::Schema.define(version: 20161106030007) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "hash_activities", force: :cascade do |t|
+  create_table "hash_activities", id: false, force: :cascade do |t|
     t.integer  "hash_tag_id"
     t.integer  "activity_id"
     t.datetime "created_at",  null: false
@@ -118,7 +121,7 @@ ActiveRecord::Schema.define(version: 20161106030007) do
     t.index ["hash_tag_id"], name: "index_hash_activities_on_hash_tag_id"
   end
 
-  create_table "hash_events", force: :cascade do |t|
+  create_table "hash_events", id: false, force: :cascade do |t|
     t.integer  "event_id"
     t.integer  "hash_tag_id"
     t.datetime "created_at",  null: false
@@ -127,7 +130,7 @@ ActiveRecord::Schema.define(version: 20161106030007) do
     t.index ["hash_tag_id"], name: "index_hash_events_on_hash_tag_id"
   end
 
-  create_table "hash_majors", force: :cascade do |t|
+  create_table "hash_majors", id: false, force: :cascade do |t|
     t.integer  "hash_tag_id"
     t.integer  "major_story_id"
     t.datetime "created_at",     null: false
@@ -308,7 +311,6 @@ ActiveRecord::Schema.define(version: 20161106030007) do
   create_table "users", force: :cascade do |t|
     t.boolean  "admin"
     t.string   "image"
-    t.string   "photo"
     t.string   "membertype"
     t.string   "paththrough"
     t.string   "email",                  default: "", null: false

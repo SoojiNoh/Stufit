@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get '/events/eventfollow/:id' => 'events#event_follow_create'
   get '/events/eventfollow_destroy/:id' => 'events#event_follow_destroy'
   #post '/events/:event_id/like' => 'likes#like_toggle'
+  get '/events/hashtags/:name', to: 'events#hashtags'
   
   resources :activities
   get '/activities/image/:id'=>'activities#image'

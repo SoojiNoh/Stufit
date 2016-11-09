@@ -2,6 +2,7 @@ class EventsController < ApplicationController
   helper_method :sort_column, :sort_direction
   skip_before_action :authenticate_user!, :only => [:index]
   #impressionist :actions=>[:show,:index]
+  
   def index
     @user = current_user
     @events =Event.all.order(sort_column + " " + sort_direction).paginate(:page => params[:page], :per_page => 5)
@@ -12,24 +13,29 @@ class EventsController < ApplicationController
   def new
     @event=Event.new
   end
-
+  
+  def hashtags
+    tag = HashTag.find_by(name: params[:name]) 
+    @tag_events = tag.events
+  end
+  
   def create
     @event = Event.new(event_params)
     @event.user = current_user
     @event.save
 
-    @hash = params[:event][:hash_events]
-    @hash.each do |hash|
-      unless hash == nil
-        HashEvent.create(event: @event, hash_tag_id: hash)
-      end
-    end
+    # @hash = params[:event][:hash_events]
+    # @hash.each do |hash|
+    #   unless hash == nil
+    #     HashEvent.create(event: @event, hash_tag_id: hash)
+    #   end
+    # end
 
     redirect_to events_path
   end
 
   def show
-    @event=Event.find(params[:id])
+    @event = Event.find(params[:id])
     impressionist(@event)
   end
 
