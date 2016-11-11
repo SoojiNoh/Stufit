@@ -21,46 +21,44 @@ content: '컴퓨터 활용능력', host_name:'한국산업인력공단', issuedn
 Activity.create(activity_type: '교내', style:'봉사활동', title:'농촌 지역 봉사활동',
 content: '가지치기, 열매 수확', host_name:'한국고등학교', issuednumber: '2016-68', grade: '20시간', start_at:'2014-07-05', end_at: '2016-07-08')
 
-University.create(name: "가톨릭대학교", remote_img_url: "http://i.imgur.com/N2b2jr1.png", link_url: "http://ipsi.catholic.ac.kr", content: "가톨릭대학교")
-University.create(name: "감리교신학대학교", remote_img_url: "http://i.imgur.com/qiY8kXu.png", link_url: "https://www.mtu.ac.kr", content: "감리교신학대학교")
-University.create(name: "건국대학교", remote_img_url: "http://i.imgur.com/YnhRe1Z.png", link_url: "http://enter.konkuk.ac.kr/seoul", content: "건국대학교")
-University.create(name: "경기대학교", remote_img_url: "http://i.imgur.com/WMbA7ps.png", link_url: "http://enter.kyonggi.ac.kr", content: "경기대학교")
-University.create(name: "경희대학교", remote_img_url:
-                                                    #"http://i.imgur.com/ENvphPE.png"
-                                                    "http://sophia.khu.ac.kr/wp-content/uploads/logo-semple.png", link_url: "http://iphak.khu.ac.kr", content: "경희대학교")
-University.create(name: "고려대학교", remote_img_url: "http://i.imgur.com/ypyE82f.png", link_url: "http://oku.korea.ac.kr", content: "고려대학교")
-University.create(name: "광운대학교", remote_img_url: "http://i.imgur.com/o9nLb1d.png", link_url: "http://iphak.kw.ac.kr", content: "광운대학교")
-University.create(name: "국민대학교", remote_img_url: "http://i.imgur.com/214pwJX.png", link_url: "http://admission.kookmin.ac.kr", content: "국민대학교")
-University.create(name: "덕성여자대학교", remote_img_url: "http://i.imgur.com/b40I3Ma.png", link_url: "http://enter.duksung.ac.kr", content: "덕성여자대학교")
-University.create(name: "동국대학교", remote_img_url: "http://i.imgur.com/BtfdQbG.png", link_url: "https://ipsi.dongguk.edu", content: "동국대학교")
-University.create(name: "동덕여자대학교", remote_img_url: "http://i.imgur.com/Odz9IWF.png", link_url: "http://ipsi.dongduk.ac.kr", content: "동덕여자대학교")
-University.create(name: "명지대학교", remote_img_url: "http://i.imgur.com/dLgZBkN.png", link_url: "http://ipsi.mju.ac.kr", content: "명지대학교")
-University.create(name: "삼육대학교", remote_img_url: "http://i.imgur.com/eOVo9p0.png", link_url: "http://ipsi.syu.ac.kr", content: "삼육대학교")
-University.create(name: "상명대학교", remote_img_url: "http://i.imgur.com/YZ4MhGH.png", link_url: "https://admission.smu.ac.kr:2012", content: "상명대학교")
-University.create(name: "서강대학교", remote_img_url: "http://i.imgur.com/Tpd4PDl.png", link_url: "http://admission.sogang.ac.kr", content: "서강대학교")
-University.create(name: "서경대학교", remote_img_url: "http://i.imgur.com/RpIwP8Z.png", link_url: "http://go.skuniv.ac.kr", content: "서경대학교")
-University.create(name: "서울과학기술대학교", remote_img_url: "http://i.imgur.com/a6ES7TP.png", link_url: "http://admission.seoultech.ac.kr", content: "서울과학기술대학교")
-University.create(name: "서울교육대학교", remote_img_url: "http://i.imgur.com/0VumHY5.png", link_url: "http://admission.snue.ac.kr", content: "서울교육대학교")
-University.create(name: "서울기독대학교", remote_img_url: "http://i.imgur.com/PflTNZV.png", link_url: "http://www.scu.ac.kr/entrance/outline.php", content: "서울기독대학교")
-University.create(name: "서울대학교", remote_img_url: "http://i.imgur.com/N2mux92.png", link_url: "http://admission.snu.ac.kr", content: "서울대학교")
-University.create(name: "서울시립대학교", remote_img_url: "http://i.imgur.com/nX2uc4m.png", link_url: "http://admission.uos.ac.kr/iphak/main.do", content: "서울시립대학교")
-University.create(name: "서울여자대학교", remote_img_url: "http://i.imgur.com/QnTlgsy.png", link_url: "http://admission.swu.ac.kr", content: "서울여자대학교")
-University.create(name: "성공회대학교", remote_img_url: "http://i.imgur.com/vhKSaiq.png", link_url: "http://enter.skhu.ac.kr", content: "성공회대학교")
-University.create(name: "성균관대학교", remote_img_url: "http://i.imgur.com/FE3bn6G.png", link_url: "https://admission.skku.edu", content: "성균관대학교")
-University.create(name: "성신여자대학교", remote_img_url: "http://i.imgur.com/TNt05gu.png", link_url: "https://ipsi.sungshin.ac.kr:2016", content: "성신여자대학교")
-University.create(name: "세종대학교", remote_img_url: "http://i.imgur.com/pOxyuwe.png", link_url: "http://ipsi.sejong.ac.kr", content: "세종대학교")
-University.create(name: "숙명여자대학교", remote_img_url: "http://i.imgur.com/W8T81fa.png", link_url: "http://admission.sookmyung.ac.kr", content: "숙명여자대학교")
-University.create(name: "숭실대학교", remote_img_url: "http://i.imgur.com/XdQ6RK5.png", link_url: "http://iphak.ssu.ac.kr", content: "숭실대학교")
-University.create(name: "연세대학교", remote_img_url: "http://i.imgur.com/xqrm2xZ.png", link_url: "http://admission.yonsei.ac.kr/seoul/admission/html/main/main.asp", content: "연세대학교")
-University.create(name: "이화여자대학교", remote_img_url: "http://i.imgur.com/cyJpi3z.png", link_url: "http://admission.ewha.ac.kr/admission/html/main/main.asp", content: "이화여자대학교")
-University.create(name: "장로회신대학교", remote_img_url: "http://i.imgur.com/RRPRUJR.png", link_url: "http://www.puts.ac.kr/main/sub2011/sub_2.asp?m2=1&m3=1", content: "장로회신대학교")
-University.create(name: "중앙대학교", remote_img_url: "http://i.imgur.com/sJpLCTh.png", link_url: "https://admission.cau.ac.kr", content: "중앙대학교")
-University.create(name: "총신대학교", remote_img_url: "http://i.imgur.com/VoZX4Ez.png", link_url: "http://admission.chongshin.ac.kr", content: "총신대학교")
-University.create(name: "추계예술대학교", remote_img_url: "http://i.imgur.com/aElhqxl.png", link_url: "http://www.chugye.ac.kr/mbs/ipsi/index.jsp", content: "추계예술대학교")
-University.create(name: "케이씨대학교", remote_img_url: "http://i.imgur.com/7rKRGWR.png", link_url: "http://kcu.ac.kr/kcui/main?menuId=10", content: "케이씨대학교")
-University.create(name: "한국성서대학교", remote_img_url: "http://i.imgur.com/idtqy3L.png", link_url: "http://ipsi.bible.ac.kr/index.aspx", content: "한국성서대학교")
-University.create(name: "한국외국어대학교", remote_img_url: "http://i.imgur.com/AS9T0r6.png", link_url: "http://adms.hufs.ac.kr/enter/html/main/main.asp", content: "한국외국어대학교")
-University.create(name: "한국체육대학교", remote_img_url: "http://i.imgur.com/HvyDEXV.png", link_url: "http://ipsi.knsu.ac.kr/web/ipsi", content: "한국체육대학교")
+University.create(name: "가톨릭대학교", remote_img_url: "http://i.imgur.com/66W4piX.png", link_url: "http://ipsi.catholic.ac.kr", content: "가톨릭대학교")
+University.create(name: "감리교신학대학교", remote_img_url: "http://i.imgur.com/towkqcM.png", link_url: "https://www.mtu.ac.kr", content: "감리교신학대학교")
+University.create(name: "건국대학교", remote_img_url: "http://i.imgur.com/BvpvSvq.png", link_url: "http://enter.konkuk.ac.kr/seoul", content: "건국대학교")
+University.create(name: "경기대학교", remote_img_url: "http://i.imgur.com/MM89ZM1.png", link_url: "http://enter.kyonggi.ac.kr", content: "경기대학교")
+University.create(name: "경희대학교", remote_img_url: "http://i.imgur.com/yhrTcyI.png", link_url: "http://iphak.khu.ac.kr", content: "경희대학교")
+University.create(name: "고려대학교", remote_img_url: "http://i.imgur.com/oTQS46e.png", link_url: "http://oku.korea.ac.kr", content: "고려대학교")
+University.create(name: "광운대학교", remote_img_url: "http://i.imgur.com/DjEVKoP.png", link_url: "http://iphak.kw.ac.kr", content: "광운대학교")
+University.create(name: "국민대학교", remote_img_url: "http://i.imgur.com/SC6Vz9s.png", link_url: "http://admission.kookmin.ac.kr", content: "국민대학교")
+University.create(name: "덕성여자대학교", remote_img_url: "http://i.imgur.com/93ueRKF.png", link_url: "http://enter.duksung.ac.kr", content: "덕성여자대학교")
+University.create(name: "동국대학교", remote_img_url: "http://i.imgur.com/BqW3nU8.png", link_url: "https://ipsi.dongguk.edu", content: "동국대학교")
+University.create(name: "동덕여자대학교", remote_img_url: "http://i.imgur.com/WE5dXkJ.png", link_url: "http://ipsi.dongduk.ac.kr", content: "동덕여자대학교")
+University.create(name: "명지대학교", remote_img_url: "http://i.imgur.com/555zGOm.png", link_url: "http://ipsi.mju.ac.kr", content: "명지대학교")
+University.create(name: "삼육대학교", remote_img_url: "http://i.imgur.com/c5fx048.png", link_url: "http://ipsi.syu.ac.kr", content: "삼육대학교")
+University.create(name: "상명대학교", remote_img_url: "http://i.imgur.com/uKqt5vE.png", link_url: "https://admission.smu.ac.kr:2012", content: "상명대학교")
+University.create(name: "서강대학교", remote_img_url: "http://i.imgur.com/xQN3eJm.png", link_url: "http://admission.sogang.ac.kr", content: "서강대학교")
+University.create(name: "서경대학교", remote_img_url: "http://i.imgur.com/a9dDRF0.png", link_url: "http://go.skuniv.ac.kr", content: "서경대학교")
+University.create(name: "서울과학기술대학교", remote_img_url: "http://i.imgur.com/mQ648Pu.png", link_url: "http://admission.seoultech.ac.kr", content: "서울과학기술대학교")
+University.create(name: "서울교육대학교", remote_img_url: "http://i.imgur.com/Bw5iqQm.png", link_url: "http://admission.snue.ac.kr", content: "서울교육대학교")
+University.create(name: "서울기독대학교", remote_img_url: "http://i.imgur.com/VqogrHs.png", link_url: "http://www.scu.ac.kr/entrance/outline.php", content: "서울기독대학교")
+University.create(name: "서울대학교", remote_img_url: "http://i.imgur.com/1JUJsb2.png", link_url: "http://admission.snu.ac.kr", content: "서울대학교")
+University.create(name: "서울시립대학교", remote_img_url: "http://i.imgur.com/hZQ9y1o.png", link_url: "http://admission.uos.ac.kr/iphak/main.do", content: "서울시립대학교")
+University.create(name: "서울여자대학교", remote_img_url: "http://i.imgur.com/qAqJulr.png", link_url: "http://admission.swu.ac.kr", content: "서울여자대학교")
+University.create(name: "성공회대학교", remote_img_url: "http://i.imgur.com/226756D.png", link_url: "http://enter.skhu.ac.kr", content: "성공회대학교")
+University.create(name: "성균관대학교", remote_img_url: "http://i.imgur.com/8Gwwqv4.png", link_url: "https://admission.skku.edu", content: "성균관대학교")
+University.create(name: "성신여자대학교", remote_img_url: "http://i.imgur.com/5jHWyan.png", link_url: "https://ipsi.sungshin.ac.kr:2016", content: "성신여자대학교")
+University.create(name: "세종대학교", remote_img_url: "http://i.imgur.com/Zg2L2Pa.png", link_url: "http://ipsi.sejong.ac.kr", content: "세종대학교")
+University.create(name: "숙명여자대학교", remote_img_url: "http://i.imgur.com/89QIIzN.png", link_url: "http://admission.sookmyung.ac.kr", content: "숙명여자대학교")
+University.create(name: "숭실대학교", remote_img_url: "http://i.imgur.com/d6MxF1h.png", link_url: "http://iphak.ssu.ac.kr", content: "숭실대학교")
+University.create(name: "연세대학교", remote_img_url: "http://i.imgur.com/zuv76BG.png", link_url: "http://admission.yonsei.ac.kr/seoul/admission/html/main/main.asp", content: "연세대학교")
+University.create(name: "이화여자대학교", remote_img_url: "http://i.imgur.com/u5ZafuV.png", link_url: "http://admission.ewha.ac.kr/admission/html/main/main.asp", content: "이화여자대학교")
+University.create(name: "장로회신대학교", remote_img_url: "http://i.imgur.com/dO5RHD1.png", link_url: "http://www.puts.ac.kr/main/sub2011/sub_2.asp?m2=1&m3=1", content: "장로회신대학교")
+University.create(name: "중앙대학교", remote_img_url: "http://i.imgur.com/PBMA8Ga.png", link_url: "https://admission.cau.ac.kr", content: "중앙대학교")
+University.create(name: "총신대학교", remote_img_url: "http://i.imgur.com/UFyGGEc.png", link_url: "http://admission.chongshin.ac.kr", content: "총신대학교")
+University.create(name: "추계예술대학교", remote_img_url: "http://i.imgur.com/z4kLzWO.png", link_url: "http://www.chugye.ac.kr/mbs/ipsi/index.jsp", content: "추계예술대학교")
+University.create(name: "케이씨대학교", remote_img_url: "http://i.imgur.com/vYjZKTE.png", link_url: "http://kcu.ac.kr/kcui/main?menuId=10", content: "케이씨대학교")
+University.create(name: "한국성서대학교", remote_img_url: "http://i.imgur.com/dmiehcQ.png", link_url: "http://ipsi.bible.ac.kr/index.aspx", content: "한국성서대학교")
+University.create(name: "한국외국어대학교", remote_img_url: "http://i.imgur.com/sxccsNN.png", link_url: "http://adms.hufs.ac.kr/enter/html/main/main.asp", content: "한국외국어대학교")
+University.create(name: "한국체육대학교", remote_img_url: "http://i.imgur.com/cPWyaQP.png", link_url: "http://ipsi.knsu.ac.kr/web/ipsi", content: "한국체육대학교")
 University.create(name: "한성대학교", remote_img_url: "http://i.imgur.com/kV5QcyV.png", link_url: "http://enter.hansung.ac.kr/home", content: "한성대학교")
 University.create(name: "한양대학교", remote_img_url: "http://i.imgur.com/gQurYln.png", link_url: "http://go.hanyang.ac.kr/new/2015/intro/intro.html", content: "한양대학교")
 University.create(name: "한영신학대학교", remote_img_url: "http://i.imgur.com/atRiIjb.png", link_url: "http://ipsi.hytu.ac.kr", content: "한영신학대학교")
@@ -646,7 +644,7 @@ MajorStory.create(
     주장에 대한 근거를 논리적으로 잘 말하는 것이 중요해. 또 문제를 제대로 못 풀더라도 자신감이 중요해(물론 겸손해야 하지). 이 학생이 문제를 푸는 것도 중요하지만 얼마나 끝까지 문제를
     해결하려는 의지가 있는가를 보시려는 것도 있어! 그러니까 문제를 모르더라도 자신감 있게 행동해야 해!
         **면접상황REPLAY: 우선 대기실에 다같이 앉아있다가. 5명씩 불려서 다른 강의실로 이동해서 15분제한시간동안 문제가 주어져. 그리고 풀이(생각)하는 시간을 주고 시간이 끝나면 교수님들이
-    계시는 강의실로 이동해(교수님 2명, 학생 1명인 2:1면접). 나는 들어서는 순��� 큰 소리로 공손하게 인사를 했고, 앉자마자 문제에 대한 풀이를 설명했어. 아마 교수님께서는 학생의 의견에 대해서
+    계시는 강의실로 이동해(교수님 2명, 학생 1명인 2:1면접). 나는 들어서는 순������� 큰 소리로 공손하게 인사를 했고, 앉자마자 문제에 대한 풀이를 설명했어. 아마 교수님께서는 학생의 의견에 대해서
     무서울 정도로 무조건 반박하실 거니깐 마음 단단히 먹어야 해.
         **기억나는 면접질문: 지역축제 문제점을 경영학부의 관점으로 답변하는 문제',
     q5: '나는 해외연수를 갔다 와서 외국계 기업 쪽으로 취업을 해보고 싶어. 그 이유는 한 학기 동안 외국계기업에서 제공하는 멘토링을 했었는데, 조직구조나 환경이 너무 마음에 들었거든.(물론
@@ -1441,7 +1439,7 @@ MajorStory.create(
 
 있는 교육실습을 나가게 돼. 임용고시의 꿈을 접을 수도, 더 키울 수도 있는 계기가 될거야ㅎㅎㅎ',
     q3:
-        '동국대 교육학과에는 다른 과에 비해 교수님이 많이 계셔. 무려 11명의 교수님이 ���셔서 다양한 수업을
+        '동국대 교육학���에는 다른 과에 비해 교수님이 많이 계셔. 무려 11명의 교수님이 ���셔서 다양한 수업을
 
 듣고 배울 점도 많은 것 같아
         >>> 만족도(5점 만점): 4점',
