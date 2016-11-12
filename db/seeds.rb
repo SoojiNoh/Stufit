@@ -270,7 +270,7 @@ MajorStory.create(
     major: '정보통신공학과',
     grade: '3학년',
     name: '김OO',
-    remote_file_url: 'http://i.imgur.com/BtfdQbG.png',
+    remote_file_url: 'http://i.imgur.com/BqW3nU8.png',
     q1:
         '소프트웨어: 컴퓨터의 언어를 주로 배워(c,c++,자바...)
         하드웨어: 소프트웨어 분야에서 배운 언어를 바탕으로 그것이 실제로 어떻게 사용되는지 적용하는 수업이야.(실제로 어셈블리어(기계가 이해할 수 있는 언어)를 사용하여
@@ -347,7 +347,7 @@ MajorStory.create(
     major: '화학공학과',
     grade: '3학년',
     name: '이OO',
-    remote_file_url: 'http://i.imgur.com/XdQ6RK5.png',
+    remote_file_url: 'http://i.imgur.com/d6MxF1h.png',
     q1:
         '(화학과 VS 화학공학과)
     >>> 우선 공학에 대해 설명해 줄게. 예외는 있겠지만, 쉽게 말하면 돈을 벌기 위한 학문이야. 공학은 순수학문이 발견한 지식을 사용해 돈을 벌고,
@@ -707,7 +707,7 @@ MajorStory.create(
     major: '경영학부',
     grade: '4학년',
     name: '신OO',
-    remote_file_url: 'http://i.imgur.com/XdQ6RK5.png',
+    remote_file_url: 'http://i.imgur.com/d6MxF1h.png',
     q1:
         '기업을 경영하기 위해 필요한 지식과 기술을 배우는 학과야. 회계, 마케
 
@@ -869,7 +869,7 @@ MajorStory.create(
     major: '광고홍보학과',
     grade: '4학년',
     name: '김OO',
-    remote_file_url: 'http://i.imgur.com/BtfdQbG.png',
+    remote_file_url: 'http://i.imgur.com/BqW3nU8.png',
     q1:
         '동국대 광고홍보학과는 광고인 혹은 홍보인이 되기 위한 지식을 배우
 
@@ -1423,7 +1423,7 @@ MajorStory.create(
     major: '교육학과',
     grade: '4학년',
     name: '이OO',
-    remote_file_url: 'http://i.imgur.com/BtfdQbG.png',
+    remote_file_url: 'http://i.imgur.com/BqW3nU8.png',
     q1:
         '동국대 교육학과는 교육의 다양한 분야를 배우는 학과야. 예를 들어 교육 행정, 교육 심리, 교육 철학 등
 
@@ -1592,7 +1592,7 @@ MajorStory.create(
     major: '전자공학과',
     grade: '3학년',
     name: '이OO',
-    remote_file_url: 'http://i.imgur.com/Tpd4PDl.png',
+    remote_file_url: 'http://i.imgur.com/xQN3eJm.png',
     q1:
         '전자공학이란 학문은 21세기 지식 산업의 핵심 영역인 컴퓨터, 반도체, 유무선통신, 가전, 로보틱스,
 
@@ -1809,7 +1809,7 @@ MajorStory.create(
     major: '건축학전공',
     grade: '졸업생',
     name: '서OO',
-    remote_file_url: 'http://i.imgur.com/BtfdQbG.png',
+    remote_file_url: 'http://i.imgur.com/BqW3nU8.png',
     q1:
         '동국대 건축학과는 학부제라서 처음 입학할 때는 공과대학에 ‘건축공학부’ 학부생으로 입학을 하고
 
@@ -2130,7 +2130,7 @@ MajorStory.create(
     major: '경영학과',
     grade: '4학년',
     name: '배OO',
-    remote_file_url: 'http://i.imgur.com/ypyE82f.png',
+    remote_file_url: 'http://i.imgur.com/oTQS46e.png',
     q1:
         '경영학과는 말 그대로 쉽게 회사의 경영과 이윤을 위한 분야들 (회계, 마케팅, 생산관리, 금융 등)을
 
@@ -2191,7 +2191,7 @@ MajorStory.create(
     major: '경영학과',
     grade: '2학년',
     name: '허OO',
-    remote_file_url: 'http://i.imgur.com/FE3bn6G.png',
+    remote_file_url: 'http://i.imgur.com/8Gwwqv4.png',
     q1:
         '사실 나도 고등학교 때 공부하면서, 대학 무슨 과를 갈지 확실히 결정하지 못했어. 그런데 학과에 대한
 
@@ -2240,7 +2240,7 @@ MajorStory.create(
     major: '경영학과',
     grade: '4학년',
     name: '손OO',
-    remote_file_url: 'http://i.imgur.com/cyJpi3z.png',
+    remote_file_url: 'http://i.imgur.com/u5ZafuV.png',
     q1:
         '나는 고등학교 때 경제동아리에서 활동했었는데 여러 가지 경험을 통해 경제와 경영에 관���이 생겨서
 
