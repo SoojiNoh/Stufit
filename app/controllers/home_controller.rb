@@ -28,6 +28,11 @@ class HomeController < ApplicationController
   
   
   def search
+    @events = Event.search(params[:search])
+
+  end
+  
+  def search3
     @search = Event.search do
       fulltext params[:search]
       with(:start_at)
