@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 20161106030007) do
 
   create_table "consults", force: :cascade do |t|
     t.string   "title"
-    t.string   "content"
+    t.text     "content"
     t.string   "image"
     t.integer  "user_id"
     t.datetime "created_at", null: false

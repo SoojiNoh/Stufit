@@ -5,7 +5,6 @@ gem 'rolify'     # role 관리
 gem 'authority'  # 권한설정
 
 gem 'ckeditor'
-gem "paperclip"
 gem 'jquery-turbolinks'
 gem 'mini_magick'
 

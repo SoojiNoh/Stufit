@@ -2,8 +2,8 @@
   <div class="determinate" style="width: 70%"></div>
 </div>
 
-<h5>제목 | <%= @consult.title %></h5>
-<h6>내용 | <%= @consult.content %></h6>
+<h5>제목 | <%= @consult.title.html_safe %></h5>
+<h6>내용 | <%= @consult.content.html_safe %></h6>
 <%= image_tag "#{@consult.image}" , height: '300', width: '400' %>
 </div>
 <%= link_to "목록", consults_path, class: 'waves-effect waves-light btn' %>
