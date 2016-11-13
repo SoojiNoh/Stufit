@@ -80,8 +80,11 @@
       <div>
 
       <%= link_to "목록", activities_path, class: 'waves-effect waves-light btn' %>
+      
       <%= link_to "수정", edit_activity_path(@activity), class: 'waves-effect waves-light btn' %>
+      
       <%= link_to "삭제", activity_path(@activity), method: "delete", class: 'waves-effect waves-light btn' %>
+      
     <%= link_to '새 글쓰기', new_activity_path ,class: 'waves-effect waves-light btn' %>
       </div>
 

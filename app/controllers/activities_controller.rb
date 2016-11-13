@@ -26,6 +26,7 @@ class ActivitiesController < ApplicationController
 
   def edit
     @activity = Activity.find(params[:id])
+    
   end
 
   def update
@@ -41,6 +42,7 @@ class ActivitiesController < ApplicationController
 
   def destroy
     @activity = Activity.find(params[:id])
+    
     @activity.destroy
     redirect_to activities_path
   end

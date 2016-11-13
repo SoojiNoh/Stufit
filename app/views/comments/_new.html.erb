@@ -11,6 +11,9 @@
   <% if belong=="event" %>
     <%= f.hidden_field :event_id, value: event %>
   <% end %>
+  <% if belong=="community" %>
+    <%= f.hidden_field :community_id, value: community %>
+  <% end %>
 
   <%= f.submit "submit", class: 'waves-effect waves-light btn'%>
 <% end %>

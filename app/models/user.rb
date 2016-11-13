@@ -54,6 +54,11 @@ class User < ApplicationRecord
   # User : Consults게시글은 1:N 관계
   has_many :consults
   
+  # User : Consulting게시글은 1:N 관계
+  has_many :consultings
+
+  # User : Community 게시글은 1:N 관계
+  has_many :communities
   
   # for checking user did like
   def is_event_like?(event)

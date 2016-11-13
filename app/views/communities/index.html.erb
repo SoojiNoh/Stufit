@@ -1,0 +1,49 @@
+<h5 class="center">Community</h5>
+
+<%= form_tag communities_path, :method => 'get', :id => "communities_search" do %>
+  <%#= hidden_field_tag :direction, params[:direction]%>
+  <%#= hidden_field_tag :sort, params[:sort]%>  
+  <p>
+    <%= text_field_tag :search, params[:search], :placeholder=>"검색어를 입력하세요" %>
+  <%= submit_tag "검색", :content => nil, :class=>'waves-effect waves-light btn blue'%>
+      </p>
+<% end %>
+<br>
+
+<head>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"></script>
+</head>
+
+<div class="row">
+<table class="bordered centered" style="width: 100%;">
+      <thead>
+        <tr>
+          <th colspan="2">제목</th>
+          <th colspan="2">내용</th>
+          <th>작성자</th>
+          <th>작성일</th>
+       
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @communities.each do |c| %>
+        <tr>
+          <td colspan="2"><%= link_to "#{truncate(c.title, :length =>14, :separator=>' ')}", community_path(c) %></td>
+          <td colspan="2"><%= link_to "#{truncate(c.content, :length => 14, :separator=>' ')}", community_path(c)  %></td>
+          <td><%=c.user.name%></td>
+          <td><%=c.created_at%></td>
+        <%end%>
+        </tr>
+        </tbody>
+        </table>
+        </div><br>
+        
+      <%= link_to "새글 쓰기", new_community_path, class: 'waves-effect waves-light btn right blue'%><br>
+
+  <div class="digg_pagination" align="center">
+    <%= will_paginate @communities, :previous_lable => "이전", :next_lable => "다음", :container => false %>
+  </div>

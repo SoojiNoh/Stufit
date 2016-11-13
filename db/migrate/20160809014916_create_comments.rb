@@ -8,6 +8,7 @@ class CreateComments < ActiveRecord::Migration[5.0]
       t.references :university, index: true, foreign_key: true
       t.references :major_story, index: true, foreign_key: true
       t.references :consult, index: true, foreign_key: true
+      t.references :community, index: true, foreign_key: true
       t.timestamps
     end
   end
