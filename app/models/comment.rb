@@ -2,7 +2,10 @@ class Comment < ApplicationRecord
 
    resourcify
   include Authority::Abilities
-
+  
+  # Community : Comment relation => 1:N
+  belongs_to :community, required: false
+    
   # User : Comment relation => 1:N
   belongs_to :user, optional: true
 

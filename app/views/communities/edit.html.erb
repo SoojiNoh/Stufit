@@ -1,0 +1,19 @@
+<head>
+    <style>
+        table td.shrink {
+    white-space:nowrap
+}
+    </style>
+</head>
+
+<%= form_for @community do |c| %>
+<%= render partial: 'form', locals: { :f => c} %>
+<% end %>
+
+
+
+<script>
+    $(document).ready(function() {
+    $('select').material_select();
+});
+</script>

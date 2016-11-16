@@ -1,0 +1,21 @@
+<!--<div class="field">
+<%#= f.label :hash_activities, 'hash_activities', :class=>"mdl-textfield__input", :for=>"sample1" %>
+<%#= f.select :hash_activities, options_for_select(HashTag.all.collect{ |u| [u.name,u.id] }, :class=>"mdl-textfield__input", :type=>"text", :id=>"sample1"  ),{},{ :multiple => true}%>
+</div>-->
+ 
+<div class="field">
+      <%= f.label :title, '제목'%>
+      <%= f.text_field :title  %>
+</div>
+<div class="field">
+      <%= f.label :content, '내용'%>
+      <%= f.text_area :content %>
+</div>
+
+<div class="field">
+<%= f.label :image, '이미지'%>
+<%= f.file_field :image %>
+</div><br>
+
+<%=f.submit "올리기", class:"btn waves-effect waves-light" %>
+

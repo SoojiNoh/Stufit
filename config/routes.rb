@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :communities
   resources :consults
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :mains

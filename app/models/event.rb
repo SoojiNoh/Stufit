@@ -51,8 +51,10 @@ class Event < ApplicationRecord
   has_many :user_events
   belongs_to :user, optional: true
 
-  #event 검색 _수지
-  
+  #event 검색
+  def self.search(search)
+      where("content LIKE ?", "%#{search}%")
+  end
 
   mount_uploader :image, AvatarUploader
 
