@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161113045536) do
+ActiveRecord::Schema.define(version: 20161113045513) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "activity_type"
@@ -60,10 +60,8 @@ ActiveRecord::Schema.define(version: 20161113045536) do
     t.integer  "university_id"
     t.integer  "major_story_id"
     t.integer  "consult_id"
-    t.integer  "community_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.index ["community_id"], name: "index_comments_on_community_id"
     t.index ["consult_id"], name: "index_comments_on_consult_id"
     t.index ["event_id"], name: "index_comments_on_event_id"
     t.index ["major_story_id"], name: "index_comments_on_major_story_id"
@@ -72,15 +70,6 @@ ActiveRecord::Schema.define(version: 20161113045536) do
   end
 
   create_table "communities", force: :cascade do |t|
-    t.string   "title"
-    t.string   "content"
-    t.string   "image"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "consultings", force: :cascade do |t|
     t.string   "title"
     t.string   "content"
     t.string   "image"

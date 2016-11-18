@@ -1,29 +1,29 @@
 <h5 class="center">대학알리GO</h5>
 
 <div class="row">
-<% @universities.each do |univ| %>
-  <div class="col s2 m3 l2">
-    <div class="card">
-      <div class="card-image">
-         <% if current_user.nil? %>
-        <%= link_to "/universities/univ/#{univ.id}" do %> <i class="empty_star material-icons">star</i> <% end %>
-        <%else%>
-        <% if current_user.universities.where(id: univ.id).take != nil  %>
-          <%= link_to "/universities/univ_destroy/#{UnivFollow.where(user: current_user, university: univ).take.id}" do %><i class="pull_star material-icons">star</i> <% end %>
-        <% else %>
-          <%= link_to "/universities/univ/#{univ.id}" do %> <i class="empty_star material-icons">star</i> <% end %>
-        <% end %>
-        <% end %>
-      <%= link_to univ.link_url do %>
-        <%= image_tag "#{univ.img}", :size => '200x150' %>
-        <div style="text-align:center; margin-top:10px; margin-bottom:10px; font-weight:bold;">
-          <span><%= link_to univ.name, "#{university_path(univ)}" %></span>
+  <% @universities.each do |univ| %>
+    <div class="col s2 m3 l2">
+      <div class="card">
+        <div class="card-image">
+          <% if current_user.nil? %>
+            <%= link_to "/universities/univ/#{univ.id}" do %> <i class="empty_star material-icons">star</i> <% end %>
+          <%else%>
+            <% if current_user.universities.where(id: univ.id).take != nil  %>
+              <%= link_to "/universities/univ_destroy/#{UnivFollow.where(user: current_user, university: univ).take.id}" do %><i class="pull_star material-icons">star</i> <% end %>
+            <% else %>
+              <%= link_to "/universities/univ/#{univ.id}" do %> <i class="empty_star material-icons">star</i> <% end %>
+            <% end %>
+          <% end %>
+          <%= link_to univ.link_url do %>
+            <%= image_tag "#{univ.img}", :size => '200x150' %>
+            <div style="text-align:center; margin-top:10px; margin-bottom:10px; font-weight:bold;">
+              <span><%= link_to univ.name, "#{university_path(univ)}" %></span>
+            </div>
         </div>
+        <% end %>
       </div>
-      <% end %>
     </div>
-  </div>
-<% end %>
+  <% end %>
 </div>
 
 <!--대학등록 버튼(로그인 했을 때만)-->
