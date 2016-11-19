@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161113045513) do
+ActiveRecord::Schema.define(version: 20161119093843) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "activity_type"
@@ -60,8 +60,10 @@ ActiveRecord::Schema.define(version: 20161113045513) do
     t.integer  "university_id"
     t.integer  "major_story_id"
     t.integer  "consult_id"
+    t.integer  "community_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.index ["community_id"], name: "index_comments_on_community_id"
     t.index ["consult_id"], name: "index_comments_on_consult_id"
     t.index ["event_id"], name: "index_comments_on_event_id"
     t.index ["major_story_id"], name: "index_comments_on_major_story_id"
@@ -117,6 +119,11 @@ ActiveRecord::Schema.define(version: 20161113045513) do
 
   create_table "favorite_events", force: :cascade do |t|
     t.string   "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "frontpages", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -179,11 +186,11 @@ ActiveRecord::Schema.define(version: 20161113045513) do
   end
 
   create_table "mains", force: :cascade do |t|
-    t.string   "image1"
-    t.string   "image2"
-    t.string   "image3"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "carouselfront"
+    t.string   "eventfront"
+    t.string   "majorfront"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "major_favorites", force: :cascade do |t|

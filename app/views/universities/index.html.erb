@@ -27,13 +27,14 @@
 </div>
 
 <!--대학등록 버튼(로그인 했을 때만)-->
-
-<% if current_user.admin==true %>
-  <div align="right" style="margin-top:10px; margin-bottom:20px;">
-    <%= link_to "대학등록", new_university_path,class: 'waves-effect waves-light btn blue' %>
-  </div>
+<% if user_signed_in?%>
+  <% if current_user.admin==true %>
+    <div align="right" style="margin-top:10px; margin-bottom:20px;">
+      <%= link_to "대학등록", new_university_path,class: 'waves-effect waves-light btn blue' %>
+    </div>
+  <% end %>
 <% end %>
-
+    
   <!--Pagination -->
 <div class="digg_pagination" align="center">
   <%= will_paginate @universities, :previous_lable => "이전", :next_lable => "다음", :container => false %>
