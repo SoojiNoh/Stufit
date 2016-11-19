@@ -30,6 +30,7 @@ class CommunitiesController < ApplicationController
  
     def show
         @community = Community.find(params[:id])
+        impressionist(@community)
     end 
     
     def destroy

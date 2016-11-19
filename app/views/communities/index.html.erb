@@ -1,4 +1,4 @@
-<h5 class="center">Community</h5>
+<h5 class="center">커뮤니티</h5>
 
 <br>
 
@@ -14,10 +14,11 @@
       <thead>
         <tr>
           <th colspan="2">제목</th>
-          <th colspan="2">내용</th>
+          <th colspan="2">작성일</th>
+          <th>조회수</th>
           <th>좋아요</th>
           <th>작성자</th>
-          <th>작성일</th>
+
        
         </tr>
       </thead>
@@ -26,7 +27,8 @@
         <% @communities.each do |c| %>
         <tr>
           <td colspan="2"><%= link_to "#{truncate(c.title, :length =>14, :separator=>' ')}", community_path(c) %></td>
-          <td colspan="2"><%= link_to "#{truncate(c.content, :length => 14, :separator=>' ')}", community_path(c)  %></td>
+          <td colspan="2"><%= truncate(c.created_at.in_time_zone("Asia/Seoul").strftime("%Y년%m월%d일"), :length => 14, :separator=>' ')%></td>
+          <td colspan="1"><%= c.impressions.count %> </td> <!--조회수 event.impressionist -->
           <td width="10%">
           <!-- like function -->
           <% if user_signed_in? %>
@@ -42,7 +44,7 @@
           <%end%>
           </td>
           <td><%=c.user.name%></td>
-          <td><%=c.created_at%></td>
+  
         <%end%>
         </tr>
         </tbody>

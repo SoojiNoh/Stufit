@@ -3,6 +3,7 @@ class Community < ApplicationRecord
   resourcify
   include Authority::Abilities
     
+  is_impressionable  
     #User:Community => 1:N
     belongs_to :user
 
