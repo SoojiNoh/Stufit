@@ -13,6 +13,11 @@ class ConsultsController < ApplicationController
 
   def new
     @consult = Consult.new
+    
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render xml: @consult }
+    end
 
   end
 
@@ -22,7 +27,7 @@ class ConsultsController < ApplicationController
     
     respond_to do |format|
       if @consult.save
-        format.html { redirect_to @consult, notice: 'Schedule was successfully created.' }
+        format.html { redirect_to @consult, notice: 'Consult was successfully created.' }
         format.json { render :show, status: :created, location: @consult }
       else
         format.html { render :new }
@@ -82,6 +87,6 @@ class ConsultsController < ApplicationController
   end
 
   def consult_params
-    params.require(:consult).permit(:title, :content)
+    params.require(:consult).permit(:title, :content, :image)
   end
 end

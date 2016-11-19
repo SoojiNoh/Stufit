@@ -6,6 +6,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application' , 'data-turbolinks-track': 'reload' %>
+    
+
     <!-- Favicons-->
     <link rel="icon" href="http://i.imgur.com/4eO07yP.png" sizes="32x32" data-turbolinks-track="reload">
     <!-- Favicons-->
@@ -18,7 +20,7 @@
     
     <!--materialize js-->
     <script type="text/javascript" src="<%= asset_path "materialize.js"%>"></script>
-
+    
     <link href="<%= asset_path "materialize.css" %>" type="text/css" rel="stylesheet" media="screen,projection"data-turbolinks-track="reload">
     <link href="<%= asset_path "style.css" %>"type="text/css" rel="stylesheet" media="screen,projection"data-turbolinks-track="reload">
 
@@ -73,6 +75,7 @@
         <div class="wrapper">
 
           <!-- START LEFT SIDEBAR NAV-->
+          
           <%= render partial: 'layouts/left_siderbar' %>
           <!-- END LEFT SIDEBAR NAV-->
 
@@ -87,6 +90,8 @@
           <div class="container">
             <div class="section">
             <% end %>
+            <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only darken-2">
+  <i class="mdi-navigation-menu" ></i></a>
             <%= yield %>
             <% unless devise.include?(controller.controller_name)  %>
 

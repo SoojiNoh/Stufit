@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+FrontObject.create(title: 'Princess Maker')
+FrontObject.create(title: 'Tetris')
+FrontObject.create(title: 'Tetris')
+
 Activity.create(activity_type: '교내', style:'동아리', title:'멋쟁이 사자처럼', content: '비전공자도 만들고 싶은 서비스를 만들어보자', host_name:'멋쟁이 사자처럼', issuednumber: '42016', grade: 'AAA', start_at:'2016-03-05', end_at: '2016-08-31')
 Activity.create(activity_type: '교외', style:'토론대회', title:'통일 대한민국 청소년 토론 한마당', content: '통일 세대의 주역 청소년들의 토론', host_name: '통일부', issuednumber: '13510', grade: '대상', start_at:'2016-02-05', end_at: '2016-02-07')
 Activity.create(activity_type: '교내', style:'공모전', title:'전국 고등학생 발명 대회',
@@ -1425,7 +1429,7 @@ MajorStory.create(
     name: '이OO',
     remote_file_url: 'http://i.imgur.com/BqW3nU8.png',
     q1:
-        '동국대 교육학과는 교육의 다양한 분야를 배우는 학과야. 예를 들어 교육 행정, 교육 심리, 교육 철학 등
+        '동국대 교���학과는 교육의 다양한 분야를 배우는 학과야. 예를 들어 교육 행정, 교육 심리, 교육 철학 등
 
 교육의 전반적인 내용을 다룬다고 보면 돼',
     q2:
@@ -2222,7 +2226,7 @@ MajorStory.create(
     q4: '사실 나는 논술을 제대로 준비하지는 않았는데, 결국에 수능 등급에 따른 우선선발 전형이라서...
 
 수능공부가 우선이 되야 하는 것 같아.',
-    q5: '우리 학과가 회계 위주로 커리큘럼이 짜여있어서 회계공부도 해봤지만, 내가 별로 좋아하는 과목이
+    q5: '우리 학과가 회계 위주로 커리큘럼이 짜여있어서 회계공부도 해봤���만, 내가 별로 좋아하는 과목이
 
 아니라고 느꼈어. 아직도 진로를 정확히 잡지는 못했지만, 마케팅 쪽으로 수업을 듣고 학회에서 여러
 

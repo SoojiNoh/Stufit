@@ -19,11 +19,12 @@ class CommentsController < ApplicationController
 
   def edit
     @comment = Comment.find(params[:id])
-    #authorize_action_for @comment
+    authorize_action_for @comment
   end
 
   def update
   @comment = Comment.find(params[:id])
+  authorize_action_for @comment
   @comment.update(comment_params)
     if @comment.major_story_id.present?
       redirect_to major_story_path(@comment.major_story_id)

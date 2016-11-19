@@ -18,22 +18,26 @@
 <!-- Square card -->
 
 <div class="row">
-<% @consults.each do |consult| %>
-  <div class="col s3 m3 l3">
-    <div class="card">
-      <div class="card-image">
-      <%= link_to consult_path(consult) do %>
-        <%= image_tag "#{consult.image}", :size => '250x250' %>
-      </div>
-        <div class="card-content">
-          <p><%= consult.title %></p>
-          <p><strong><%= consult.user %></strong></p>
+  <% @consults.each do |consult| %>
+    <div class="col s3 m3 l3">
+      <div class="card">
+        <div class="card-image">
+        <%= link_to consult_path(consult) do %>
+          <%if consult.image.nil?%>
+            <%= image_tag "stufit_thumnail.png", :size => '250x250'%>
+          <%else%>
+            <%= image_tag "#{consult.image}", :size => '250x250' %>
+          <%end%>
         </div>
-        
-      <% end %>
+          <div class="card-content">
+            <p><%= consult.title %></p>
+            <p><strong><%= consult.user.name %></strong></p>
+          </div>
+          
+        <% end %>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
 </div><br>
 
 <!-- 전공추가 버튼-->

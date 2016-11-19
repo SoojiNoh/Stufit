@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   
   resources :consults
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  resources :mains
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
 
@@ -46,6 +45,6 @@ Rails.application.routes.draw do
   get 'facebook/index'
   get '/help' => 'help#index'
 
-
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

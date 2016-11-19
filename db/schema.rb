@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20161116052531) do
+=======
+ActiveRecord::Schema.define(version: 20161119093843) do
+>>>>>>> 09f41ad52631fc7a085e40d52c3f736f94300aee
 
   create_table "activities", force: :cascade do |t|
     t.string   "activity_type"
@@ -80,6 +84,7 @@ ActiveRecord::Schema.define(version: 20161116052531) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
   create_table "community_likes", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "community_id"
@@ -89,6 +94,8 @@ ActiveRecord::Schema.define(version: 20161116052531) do
     t.index ["user_id"], name: "index_community_likes_on_user_id"
   end
 
+=======
+>>>>>>> 09f41ad52631fc7a085e40d52c3f736f94300aee
   create_table "consults", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
@@ -128,6 +135,11 @@ ActiveRecord::Schema.define(version: 20161116052531) do
 
   create_table "favorite_events", force: :cascade do |t|
     t.string   "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "frontpages", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -190,11 +202,11 @@ ActiveRecord::Schema.define(version: 20161116052531) do
   end
 
   create_table "mains", force: :cascade do |t|
-    t.string   "image1"
-    t.string   "image2"
-    t.string   "image3"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "carouselfront"
+    t.string   "eventfront"
+    t.string   "majorfront"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "major_favorites", force: :cascade do |t|
