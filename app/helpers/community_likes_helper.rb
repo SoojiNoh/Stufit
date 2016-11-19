@@ -1,0 +1,2 @@
+module CommunityLikesHelper
+end

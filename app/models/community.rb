@@ -9,6 +9,10 @@ class Community < ApplicationRecord
     # University : Comment relation => 1:N
     has_many :comments
 
+    has_many :community_likes
+    has_many :community_liked_user, through: :community_likes, source: :user
+
+
   def self.search(search)
     if search
       where('title LIKE :search OR content LIKE :search', search: "%#{search}%")
@@ -16,6 +20,8 @@ class Community < ApplicationRecord
       where(nil)
     end
   end
+  
+  
   
     mount_uploader :image, AvatarUploader
   

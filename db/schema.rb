@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161113045536) do
+ActiveRecord::Schema.define(version: 20161116052531) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "activity_type"
@@ -80,13 +80,13 @@ ActiveRecord::Schema.define(version: 20161113045536) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "consultings", force: :cascade do |t|
-    t.string   "title"
-    t.string   "content"
-    t.string   "image"
+  create_table "community_likes", force: :cascade do |t|
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "community_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["community_id"], name: "index_community_likes_on_community_id"
+    t.index ["user_id"], name: "index_community_likes_on_user_id"
   end
 
   create_table "consults", force: :cascade do |t|
