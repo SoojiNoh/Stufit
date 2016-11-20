@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
+  
   resources :frontobjects
   resources :communities
+  #resources :community_likes
+  
+  resources :communities do
+    post "/community_like", to: 'community_likes#like_toggle'
+  end
+
   resources :consults
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   mount Ckeditor::Engine => '/ckeditor'

@@ -1,13 +1,5 @@
-<h5 class="center">Community</h5>
+<h5 class="center">커뮤니티</h5>
 
-<%= form_tag communities_path, :method => 'get', :id => "communities_search" do %>
-  <%#= hidden_field_tag :direction, params[:direction]%>
-  <%#= hidden_field_tag :sort, params[:sort]%>  
-  <p>
-    <%= text_field_tag :search, params[:search], :placeholder=>"검색어를 입력하세요" %>
-  <%= submit_tag "검색", :content => nil, :class=>'waves-effect waves-light btn blue'%>
-      </p>
-<% end %>
 <br>
 
 <head>
@@ -22,9 +14,11 @@
       <thead>
         <tr>
           <th colspan="2">제목</th>
-          <th colspan="2">내용</th>
+          <th colspan="2">작성일</th>
+          <th>조회수</th>
+          <th>좋아요</th>
           <th>작성자</th>
-          <th>작성일</th>
+
        
         </tr>
       </thead>
@@ -33,9 +27,24 @@
         <% @communities.each do |c| %>
         <tr>
           <td colspan="2"><%= link_to "#{truncate(c.title, :length =>14, :separator=>' ')}", community_path(c) %></td>
-          <td colspan="2"><%= link_to "#{truncate(c.content, :length => 14, :separator=>' ')}", community_path(c)  %></td>
+          <td colspan="2"><%= truncate(c.created_at.in_time_zone("Asia/Seoul").strftime("%Y년%m월%d일"), :length => 14, :separator=>' ')%></td>
+          <td colspan="1"><%= c.impressions.count %> </td> <!--조회수 event.impressionist -->
+          <td width="10%">
+          <!-- like function -->
+          <% if user_signed_in? %>
+            <% if current_user.is_community_like(c) %>
+              <%= link_to community_community_like_path(c), method: "post" do %><%= image_tag "#{asset_path "heart.png"}", alt: "blog-img"%><%end%>
+            <% else %>
+              <%= link_to community_community_like_path(c), method: "post" do %><%= image_tag "#{asset_path "heart_empty.png"}", alt: "blog-img"%><%end%>
+            <% end %>
+            <%= c.community_likes.size %>
+          <% else %>
+            <%= image_tag "#{asset_path "heart.png"}" %>
+            <%= c.community_likes.size %>
+          <%end%>
+          </td>
           <td><%=c.user.name%></td>
-          <td><%=c.created_at%></td>
+  
         <%end%>
         </tr>
         </tbody>

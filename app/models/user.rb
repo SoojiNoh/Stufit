@@ -59,6 +59,8 @@ class User < ApplicationRecord
 
   # User : Community 게시글은 1:N 관계
   has_many :communities
+  has_many :community_likes
+  has_many :community_liked_communities, through: :community_likes, source: :community
   
   # for checking user did like
   def is_event_like?(event)
@@ -69,6 +71,11 @@ class User < ApplicationRecord
   def is_major_like?(major_story)
     MajorStoryLike.find_by(user_id: self.id, major_story_id: major_story.id).present?
   end
+  
+  def is_community_like(community)
+    CommunityLike.find_by(user_id: self.id, community_id: community.id).present?
+  end
+  
 
   def admin?
     self.admin == true
