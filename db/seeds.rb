@@ -5,10 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Frontobject.create(frontable_id: '1', frontable_type: 'Carousel', image: "stufit_main1.png")
+Frontobject.create(frontable_id: '1', frontable_type: 'Carousel', image: "stufit_main2.png")
+Frontobject.create(frontable_id: '2', frontable_type: 'MajorStory', image: "인터뷰.JPG", link_url: "/major_stories")
+Frontobject.create(frontable_id: '3', frontable_type: 'Event', image: "event_contents.png", link_url: "/events")
 
-Frontobject.create(frontable_id: '1', frontable_type: 'MajorStory')
-Frontobject.create(frontable_id: '2', frontable_type: 'Event')
-Frontobject.create(frontable_id: '3', frontable_type: 'Carousel')
 
 Activity.create(activity_type: '교내', style:'동아리', title:'멋쟁이 사자처럼', content: '비전공자도 만들고 싶은 서비스를 만들어보자', host_name:'멋쟁이 사자처럼', issuednumber: '42016', grade: 'AAA', start_at:'2016-03-05', end_at: '2016-08-31')
 Activity.create(activity_type: '교외', style:'토론대회', title:'통일 대한민국 청소년 토론 한마당', content: '통일 세대의 주역 청소년들의 토론', host_name: '통일부', issuednumber: '13510', grade: '대상', start_at:'2016-02-05', end_at: '2016-02-07')

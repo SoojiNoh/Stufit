@@ -1,14 +1,209 @@
 
-
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+	<link rel="stylesheet" href="stylecss.css.scss"  type="text/css">
+  </head>
+    
+    <h3>Frontobject 사진조정페이지입니다.</h3>
+    <h4>각 Frontobject의 frontable_type 종류 : Carousel , MajorStory , Event</h4>
+  <body>
+    <!--chart dashboard start-->
+    <div id="chart-dashboard">
+      <div class="row">  
+        <% unless user_signed_in?%>
+          <div class="col s12 m12 110">
+            <div class="card">
+              <div class="owl-carousel" style="text-align : center; margin-top : 30px;">
+                <% Frontobject.where("frontable_type LIKE ?", "Carousel").each do |object|%>
+                  <div> <%= image_tag "#{asset_path object.image}", alt: "blog-img", size: "700x500"%> </div>
+                <%end%>
+              </div>
+            </div>
+          </div>
+        <%else%>
+          
+          <div class="col s12 m12 l7">
+            <div class="card">
+              <div class="owl-carousel" style="text-align : center; margin-top : 30px;">
+                <% Frontobject.where("frontable_type LIKE ?", "Carousel").each do |object|%>
+                  <div> <%= image_tag "#{asset_path object.image}", alt: "blog-img", size: "700x500"%> </div>
+                <%end%>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m12 l5">
+            <div class="card">
+              <div id='calendar' style="margin:30px; size:1000px;"></div>
+            </div>
+          </div>
+        <%end%>
+      </div>
+    </div>
+    
+    <!--chart dashboard end-->
+    
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+    
+    
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+    
+    <!--card widgets start-->
+    <div id="card-widgets">
+      <div class="row">
+        <!-- 오늘의 대외활동 -->
+        <div class="col s12 m12 l4">
+          <div class="blog-card">
+            <div class="card">
+              <div class="card-content">
+                <% Frontobject.where("frontable_type LIKE ?", "Event").each do |object|%>
+                  <a href="#" class="grey-text text-darken-4 "></a>
+                   <h5 class="center"><%= link_to '오늘의 대외활동', "#{object.link_url}" , method: 'get' %></h5>
+              </div>
+              <div class="card-image waves-effect waves-block waves-light">
+                <div> <%= image_tag "#{asset_path object.image}", alt: "blog-img"%> </div>
+              </div>
+                <%end%>
+            </div>
+          </div>
+        </div>
+    
+        <!-- 오늘의 인터뷰 -->
+        <div class="col s12 m12 l4">
+          <div class="blog-card">
+            <div class="card">
+              <div class="card-content">
+                <% Frontobject.where("frontable_type LIKE ?", "MajorStory").each do |object|%>
+                  <a href="#" class="grey-text text-darken-4 "></a>
+                   <h5 class="center"><%= link_to '오늘의 추천인터뷰', "#{object.link_url}" , method: 'get' %></h5>
+              </div>
+              <div class="card-image waves-effect waves-block waves-light">
+                <div> <%= image_tag "#{asset_path object.image}", alt: "blog-img"%> </div>
+              </div>
+                <%end%>
+            </div>
+          </div>
+        </div>
+    
+        <!-- my Tasks -->
+        <div class="col s12 m12 l4">
+          <ul id="task-card" class="collection with-header">
+            <li class="collection-header" style="background-color:#64b5f6">
+              <h4 class="task-card-title"><%=@task_name%></h4>
+              <p class="task-card-date"><%=@today.to_s%> </p>
+            </li>
+            
+              <% @task_num = 0 %>
+              
+            <% if @tasks.present?%>
+              <% @tasks.each do |task| %><% unless @task_num >= 3 %>  <%@task_num=@task_num+1%>
+                <li class="collection-item dismissable" style="touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                <input type="checkbox" id="task.#{<%= task.id %>}">
+                <label for="task.#{<%= task.id %>}" style="text-decoration: none;"> <%= task.title %></label> 
+                <a href="#" class="secondary-content"><span class="ultra-small"><%=task.end_at.to_date%></span></a>
+                </label>
+                <span class="task-cat teal"><%=task.event_type%></span>
+                
+                <% if user_signed_in? && current_user.favorite_events.where(id: task.id).take != nil %><%= link_to "/events/eventfollow_destroy/#{UserEvent.where(user: current_user, favorite_event: task).take.id}" do %><i class="pull_star material-icons">star</i> <% end %><% end %>
+                </li>
+                
+              <%else%><%end%><% end %>
+            <% else %>
+              <li class="collection-item dismissable" style="touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+              이벤트 활동없음
+              </li>
+            <% end %>
+            
+            
+              <% @task_num = 0 %>
+            
+            <% if @schedules.present? %>
+              <% @schedules.each do |schedule| %> <% unless @task_num >= 3 %>  <%@task_num=@task_num+1%>
+                <li class="collection-item dismissable" style="touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                <input type="checkbox" id="schedule.#{<%= schedule.id %>}">
+                <label for="schedule.#{<%= schedule.id %>}" style="text-decoration: none;"> <%= schedule.title %></label> 
+                <a href="#" class="secondary-content"><span class="ultra-small"><%=schedule.end_at.to_date%></span></a>
+                </label>
+                <td><%= link_to '삭제', schedule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <span class="task-cat teal"><%=schedule.event_type%></span>
+                </li>
+                <%else%><%end%><% end %>
+            <% else %>
+                <li class="collection-item dismissable" style="touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">스케줄 활동없음</li>
+            <% end %>
+            <li class="collection-item dismissable" style="touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">  <%= link_to '더보기', schedules_path %> </li>
+            
+            
+          </ul>
+        </div>
+    
+      </div>
+      <!--card widgets end-->
+    
+      <!-- //////////////////////////////////////////////////////////////////////////// -->
+    
+    
+      <!--Calendar--> 
+      <script>
+        $(document).ready(function(){
+          $('#calendar').empty();
+          $('#calendar').fullCalendar(
+          {
+            eventSources: [
+    
+            // your schedule source
+            {
+              url: '/schedules.json',// use the `url` property
+              color: 'yellow',    // an option!
+              textColor: 'green'  // an option!
+            }
+            ]
+            // schedules: '/schedules.json'
+            // put your options and callbacks here
+          });   
+        });
+      </script>
+      <!--Calendar--> 
+      
+      <!--Carousel-->
+      
+      <script>
+       $(document).ready(function() {
+         $(".owl-carousel").owlCarousel({
+         autoPlay : 3000,
+         stopOnHover : false,
+         navigation:true,
+         paginationSpeed : 1000,
+         goToFirstSpeed : 2000,
+         singleItem : true,
+         autoHeight : true,
+         transitionStyle:"fade",
+         lazyLoad : true,
+         
+         });
+           });
+        </script>
+      <!--Carousel-->
+        <style>
+    
+      .task-card-title{
+        background-color: #64b5f6;
+    }
+     .task-card-date{
+        background-color: #64b5f6;
+    }
+    </style>
+  </body>
              
-<h5><p>나의 일정</p></h5>
+<h5><p>Frontobject목록</p></h5>
   <table>
         <thead>
           <tr style="text-align: center;">
-            <th colspan="1">일정</th>
-            <th colspan="1">시작시점</th>
-            <th>종료시점</th>
-            <th></th>
+            <th colspan="1">frontable_id</th>
+            <th colspan="1">frontable_type</th>
+            <th colspan="3">image</th>
+            <th colspan="1">link_url</th>
           </tr>
         </thead>
   
@@ -18,7 +213,7 @@
               <tr>
                 <td><%= frontobject.frontable_id%></td>
                 <td><%= frontobject.frontable_type%></td>
-                <td><%= image_tag "#{frontobject.image}"%></td>
+                <td colspan="3"><%= image_tag "#{frontobject.image}", size: "300x200"%></td>
                 <td><%= frontobject.link_url %></td>
                 <td><%= link_to '자세히', frontobject %></td>
                 <td><%= link_to '수정', edit_frontobject_path(frontobject) %></td>

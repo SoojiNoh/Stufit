@@ -1,5 +1,18 @@
 <h1>프런트조정</h1>
+<%= form_for @frontobject, multipart: true do |f| %>
+    <% if @frontobject.errors.any? %>
+        <div id="error_explanation">
+        <h2><%= pluralize(@frontobject.errors.count, "error") %> prohibited this frontobject from being saved:</h2>
 
-<%= render 'form' %>
+        <ul>
+        <% @frontobject.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+<%= render partial: 'form', locals: { :f => f } %>
 <br>
+<%end%>
 <%= link_to '목록으로', frontobjects_path, class:"btn waves-effect waves-light" %>

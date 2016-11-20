@@ -35,18 +35,14 @@ before_action :set_frontobject, only: [:show, :edit, :update, :destroy]
         format.json { render json: @frontobject.errors, status: :unprocessable_entity }
       end
     end
-
-
   end
 
   def edit
     @frontobject = Frontobject.find(params[:id])
-    authorize_action_for @frontobject
   end
 
   def destroy
     @frontobject.destroy
-    authorize_action_for @frontobject
     respond_to do |format|
       format.html { redirect_to(frontobjects_url) }
       format.xml  { head :ok }
@@ -75,7 +71,7 @@ before_action :set_frontobject, only: [:show, :edit, :update, :destroy]
   end
 
   def frontobject_params
-    params.require(:frontobject).permit(:title, :content, :image)
+    params.require(:frontobject).permit(:frontable_id, :frontable_type, :image, :link_url)
   end
 end
 

@@ -1,6 +1,6 @@
-<h1>Editing Schedule</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @schedule %> |
-<%= link_to 'Back', schedules_path %>
+<h1>Editing Frontobject</h1>
+<%= form_for @frontobject do |f| %>
+  <%= render partial: 'form', locals: { :f => f } %>
+<% end %>
+<%= link_to 'Show', @frontobject %> |
+<%= link_to 'Back', frontobjects_path %>

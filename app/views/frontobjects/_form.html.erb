@@ -1,24 +1,11 @@
-<%= form_for(@frontobject) do |f| %>
-  <% if @frontobject.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@frontobject.errors.count, "error") %> prohibited this frontobject from being saved:</h2>
-
-      <ul>
-      <% @frontobject.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-  
   <%= f.radio_button :frontable_id, 1%>
 
   <div class="field" col="20">
     <%Frontobject.uniq.pluck(:frontable_type).each do |objtype|%>
     <!--%Frontobject.columns.find_all { |column| ['frontable_type'].include? column.name }.each do |objtype|%-->
-      <%= f.radio_button :frontable_type, objtype%> <%= objtype %><br />
+      <%= objtype %> 또는<br />
     <% end %>
-    For new frontable_type you want to add
+    또는, For new frontable_type you want to add
     <%= f.text_area :frontable_type %>
   </div>
   <div class="field">
@@ -27,9 +14,8 @@
   </div>
   <div class="field">
     <%= f.label :link_url %><br>
-    <%= f.text_field :link_url, placeholder: '연결게시물url' %>
+    <%= f.text_field :link_url, placeholder: '연결게시물url에서 www.stufit.co.kr뒤의 events/1 또는 major_stories/1 만 기입' %>
   </div>
   <div class="actions">
     <%= f.submit "올리기", class:"btn waves-effect waves-light" %>
   </div>
-<% end %>
