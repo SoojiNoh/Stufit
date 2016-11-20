@@ -1,0 +1,40 @@
+
+
+             
+<h5><p>나의 일정</p></h5>
+  <table>
+        <thead>
+          <tr style="text-align: center;">
+            <th colspan="1">일정</th>
+            <th colspan="1">시작시점</th>
+            <th>종료시점</th>
+            <th></th>
+          </tr>
+        </thead>
+  
+        <% if @frontobjects.present? %>
+          <tbody>
+            <% @frontobjects.each do |frontobject| %>
+              <tr>
+                <td><%= frontobject.frontable_id%></td>
+                <td><%= frontobject.frontable_type%></td>
+                <td><%= image_tag "#{frontobject.image}"%></td>
+                <td><%= frontobject.link_url %></td>
+                <td><%= link_to '자세히', frontobject %></td>
+                <td><%= link_to '수정', edit_frontobject_path(frontobject) %></td>
+                <td><%= link_to '삭제', frontobject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+          <% else %>
+            <p> no front objects</p>
+          <% end %>
+      </table><br><br>
+
+       <%= link_to 'frontobject추가', new_frontobject_path, class: 'waves-effect waves-light btn right' %>
+     </button>
+
+  </div>
+</div>
+
+

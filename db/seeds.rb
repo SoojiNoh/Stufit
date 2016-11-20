@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-FrontObject.create(title: 'Princess Maker')
-FrontObject.create(title: 'Tetris')
-FrontObject.create(title: 'Tetris')
+Frontobject.create(frontable_id: '1', frontable_type: 'MajorStory')
+Frontobject.create(frontable_id: '2', frontable_type: 'Event')
+Frontobject.create(frontable_id: '3', frontable_type: 'Carousel')
 
 Activity.create(activity_type: '교내', style:'동아리', title:'멋쟁이 사자처럼', content: '비전공자도 만들고 싶은 서비스를 만들어보자', host_name:'멋쟁이 사자처럼', issuednumber: '42016', grade: 'AAA', start_at:'2016-03-05', end_at: '2016-08-31')
 Activity.create(activity_type: '교외', style:'토론대회', title:'통일 대한민국 청소년 토론 한마당', content: '통일 세대의 주역 청소년들의 토론', host_name: '통일부', issuednumber: '13510', grade: '대상', start_at:'2016-02-05', end_at: '2016-02-07')
@@ -644,7 +644,7 @@ MajorStory.create(
     q3:
         '매우 만족하면서 다니고 있어! 여자들끼리만 있어서 무슨 일이 있으면 오히려 먼저 나서서 하게 되고, 능동적인 사람이 될 수 있는 느낌이야! 자극도 받아서 꾸준히 열심히 살게 되는 것 같아ㅎ
         >>> 만족도(5점 만점): 4점',
-    q4: '우리학교는 리더십을 중요하게 생각해! 그래서 수시전형을 준비하는 친구들은 학교나 지역에서 임원 활동 또는 적극적으로 역할을 맡아서 꾸준히 해온 것이 있다면 어필 하는 것이 좋아! 그리고 나의
+    q4: '우리학교는 리더십을 중요하게 생각해! 그래서 수시전���을 준비하는 친구들은 학교나 지역에서 임원 활동 또는 적극적으로 역할을 맡아서 꾸준히 해온 것이 있다면 어필 하는 것이 좋아! 그리고 나의
     주장에 대한 근거를 논리적으로 잘 말하는 것이 중요해. 또 문제를 제대로 못 풀더라도 자신감이 중요해(물론 겸손해야 하지). 이 학생이 문제를 푸는 것도 중요하지만 얼마나 끝까지 문제를
     해결하려는 의지가 있는가를 보시려는 것도 있어! 그러니까 문제를 모르더라도 자신감 있게 행동해야 해!
         **면접상황REPLAY: 우선 대기실에 다같이 앉아있다가. 5명씩 불려서 다른 강의실로 이동해서 15분제한시간동안 문제가 주어져. 그리고 풀이(생각)하는 시간을 주고 시간이 끝나면 교수님들이
@@ -1424,7 +1424,7 @@ MajorStory.create(
 #26번
 MajorStory.create(
     univ: '동국대학교',
-    major: '교육학과',
+    major: '교육���과',
     grade: '4학년',
     name: '이OO',
     remote_file_url: 'http://i.imgur.com/BqW3nU8.png',
@@ -2225,7 +2225,7 @@ MajorStory.create(
         >>> 만족도(5점 만점): 4.5점',
     q4: '사실 나는 논술을 제대로 준비하지는 않았는데, 결국에 수능 등급에 따른 우선선발 전형이라서...
 
-수능공부가 우선이 되야 하는 것 같아.',
+수���공부가 우선이 되야 하는 것 같아.',
     q5: '우리 학과가 회계 위주로 커리큘럼이 짜여있어서 회계공부도 해봤���만, 내가 별로 좋아하는 과목이
 
 아니라고 느꼈어. 아직도 진로를 정확히 잡지는 못했지만, 마케팅 쪽으로 수업을 듣고 학회에서 여러

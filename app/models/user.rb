@@ -70,6 +70,10 @@ class User < ApplicationRecord
     MajorStoryLike.find_by(user_id: self.id, major_story_id: major_story.id).present?
   end
 
+  def admin?
+    self.admin == true
+  end
+
   mount_uploader :image, AvatarUploader
 
 end
