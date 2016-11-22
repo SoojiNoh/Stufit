@@ -1,62 +1,82 @@
-<div id="login-page" class="row">
-  <div class="col s12 z-depth-4 card-panel">
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "login-form") do |f| %>
-      <div class="row">
-        <div class="input-field col s12 center">
-          <%= image_tag "#{asset_path "http://i.imgur.com/KZFqXNw.png"}" %>
-          <p class="center login-form-text">   온라인에서 시작하는 입시관리 stu-fit  </p>
-        </div>
-      </div>
-      <div class="row margin">
-        <div class="input-field col s12">
-          <i class="mdi-social-person-outline prefix"></i>
-          <%= f.email_field :email, autofocus: true , id: "username"%>
-          <%= f.label :email, class:"center-align" %>
-        </div>
-      </div>
-      <div class="row margin">
-        <div class="input-field col s12">
-          <i class="mdi-action-lock-outline prefix"></i>
-          <%= f.password_field :password, autocomplete: "off" ,id: "password"%>
-          <%= f.label :password %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12 m12 l12  login-text">
-          <% if devise_mapping.rememberable? -%>
-            <%= f.check_box :remember_me,id:"remember-me" %>
-            <%= f.label :remember_me %>
-          <% end -%>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <%= f.submit "Log in", class: "btn waves-effect waves-light col s12"%>
-        </div>
-      </div>
-      <%= render "devise/shared/links" %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .first-container {
+        margin: 50px 0px 50px 0px;
+        padding: 20px 40px 20px 40px;
+      }
+      .button-container {
+        margin: 20px 0px 20px 0px;
+        padding: 10px 0px 10px 0px;
+      }
+      body {
+          background-color:  #64b5f6;
+      }
+      .input-field{
+            background-color: #fff;
+      }
+      .fonty {
+        letter-spacing: -1.3px;
+      }
+    </style>
+  </head>
+  <body class="fonty">
+    <div id="login-page" class="row">
+      <div class="col s12 z-depth-4 card-panel">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "login-form") do |f| %>
+          <div class="row">
+            <div class="input-field col s12 center">
+              <div style="margin-top: 30px;">
+                <%= image_tag "#{asset_path "http://i.imgur.com/KZFqXNw.png"}" %>
+              </div>
+              <p class="center login-form-text">온라인에서 시작하는 입시관리 stu-fit</p>
+            </div>
+          </div>
+          <div class="row margin">
+            <div class="input-field col s12">
+              <i class="mdi-social-person-outline prefix"></i>
+              <%= f.email_field :email, autofocus: true , id: "username"%>
+              <%= f.label :email, '이메일',class:"center-align" %>
+            </div>
+          </div>
+          <div class="row margin">
+            <div class="input-field col s12">
+              <i class="mdi-action-lock-outline prefix"></i>
+              <%= f.password_field :password, autocomplete: "off" ,id: "password"%>
+              <%= f.label :password, '비밀번호' %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12 m12 l12 login-text">
+              <% if devise_mapping.rememberable? -%>
+                <%= f.check_box :remember_me, id:"remember-me" %>
+                <%= f.label :remember_me, '날 기억해줘요' %>
+              <% end -%>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <%= f.submit "로그인", class: "btn waves-effect waves-light col s12"%>
+            </div>
+          </div>
+          <div>
+            <%= render "devise/shared/links" %>
+          </div>
 
-      <div class="row">
-        <div class="input-field col s6 m6 l6">
-          <p class="margin medium-small"><%= link_to '회원가입', new_user_registration_path , method: 'get' %></p>
-        </div>
-        <div class="input-field col s6 m6 l6">
-          <p class="margin right-align medium-small"><%= link_to '비밀번호찾기', new_user_password_path , method: 'get' %></p>
-        </div>          
+          <div class="row">
+            <div class="input-field col s6 m6 l6">
+              <p class="margin medium-small"><%= link_to '회원가입', new_user_registration_path , method: 'get' %></p>
+            </div>
+            <div class="input-field col s6 m6 l6">
+              <p class="margin right-align medium-small"><%= link_to '비밀번호찾기', new_user_password_path , method: 'get' %></p>
+            </div>          
+          </div>
+        <% end %> <!--form_for-->
       </div>
-
-    <% end %>
-  </div>
-  </div>
-<style>
-  body {
-    background-color:  #64b5f6;
-}
-
-.input-field{
-      background-color: #fff;
-}
-</style>
+    </div>
+  </body>
+</html>
 
 <!--<script charset="utf-8">
   $(function(){
