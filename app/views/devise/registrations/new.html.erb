@@ -1,97 +1,109 @@
-<div id="login-page" class="row">
-  <div class="col s12 z-depth-4 card-panel">
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:multipart => true}, class:"login-form") do |f| %>
-      <%= devise_error_messages! %>
-      <div class="row">
-        <div class="input-field col s12 center">
-          <%= image_tag "#{asset_path "http://i.imgur.com/KZFqXNw.png"}" %>
-          <p class="center login-form-text">   온라인에서 시작하는 입시관리 stu-fit  </p>
-        </div>
-      </div>
-      
-      <div class="row margin">
-        <div class="input-field col s12">
-          <i class="mdi-social-person-outline prefix"></i>
-          <%= f.label :membertype, 'Membertype', class: "center-align" %><br>
-          <%= f.radio_button :membertype, "Highschool", class: "center-align" %>
-          <%= f.label :membertype, 'Highschool', :value => "highschool", class: "center-align" %>
-          <%= f.radio_button :membertype, "Univ", class: "center-align" %>
-          <%= f.label :membertype, 'Univ', :value=> "univ", class: "center-align" %>
-      
-        </div>
-      </div>
-      <div class="row margin">
-        <div class="input-field col s12">
-          <i class="small material-icons prefix">person_pin</i>
-          <%= f.label :name, 'Name', class: "center-align" %>
-          <%= f.text_field :name, id:"username" %>
-        </div>
-      </div>
-      <div class="row margin">
-        <div class="input-field col s12">
-          <i class="mdi-communication-email prefix"></i>
-          <%= f.email_field :email, autofocus: true , id: "email"%>
-          <%= f.label :email, class:"center-align" %>
-        </div>
-      </div>
-      <div class="row margin">
-        <div class="input-field col s12">
-          <i class="mdi-action-lock-outline prefix"></i>
-          <%= f.password_field :password, autocomplete: "off", id:"password" %>
-          <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %>
-          <%= f.label :password%>
-        </div>
-      </div>
-      <div class="row margin">
-        <div class="input-field col s12">
-          <i class="mdi-action-lock-outline prefix"></i>
-          <%= f.password_field :password_confirmation, autocomplete: "off" , id:"password-again"%>
-          <%= f.label :password_confirmation %>
-        </div>
-      </div>
-        <div class="row margin">
-        <div class="input-field col s12">
-          <i class="small material-icons prefix">insert_chart</i>
-          <%= f.label :highschool, "Highschool" %>
-          <%= f.text_field :highschool, id:"highschool", placeholder: "ex)반포고등학교" %>
-        </div>
-      </div>
-          <div class="row margin">
-        <div class="input-field col s12">
-          <i class="small material-icons prefix">open_in_browser</i>
-          <%= f.label "Paththrough" %><br />
-          <%= f.collection_check_boxes :paththrough_ids, Paththrough.limit(3), :id, :way do |b| %>
-            <div class="collection-check-box">
-              <%= b.check_box %>
-              <%= b.label %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-color: #64b5f6;
+    }
+      .fonty {
+        letter-spacing: -1.3px;
+      }
+    </style>
+  </head>
+  <body class="fonty">
+    <div id="login-page" class="row">
+      <div class="col s12 z-depth-4 card-panel">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:multipart => true}, class:"login-form") do |f| %>
+          <%= devise_error_messages! %>
+          <div class="row">
+            <div class="input-field col s12 center">
+              <div style="margin-top: 30px;">
+                <%= image_tag "#{asset_path "http://i.imgur.com/KZFqXNw.png"}" %>
+              </div>
+              <p class="center login-form-text">온라인에서 시작하는 입시관리 stu-fit</p>
             </div>
-          <% end %>
-        </div>
+          </div>
+          
+          <div class="row margin">
+            <div class="input-field col s12">
+              <i class="mdi-social-person-outline prefix"></i>
+              <%= f.label :membertype, '구분', class: "center-align" %><br>
+              <%= f.radio_button :membertype, "Highschool", class: "center-align", :checked => true %>
+              <%= f.label :membertype, '고등학생', :value => "highschool", class: "center-align" %>
+              <%= f.radio_button :membertype, "Univ", class: "center-align" %>
+              <%= f.label :membertype, '대학생', :value=> "univ", class: "center-align" %>
+          
+            </div>
+          </div>
+          <div class="row margin">
+            <div class="input-field col s12">
+              <i class="small material-icons prefix">person_pin</i>
+              <%= f.label :name, '이름', class: "center-align" %>
+              <%= f.text_field :name, id:"username" %>
+            </div>
+          </div>
+          <div class="row margin">
+            <div class="input-field col s12">
+              <i class="mdi-communication-email prefix"></i>
+              <%= f.email_field :email, autofocus: true , id: "email"%>
+              <%= f.label :email, '이메일', class:"center-align" %>
+            </div>
+          </div>
+          <div class="row margin">
+            <div class="input-field col s12">
+              <i class="mdi-action-lock-outline prefix"></i>
+              <%= f.password_field :password, autocomplete: "off", id:"password" %>
+              <% if @minimum_password_length %>
+                <em>(최소 <%= @minimum_password_length %>자리)</em>
+              <% end %>
+              <%= f.label :password, '비밀번호' %>
+            </div>
+          </div>
+          <div class="row margin">
+            <div class="input-field col s12">
+              <i class="mdi-action-lock-outline prefix"></i>
+              <%= f.password_field :password_confirmation, autocomplete: "off" , id:"password-again"%>
+              <%= f.label :password_confirmation, '비밀번호 확인' %>
+            </div>
+          </div>
+            <div class="row margin">
+            <div class="input-field col s12">
+              <i class="small material-icons prefix">insert_chart</i>
+              <%= f.label :highschool, "출신 고등학교" %>
+              <%= f.text_field :highschool, id:"highschool", placeholder: "ex)반포고등학교" %>
+            </div>
+          </div>
+              <div class="row margin">
+            <div class="input-field col s12">
+              <i class="small material-icons prefix">open_in_browser</i>
+              <%= f.label "유입 경로" %><br />
+              <%= f.collection_check_boxes :paththrough_ids, Paththrough.limit(3), :id, :way do |b| %>
+                <div class="collection-check-box">
+                  <%= b.check_box %>
+                  <%= b.label %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12" style="margin-top: 40px;">
+              <%= f.submit "회원가입!", class: "btn waves-effect waves-light col s12" %>
+            </div>
+            <div class="input-field col s12">
+              <p class="margin center medium-small sign-up">이미 계정이 있나요?? <%= render "devise/shared/links" %></p>
+            </div>
+          </div>
+        <% end %>
       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <%= f.submit "Sign up", class: "btn waves-effect waves-light col s12"%>
-        </div>
-        <div class="input-field col s12">
-          <p class="margin center medium-small sign-up">Already have an account? <%= render "devise/shared/links" %></p>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
-<style>
-  body {
-    background-color: #64b5f6;
-}
-
-</style>
-
-<!--<script charset="utf-8">
-  $(function(){
-    setTimeout(function() {
-      $('body').addClass('cyan');      
-    }, 50);
-  });
-</script>-->
+    </div>
+    
+    
+    <!--<script charset="utf-8">
+      $(function(){
+        setTimeout(function() {
+          $('body').addClass('cyan');      
+        }, 50);
+      });
+    </script>-->
+  </body>
+</html>
