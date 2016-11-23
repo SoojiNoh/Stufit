@@ -58,7 +58,7 @@
   <%= link_to "새글 쓰기", new_event_path ,class: 'waves-effect waves-light btn right blue'%><br>
 
   <!--Pagination -->
-  <div class="digg_pagination" align="center">
+  <div class="digg_pagination center" align="center">
     <%= will_paginate @events, :previous_lable => "이전", :next_lable => "다음", :container => false %>
   </div>
 </ul>
