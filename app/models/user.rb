@@ -76,6 +76,11 @@ class User < ApplicationRecord
     CommunityLike.find_by(user_id: self.id, community_id: community.id).present?
   end
   
+
+  def admin?
+    self.admin == true
+  end
+
   mount_uploader :image, AvatarUploader
 
 end

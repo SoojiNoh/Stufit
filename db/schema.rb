@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20161116052531) do
-=======
-ActiveRecord::Schema.define(version: 20161119093843) do
->>>>>>> 09f41ad52631fc7a085e40d52c3f736f94300aee
+ActiveRecord::Schema.define(version: 20161119102430) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "activity_type"
@@ -84,7 +80,6 @@ ActiveRecord::Schema.define(version: 20161119093843) do
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
   create_table "community_likes", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "community_id"
@@ -94,8 +89,6 @@ ActiveRecord::Schema.define(version: 20161119093843) do
     t.index ["user_id"], name: "index_community_likes_on_user_id"
   end
 
-=======
->>>>>>> 09f41ad52631fc7a085e40d52c3f736f94300aee
   create_table "consults", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
@@ -139,9 +132,14 @@ ActiveRecord::Schema.define(version: 20161119093843) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "frontpages", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "frontobjects", force: :cascade do |t|
+    t.integer  "frontable_id"
+    t.string   "frontable_type"
+    t.string   "image"
+    t.string   "link_url"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["frontable_type", "frontable_id"], name: "index_frontobjects_on_frontable_type_and_frontable_id"
   end
 
   create_table "hash_activities", id: false, force: :cascade do |t|
@@ -199,14 +197,6 @@ ActiveRecord::Schema.define(version: 20161119093843) do
     t.index ["impressionable_type", "impressionable_id", "session_hash"], name: "poly_session_index"
     t.index ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index"
     t.index ["user_id"], name: "index_impressions_on_user_id"
-  end
-
-  create_table "mains", force: :cascade do |t|
-    t.string   "carouselfront"
-    t.string   "eventfront"
-    t.string   "majorfront"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
   end
 
   create_table "major_favorites", force: :cascade do |t|

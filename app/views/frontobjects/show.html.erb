@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>frontable_id:</strong>
+  <%= @frontobject.frontable_id %>
+</p>
+
+<p>
+  <strong>frontable_type:</strong>
+  <%= @frontobject.frontable_type %>
+</p>
+
+<p>
+    <%= image_tag "#{@frontobject.image}"%></p>
+<p>
+  <strong>게시물연결url:</strong>
+  <%= @frontobject.link_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_frontobject_path(@frontobject) %> |
+<%= link_to 'Back', frontobjects_path %>

@@ -29,7 +29,7 @@ class Event < ApplicationRecord
   # create event hashtag
   after_create do
     event = Event.find_by(id: self.id) 
-    hashtags = self.content.scan(/#\w+/)       #w+ means numbers or letters also
+    hashtags = self.content.scan(/#[ㄱ-ㅎ가-힣0-9a-zA-Z]+/)       #w+ means numbers or letters also
     hashtags.uniq.map do |hashtag|          #uniq if there #pizza #pizza then we only store 1 pizza
       tag = HashTag.find_or_create_by(name: hashtag.downcase.delete('#'))
       event.hash_tags << tag
@@ -39,7 +39,7 @@ class Event < ApplicationRecord
   before_update do
     event = Event.find_by(id: self.id) 
     event.hash_tags.clear                         #we delete all and add again
-    hashtags = self.content.scan(/#\w+/)       
+    hashtags = self.content.scan(/#[ㄱ-ㅎ가-힣0-9a-zA-Z]+/)       
       hashtags.uniq.map do |hashtag|      
       tag = HashTag.find_or_create_by(name: hashtag.downcase.delete('#'))
       event.hash_tags << tag
