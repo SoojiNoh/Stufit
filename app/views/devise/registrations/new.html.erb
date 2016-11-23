@@ -1,7 +1,5 @@
 
-=======
-<!DOCTYPE html>
-<html>
+
   <head>
     <style>
       body {
@@ -9,6 +7,10 @@
     }
       .fonty {
         letter-spacing: -1.3px;
+      }
+
+    #error_explanation >h2 {
+  font-size: 15px;
       }
     </style>
   </head>
@@ -26,7 +28,6 @@
             </div>
           </div>
           
->>>>>>> 16a3fdd21f124fb9d3d2a0f7bdbdcac465397c7f
           <div class="row margin">
             <div class="input-field col s12">
               <i class="mdi-social-person-outline prefix"></i>
@@ -48,18 +49,20 @@
           <div class="row margin">
             <div class="input-field col s12">
               <i class="mdi-communication-email prefix"></i>
-              <%= f.email_field :email, autofocus: true , id: "email"%>
               <%= f.label :email, '이메일', class:"center-align" %>
+              <%= f.email_field :email, autofocus: true , id: "email"%>
             </div>
           </div>
           <div class="row margin">
             <div class="input-field col s12">
               <i class="mdi-action-lock-outline prefix"></i>
+              <%= f.label :password, '비밀번호' %>
               <%= f.password_field :password, autocomplete: "off", id:"password" %>
+              <div>
               <% if @minimum_password_length %>
                 <em>(최소 <%= @minimum_password_length %>자리)</em>
               <% end %>
-              <%= f.label :password, '비밀번호' %>
+              </div>
             </div>
           </div>
           <div class="row margin">
@@ -98,39 +101,8 @@
           </div>
         <% end %>
       </div>
-<<<<<<< HEAD
-    <% end %>
+
   </div>
-</div>
-<style>
-  body {
-    background-color: #64b5f6;
-}
-
-#error_explanation >h2 {
-  font-size: 17px;
-}
-
-</style>
-
-<!--<script charset="utf-8">
-  $(function(){
-    setTimeout(function() {
-      $('body').addClass('cyan');      
-    }, 50);
-  });
-</script>-->
-=======
-    </div>
-    
-    
-    <!--<script charset="utf-8">
-      $(function(){
-        setTimeout(function() {
-          $('body').addClass('cyan');      
-        }, 50);
-      });
-    </script>-->
   </body>
-</html>
->>>>>>> 16a3fdd21f124fb9d3d2a0f7bdbdcac465397c7f
+
+
