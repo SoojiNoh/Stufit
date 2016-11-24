@@ -199,14 +199,6 @@ ActiveRecord::Schema.define(version: 20161119102430) do
     t.index ["user_id"], name: "index_impressions_on_user_id"
   end
 
-  create_table "mains", force: :cascade do |t|
-    t.string   "image1"
-    t.string   "image2"
-    t.string   "image3"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "major_favorites", force: :cascade do |t|
     t.string   "major_stroy_id"
     t.datetime "created_at",     null: false
@@ -342,7 +334,6 @@ ActiveRecord::Schema.define(version: 20161119102430) do
     t.boolean  "admin"
     t.string   "image"
     t.string   "membertype"
-    t.string   "paththrough"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "name"

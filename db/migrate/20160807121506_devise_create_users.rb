@@ -5,7 +5,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.boolean :admin
       t.string :image, optional: true
       t.string :membertype
-      t.string :paththrough      
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
       t.string :name
