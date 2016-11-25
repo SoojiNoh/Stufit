@@ -17,19 +17,19 @@
     <div class="col col s8 m8 l8">
       <ul id="profile-dropdown" class="dropdown-content">
         <li><%= link_to help_path do %>
-          <i class="mdi-communication-live-help"></i> Help
+          <i class="mdi-communication-live-help"></i> 도움말
         <%end%>
         </li>
         <li class="divider"></li>
         
         <% if user_signed_in? %>
         <li><%= link_to edit_user_registration_path do %>
-          <i class="mdi-action-settings"></i>Profile
+          <i class="mdi-action-settings"></i>프로필
         <%end%>
         </li>
         
         <li><%= link_to destroy_user_session_path, method: 'delete' do %>
-        <i class="material-icons">vpn_key</i>Logout
+        <!--<i class="material-icons">vpn_key</i>-->로그아웃
         <%end%>
       </li>
       </ul>
@@ -38,11 +38,11 @@
     
         <% else %>
         <li><%= link_to new_user_registration_path , method: 'get' do%>
-        <i class="material-icons">assignment_ind</i>Register
+        <!--<i class="material-icons">assignment_ind</i>-->회원가입
         <%end%>
         </li>
         <li><%= link_to new_user_session_path, method: 'get' do %>
-        <i class="material-icons">vpn_key</i>Login
+        <i class="material-icons">vpn_key</i>로그인
         <%end%></li>
       </ul>
       <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">로그인하세요<i class="mdi-navigation-arrow-drop-down right"></i></a>

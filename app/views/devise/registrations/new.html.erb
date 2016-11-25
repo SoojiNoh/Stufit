@@ -30,7 +30,6 @@
           
           <div class="row margin">
             <div class="input-field col s12">
-              <i class="mdi-social-person-outline prefix"></i>
               <%= f.label :membertype, '구분', class: "center-align" %><br>
               <%= f.radio_button :membertype, "Highschool", class: "center-align", :checked => true %>
               <%= f.label :membertype, '고등학생', :value => "highschool", class: "center-align" %>
@@ -41,23 +40,18 @@
           </div>
           <div class="row margin">
             <div class="input-field col s12">
-              <i class="small material-icons prefix">person_pin</i>
-              <%= f.label :name, '이름', class: "center-align" %>
-              <%= f.text_field :name, id:"username" %>
+
+              <%= f.text_field :name, id:"username", placeholder:"이름" %>
             </div>
           </div>
           <div class="row margin">
             <div class="input-field col s12">
-              <i class="mdi-communication-email prefix"></i>
-              <%= f.label :email, '이메일', class:"center-align" %>
-              <%= f.email_field :email, autofocus: true , id: "email"%>
+              <%= f.email_field :email, autofocus: true , id: "email", placeholder:'이메일'%>
             </div>
           </div>
           <div class="row margin">
             <div class="input-field col s12">
-              <i class="mdi-action-lock-outline prefix"></i>
-              <%= f.label :password, '비밀번호' %>
-              <%= f.password_field :password, autocomplete: "off", id:"password" %>
+              <%= f.password_field :password, autocomplete: "off", id:"password", placeholder:'비밀번호' %>
               <div>
               <% if @minimum_password_length %>
                 <em>(최소 <%= @minimum_password_length %>자리)</em>
@@ -67,21 +61,16 @@
           </div>
           <div class="row margin">
             <div class="input-field col s12">
-              <i class="mdi-action-lock-outline prefix"></i>
-              <%= f.password_field :password_confirmation, autocomplete: "off" , id:"password-again"%>
-              <%= f.label :password_confirmation, '비밀번호 확인' %>
+              <%= f.password_field :password_confirmation, autocomplete: "off" , id:"password-again", placeholder:'비밀번호 확인'%>
             </div>
           </div>
             <div class="row margin">
             <div class="input-field col s12">
-              <i class="small material-icons prefix">insert_chart</i>
-              <%= f.label :highschool, "출신 고등학교" %>
-              <%= f.text_field :highschool, id:"highschool", placeholder: "ex)반포고등학교" %>
+              <%= f.text_field :highschool, id:"highschool", placeholder: "출신 고등학교" %>
             </div>
           </div>
               <div class="row margin">
             <div class="input-field col s12">
-              <i class="small material-icons prefix">open_in_browser</i>
               <%= f.label "유입 경로" %><br />
               <%= f.collection_check_boxes :paththrough_ids, Paththrough.limit(3), :id, :way do |b| %>
                 <div class="collection-check-box">
@@ -97,7 +86,7 @@
             </div>
             <div class="input-field col s12">
               <p class="margin center medium-small sign-up">이미 계정이 있나요??</p>
-              <%= render "devise/shared/links" %>
+              <p class="margin center medium-small sign-up"><%= render "devise/shared/links" %></p>
             </div>
           </div>
         <% end %>
