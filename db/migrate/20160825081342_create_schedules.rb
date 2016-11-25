@@ -9,7 +9,7 @@ class CreateSchedules < ActiveRecord::Migration[5.0]
       t.string :event_type
       t.datetime :start_at
       t.datetime :end_at
-      t.boolean :done
+      t.boolean :done, default: false
       t.references :university, index: true, foreign_key: true
       t.references :user, index: true, foreign_key: true
       t.timestamps

@@ -13,6 +13,10 @@
 /*----------------------------------------
   General Layout Style
 ------------------------------------------*/
+.jua{
+  font-family:'BM JUA','배달의민족 주아', sans-serif;
+}
+
 .center{
     margin: auto;
     width: 50%;

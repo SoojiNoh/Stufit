@@ -1,51 +1,56 @@
-<div class="progress">
-  <div class="determinate" style="width: 70%"></div>
-</div>
+<ul class="collection">
+  <li class="collection-item avatar">
+    <div class="progress">
+      <div class="determinate" style="width: 70%"></div>
+    </div>
+    
+    <!--제목부분-->
+    <h5> 제목 | <%= @event.title %> </h5>
+    <h6> 작성일 :  <%= @event.created_at.in_time_zone("Asia/Seoul").strftime("%Y. %m. %d.    %H : %M") %> </h6>
+    <h6> 조회수 : <%=@event.impressions.count%></h6>
+    
+    <div class="progress">
+      <div class="determinate" style="width: 70%"></div>
+    </div>
+    
+    <!--내용부분-->
+    <br><p><%= @event.content %></p><br>
+    <%= image_tag "#{@event.image}" %><br><br>
+    
+    <!--그 외 정보-->
+    
+    장소 : <%= @event.place %><br>
+    분류 : <%= @event.event_type %><br>
+    일정 : <% if @event.start_at.present?%>
+    <%= @event.start_at.strftime("%Y. %m. %d.  %H : %M") %>
+    ~  <%= @event.end_at.strftime("%Y. %m. %d.  %H : %M") %>
+    <% end %>
+    <br>
+    
+    첨부파일 <br><%= @event.file %>
+    <div class="progress">
+      <div class="determinate" style="width: 70%"></div>
+    </div>
+    
+    
+    <!--해쉬태그-->
+    <h6>연관 태그</h6>
+    <p>
+    <% @event.hash_tags.each do |hash| %>
+    <span class="chip">
+    <span class="chip"><%#= render_with_hashtags(hash) %><%= link_to "#{hash.name}", hash_tag_path(hash) %></span>
+    </span>
+    <% end %>
+    </p>
+    <div class="progress">
+      <div class="determinate" style="width: 70%"></div>
+    </div>
+    </div>
 
-<!--제목부분-->
-<h5> 제목 | <%= @event.title %> </h5>
-<h6> 작성일 :  <%= @event.created_at.in_time_zone("Asia/Seoul").strftime("%Y. %m. %d.    %H : %M") %> </h6>
-<h6> 조회수 : <%=@event.impressions.count%></h6>
+    
+</li>
+</ul>
 
-
-<div class="progress">
-  <div class="determinate" style="width: 70%"></div>
-</div>
-
-<!--내용부분-->
-<br><p><%= @event.content %></p><br>
-<%= image_tag "#{@event.image}" %><br><br>
-
-<!--그 외 정보-->
-
-장소 : <%= @event.place %><br>
-분류 : <%= @event.event_type %><br>
-일정 : <% if @event.start_at.present?%>
-<%= @event.start_at.in_time_zone("Asia/Seoul").strftime("%Y. %m. %d.  %H : %M") %>
-~  <%= @event.end_at.in_time_zone("Asia/Seoul").strftime("%Y. %m. %d.  %H : %M") %>
-<% end %>
-<br>
-첨부파일 <br><%= @event.file %>
-<div class="progress">
-<div class="determinate" style="width: 70%"></div>
-</div>
-
-
-<!--해쉬태그-->
-<h6>연관 태그</h6>
-<p>
-<% @event.hash_tags.each do |hash| %>
-<span class="chip">
-<span class="chip"><%#= render_with_hashtags(hash) %><%= link_to "#{hash.name}", hash_tag_path(hash) %></span>
-</span>
-
-<% end %>
-</p>
-</div>
-
-<div class="progress">
-<div class="determinate" style="width: 70%"></div>
-</div>
 
 <!--버튼 기능-->
 <%= link_to "목록", events_path, class: 'waves-effect waves-light btn' %>

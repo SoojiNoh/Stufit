@@ -18,16 +18,22 @@ class HomeController < ApplicationController
     end
     @tasks.order(end_at: :desc)
     @schedules.order(end_at: :desc)
-    
-  
   
   end
-  
   
   def search
     @events = Event.search(params[:search])
-
   end
+  
+  def update_schedule_done
+    update_schedule = Schedule.find(params[:schedule_id])
+    if update_schedule.fix == false
+      update_schedule.update(done: true)
+    end
+    
+    redirect_to :back
+  end
+  
   
   def search3
     @search = Event.search do
