@@ -115,6 +115,7 @@ ActiveRecord::Schema.define(version: 20161125130532) do
     t.string   "file"
     t.string   "image"
     t.string   "event_type"
+    t.boolean  "done"
     t.date     "start_at"
     t.date     "end_at"
     t.integer  "impressions_count"
@@ -295,21 +296,13 @@ ActiveRecord::Schema.define(version: 20161125130532) do
     t.string   "event_type"
     t.datetime "start_at"
     t.datetime "end_at"
+    t.boolean  "done"
     t.integer  "university_id"
     t.integer  "user_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["university_id"], name: "index_schedules_on_university_id"
     t.index ["user_id"], name: "index_schedules_on_user_id"
-  end
-
-  create_table "univ_follows", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "university_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["university_id"], name: "index_univ_follows_on_university_id"
-    t.index ["user_id"], name: "index_univ_follows_on_user_id"
   end
 
   create_table "universities", force: :cascade do |t|

@@ -8,6 +8,7 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.string :file
       t.string :image
       t.string :event_type
+      t.boolean :done
       t.date :start_at
       t.date :end_at
       t.integer :impressions_count
