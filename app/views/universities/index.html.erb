@@ -9,7 +9,7 @@
             <%= link_to "/universities/univ/#{univ.id}" do %> <i class="empty_star material-icons">star</i> <% end %>
           <%else%>
             <% if current_user.universities.where(id: univ.id).take != nil  %>
-              <%= link_to "/universities/univ_destroy/#{UnivFollow.where(user: current_user, university: univ).take.id}" do %><i class="pull_star material-icons">star</i> <% end %>
+              <%= link_to "/universities/univ_destroy/#{UniversityFollow.where(user: current_user, university: univ).take.id}" do %><i class="pull_star material-icons">star</i> <% end %>
             <% else %>
               <%= link_to "/universities/univ/#{univ.id}" do %> <i class="empty_star material-icons">star</i> <% end %>
             <% end %>

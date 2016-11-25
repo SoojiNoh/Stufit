@@ -8,8 +8,8 @@ class University < ApplicationRecord
   has_many :major_stories
 
   # User : Univ_follow : University relation => N:M
-  has_many :univ_follows
-  has_many :users, through: :univ_follows
+  has_many :university_follows
+  has_many :users, through: :university_follows
 
   # university : comment relation => 1:N
   has_many :comments

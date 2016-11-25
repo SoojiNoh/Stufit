@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161119102430) do
+ActiveRecord::Schema.define(version: 20161125130532) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "activity_type"
@@ -319,6 +319,15 @@ ActiveRecord::Schema.define(version: 20161119102430) do
     t.string   "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "university_follows", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "university_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["university_id"], name: "index_university_follows_on_university_id"
+    t.index ["user_id"], name: "index_university_follows_on_user_id"
   end
 
   create_table "user_events", force: :cascade do |t|

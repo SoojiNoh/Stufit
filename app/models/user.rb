@@ -21,8 +21,8 @@ class User < ApplicationRecord
   has_many :comments#, through: :likes
 
   # University : univ_follow : User relation => N:M
-  has_many :univ_follows
-  has_many :universities, through: :univ_follows
+  has_many :university_follows
+  has_many :universities, through: :university_follows
 
 
   has_many :major_stories  #User : Major_Stories 1:N
