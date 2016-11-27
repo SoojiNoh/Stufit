@@ -15,7 +15,7 @@ class MajorStory < ApplicationRecord
 
   # User : Major_follow : Major_story relation => N:M
   #삭제함(2016.11.27, 공희재) has_many :major_follows
-  #삭제함(2016.11.27, 공희재) belongs_to :user, optional: true
+  belongs_to :user, optional: true
 
   def self.search(search)
     if search
