@@ -200,30 +200,6 @@ ActiveRecord::Schema.define(version: 20161125130532) do
     t.index ["user_id"], name: "index_impressions_on_user_id"
   end
 
-  create_table "major_favorites", force: :cascade do |t|
-    t.string   "major_stroy_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
-
-  create_table "major_follows", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "major_favorite_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.index ["major_favorite_id"], name: "index_major_follows_on_major_favorite_id"
-    t.index ["user_id"], name: "index_major_follows_on_user_id"
-  end
-
-  create_table "major_likes", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "major_story_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["major_story_id"], name: "index_major_likes_on_major_story_id"
-    t.index ["user_id"], name: "index_major_likes_on_user_id"
-  end
-
   create_table "major_stories", force: :cascade do |t|
     t.string   "univ"
     t.string   "major"
