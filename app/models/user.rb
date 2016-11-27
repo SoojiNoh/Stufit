@@ -21,8 +21,8 @@ class User < ApplicationRecord
   has_many :comments#, through: :likes
 
   # University : univ_follow : User relation => N:M
-  has_many :university_follows
-  has_many :universities, through: :university_follows
+  #삭제함(2016.11.27, 공희재) has_many :university_follows
+  has_many :universities#삭제함(2016.11.27, 공희재), through: :university_follows
 
 
   has_many :major_stories  #User : Major_Stories 1:N
