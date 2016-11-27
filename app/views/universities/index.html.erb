@@ -35,7 +35,16 @@
   <% end %>
 <% end %>
     
-  <!--Pagination -->
-<div class="digg_pagination center" align="center">
-  <%= will_paginate @universities, :previous_lable => "이전", :next_lable => "다음", :container => false %>
+  <!--옛날 Pagination
+<div class="digg_pagination center" >
+  <#%= will_paginate @universities, :previous_lable => "이전", :next_lable => "다음", :container => false %>
+</div> -->
+
+<!--Pagination -->
+<div class="row" align="center">
+  <div class="col s4 offset-s4">
+    <div class="digg_pagination">
+      <%= will_paginate @universities, :previous_lable => "이전", :next_lable => "다음", :container => false %>
+    </div>
+  </div>
 </div>

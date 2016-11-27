@@ -18,10 +18,13 @@
  */
 
 
+
+
+@import "materialize";
+
 .pagination a li.active {
   color: #fff;
 }
-@import "materialize";
 
 #main_tab{
   margin: 15px;
@@ -46,6 +49,7 @@
   background-color: #d7ccc8;
 }
 /*버튼 디자인 끝*/
+
 .pagination a li.active {
   color: #b2b2b2;
 }
@@ -103,8 +107,8 @@ main {
     color: #64b5f6;
     border: 1px solid #64b5f6; }
     .digg_pagination a:hover, .digg_pagination a:focus {
-      color: #000033;
-      border-color: #000033; }
+      color: #5498ce;
+      border-color: #5498ce; }
   .digg_pagination .page_info {
     background: #2e6ab1;
     color: white;

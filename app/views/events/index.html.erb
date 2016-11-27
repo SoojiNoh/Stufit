@@ -57,8 +57,17 @@
   
   <%= link_to "새글 쓰기", new_event_path ,class: 'waves-effect waves-light btn right blue'%><br>
 
-  <!--Pagination -->
+  <!--옛날Pagination
   <div class="digg_pagination center" align="center">
-    <%= will_paginate @events, :previous_lable => "이전", :next_lable => "다음", :container => false %>
+    <#%= will_paginate @events, :previous_lable => "이전", :next_lable => "다음", :container => false %>
+  </div> -->
+  
+  <!--Pagination -->
+  <div class="row" align="center">
+    <div class="col s4 offset-s4">
+      <div class="digg_pagination">
+        <%= will_paginate @events, :previous_lable => "이전", :next_lable => "다음", :container => false %>
+      </div>
+    </div>
   </div>
 </ul>
