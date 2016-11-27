@@ -27,8 +27,8 @@ class User < ApplicationRecord
 
   has_many :major_stories  #User : Major_Stories 1:N
   # User : Major_follow : major_favorites relation => N:M
-  has_many :major_follows
-  has_many :major_favorites, through: :major_follows
+  #삭제함(2016.11.27, 공희재) has_many :major_follows
+  #삭제함(2016.11.27, 공희재) has_many :major_favorites, through: :major_follows
   
     
   has_many :events # User : Events => 1:N
