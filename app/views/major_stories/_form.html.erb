@@ -1,66 +1,78 @@
-<%= form_for(@major_story) do |f| %>
-  <% if @major_story.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@major_story.errors.count, "error") %> prohibited this major_story from being saved:</h2>
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
 
-      <ul>
-      <% @major_story.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+    </style>
+  </head>
+  <body>
+    
+    <%= form_for(@major_story) do |f| %>
+      <% if @major_story.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@major_story.errors.count, "error") %> prohibited this major_story from being saved:</h2>
+    
+          <ul>
+          <% @major_story.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field" col="3">
-    <%= f.label :univ,"대학교"  %><br>
-    <%= f.text_field :univ %> <!-- 인터뷰 제목 -->
-  </div>
-  <div class="field">
-    <%= f.label :major, "인터뷰이 학과이름" %><br>
-    <%= f.text_field :major %> <!-- 학교이름 -->
-  </div>
-  <div class="field">
-    <%= f.label :grade, "인터뷰이의 학년" %><br>
-    <%= f.text_field :grade %><!-- 학과 이름 -->
-  </div>
-    <div class="field">
-    <%= f.label :name, "인터뷰이 이름" %><br>
-    <%= f.text_field :name %><!-- 이름 -->
-  </div>
-  <div>
-    <%= f.label :q1, "1.학과에 대해서 자세히 설명해줘" %>
-    <%= f.text_area :q1 %><!-- 인터뷰 내용 -->
-  </div>
-    <div>
-    <%= f.label :q2, "2.학년별로 배우는 내용에 대해 간략하게 설명해줘" %>
-    <%= f.text_area :q2 %><!-- 인터뷰 내용 -->
-  </div>
-    <div>
-    <%= f.label :q3, "3.학과에 만족해?" %>
-    <%= f.text_area :q3 %><!-- 인터뷰 내용 -->
-  </div>
-    <div>
-    <%= f.label :q4, "4.1(정시 입학생 대상) 대학생이 된 후 한 기억에 남는 활동은?" %><br>
-    <%= f.label :q4, "4.2(수시 입학생 대상) OO전형에 들어올 학생들을 위한 팁 좀 부탁해!" %>
-    <%= f.text_area :q4 %><!-- 인터뷰 내용 -->
-  </div>
-    <div>
-    <%= f.label :q5, "5.생각하고 있는 진로?" %>
-    <%= f.text_area :q5 %><!-- 인터뷰 내용 -->
-  </div>
+    
+      <div class="field" col="3">
+        <%= f.label :univ,"대학교"  %><br>
+        <%= f.text_field :univ %> <!-- 인터뷰 제목 -->
+      </div>
+      <div class="field">
+        <%= f.label :major, "인터뷰이 학과이름" %><br>
+        <%= f.text_field :major %> <!-- 학교이름 -->
+      </div>
+      <div class="field">
+        <%= f.label :grade, "인터뷰이의 학년" %><br>
+        <%= f.text_field :grade %><!-- 학과 이름 -->
+      </div>
+        <div class="field">
+        <%= f.label :name, "인터뷰이 이름" %><br>
+        <%= f.text_field :name %><!-- 이름 -->
+      </div>
       <div>
-    <%= f.label :q6, "6.공식질문: 절대 우리 과에 오지 말아야 할 사람은?" %>
-    <%= f.text_area :q6 %><!-- 인터뷰 내용 -->
-  </div>
-  <div class="field">
-    <%= f.label :file, "대표 이미지" %><br>
-    <%= f.file_field :file %><!-- 이미지 -->
-  </div>
-  <div class="field">
-    <%= f.label :university %><br>
-    <%= f.text_field :university %>
-  </div>
-  <div class="actions">
-    <%= f.submit "올리기", class: 'waves-effect waves-light btn'%>
-  </div>
-<% end %>
+        <%= f.label :q1, "1.학과에 대해서 자세히 설명해줘" %>
+        <%= f.text_area :q1 %><!-- 인터뷰 내용 -->
+      </div>
+        <div>
+        <%= f.label :q2, "2.학년별로 배우는 내용에 대해 간략하게 설명해줘" %>
+        <%= f.text_area :q2 %><!-- 인터뷰 내용 -->
+      </div>
+        <div>
+        <%= f.label :q3, "3.학과에 만족해?" %>
+        <%= f.text_area :q3 %><!-- 인터뷰 내용 -->
+      </div>
+        <div>
+        <%= f.label :q4, "4.1(정시 입학생 대상) 대학생이 된 후 한 기억에 남는 활동은?" %><br>
+        <%= f.label :q4, "4.2(수시 입학생 대상) OO전형에 들어올 학생들을 위한 팁 좀 부탁해!" %>
+        <%= f.text_area :q4 %><!-- 인터뷰 내용 -->
+      </div>
+        <div>
+        <%= f.label :q5, "5.생각하고 있는 진로?" %>
+        <%= f.text_area :q5 %><!-- 인터뷰 내용 -->
+      </div>
+          <div>
+        <%= f.label :q6, "6.공식질문: 절대 우리 과에 오지 말아야 할 사람은?" %>
+        <%= f.text_area :q6 %><!-- 인터뷰 내용 -->
+      </div>
+      <div class="field">
+        <%= f.label :file, "대표 이미지" %><br>
+        <%= f.file_field :file %><!-- 이미지 -->
+      </div>
+      <div class="field">
+        <%= f.label :university %><br>
+        <%= f.text_field :university %>
+      </div>
+      <div class="actions">
+        <%= f.submit "올리기", class: 'waves-effect waves-light btn'%>
+      </div>
+    <% end %>
+  
+  </body>
+</html>

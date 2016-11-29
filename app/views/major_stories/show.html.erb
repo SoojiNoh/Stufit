@@ -1,63 +1,72 @@
-<ul class="collection">
-  <li class="collection-item avatar">
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
 
-<div class="progress">
-  <div class="determinate" style="width: 70%"></div>
-</div>
-
-<h5><%= @major_story.univ.html_safe %> <strong><%= @major_story.major %></strong></h5>
-<h6><%= @major_story.grade %> <%= @major_story.name %></h6> 
-
-   <div class="progress">
-       <div class="determinate" style="width: 70%"></div>
-     </div>
-
-<div class ="col s12 m12">
+    </style>
+  </head>
+  <body>
+    <ul class="collection">
+      <li class="collection-item avatar">
     
-  <p>1. 학과에 대해서 자세히 설명해줘</p>
-  <p><%= @major_story.q1.html_safe %></p><br>
-  <p>2. 학년별로 배우는 내용에 대해 간략하게 설명해줘</p>
-  <p><%= @major_story.q2.html_safe %></p><br>
-  <p>3. 학과에 만족해?</p>
-  <p><%= @major_story.q3.html_safe %></p><br>
-  <p>4.1 대학생이 된 후 한 기억에 남는 활동은?"</p>
-  <p>4.2 해당 전형에 들어올 학생들을 위한 팁 좀 부탁해!"</p>
-  <p><%= @major_story.q4.html_safe %></p><br>
-  <p>5. 생각하고 있는 진로?</p>
-  <p><%= @major_story.q5.html_safe %></p><br>
-  <p>6. 공식질문: 절대 우리 과에 오지 말아야 할 사람은?</p>
-  <p><%= @major_story.q6.html_safe %></p><br>
-<%= image_tag "#{@major_story.file}" , height: '300', width: '400' %>
-</div>
-</ul>
-</li>
-<%= link_to "목록", major_stories_path, class: 'waves-effect waves-light btn' %>
-
-<%if @major_story.updatable_by? current_user%>
-<%= link_to "수정", edit_major_story_path(@major_story), class: 'waves-effect waves-light btn' %> 
-<%end%>
-<%if @major_story.deletable_by? current_user%>
-<%= link_to "삭제", major_story_path(@major_story), method: "delete", class: 'waves-effect waves-light btn', data: { confirm: 'Are you sure?' } if @major_story.deletable_by? current_user %>
-<%end%>
-<%= link_to '새 글쓰기', new_major_story_path ,class: 'waves-effect waves-light btn' %>
-<ul class="collection">
-      <li class="collection-item">
-<strong>댓글</strong>
-
-   <% @major_story.comments.each do |comment| %>
-<li class="collection-item">
-    <strong><%= comment.user.name %></strong><br>
-     <%= comment.content %>
-    <%if comment.updatable_by? current_user%>
-    <div align="right"><%= link_to "수정", edit_comment_path(comment), class: 'waves-effect waves-light btn' %></div>
+    <div class="progress">
+      <div class="determinate" style="width: 70%"></div>
+    </div>
+    
+    <h5><%= @major_story.univ.html_safe %> <strong><%= @major_story.major %></strong></h5>
+    <h6><%= @major_story.grade %> <%= @major_story.name %></h6> 
+    
+       <div class="progress">
+           <div class="determinate" style="width: 70%"></div>
+         </div>
+    
+    <div class ="col s12 m12">
+        
+      <p>1. 학과에 대해서 자세히 설명해줘</p>
+      <p><%= @major_story.q1.html_safe %></p><br>
+      <p>2. 학년별로 배우는 내용에 대해 간략하게 설명해줘</p>
+      <p><%= @major_story.q2.html_safe %></p><br>
+      <p>3. 학과에 만족해?</p>
+      <p><%= @major_story.q3.html_safe %></p><br>
+      <p>4.1 대학생이 된 후 한 기억에 남는 활동은?"</p>
+      <p>4.2 해당 전형에 들어올 학생들을 위한 팁 좀 부탁해!"</p>
+      <p><%= @major_story.q4.html_safe %></p><br>
+      <p>5. 생각하고 있는 진로?</p>
+      <p><%= @major_story.q5.html_safe %></p><br>
+      <p>6. 공식질문: 절대 우리 과에 오지 말아야 할 사람은?</p>
+      <p><%= @major_story.q6.html_safe %></p><br>
+    <%= image_tag "#{@major_story.file}" , height: '300', width: '400' %>
+    </div>
+    </ul>
+    </li>
+    <%= link_to "목록", major_stories_path, class: 'waves-effect waves-light btn' %>
+    
+    <%if @major_story.updatable_by? current_user%>
+    <%= link_to "수정", edit_major_story_path(@major_story), class: 'waves-effect waves-light btn' %> 
     <%end%>
-    <%if comment.deletable_by? current_user%>
-     <div align="right"><%= link_to "삭제", comment_path(comment), method: :delete, class: 'waves-effect waves-light btn' %></div>
-   <% end %>
-   <% end %>
-
-   <%= render partial: 'comments/new', locals: { :comment => @major_story.comments.new , major_story: @major_story.id, belong: "major_story"} %>
-</li>
-</li>
-</ul>
-
+    <%if @major_story.deletable_by? current_user%>
+    <%= link_to "삭제", major_story_path(@major_story), method: "delete", class: 'waves-effect waves-light btn', data: { confirm: 'Are you sure?' } if @major_story.deletable_by? current_user %>
+    <%end%>
+    <%= link_to '새 글쓰기', new_major_story_path ,class: 'waves-effect waves-light btn' %>
+    <ul class="collection">
+          <li class="collection-item">
+    <strong>댓글</strong>
+    
+       <% @major_story.comments.each do |comment| %>
+    <li class="collection-item">
+        <strong><%= comment.user.name %></strong><br>
+         <%= comment.content %>
+        <%if comment.updatable_by? current_user%>
+        <div align="right"><%= link_to "수정", edit_comment_path(comment), class: 'waves-effect waves-light btn' %></div>
+        <%end%>
+        <%if comment.deletable_by? current_user%>
+         <div align="right"><%= link_to "삭제", comment_path(comment), method: :delete, class: 'waves-effect waves-light btn' %></div>
+       <% end %>
+       <% end %>
+    
+       <%= render partial: 'comments/new', locals: { :comment => @major_story.comments.new , major_story: @major_story.id, belong: "major_story"} %>
+    </li>
+    </li>
+    </ul>
+  </body>
+</html>
