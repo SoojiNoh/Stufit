@@ -39,15 +39,15 @@
     </div>
     </ul>
     </li>
-    <%= link_to "목록", major_stories_path, class: 'waves-effect waves-light btn' %>
+    <%= link_to "목록", major_stories_path, class: 'jaybutton z-depth-1 hoverable' %>
     
     <%if @major_story.updatable_by? current_user%>
-    <%= link_to "수정", edit_major_story_path(@major_story), class: 'waves-effect waves-light btn' %> 
+    <%= link_to "수정", edit_major_story_path(@major_story), class: 'jaybutton z-depth-1 hoverable' %> 
     <%end%>
     <%if @major_story.deletable_by? current_user%>
-    <%= link_to "삭제", major_story_path(@major_story), method: "delete", class: 'waves-effect waves-light btn', data: { confirm: 'Are you sure?' } if @major_story.deletable_by? current_user %>
+    <%= link_to "삭제", major_story_path(@major_story), method: "delete", class: 'jaybutton z-depth-1 hoverable', data: { confirm: 'Are you sure?' } if @major_story.deletable_by? current_user %>
     <%end%>
-    <%= link_to '새 글쓰기', new_major_story_path ,class: 'waves-effect waves-light btn' %>
+    <%= link_to '새 글쓰기', new_major_story_path ,class: 'jaybutton z-depth-1 hoverable' %>
     <ul class="collection">
           <li class="collection-item">
     <strong>댓글</strong>
@@ -57,10 +57,10 @@
         <strong><%= comment.user.name %></strong><br>
          <%= comment.content %>
         <%if comment.updatable_by? current_user%>
-        <div align="right"><%= link_to "수정", edit_comment_path(comment), class: 'waves-effect waves-light btn' %></div>
+        <div align="right"><%= link_to "수정", edit_comment_path(comment), class: 'jaybutton z-depth-1 hoverable' %></div>
         <%end%>
         <%if comment.deletable_by? current_user%>
-         <div align="right"><%= link_to "삭제", comment_path(comment), method: :delete, class: 'waves-effect waves-light btn' %></div>
+         <div align="right"><%= link_to "삭제", comment_path(comment), method: :delete, class: 'jaybutton z-depth-1 hoverable' %></div>
        <% end %>
        <% end %>
     
