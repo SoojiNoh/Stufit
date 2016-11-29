@@ -23,6 +23,27 @@
   font-family:'BM JUA','배달의민족 주아', sans-serif;
 }
 
+/* 에브리타임에서 훔쳐옴 */
+.jaybutton {
+  display: inline;
+	margin: 5px 5px 5px 5px;
+	padding: 12px 12px 12px 12px;
+	/*height: 35px;
+	line-height: 35px; */
+	border: 1px solid #64b5f6;
+	border-radius: 3px;
+	color: #64b5f6;
+	font-size: 14px;
+	font-weight: bold;
+	/*background-repeat: no-repeat;
+	background-position: 10px center;
+	background-size: 10px 10px;
+	background-color: #fff */
+	background: transparent;
+	cursor: pointer;
+}
+
+
 .center{
     margin: auto;
     width: 50%;

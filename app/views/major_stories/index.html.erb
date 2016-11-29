@@ -3,25 +3,6 @@
   <head>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
-      /* 에브리타임에서 훔쳐옴 */
-      .jaybutton {
-					    display: inline;
-							margin: 5px 5px 5px 5px;
-							padding: 12px 12px 12px 12px;
-							/*height: 35px;
-							line-height: 35px; */
-							border: 1px solid #64b5f6;
-							border-radius: 3px;
-							color: #64b5f6;
-							font-size: 14px;
-							font-weight: bold;
-							/*background-repeat: no-repeat;
-							background-position: 10px center;
-							background-size: 10px 10px;
-							background-color: #fff */
-							background: transparent;
-							cursor: pointer;
-					}
 
     </style>
   </head>
@@ -65,7 +46,7 @@
     
     <!-- 전공추가 버튼-->
     <div align="right" style="margin-top:10px; margin-bottom:20px;">
-      <%= link_to '전공추가', new_major_story_path, class: 'jaybutton' %>
+      <%= link_to '전공추가', new_major_story_path, class: 'jaybutton z-depth-1 hoverable' %>
     </div><br>
     
     <!--Pagination -->
