@@ -43,6 +43,11 @@
 	cursor: pointer;
 }
 
+/*자체 컨테이너*/
+.jaycontainer {
+  margin: 30px 15px 30px 20px;
+  padding: 20px 5px 20px 5px;
+}
 
 .center{
     margin: auto;
