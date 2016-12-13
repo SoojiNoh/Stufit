@@ -68,11 +68,11 @@
 
 
 body {
-  background-color: #f9f9f9;
+  background-color: #f8f8f8;
 }
 
 #main {
-  padding-left: 240px;
+  padding-left: 310px;
 }
 
 footer {
@@ -646,7 +646,8 @@ nav ul li.no-hover:hover {
 }
 
 ul.side-nav.leftside-navigation {
-  top: 64px;
+  top: 98px;
+  left: 25px;
   overflow: hidden;
 }
 
