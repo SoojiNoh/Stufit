@@ -9,7 +9,7 @@
     <div class="header-search-wrapper hide-on-med-and-down">
       <i class="mdi-action-search"></i>
       <%= form_tag '/search', :method => :get do %>
-          <%= text_field_tag :search, params[:search], class: 'header-search-input z-depth-2'%>
+          <%= text_field_tag :search, params[:search], class: 'header-search-input z-depth-2', placeholder: '뭐든지 검색해보세요!'%>
       <% end %>      
     </div>
     <!-- fullscreen 기능 button 삭제
