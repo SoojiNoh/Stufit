@@ -422,11 +422,11 @@ h1 span.logo-text {
 
 header .brand-logo {
   margin: 1px 0;
-  padding: 14px 20px;
+  padding: 16px 63px;
 }
 
 header .brand-logo img {
-  width: 172px;
+  width: 233px;
 }
 
 @media only screen and (max-width: 992px) {
