@@ -25,9 +25,8 @@
           <th><%= sortable "style", "분류"%></th>
           <th colspan="2"><%= sortable  "title",  "활동명"%></th>
           <th colspan="2"><%= sortable "content", "내용"%></th>
-          <th><%= sortable"host_name",  "주관기관"%></th>
-          <th><%= sortable "start_at", "시작일" %></th>
-          <th><%= sortable "end_at", "종료일" %></th>
+          <th><%= sortable "host_name",  "기관"%></th>
+          <th><%= sortable "start_at", "활동 기간" %></th>
        
         </tr>
       </thead>
@@ -40,13 +39,10 @@
           <td colspan="2"><%= link_to "#{truncate(a.title, :length =>14, :separator=>' ')}", activity_path(a) %></td>
           <td colspan="2"><%= link_to "#{truncate(a.content, :length => 14, :separator=>' ')}", activity_path(a)  %></td>
           <td><%=a.host_name%></td>
-          <td><%=a.start_at%></td>
-          <td><%=a.end_at%></td>
-              
-          
-          
+          <td><%=a.start_at%> ~ <%=a.end_at%></td>
+          </tr>
         <%end%>
-        </tr>
+        
         </tbody>
         </table>
         </div><br>
