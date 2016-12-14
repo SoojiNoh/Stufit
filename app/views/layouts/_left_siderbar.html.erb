@@ -34,8 +34,16 @@
       </li>
       </ul>
       <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown"><%=current_user.name%><i class="mdi-navigation-arrow-drop-down right"></i></a>
-      <p class="user-roal"><%=current_user.email%></p>
-    
+      <p class="user-roal"><%=current_user.email%>
+              <% if current_user.points > 40 %>
+      Grade : Gold
+        <%else%>
+      Grade : Silver
+        <%end%></p>
+        <p class="user-roal">Point : <%= current_user.points %></p>
+        <%# current_user.badges.each do |badge| %>
+          <!--<li><%#= badge.name %></li>-->
+        <%# end %>
         <% else %>
         <li><%= link_to new_user_registration_path , method: 'get' do%>
         <!--<i class="material-icons">assignment_ind</i>-->회원가입

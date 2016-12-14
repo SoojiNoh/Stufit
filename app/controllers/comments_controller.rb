@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
-
+  after_action :provide_badge
+  
   def create
     @user = current_user
     @comment = Comment.new(comment_params)
@@ -48,6 +49,10 @@ class CommentsController < ApplicationController
   
   def comment_params
     params.require(:comment).permit(:content, :event_id, :university_id, :major_story_id, :community_id)
+  end
+
+  def provide_badge
+    current_user.add_badge(2) if (current_user.comments == 2)
   end
 
 end

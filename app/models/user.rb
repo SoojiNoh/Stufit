@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_merit
+
   rolify
   include Authority::UserAbilities
   
