@@ -125,13 +125,14 @@ ActiveRecord::Schema.define(version: 20161206022151) do
     t.string   "file"
     t.string   "image"
     t.string   "event_type"
+    t.boolean  "done",              default: false
     t.date     "start_at"
     t.date     "end_at"
     t.integer  "impressions_count"
     t.integer  "user_id"
     t.integer  "university_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.index ["university_id"], name: "index_events_on_university_id"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
@@ -207,30 +208,6 @@ ActiveRecord::Schema.define(version: 20161206022151) do
     t.index ["impressionable_type", "impressionable_id", "session_hash"], name: "poly_session_index"
     t.index ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index"
     t.index ["user_id"], name: "index_impressions_on_user_id"
-  end
-
-  create_table "major_favorites", force: :cascade do |t|
-    t.string   "major_stroy_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
-
-  create_table "major_follows", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "major_favorite_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.index ["major_favorite_id"], name: "index_major_follows_on_major_favorite_id"
-    t.index ["user_id"], name: "index_major_follows_on_user_id"
-  end
-
-  create_table "major_likes", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "major_story_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["major_story_id"], name: "index_major_likes_on_major_story_id"
-    t.index ["user_id"], name: "index_major_likes_on_user_id"
   end
 
   create_table "major_stories", force: :cascade do |t|
@@ -343,21 +320,13 @@ ActiveRecord::Schema.define(version: 20161206022151) do
     t.string   "event_type"
     t.datetime "start_at"
     t.datetime "end_at"
+    t.boolean  "done",          default: false
     t.integer  "university_id"
     t.integer  "user_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.index ["university_id"], name: "index_schedules_on_university_id"
     t.index ["user_id"], name: "index_schedules_on_user_id"
-  end
-
-  create_table "univ_follows", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "university_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["university_id"], name: "index_univ_follows_on_university_id"
-    t.index ["user_id"], name: "index_univ_follows_on_user_id"
   end
 
   create_table "universities", force: :cascade do |t|

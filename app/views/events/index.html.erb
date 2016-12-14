@@ -7,7 +7,7 @@
   </head>
   <body>
     <div class="jaycontainer">
-      <h5 class="center">정보게시판</h5>
+      <h5 class="center">대외알리GO</h5>
           
         <br>
         <!--버튼-->
@@ -21,7 +21,7 @@
                 <th  colspan="2"><%= sortable "created_at", "작성일"%></th>
                 <th  colspan="1">조회수</th>
                 <th  colspan="1">좋아요</th>
-                <th  colspan="1">즐겨찾기</th>
+                <!--<th  colspan="1">즐겨찾기</th>-->
               </tr>
             </thead>
           
@@ -46,17 +46,17 @@
                     <%= event.event_likes.size %>
                   <%end%>
                   </td>
-                  <td width="10%">
-                    <% if current_user.nil? %>
-                    <%= link_to "/events/eventfollow/#{event.id}" do %> <i class="empty_star material-icons">star</i> <% end %>
-                   <% else %>
-                   <% if current_user.favorite_events.where(id: event.id).take != nil  %>
-                     <%= link_to "/events/eventfollow_destroy/#{UserEvent.where(user: current_user, favorite_event: event).take.id}" do %><i class="pull_star material-icons">star</i> <% end %>
-                   <% else %>
-                     <%= link_to "/events/eventfollow/#{event.id}" do %> <i class="empty_star material-icons">star</i> <% end %>
-                   <% end %>
-                   <% end %>
-                   </td>
+                  <!--<td width="10%">-->
+                  <!--  <%# if current_user.nil? %>-->
+                  <!--  <%#= link_to "/events/eventfollow/#{event.id}" do %> <i class="empty_star material-icons">star</i> <%# end %>-->
+                  <!-- <%# else %>-->
+                  <!-- <%# if current_user.favorite_events.where(id: event.id).take != nil  %>-->
+                  <!--   <%#= link_to "/events/eventfollow_destroy/#{UserEvent.where(user: current_user, favorite_event: event).take.id}" do %><i class="pull_star material-icons">star</i> <% end %>-->
+                  <!-- <%# else %>-->
+                  <!--   <%#= link_to "/events/eventfollow/#{event.id}" do %> <i class="empty_star material-icons">star</i> <%# end %>-->
+                  <!-- <%# end %>-->
+                  <!-- <%# end %>-->
+                  <!-- </td>-->
                 </tr>
               <% end %>
             </tbody>
