@@ -68,11 +68,11 @@
 
 
 body {
-  background-color: #f9f9f9;
+  background-color: #f8f8f8;
 }
 
 #main {
-  padding-left: 240px;
+  padding-left: 310px;
 }
 
 footer {
@@ -328,7 +328,7 @@ li.home:before {
   position: absolute;
   left: 48%;
   top: 46%;
-  background: url("../images/user-bg-2.jpg") no-repeat center center;
+  /*background: url("../images/user-bg-2.jpg") no-repeat center center;*/
   z-index: 1001;
 }
 
@@ -422,11 +422,11 @@ h1 span.logo-text {
 
 header .brand-logo {
   margin: 1px 0;
-  padding: 14px 20px;
+  padding: 16px 63px;
 }
 
 header .brand-logo img {
-  width: 172px;
+  width: 233px;
 }
 
 @media only screen and (max-width: 992px) {
@@ -443,7 +443,7 @@ header .brand-logo img {
 
 /*Search box*/
 .header-search-wrapper {
-  margin: 10px auto 0 240px;
+  margin: 20px auto 0 335px;
   width: calc(100% - 600px);
   height: 40px;
   display: inline-block;
@@ -463,7 +463,7 @@ header .brand-logo img {
 input.header-search-input {
   display: block;
   padding: 8px 8px 8px 72px;
-  width: 100%;
+  width: 70%;
   background: rgba(255, 255, 255, 0.3);
   height: 24px;
   -webkit-transition: all 200ms ease;
@@ -646,7 +646,8 @@ nav ul li.no-hover:hover {
 }
 
 ul.side-nav.leftside-navigation {
-  top: 64px;
+  top: 98px;
+  left: 25px;
   overflow: hidden;
 }
 
@@ -677,7 +678,8 @@ ul.side-nav.leftside-navigation li a {
 }
 
 ul.side-nav.leftside-navigation li.user-details {
-  background: url("../images/user-bg.jpg") no-repeat center center;
+  /*background: url("../images/user-bg.jpg") no-repeat center center;*/
+  background-color: #fff;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
