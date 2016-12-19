@@ -31,65 +31,71 @@
         </div>
         <div class="col col s8 m8 l8">
           <ul id="profile-dropdown" class="dropdown-content">
-            <li><%= link_to help_path do %>
+            <li>
+              <%= link_to help_path do %>
               <!--<i class="mdi-communication-live-help"></i>--> 도움말
-            <%end%>
+              <%end%>
             </li>
+            <!-- hr선(divider) -->
             <li class="divider"></li>
-            
+
             <% if user_signed_in? %>
-            <li><%= link_to edit_user_registration_path do %>
+            <li>
+              <%= link_to edit_user_registration_path do %>
               <!--<i class="mdi-action-settings"></i>-->프로필
-            <%end%>
+              <%end%>
             </li>
             
-            <li><%= link_to destroy_user_session_path, method: 'delete' do %>
-            <!--<i class="material-icons">vpn_key</i>-->로그아웃
-            <%end%>
-          </li>
-          </ul>
-          <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown"><%=current_user.name%><i class="mdi-navigation-arrow-drop-down right"></i></a>
-          <p class="user-roal"><%=current_user.email%></p>
-        
-            <% else %>
-            <li><%= link_to new_user_registration_path , method: 'get' do%>
-            <!--<i class="material-icons">assignment_ind</i>-->회원가입
-            <%end%>
+            <li>
+              <%= link_to destroy_user_session_path, method: 'delete' do %>
+              <!--<i class="material-icons">vpn_key</i>-->로그아웃
+              <%end%>
             </li>
-            <li><%= link_to new_user_session_path, method: 'get' do %>
-            <!--<i class="material-icons">vpn_key</i>-->로그인
-            <%end%></li>
           </ul>
-          <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">로그인하세요<i class="mdi-navigation-arrow-drop-down right"></i></a>
+          <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">
+            <%=current_user.name%><i class="mdi-navigation-arrow-drop-down right"></i>
+          </a>
+
+          <p class="user-roal"><%=current_user.email%>
+            <% if current_user.points > 40 %>
+              Grade : Gold
+            <%else%>
+              Grade : Silver
+            <%end%>
+          </p>
+          <p class="user-roal">Point : <%= current_user.points %></p>
+          <%# current_user.badges.each do |badge| %>
+            <!--<li><%#= badge.name %></li>-->
+          <%# end %>
+
+            <% else %> <!--if user_signed_in?-->
+            <li>
+              <%= link_to new_user_registration_path , method: 'get' do%>
+              <!--<i class="material-icons">assignment_ind</i>-->회원가입
+              <%end%>
+            </li>
+            <li>
+              <%= link_to new_user_session_path, method: 'get' do %>
+              <!--<i class="material-icons">vpn_key</i>-->로그인
+              <%end%>
+            </li>
+          </ul>
+          <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">
+            로그인하세요<i class="mdi-navigation-arrow-drop-down right"></i>
+          </a>
           <p class="user-roal">환영합니다.</p>
           
-          <% end %>
+            <% end %> <!--if user_signed_in?-->
         </div>
-        
       </div>
       </li>
-      </ul>
-      <% if user_signed_in? %>
-      <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown"><%=current_user.name%><i class="mdi-navigation-arrow-drop-down right"></i></a>
-      <p class="user-roal"><%=current_user.email%>
-              <% if current_user.points > 40 %>
-      Grade : Gold
-        <%else%>
-      Grade : Silver
-        <%end%></p>
-        <p class="user-roal">Point : <%= current_user.points %></p>
-        <%# current_user.badges.each do |badge| %>
-          <!--<li><%#= badge.name %></li>-->
-        <%# end %>
-        <% else %>
-        <li><%= link_to new_user_registration_path , method: 'get' do%>
-        <!--<i class="material-icons">assignment_ind</i>-->회원가입
-        <%end%>
-                <%end%>
+    </ul>
 
-      <ul class="collapsible collapsible-accordion">
-        <li class="bold"><a class="collapsible-header active waves-effect waves-cyan">
-          <!--<i class="mdi-action-perm-identity"></i>--> 내 서비스</a>
+    <ul class="collapsible collapsible-accordion">
+      <li class="bold">
+        <a class="collapsible-header active waves-effect waves-cyan">
+          <!--<i class="mdi-action-perm-identity"></i>--> 내 서비스
+        </a>
         <div class="collapsible-body">
           <ul>
             <li><a href="/activities"><!--<i class="large mdi-device-now-widgets "></i>-->활동내역</a>
@@ -98,32 +104,29 @@
             </li>
           </ul>
         </div>
-
+      </li>
+      <ul>
+        <li class="li-hover"><div class="divider"></div></li>
+        <!--<li class="li-hover"><p class="ultra-small margin more-text">알리Go</p></li>-->
+        <li class="bold"><a href="/universities" class="waves-effect waves-cyan">
+          <!--<i class="material-icons">&#xE80C;</i>--> 대학알리Go</a>
         </li>
-        <ul>
-    
-          <li class="li-hover"><div class="divider"></div></li>
-          <!--<li class="li-hover"><p class="ultra-small margin more-text">알리Go</p></li>-->
-          <li class="bold"><a href="/universities" class="waves-effect waves-cyan">
-            <!--<i class="material-icons">&#xE80C;</i>--> 대학알리Go</a>
-          </li>
-          <li class="bold"><a href="/major_stories" class="waves-effect waves-cyan">
-            <!--<i class="material-icons">&#xE150;</i>--> 전공알리Go</a>
-          </li>
-          <li class="bold"><a href="/events" class="waves-effect waves-cyan">
-            <!--<i class="material-icons">&#xE916;</i>--> 대외알리Go</a>
-          </li>
-          <li class="bold"><a href="/communities" class="waves-effect waves-cyan">
-            <!--<i class="material-icons">&#xE916;</i>--> 커뮤니티</a>
-          </li>
-          <li class="bold"><a href="/consults" class="waves-effect waves-cyan">
-            <!--<i class="material-icons">&#xE916;</i>--> 컨설팅</a>
-          </li>
-    
-    
-        </ul>
-        <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only darken-2">
-          <i class="mdi-navigation-menu" >&#xE916;</i></a>
-        </aside>
+        <li class="bold"><a href="/major_stories" class="waves-effect waves-cyan">
+          <!--<i class="material-icons">&#xE150;</i>--> 전공알리Go</a>
+        </li>
+        <li class="bold"><a href="/events" class="waves-effect waves-cyan">
+          <!--<i class="material-icons">&#xE916;</i>--> 대외알리Go</a>
+        </li>
+        <li class="bold"><a href="/communities" class="waves-effect waves-cyan">
+          <!--<i class="material-icons">&#xE916;</i>--> 커뮤니티</a>
+        </li>
+        <li class="bold"><a href="/consults" class="waves-effect waves-cyan">
+          <!--<i class="material-icons">&#xE916;</i>--> 컨설팅</a>
+        </li>
+      </ul>
+      <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only darken-2">
+        <i class="mdi-navigation-menu" >&#xE916;</i>
+      </a>
+    </aside>
   </body>
 </html>
