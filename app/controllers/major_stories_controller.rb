@@ -4,7 +4,7 @@ class MajorStoriesController < ApplicationController
  
   def index
     @user = current_user
-    @major_stories = MajorStory.search(params[:search]).paginate(:page => params[:page], :per_page => 20)
+    @major_stories = MajorStory.search(params[:search]).paginate(:page => params[:page], :per_page => 12)
   end
 
   def show

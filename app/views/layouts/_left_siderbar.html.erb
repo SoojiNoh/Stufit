@@ -69,6 +69,7 @@
       </div>
       </li>
       </ul>
+      <% if user_signed_in? %>
       <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown"><%=current_user.name%><i class="mdi-navigation-arrow-drop-down right"></i></a>
       <p class="user-roal"><%=current_user.email%>
               <% if current_user.points > 40 %>
@@ -84,6 +85,7 @@
         <li><%= link_to new_user_registration_path , method: 'get' do%>
         <!--<i class="material-icons">assignment_ind</i>-->회원가입
         <%end%>
+                <%end%>
 
       <ul class="collapsible collapsible-accordion">
         <li class="bold"><a class="collapsible-header active waves-effect waves-cyan">

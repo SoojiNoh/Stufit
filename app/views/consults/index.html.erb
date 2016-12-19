@@ -1,19 +1,26 @@
+<div class="jaycontainer">
 <h5 class="center">컨설트</h5>
-
+<hr>
 <!--search -->
 
-<div class="container">
+<!-- 컨설트 추가 버튼-->
+<div class = "row">
+<div class="header-search-wrapper hide-on-med-and-down">
   <%= form_tag consults_path, :method => 'get', :id => "consults_search", :style=>"margin-top:50px" do %>
     <%= hidden_field_tag :direction, params[:direction]%>
     <%= hidden_field_tag :sort, params[:sort]%>
-    <p>
-      <%= text_field_tag :search, params[:search], placeholder: "검색어를 입력하세요" %>
-      <div><%= submit_tag "검색", :content => nil, class: 'waves-effect waves-light btn blue' %></div>
+    <p class="col s10 m10 l10">
+      <%= text_field_tag :search, params[:search], placeholder: "예비 선배를 찾아보세요!" %>
+      <div><%#= submit_tag "검색", :content => nil, class: 'waves-effect waves-light btn blue header-search-input z-depth-2' %></div>
+    </p>
+    <p class="col s2 m2 l2" align="right">
+    <%= link_to '컨설팅 추가', new_consult_path, class: 'jaybutton z-depth-1 hoverable' %>
     </p>
   <% end %>
 </div>
 
-
+</div>
+<br><br><br><br>
 
 <!-- Square card -->
 
@@ -40,12 +47,9 @@
   <% end %>
 </div><br>
 
-<!-- 전공추가 버튼-->
-<div align="right" style="margin-top:10px; margin-bottom:20px;">
-  <%= link_to '컨설트추가', new_consult_path, class: 'waves-effect waves-light btn blue' %>
-</div><br>
 
 <!--Pagination -->
 <div class="digg_pagination" align="center">
   <%= will_paginate @consults, previous_lable: "이전", next_lable: "다음", :container => false %>
+</div>
 </div>

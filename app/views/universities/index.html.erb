@@ -1,5 +1,6 @@
+<div class="jaycontainer">
 <h5 class="center">대학알리GO</h5>
-
+<hr>
 <div class="row">
   <% @universities.each do |univ| %>
     <div class="col s2 m3 l2">
@@ -47,4 +48,5 @@
       <%= will_paginate @universities, :previous_lable => "이전", :next_lable => "다음", :container => false %>
     </div>
   </div>
+</div>
 </div>
