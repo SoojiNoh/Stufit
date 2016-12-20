@@ -2,41 +2,71 @@
 <html>
   <head>
     <style>
-
+      .inline-display {
+        display: inline;
+      }
+      .question-num {
+        /*position: absolute;
+        left: 35px;
+        top: 28px;*/
+        font-size: 33px;
+        color: #999;
+        line-height: 30px;
+        font-weight: bold;
+      }
+      .question {
+        /*position: absolute;
+        left: 35px;
+        top: 28px;*/
+        font-size: 21px;
+        color: #999;
+        line-height: 30px;
+        font-weight: bold;
+      }
+      .question-margin {
+        margin-bottom: 15px;
+      }
+      
     </style>
   </head>
   <body>
     <div class="jaycontainer">
       <ul class="collection">
         <li class="collection-item avatar">
-      
-      <div class="progress">
-        <div class="determinate" style="width: 70%"></div>
+
+      <%= image_tag "#{@major_story.file}" , height: '150', width: '150', class:"inline-display"%>
+      <div align="center" class="inline-display">
+        <h5><strong><%= @major_story.univ.html_safe %> <%= @major_story.major %><br>
+                    <%= @major_story.grade %> <%= @major_story.name %></strong></h5>
       </div>
       
-      <h5><%= @major_story.univ.html_safe %> <strong><%= @major_story.major %></strong></h5>
-      <h6><%= @major_story.grade %> <%= @major_story.name %></h6> 
-      
-         <div class="progress">
-             <div class="determinate" style="width: 70%"></div>
-           </div>
       
       <div class ="col s12 m12">
-          
-        <p>1. 학과에 대해서 자세히 설명해줘</p>
-        <p><%= @major_story.q1.html_safe %></p><br>
-        <p>2. 학년별로 배우는 내용에 대해 간략하게 설명해줘</p>
-        <p><%= @major_story.q2.html_safe %></p><br>
-        <p>3. 학과에 만족해?</p>
-        <p><%= @major_story.q3.html_safe %></p><br>
-        <p>4.1 대학생이 된 후 한 기억에 남는 활동은?"</p>
-        <p>4.2 해당 전형에 들어올 학생들을 위한 팁 좀 부탁해!"</p>
-        <p><%= @major_story.q4.html_safe %></p><br>
-        <p>5. 생각하고 있는 진로?</p>
-        <p><%= @major_story.q5.html_safe %></p><br>
-        <p>6. 공식질문: 절대 우리 과에 오지 말아야 할 사람은?</p>
-        <p><%= @major_story.q6.html_safe %></p><br>
-      <%= image_tag "#{@major_story.file}" , height: '300', width: '400' %>
+        <div class="question-margin">
+          <p><span class="question-num">01.</span> <span class="question">학과에 대해서 자세히 설명해줘</span></p>
+        </div>  
+          <p><%= @major_story.q1.html_safe %></p><br>
+        <div class="question-margin">
+          <p><span class="question-num">02.</span> <span class="question">학년별로 배우는 내용에 대해 간략하게 설명해줘</span></p>
+        </div>
+          <p><%= @major_story.q2.html_safe %></p><br>
+        <div class="question-margin">
+          <p><span class="question-num">03.</span> <span class="question">학과에 만족해?</span></p>
+        </div>
+          <p><%= @major_story.q3.html_safe %></p><br>
+        <div class="question-margin">
+          <p><span class="question-num">04-1.</span> <span class="question">대학생이 된 후 한 기억에 남는 활동은?</span></p>
+          <p><span class="question-num">04-2.</span> <span class="question">해당 전형에 들어올 학생들을 위한 팁 좀 부탁해!</span></p>
+        </div>
+          <p><%= @major_story.q4.html_safe %></p><br>
+        <div class="question-margin">
+          <p><span class="question-num">05.</span> <span class="question">생각하고 있는 진로?</span></p>
+        </div>
+          <p><%= @major_story.q5.html_safe %></p><br>
+        <div class="question-margin">
+          <p><span class="question-num">06.</span> <span class="question">공식질문: 절대 우리 과에 오지 말아야 할 사람은?</span></p>
+        </div>
+          <p><%= @major_story.q6.html_safe %></p><br>
       </div>
       </ul>
       </li>
