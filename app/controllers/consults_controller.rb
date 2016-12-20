@@ -4,7 +4,7 @@ class ConsultsController < ApplicationController
  
   def index
     @user = current_user
-    @consults = Consult.all.paginate(:page => params[:page], :per_page => 24)
+    @consults = Consult.all.search(params[:search]).paginate(:page => params[:page], :per_page => 24)
   end
 
   def show

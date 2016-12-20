@@ -10,6 +10,6 @@ class Consult < ApplicationRecord
 
    
    def self.search(search)
-     where("title LIKE ? OR content LIKE ? user LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+     where("title LIKE :search OR content LIKE :search", search: "%#{search}%")
    end
 end

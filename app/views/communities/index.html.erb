@@ -1,6 +1,7 @@
+<div class="jaycontainer">
 <h5 class="center">커뮤니티</h5>
 
-<br>
+<hr>
 
 <head>
     <!-- Compiled and minified JavaScript -->
@@ -8,6 +9,14 @@
     <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"></script>
 </head>
+
+    <div class = "row">
+      <div>
+      <p align="right" style="margin-top:10px; margin-bottom:20px;">
+        <%= link_to "새글 쓰기", new_community_path, class: 'jaybutton z-depth-1 hoverable' %>
+      </p><br>
+      </div>
+      </div>
 
 <div class="row">
 <table class="bordered centered" style="width: 100%;">
@@ -51,8 +60,9 @@
         </table>
         </div><br>
         
-      <%= link_to "새글 쓰기", new_community_path, class: 'waves-effect waves-light btn right blue'%><br>
+      
 
   <div class="digg_pagination" align="center">
     <%= will_paginate @communities, :previous_lable => "이전", :next_lable => "다음", :container => false %>
   </div>
+    </div>
