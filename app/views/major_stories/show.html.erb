@@ -29,6 +29,14 @@
       .answer {
         color: #7F7F7F;
       }
+      .story_title {
+        color: #545454;
+        font-weight: bold;
+        /* 아래는 h5의 특징임*/
+        font-size: 1.64rem;
+        line-height: 110%;
+        margin: 0.82rem 0 0.656rem 0;
+      }
     </style>
   </head>
   <body>
@@ -38,8 +46,8 @@
 
       <%= image_tag "#{@major_story.file}" , height: '150', width: '150', class:"inline-display"%>
       <div align="center" class="inline-display">
-        <h5><strong><%= @major_story.univ.html_safe %> <%= @major_story.major %><br>
-                    <%= @major_story.grade %> <%= @major_story.name %></strong></h5>
+        <div class="story_title"><%= @major_story.univ.html_safe %> <%= @major_story.major %><br>
+                    <%= @major_story.grade %> <%= @major_story.name %></div>
       </div>
       <div class="divider" style="margin: 40px 20px 40px 0px;"></div>
       
