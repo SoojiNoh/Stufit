@@ -696,7 +696,7 @@ ul.side-nav.leftside-navigation .profile-btn {
   margin: 0;
   text-transform: capitalize;
   padding: 0;
-  text-shadow: 1px 1px 1px #444;
+  /*text-shadow: 1px 1px 1px #444;*/
   font-size: 15px;
 }
 
@@ -753,10 +753,10 @@ ul.side-nav .collapsible-header {
 }
 
 .user-roal {
-  color: #fff;
+  color: #7F7F7F;
   margin-top: -16px;
   font-size: 13px;
-  text-shadow: 1px 1px 1px #444;
+  /*text-shadow: 1px 1px 1px #444;*/
 }
 
 .user-details .row {

@@ -3281,6 +3281,7 @@ td, th {
   border-radius: 2px;
   overflow: hidden;
   position: relative;
+  background-color: #F5FAFD;
 }
 
 .collection .collection-item {
@@ -9947,7 +9948,7 @@ select {
 .side-nav.fixed a {
   display: block;
   padding: 0 15px;
-  color: #444;
+  color: #7F7F7F;
 }
 
 .side-nav.fixed {

@@ -26,7 +26,9 @@
       .question-margin {
         margin-bottom: 15px;
       }
-      
+      .answer {
+        color: #7F7F7F;
+      }
     </style>
   </head>
   <body>
@@ -39,34 +41,34 @@
         <h5><strong><%= @major_story.univ.html_safe %> <%= @major_story.major %><br>
                     <%= @major_story.grade %> <%= @major_story.name %></strong></h5>
       </div>
-      
+      <div class="divider" style="margin: 40px 20px 40px 0px;"></div>
       
       <div class ="col s12 m12">
         <div class="question-margin">
           <p><span class="question-num">01.</span> <span class="question">학과에 대해서 자세히 설명해줘</span></p>
         </div>  
-          <p><%= @major_story.q1.html_safe %></p><br>
+          <p class="answer"><%= @major_story.q1.html_safe %></p><br>
         <div class="question-margin">
           <p><span class="question-num">02.</span> <span class="question">학년별로 배우는 내용에 대해 간략하게 설명해줘</span></p>
         </div>
-          <p><%= @major_story.q2.html_safe %></p><br>
+          <p class="answer"><%= @major_story.q2.html_safe %></p><br>
         <div class="question-margin">
           <p><span class="question-num">03.</span> <span class="question">학과에 만족해?</span></p>
         </div>
-          <p><%= @major_story.q3.html_safe %></p><br>
+          <p class="answer"><%= @major_story.q3.html_safe %></p><br>
         <div class="question-margin">
           <p><span class="question-num">04-1.</span> <span class="question">대학생이 된 후 한 기억에 남는 활동은?</span></p>
           <p><span class="question-num">04-2.</span> <span class="question">해당 전형에 들어올 학생들을 위한 팁 좀 부탁해!</span></p>
         </div>
-          <p><%= @major_story.q4.html_safe %></p><br>
+          <p class="answer"><%= @major_story.q4.html_safe %></p><br>
         <div class="question-margin">
           <p><span class="question-num">05.</span> <span class="question">생각하고 있는 진로?</span></p>
         </div>
-          <p><%= @major_story.q5.html_safe %></p><br>
+          <p class="answer"><%= @major_story.q5.html_safe %></p><br>
         <div class="question-margin">
           <p><span class="question-num">06.</span> <span class="question">공식질문: 절대 우리 과에 오지 말아야 할 사람은?</span></p>
         </div>
-          <p><%= @major_story.q6.html_safe %></p><br>
+          <p class="answer"><%= @major_story.q6.html_safe %></p><br>
       </div>
       </ul>
       </li>
