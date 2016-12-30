@@ -2,6 +2,12 @@
 <html>
   <head>
     <style>
+      .profile_word {
+        line-height: 15px;
+        color: #7F7F7F;
+        font-size: 13px;
+        text-align: center;
+      }
       
     </style>
     <script>
@@ -52,7 +58,7 @@
               <%end%>
             </li>
           </ul>
-          <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">
+          <a class="btn-flat dropdown-button waves-effect waves-light profile_word profile-btn" href="#" data-activates="profile-dropdown">
             <%=current_user.name%><i class="mdi-navigation-arrow-drop-down right"></i>
           </a>
 
@@ -104,7 +110,7 @@
       </li>
       <ul>
         <li class="li-hover"><div class="divider"></div></li>
-        <li class="li-hover"><p class="ultra-small margin more-text">알리Go</p></li>
+        <li class="li-hover"><p class="ultra-small margin more-text"><!--알리Go--></p></li>
         <li class="bold"><a href="/universities" class="waves-effect waves-cyan">
           <i class="material-icons">&#xE80C;</i> 대학알리Go</a>
         </li>
