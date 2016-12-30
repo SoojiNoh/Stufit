@@ -22,7 +22,10 @@
 .jua{
   font-family:'BM JUA','배달의민족 주아', sans-serif;
 }
-
+.boardtitle{
+  font-weight: bold;
+  color: #64b5f6;
+}
 /* 에브리타임에서 훔쳐옴 */
 .jaybutton {
   display: inline;

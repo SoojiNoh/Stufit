@@ -1,20 +1,11 @@
 <div class="jaycontainer">
-<h5 class="center">컨설트</h5>
+<h5 class="center boardtitle">컨설트</h5>
 <hr>
 <!--search -->
 
 <!-- 컨설트 추가 버튼-->
       <div class = "row">
       <div>
-      <p align="right" style="margin-top:10px; margin-bottom:20px;">
-        <%= link_to '컨설팅 추가', new_consult_path, class: 'jaybutton z-depth-1 hoverable' %>
-      </p><br>
-      </div>
-      </div>
-
-
-<div class = "row">
-<div class="header-search-wrapper hide-on-med-and-down">
   <%= form_tag consults_path, :method => 'get', :id => "consults_search", :style=>"margin-top:50px" do %>
     <%= hidden_field_tag :direction, params[:direction]%>
     <%= hidden_field_tag :sort, params[:sort]%>
@@ -22,14 +13,33 @@
       <%= text_field_tag :search, params[:search], placeholder: "예비 선배를 찾아보세요!" %>
       <div><%#= submit_tag "검색", :content => nil, class: 'waves-effect waves-light btn blue header-search-input z-depth-2' %></div>
     </p>
-    <p class="col s4 m4 l4" align="right">
+    <p class="col s4 m4 l4">
       <%= submit_tag "검색", class: 'jaybutton z-depth-1 hoverable' %>
+    <%= link_to '컨설턴트 등록', new_consult_path, class: 'jaybutton z-depth-1 hoverable' %>
     </p>
   <% end %>
-</div>
+     
+      </div>
+      </div>
+
+
+<!--<div class = "row">
+<div class="header-search-wrapper hide-on-med-and-down">
+  <%#= form_tag consults_path, :method => 'get', :id => "consults_search", :style=>"margin-top:50px" do %>
+    <%#= hidden_field_tag :direction, params[:direction]%>
+    <%#= hidden_field_tag :sort, params[:sort]%>
+    <p class="col s8 m8 l8">
+      <%#= text_field_tag :search, params[:search], placeholder: "예비 선배를 찾아보세요!" %>
+      <div><%#= submit_tag "검색", :content => nil, class: 'waves-effect waves-light btn blue header-search-input z-depth-2' %></div>
+    </p>
+    <p class="col s4 m4 l4" align="right">
+      <%#= submit_tag "검색", class: 'jaybutton z-depth-1 hoverable' %>
+    </p>
+  <%# end %>
+</div>-->
 
 </div>
-<br><br><br><br>
+
 
 <!-- Square card -->
 
