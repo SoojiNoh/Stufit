@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-
+gem 'omniauth'#SNS 로그인
+gem 'omniauth-facebook' #페이스북으로 로그인
 gem 'merit' # 벳지, 포인트
 gem 'rails_admin'
 gem 'rolify'     # role 관리

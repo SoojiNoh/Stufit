@@ -72,6 +72,9 @@
               <p class="margin medium-small"><%= link_to '회원가입', new_user_registration_path , method: 'get' %></p>
             </div>
             <div class="input-field col s6 m6 l6">
+              <p class="margin right-align medium-small"><%= link_to "with Facebook", user_facebook_omniauth_authorize_path, method: 'get' %></p>
+            </div>
+            <div class="input-field col s6 m6 l6">
               <p class="margin right-align medium-small"><%= link_to '비밀번호찾기', new_user_password_path , method: 'get' %></p>
             </div>          
           </div>
