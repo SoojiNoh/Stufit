@@ -10,6 +10,7 @@ gem 'merit' # 벳지, 포인트
 gem 'rails_admin'
 gem 'rolify'     # role 관리
 gem 'authority'  # 권한설정
+gem 'mysql2'
 
 gem 'ckeditor'
 gem 'jquery-turbolinks'

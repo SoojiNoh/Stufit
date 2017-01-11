@@ -1,28 +1,28 @@
 development:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: stufit_development
-  pool: 5
-  username: root
-  password: <%=ENV['STUFIT_SQL_PASSWORD']%>
-  socket: /var/lib/mysql/mysql.sock
+ adapter: mysql2
+ encoding: utf8
+ reconnect: false
+ database: stufit_development
+ pool: 5
+ username: root
+ password: <%=ENV['STUFIT_SQL_PASSWORD']%>
+ socket: /var/lib/mysql/mysql.sock
 test:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: stufit_test
-  pool: 5
-  username: root
-  password: <%=ENV['STUFIT_SQL_PASSWORD']%>
-  socket: /var/lib/mysql/mysql.sock
+ adapter: mysql2
+ encoding: utf8
+ reconnect: false
+ database: stufit_test
+ pool: 5
+ username: root
+ password: <%=ENV['STUFIT_SQL_PASSWORD']%>
+ socket: /var/lib/mysql/mysql.sock
 
 production:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: stufit_production
-  pool: 5
-  username: root
-  password: <%=ENV['STUFIT_SQL_PASSWORD']%>
-  socket: /var/lib/mysql/mysql.sock
+ adapter: mysql2
+ encoding: utf8
+ reconnect: false
+ database: stufit_production
+ pool: 5
+ username: root
+ password: <%=ENV['STUFIT_SQL_PASSWORD']%>
+ socket: /var/lib/mysql/mysql.sock
