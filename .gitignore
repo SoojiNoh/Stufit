@@ -10,7 +10,7 @@
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
-/config/database.yml
+#/config/database.yml
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -30,10 +30,6 @@
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
 
-<<<<<<< HEAD
 
-# server database
-=======
 # stufit server mysql
->>>>>>> f3a0c8c211765fee3044b1ef79ede2b4d54c90ee
 /var/lib/mysql/stufit_production
