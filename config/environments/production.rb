@@ -1,4 +1,22 @@
 Rails.application.configure do
+
+  config.action_mailer.default_url_options = {host: '52.78.164.182'}
+  
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.raise_delivery_errors = false
+
+  config.action_mailer.smtp_settings = { 
+    :authentication => :plain,
+    :address => "smtp.mailgun.org",
+    :port => 2525,
+    :domain => ENV["MAILGUN_DOMAIN"],
+    :user_name => ENV["MAILGUN_USER_NAME"],
+    :password => ENV["MAILGUN_PASSWORD"]
+  }
+  
+
+
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.

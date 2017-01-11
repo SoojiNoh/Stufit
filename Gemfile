@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'mailgun_rails'
+gem 'actionmailer'
+gem 'yaml_db'
+
 gem 'omniauth'#SNS 로그인
 gem 'omniauth-facebook' #페이스북으로 로그인
 gem 'merit' # 벳지, 포인트
@@ -28,7 +32,8 @@ gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use mysql2 as the database for Active Record
+ gem 'mysql2'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
