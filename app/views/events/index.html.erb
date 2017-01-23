@@ -1,76 +1,70 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <style>
-
-    </style>
-  </head>
-  <body>
     <div class="jaycontainer">
       <h5 class="center">대외알리GO</h5>
-          
+
         <br>
         <!--버튼-->
-        
+
         <div class="row ">
-        <div class="col s12">
-          <table class="col s12 bordered centered" style="width: 100%">
-            <thead>
-              <tr>
-                <th  colspan="5"><%= sortable "title", "제목"%></th>
-                <th  colspan="2"><%= sortable "created_at", "작성일"%></th>
-                <th  colspan="1">조회수</th>
-                <th  colspan="1">좋아요</th>
-                <!--<th  colspan="1">즐겨찾기</th>-->
-              </tr>
-            </thead>
-          
-            <tbody>
-              <!--게시판 리스트-->
-              <% @events.each do |event| %>
+          <div class="col s12">
+            <table class="col s12 bordered centered" style="width: 100%">
+              <thead>
                 <tr>
-                  <td colspan="5"><%= link_to event.title, event_path(event) %></td>
-                  <td colspan="2"><%= truncate(event.created_at.in_time_zone("Asia/Seoul").strftime("%Y년%m월%d일"), :length => 14, :separator=>' ')%></td>
-                  <td colspan="1"><%= event.impressions.count %> </td> <!--조회수 event.impressionist -->
-                  <td colspan="1">
-                  <!-- like function -->
-                  <% if user_signed_in? %>
-                    <% if current_user.is_event_like?(event) %>
-                      <%= link_to event_event_like_path(event), method: "post" do %><%= image_tag "#{asset_path "heart.png"}", alt: "blog-img"%><%end%>
-                    <% else %>
-                      <%= link_to event_event_like_path(event), method: "post" do %><%= image_tag "#{asset_path "heart_empty.png"}", alt: "blog-img"%><%end%>
-                    <% end %>
-                    <%= event.event_likes.size %>
-                  <% else %>
-                    <%= image_tag "#{asset_path "heart.png"}" %>
-                    <%= event.event_likes.size %>
-                  <%end%>
-                  </td>
-                  <!--<td width="10%">-->
-                  <!--  <%# if current_user.nil? %>-->
-                  <!--  <%#= link_to "/events/eventfollow/#{event.id}" do %> <i class="empty_star material-icons">star</i> <%# end %>-->
-                  <!-- <%# else %>-->
-                  <!-- <%# if current_user.favorite_events.where(id: event.id).take != nil  %>-->
-                  <!--   <%#= link_to "/events/eventfollow_destroy/#{UserEvent.where(user: current_user, favorite_event: event).take.id}" do %><i class="pull_star material-icons">star</i> <% end %>-->
-                  <!-- <%# else %>-->
-                  <!--   <%#= link_to "/events/eventfollow/#{event.id}" do %> <i class="empty_star material-icons">star</i> <%# end %>-->
-                  <!-- <%# end %>-->
-                  <!-- <%# end %>-->
-                  <!-- </td>-->
+                  <th  colspan="5"><%= sortable "title", "제목"%></th>
+                  <th  colspan="2"><%= sortable "created_at", "작성일"%></th>
+                  <th  colspan="1">조회수</th>
+                  <th  colspan="1">좋아요</th>
+                  <!--<th  colspan="1">즐겨찾기</th>-->
                 </tr>
-              <% end %>
-            </tbody>
-          </table>
-          </div>
+              </thead>
+
+              <tbody>
+                <!--게시판 리스트-->
+                <% @events.each do |event| %>
+                  <tr>
+                    <td colspan="5"><%= link_to event.title, event_path(event) %></td>
+                    <td colspan="2"><%= truncate(event.created_at.in_time_zone("Asia/Seoul").strftime("%Y년%m월%d일"), :length => 14, :separator=>' ')%></td>
+                    <td colspan="1"><%= event.impressions.count %> </td> <!--조회수 event.impressionist -->
+                    <td colspan="1">
+                    <!-- like function -->
+                    <% if user_signed_in? %>
+                      <% if current_user.is_event_like?(event) %>
+                        <%= link_to event_event_like_path(event), method: "post" do %><%= image_tag "#{asset_path "heart.png"}", alt: "blog-img"%><%end%>
+                      <% else %>
+                        <%= link_to event_event_like_path(event), method: "post" do %><%= image_tag "#{asset_path "heart_empty.png"}", alt: "blog-img"%><%end%>
+                      <% end %>
+                      <%= event.event_likes.size %>
+                    <% else %>
+                      <%= image_tag "#{asset_path "heart.png"}" %>
+                      <%= event.event_likes.size %>
+                    <%end%>
+                    </td>
+
+                    <td width="10%">
+                     <% if current_user.nil? %>
+                     <%= link_to "/events/eventfollow/#{event.id}" do %> <i class="empty_star material-icons">star</i>< <% end %>
+                    <% else %>
+                      <% if current_user.favorite_events.where(id: event.id).take != nil  %>
+                        <%= link_to "/events/eventfollow_destroy/#{UserEvent.where(user: current_user, favorite_event: event).take.id}" do %><i class="pull_star material-icons">star</i> <% end %>
+                      <% else %>
+                        <%= link_to "/events/eventfollow/#{event.id}" do %> <i class="empty_star material-icons">star</i> <% end %>
+                      <% end %>
+                    <% end %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+            </div>
           </div><br>
-          
+
           <%= link_to "새글 쓰기", new_event_path ,class: 'waves-effect waves-light btn right blue'%><br>
-        
+
           <!--옛날Pagination
           <div class="digg_pagination center" align="center">
             <#%= will_paginate @events, :previous_lable => "이전", :next_lable => "다음", :container => false %>
           </div> -->
-          
+
           <!--Pagination -->
           <div class="row" align="center">
             <div class="col s4 offset-s4">
@@ -79,8 +73,4 @@
               </div>
             </div>
           </div>
-        </ul>
     </div>
-  
-  </body>
-</html>
